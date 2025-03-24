@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16dbc2b44317d6b48a9f88c2bf0e32f1, type: 3}
+  m_Name: ItemDataList_SO
+  m_EditorClassIdentifier: 
+  ItemDetailsList:
+  - itemID: 1001
+    name: "\u78C1\u529B\u623F\u5361"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: bb60660a304a4a547b7524100b305ab9, type: 3}
+    itemObject: {fileID: 919132149155446097, guid: 42c71c192fed40445960d25dbac169cb,
+      type: 3}
+    itemDescriptions: "#03\u53F7\u5BBF\u820D\u7684\u78C1\u529B\u623F\u5361\uFF0C\u5728\u5927\u95E8\u5904\u5237\u5361\u65B9\u53EF\u8FDB\u51FA\uFF0C\u8BB0\u5F55\u4E86\u4EBA\u5458\u7684\u4FE1\u606F\uFF0C\u5728\u7535\u529B\u4E0D\u8DB3\u65F6\u4ECD\u53EF\u4F7F\u7528"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0
+  - itemID: 1002
+    name: "\u62A4\u76FE\u5145\u80FD\u6A21\u7EC4"
+    itemType: 2
+    itemIcon: {fileID: 21300000, guid: ffbb8b8e929f626428cb424fc2e23f5a, type: 3}
+    itemObject: {fileID: 919132149155446097, guid: bc053a3001eb4654a8bc1497543988fd,
+      type: 3}
+    itemDescriptions: "\u5229\u7528\u7535\u78C1\u80FD\u5236\u4F5C\u7684\u5C0F\u578B\u5145\u80FD\u88C5\u7F6E\uFF0C\u80FD\u5FEB\u901F\u4FEE\u590D\u53D7\u635F\u7684\u62A4\u7532\u3002"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0
+  - itemID: 1003
+    name: "\u5355\u53D1\u6CE8\u5C04\u67AA"
+    itemType: 7
+    itemIcon: {fileID: 21300000, guid: 8423f661555e1f14c9fcf8bd8e67deb4, type: 3}
+    itemObject: {fileID: 919132149155446097, guid: e6fa161c4a7c80145a6c78fdb980efff,
+      type: 3}
+    itemDescriptions: "\u5F3A\u76F8\u4E92\u4F5C\u7528\u529B\u5236\u6210\u7684\u6D88\u97F3\u624B\u67AA\uFF0C\u5728\u8154\u5185
+      \u5B50\u5F39\u52A0\u901F\u4E3A1/20\u5149\u901F\uFF0C\u5BF9\u62A4\u76FE\u9020\u6210\u5C11\u91CF\u4F24\u5BB3"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0
+  - itemID: 1004
+    name: "\u64AC\u68CD"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: b5cc3cacc5fd622428b5682cc148c2d5, type: 3}
+    itemObject: {fileID: 3700976783133483460, guid: 07ed1259b510ae840a0051cd603e4d30,
+      type: 3}
+    itemDescriptions: "\u9668\u94C1\u5236\u4F5C\u7684\u5DE5\u5177, \u5341\u5206\u575A\u786C\uFF0C\u53EF\u4EE5\u64AC\u52A8\u5927\u90E8\u5206\u91D1\u5C5E"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0
+  - itemID: 1005
+    name: "ID\u5361"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: cc71818c5a460b84daefb519b670fe39, type: 3}
+    itemObject: {fileID: 8956216338533577061, guid: b774cb4e3bf288941abff505fc911468,
+      type: 3}
+    itemDescriptions: "\u88AB\u6C34\u6CE1\u8FC7\u7684ID\u5361, \u78C1\u6761\u5DF2\u635F\u574F,
+      \u5361\u9762\u8FD8\u53EF\u4EE5\u56DE\u6536\u5229\u7528"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0
+  - itemID: 1006
+    name: "\u5B50\u5F39\u76D2"
+    itemType: 1
+    itemIcon: {fileID: 21300000, guid: ffa8f34783082df45b2d637f876e60e4, type: 3}
+    itemObject: {fileID: 919132149155446097, guid: f926596d5c4724245b9d44caeeae8afa,
+      type: 3}
+    itemDescriptions: "\u516D\u53D1\u4E3A\u4E00\u76D2\u7684\u9547\u5B9A\u5242\u5B50\u5F39\uFF0C\u5F53\u6253\u7834\u654C\u4EBA\u7684\u62A4\u7532\u540E\uFF0C\u53EF\u5BF9\u5176\u9020\u6210"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0
+  - itemID: 1007
+    name: "#2\u53F7\u5929\u4E95\u94A5\u5319"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: ad66795590994eb41807fbe1cef3c6e5, type: 3}
+    itemObject: {fileID: 5729627239899662902, guid: def6712fee9c5004594fbe265db542ff,
+      type: 3}
+    itemDescriptions: "\u661F\u8230\u4E8C\u5C42\u897F\u90E8#2\u53F7\u5929\u4E95\u7684\u94A5\u5319,
+      \u53EF\u4EE5\u6253\u5F00\u5929\u4E95\u7684\u4E95\u76D6"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 0

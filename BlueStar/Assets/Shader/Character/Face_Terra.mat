@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Face_Terra
+  m_Shader: {fileID: 4800000, guid: 3fca3f69f24fe96488fa628a9ea5dc16, type: 3}
+  m_Parent: {fileID: 2100000, guid: 0b0e965e05662da46b85fb7cef6a61ba, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _AdditionalLights
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 8e3a71863ee0dee4f8aface167dc9621, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp1:
+        m_Texture: {fileID: 2800000, guid: 8b664085bb3fe9e40995d4fe66b8da14, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp2:
+        m_Texture: {fileID: 2800000, guid: 1e8e1d81d3efbd14791b0e593be385a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowMask:
+        m_Texture: {fileID: 2800000, guid: 3a2fb50b2ac4eed4c98dcc411b073f42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _StepEdge: 1.24
+    - _isShadow: 0
+    - _offset: 56.55
+    - _shadowThreshold: 0.75
+    - _shadowThreshold1: 0.51
+    - _shadowThreshold2: -0
+    - _threshold: 16.95
+    m_Colors:
+    - _DarkColor: {r: 0.6132076, g: 0.3737471, b: 0.25839558, a: 1}
+    - _MainColor: {r: 0.9150943, g: 0.7600783, b: 0.61006284, a: 1}
+  m_BuildTextureStacks: []

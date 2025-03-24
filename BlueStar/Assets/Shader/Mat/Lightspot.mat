@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lightspot
+  m_Shader: {fileID: 4800000, guid: 6494ddf6ee1b8ca45a4ecb83292645bc, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _AdditionalLights
+  - _isShadow
+  m_InvalidKeywords:
+  - _isRimLight
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AddLights: 1
+    - _RimIntensity: 2
+    - _StepEdge: 1.43
+    - _isRimLight: 1
+    - _isShadow: 1
+    - _offset: 1.34
+    - _threshold: 10.1
+    m_Colors:
+    - _DarkColor: {r: 0.754717, g: 0.56655127, b: 0.10442617, a: 1}
+    - _MainColor: {r: 1, g: 0.95946586, b: 0.46855342, a: 1}
+    - _RimColor: {r: 1, g: 0.88318694, b: 0.6761006, a: 1}
+  m_BuildTextureStacks: []
