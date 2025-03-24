@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Transition/ShortCut01.unity
+    guid: 851bb09e80b1d0e4bb82bc0762a4651b
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Home.unity
+    guid: 95bd9c4bc5d24a24796d930dc896ddaf
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_ControlRoom.unity
+    guid: 9ae9c6d7ba912494c8e7957f06024aeb
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/Direct.unity
+    guid: f9a028e7b06fbc04191031983d553a4a
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Corridor.unity
+    guid: ab2c07d5a8f7e9d4e921f3a6ed37e613
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_ClassRoom.unity
+    guid: 4b9427e106a654f4e8c13ab86df75d09
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Client.unity
+    guid: 305b83b0446a0cc4ea60f4b9d17bb043
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Corridor_1.unity
+    guid: c33280d95757f3d4db9c07042eb5d94b
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Corridor_2.unity
+    guid: 0f85ba0a80818354ea21a7e1dedcb559
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Decompression.unity
+    guid: 8292a3e264d0a7d43863c98250841d7f
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Electricity_01.unity
+    guid: af182f1446eecfc4b9d19eb2db916033
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Kitchen.unity
+    guid: 8be9f2e8ec1b8cb4392975bef2b045f6
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_LiftRoom.unity
+    guid: 60ce60a86453d5447863d1b32d2a5d9d
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_LivingRoom.unity
+    guid: 17b5317e4be552a4589cb792de4b1dcb
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Office.unity
+    guid: b01ef0ce053730042accf9aff703631f
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L1/L1_Shaft.unity
+    guid: cd0536d10b7182d43b1bcca36888e383
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Storage.unity
+    guid: d07df5c1324a8794c80272220a8aac31
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_TrainingCourse.unity
+    guid: e463db45792e701459ca38968e38c1d8
+  - enabled: 1
+    path: Assets/Scenes/OutDoor/O_OverView.unity
+    guid: be239015064aa2c44858763c9c1d04d0
+  - enabled: 1
+    path: Assets/Scenes/PersisitantLevel/PersistantLevel.unity
+    guid: 79211de7bb126474092c87e3f07e31e5
+  m_configObjects: {}

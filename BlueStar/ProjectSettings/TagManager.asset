@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - UI_Manufacture
+  - UI_SpaceBattle
+  - UI
+  - Celestial
+  - Orbit_Camera
+  - Spaceship
+  - fishTank
+  - cat
+  - entrance
+  - window
+  - notice
+  - Enemy
+  - Bullet
+  - pistol
+  - Zombie
+  - Interactive
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - obstacle
+  - border
+  - Player
+  - Celestial
+  - Spaceship
+  - OutlineLA
+  - Enemy
+  - Bullet
+  - Map
+  - Infrastructure
+  - Interactive
+  - Item
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 4225479937
+    locked: 0

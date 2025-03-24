@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Obstacle
+  m_Shader: {fileID: 4800000, guid: 6494ddf6ee1b8ca45a4ecb83292645bc, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _AdditionalLights
+  - _isShadow
+  m_InvalidKeywords:
+  - _isTextured
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AddLights: 1
+    - _RimIntensity: 1.01
+    - _StepEdge: 1.44
+    - _isRimLight: 0
+    - _isShadow: 1
+    - _isTextured: 1
+    - _offset: 6.6
+    - _threshold: 0.01
+    m_Colors:
+    - _DarkColor: {r: 0.6509434, g: 0.4401032, b: 0.52716315, a: 1}
+    - _MainColor: {r: 0.9150943, g: 0.7276894, b: 0.6445947, a: 1}
+    - _RimColor: {r: 0.2735849, g: 0.21078081, b: 0.21078081, a: 1}
+  m_BuildTextureStacks: []

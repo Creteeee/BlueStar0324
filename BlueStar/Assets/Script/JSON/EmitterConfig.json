@@ -1,0 +1,29 @@
+{"Items":[
+  {
+    "EmitterType": 0,
+    "PrefabPath": "Prefabs/Emitter/Type0/Emitter_Type0",
+    "IconPath": "Prefabs/Emitter/Type0/Icon_Type0",
+    "ModelPath":"Prefabs/Emitter/Type0/EmitterModel_Type0"
+  },
+
+  {
+    "EmitterType": 1,
+    "PrefabPath": "Prefabs/Emitter/Type1/Emitter_Type1",
+    "IconPath": "Prefabs/Emitter/Type1/Icon_Type1",
+    "ModelPath":"Prefabs/Emitter/Type1/EmitterModel_Type1"
+  },
+
+  {
+    "EmitterType": 2,
+    "PrefabPath": "Prefabs/Emitter/Type2/Emitter_Type2",
+    "IconPath": "Prefabs/Emitter/Type2/Icon_Type2",
+    "ModelPath":"Prefabs/Emitter/Type2/EmitterModel_Type2"
+  },
+
+  {
+    "EmitterType": 3,
+    "PrefabPath": "Prefabs/Emitter/Type3/Emitter_Type3",
+    "IconPath": "Prefabs/Emitter/Type3/Icon_Type3",
+    "ModelPath":"Prefabs/Emitter/Type3/EmitterModel_Type3"
+  }
+]}
