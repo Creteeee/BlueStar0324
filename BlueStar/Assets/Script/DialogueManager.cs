@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
         imageDic["Mao"] = sprites[1];
         imageDic["伊达"] = sprites[2];
         imageDic["受伤的清理员"] = sprites[3];
+        imageDic["舰长"] = sprites[4];
         dialogIndex = currentDialogueBeginID;
         //Canvas.GetComponent<CanvasGroup>().alpha = 0f;
         NPC_AI = Resources.Load<GameObject>("Prefabs/Character/NPC/NPC_AI");

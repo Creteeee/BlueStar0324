@@ -53,4 +53,5 @@ public class Dialougue : MonoBehaviour
             isTriggered=false;
         }
     }
+   
 }
