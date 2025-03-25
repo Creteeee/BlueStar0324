@@ -28,20 +28,6 @@ public class Controller_Terra : MonoBehaviour
     public float runSpeedMultiplier = 2.0f; // 跑步速度倍增
     public float rotationSpeed = 10.0f; // 转向速度
     public GameObject gun;
-    public DialogueManager dialogManager;
-    private Dictionary<string, int> posDic = new Dictionary<string, int>();
-    private int dialog_fish = 0;
-    private bool isdialog_Fish = false;
-    private int dialog_cat = 0;
-    private bool isdialog_cat = false;
-    private int dialog_entrance = 0;
-    private bool isdialog_entrance = false;
-    private int dialog_window = 0;
-    private bool isdialog_window = false;
-    private int dialog_notice = 0;
-    private bool isdialog_notice = false;
-    private int dialog_gun = 0;
-    private bool isdialog_gun = false;
     private GameObject shootLine;
     private GameObject shortLineInst;
     public List<Vector3> shootLinePoints=new List<Vector3>();
@@ -63,11 +49,6 @@ public class Controller_Terra : MonoBehaviour
         curState = StateType.IdleWalkRun;
         animator = GetComponent<Animator>();
         gun.SetActive(false);
-        posDic ["fishTank"] = 0;
-        posDic ["cat"] = 1;
-        posDic["entrance"] = 2;
-        posDic["window"] = 3;
-        posDic["notice"] = 4;
         shortLineInst = Instantiate(shootLine, this.transform);
         animator.SetFloat("Blend", 0);
         walkSpeedCurrent = 0;
@@ -128,79 +109,6 @@ public class Controller_Terra : MonoBehaviour
         {
             RotateTowardsMouse();
         }
-
-        // if (isdialog_Fish == true && Input.GetKeyDown(KeyCode.E))
-        // {
-        //     dialogManager.Awake();
-        //     dialogManager.Start();
-        //     UI.GetComponent<CanvasGroup>().interactable = true;
-        //     UI.GetComponent<CanvasGroup>().alpha = 1;
-        //     focusCamera.gameObject.SetActive(true);
-        //     focusCamera.gameObject.transform.position = focusPoses[posDic["fishTank"]].position;
-        //     focusCamera.gameObject.transform.rotation = focusPoses[posDic["fishTank"]].rotation;
-        // }
-        // else if (isdialog_cat == true && Input.GetKeyDown(KeyCode.E))
-        // {
-        //     dialogManager.Awake();
-        //     dialogManager.Start();
-        //     UI.GetComponent<CanvasGroup>().interactable = true;
-        //     UI.GetComponent<CanvasGroup>().alpha = 1;
-        //     focusCamera.gameObject.SetActive(true);
-        //     focusCamera.gameObject.transform.position = focusPoses[posDic["cat"]].position;
-        //     focusCamera.gameObject.transform.rotation = focusPoses[posDic["cat"]].rotation;
-        //     
-        // }
-        // else if (isdialog_entrance == true && Input.GetKeyDown(KeyCode.E))
-        // {
-        //     dialogManager.Awake();
-        //     dialogManager.Start();
-        //     UI.GetComponent<CanvasGroup>().interactable = true;
-        //     UI.GetComponent<CanvasGroup>().alpha = 1;
-        //     focusCamera.gameObject.SetActive(true);
-        //     focusCamera.gameObject.transform.position = focusPoses[posDic["entrance"]].position;
-        //     focusCamera.gameObject.transform.rotation = focusPoses[posDic["entrance"]].rotation;
-        // }
-        // else if (isdialog_window == true && Input.GetKeyDown(KeyCode.E))
-        // {
-        //     dialogManager.Awake();
-        //     dialogManager.Start();
-        //     UI.GetComponent<CanvasGroup>().interactable = true;
-        //     UI.GetComponent<CanvasGroup>().alpha = 1;
-        //     focusCamera.gameObject.SetActive(true);
-        //     focusCamera.gameObject.transform.position = focusPoses[posDic["window"]].position;
-        //     focusCamera.gameObject.transform.rotation = focusPoses[posDic["window"]].rotation;
-        // }
-        //
-        // else if (isdialog_notice == true && Input.GetKeyDown(KeyCode.E))
-        // {
-        //     dialogManager.Awake();
-        //     dialogManager.Start();
-        //     UI.GetComponent<CanvasGroup>().interactable = true;
-        //     UI.GetComponent<CanvasGroup>().alpha = 1;
-        //     focusCamera.gameObject.SetActive(true);
-        //     focusCamera.gameObject.transform.position = focusPoses[posDic["notice"]].position;
-        //     focusCamera.gameObject.transform.rotation = focusPoses[posDic["notice"]].rotation;
-        // }
-        // else if (isdialog_gun == true && Input.GetKeyDown(KeyCode.E))
-        // {
-        //     dialogManager.Awake();
-        //     dialogManager.Start();
-        //     UI.GetComponent<CanvasGroup>().interactable = true;
-        //     UI.GetComponent<CanvasGroup>().alpha = 1;
-        //
-        // }
-        //
-        //
-        // if (dialogManager.dialogIndex == 36)
-        // {
-        //     UI_MR.SetActive(true);
-        // }
-        // if (dialogManager.dialogIndex == 57)
-        // {
-        //     SceneManager.LoadScene(4);
-        // }
-        
-        
     }
 
     void onWalking(Vector2 inputVector)
@@ -338,115 +246,7 @@ public class Controller_Terra : MonoBehaviour
             transform.rotation =Quaternion.Euler(0,angle2+180,0);  // 直接设置目标旋转
         }
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case"fishTank" :
-                Debug.Log("我碰到鱼缸了");
-                if (dialog_fish>=0)
-                {
-                    DialogueManager.currentDialogueBeginID = 14;
-                    dialog_fish++;
-                    isdialog_Fish = true;
-                    Debug.Log("可以开启鱼缸对话");
-
-                }
-                break;
-            case"cat" :
-                Debug.Log("我碰到大毛了");
-                if (dialog_cat >=0)
-                {
-                    DialogueManager.currentDialogueBeginID = 27;
-                    dialog_cat++;
-                    isdialog_cat = true;
-                }
-
-                break;
-            case"entrance" :
-                Debug.Log("我碰到大门了");
-                if (dialog_entrance >=0)
-                {
-                    DialogueManager.currentDialogueBeginID = 49;
-                    dialog_entrance++;
-                    isdialog_entrance = true;
-
-                }
-
-                break;
-            case"window" :
-                Debug.Log("我碰到窗户了");
-                if (dialog_window >=0)
-                {
-                    DialogueManager.currentDialogueBeginID = 63;
-                    dialog_window++;
-                    isdialog_window = true;
-
-                }
-                break;
-            case"notice" :
-                Debug.Log("我碰到公告了");
-                if (dialog_notice >=0)
-                {
-                    DialogueManager.currentDialogueBeginID = 81;
-                    dialog_notice++;
-                    isdialog_notice = true;
-
-                }
-                break;
-            case"pistol" :
-                Debug.Log("我碰到枪了");
-                if (dialog_gun <1)
-                {
-                    DialogueManager.currentDialogueBeginID = 114;
-                    dialog_gun++;
-                    isdialog_gun = true;
-
-                }
-                break;
-                
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case"fishTank" :
-            {
-                isdialog_Fish = false;
-            } 
-                break;
-            case"cat" :
-            {
-                isdialog_cat = false;
-            }
-
-                break;
-            case"entrance" :
-
-            {
-                isdialog_entrance = false;
-            }
-                break;
-            case "window":
-            {
-                isdialog_window = false;
-            }
-                break;
-            case "notice":
-            {
-                isdialog_notice = false;
-            }
-                break;
-            case "gun":
-            {
-                isdialog_gun = false;
-            }
-                break;
-        }
-    }
+    
 
     public void ApplyDamage(float Damage)
     {
