@@ -17,6 +17,7 @@ namespace BlueStar.Inventory
         [Header("2DUI的Canvas")] [SerializeField]
         private GameObject canvas;
 
+
         private void Start()
         {
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
@@ -169,6 +170,7 @@ namespace BlueStar.Inventory
         {
             bagOpened = !bagOpened;
             bagUI.SetActive(bagOpened);
+            
         }
 
     }

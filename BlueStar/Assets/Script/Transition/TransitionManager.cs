@@ -11,6 +11,7 @@ namespace BlueStar.Inventory
     {
         private CanvasGroup blackBG;
         public GameObject player;
+        public GameObject Terra_Awake;
         void Start()
         {
             player=GameObject.Find("Terra");
@@ -47,7 +48,9 @@ namespace BlueStar.Inventory
             SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("O_OverView"));
             SceneManager.LoadSceneAsync("L2_Home",LoadSceneMode.Additive);
             GameObject.Find("------Camera------/MainCamera").GetComponent<Camera>().enabled = true;
-            GameObject.Find("DialogueManager").GetComponent<DialogueManager>().enabled = true;
+            GameObject.Find("DialogueManager").GetComponent<DialogueManager>().enabled = false;
+            blackBG.DOFade(0,1);
+            Terra_Awake.SetActive(true);
         }
 
 

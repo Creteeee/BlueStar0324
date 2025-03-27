@@ -12,6 +12,7 @@ public class TimelineTrigger : MonoBehaviour
     [Header("Timeline字幕")] [SerializeField]private string[] infos;
     [Header("继续播放的序号")] [SerializeField] private int[] indexs;
     private TimelineUI timelineUI;
+    private GameObject animationCamera;
 
     private void OnEnable()
     {
@@ -27,6 +28,7 @@ public class TimelineTrigger : MonoBehaviour
     {
         director = GetComponent<PlayableDirector>();
         timelineUI=GameObject.Find("------TimelineUI------").GetComponent<TimelineUI>();
+        animationCamera = GameObject.Find("------Camera------/AnimationCamera").gameObject;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,6 +52,8 @@ public class TimelineTrigger : MonoBehaviour
         this.gameObject.GetComponent<TimelineTrigger>().enabled = false;
         this.gameObject.GetComponent<Collider>().enabled = false;
         EventHandler.CallResetHeader(true);
+        Destroy(this.gameObject);
+        animationCamera.SetActive(false);
     }
 
     /// <summary>
@@ -60,5 +64,6 @@ public class TimelineTrigger : MonoBehaviour
         director.Pause();
         //呼叫TimelineUI显示字幕
         timelineUI.EnableTimelineInfos();
+        
     }
 }

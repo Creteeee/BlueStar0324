@@ -13,6 +13,7 @@ public class Dialougue : MonoBehaviour
     private DialogueManager dialougueManager;
     private bool isTriggered = false;
     
+    
 
     private void Start()
     {
@@ -63,6 +64,7 @@ public class Dialougue : MonoBehaviour
     public void InvokeDialogue(int index)
     {
         DialogueManager.currentDialogueBeginID=index;
+        DialogueManager.director = _director;
         dialougueManager.Awake();
         dialougueManager.Start();
     }

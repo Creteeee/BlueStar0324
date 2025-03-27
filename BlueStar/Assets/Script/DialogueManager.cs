@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Playables;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject NPC_AI;
     private GameObject NPC_AI_inst;
     private int timer=0;
+    public static PlayableDirector director;
     
     public void Awake()
     {
@@ -41,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         imageDic["Mao"] = sprites[1];
         imageDic["伊达"] = sprites[2];
         imageDic["受伤的清理员"] = sprites[3];
-        imageDic["舰长"] = sprites[4];
+        imageDic["朴义君"] = sprites[4];
         dialogIndex = currentDialogueBeginID;
         //Canvas.GetComponent<CanvasGroup>().alpha = 0f;
         NPC_AI = Resources.Load<GameObject>("Prefabs/Character/NPC/NPC_AI");
@@ -134,10 +136,12 @@ public class DialogueManager : MonoBehaviour
             }
             else if (cells[0]=="END"&& int.Parse(cells[1])==dialogIndex)
             {
-                //UI.GetComponent<CanvasGroup>().interactable = false;
-                //UI.GetComponent<CanvasGroup>().alpha = 0;
-                //UI_MR.SetActive(false);
                 UI_Front.SetActive(false);
+                if (director!=null)
+                {
+                    director.Play();
+                    director = null;
+                }
 
             }
         }
