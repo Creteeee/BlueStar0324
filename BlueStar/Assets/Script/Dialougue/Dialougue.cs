@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Dialougue : MonoBehaviour
 {
     [Header("Dialougue开始的编号")] 
     [SerializeField] private int startIndex = 0;
     [SerializeField] private GameObject suggestE;
+    [SerializeField] private PlayableDirector _director;
     private DialogueManager dialougueManager;
     private bool isTriggered = false;
+    
 
     private void Start()
     {
@@ -18,7 +21,10 @@ public class Dialougue : MonoBehaviour
             Debug.Log("Manager为空");
         }
         dialougueManager=GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
-        suggestE.gameObject.SetActive(false);
+        if (suggestE!=null)
+        {
+            suggestE.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -53,5 +59,19 @@ public class Dialougue : MonoBehaviour
             isTriggered=false;
         }
     }
-   
+
+    public void InvokeDialogue(int index)
+    {
+        DialogueManager.currentDialogueBeginID=index;
+        dialougueManager.Awake();
+        dialougueManager.Start();
+    }
+
+    public void playTimeline()
+    {
+        if (_director!=null)
+        {
+            _director.Play();
+        }
+    }
 }
