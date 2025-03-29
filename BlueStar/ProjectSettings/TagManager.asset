@@ -20,6 +20,8 @@ TagManager:
   - pistol
   - Zombie
   - Interactive
+  - PlanetModel
+  - CardWriterNumber
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - Infrastructure
   - Interactive
   - Item
-  - 
+  - Click
   - 
   - 
   - 

@@ -29,7 +29,10 @@ public class DetectPlayerEnter : MonoBehaviour
         MainCamera = GameObject.Find("------Camera------/MainCamera").GetComponent<Camera>();
         player = GameObject.Find("Terra");
         _terraCamera = MainCamera.GetComponent<TerraCamera>();
-        interactUIWidget.SetActive(false);
+        if (interactUIWidget!=null)
+        {
+            interactUIWidget.SetActive(false);
+        }
         scale = player.transform.localScale;
         blackBG = GameObject.Find("------UI------/UI_2D/BlackBG").gameObject.GetComponent<CanvasGroup>();
         //挂载场景中物体，注意有没有改名字

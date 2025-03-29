@@ -17,6 +17,7 @@ public class ItemCarry : MonoBehaviour
     private int DeviceID;
     private GameObject suggestUI;
     public  static GameObject suggestUIInst;
+    private bool IsInteractive=false;
     private bool lastInteractive;
     public static TMP_Text text_pre;
     public static TMP_Text name;
@@ -35,6 +36,7 @@ public class ItemCarry : MonoBehaviour
     private void Awake()
     {
         suggestUI = Resources.Load<GameObject>("Prefabs/UI/SuggestUI");
+        
     }
 
     private void Update()
@@ -47,8 +49,10 @@ public class ItemCarry : MonoBehaviour
             {
                 if (suggestUIInst!=null)
                 {
+                    Debug.Log("aaaa");
                     Destroy(suggestUIInst.gameObject);
-                    
+                    suggestUIInst = null;
+
                 }
             }
 
@@ -72,9 +76,10 @@ public class ItemCarry : MonoBehaviour
     
     private void onInitiateSuggestUI(bool isIneractive,int ID,string[] informations)
     {
-        Debug.Log("正在生成提示UI");
-        if (isIneractive && /*isIneractive !=lastInteractive &&*/suggestUIInst == null)
+        IsInteractive = isIneractive;
+        if (IsInteractive && /*isIneractive !=lastInteractive &&*/suggestUIInst == null)
         {
+            Debug.Log("正在生成提示UI"+isIneractive.ToString());
             suggestUIInst = Instantiate(suggestUI, GameObject.Find("------UI------/UI_2D").gameObject.transform);
             text_pre=suggestUIInst.gameObject.transform.Find("TextPre").GetComponent<TMP_Text>();
             name=suggestUIInst.gameObject.transform.Find("Name").GetComponent<TMP_Text>();
@@ -97,15 +102,17 @@ public class ItemCarry : MonoBehaviour
                 text_pre.text = "需要";
                 chooseBar.SetActive(true);
             }
-
+            
 
         }
-        else if (isIneractive==false && suggestUIInst !=null)
-        {
-            Destroy(suggestUIInst.gameObject);
-        }
+        // else if (IsInteractive==false && suggestUIInst !=null)
+        // {
+        //     Debug.Log("bbbb");
+        //     Destroy(suggestUIInst.gameObject);
+        //     suggestUIInst = null;
+        // }
+        
 
-        lastInteractive = isIneractive;
     }
 
     public void onUpdateInformation()
@@ -131,8 +138,7 @@ public class ItemCarry : MonoBehaviour
                 ItemCarry.name.gameObject.SetActive(true);
                 ItemCarry.chooseBar.SetActive(true);
                 ItemCarry.nextButton.SetActive(false);
-                
-
+                IsInteractive = false;
             }
 
         }
@@ -180,6 +186,7 @@ public class ItemCarry : MonoBehaviour
             name.text = "";
             if (suggestUIInst!=null)
             {
+                Debug.Log("cccc");
                 Destroy(suggestUIInst.gameObject,2);
             }
         }

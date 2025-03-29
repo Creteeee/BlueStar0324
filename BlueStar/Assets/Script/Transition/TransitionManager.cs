@@ -46,7 +46,7 @@ namespace BlueStar.Inventory
         public void LoadDayOne()
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("O_OverView"));
-            SceneManager.LoadSceneAsync("L2_Home",LoadSceneMode.Additive);
+            //SceneManager.LoadSceneAsync("L2_Home",LoadSceneMode.Additive);
             GameObject.Find("------Camera------/MainCamera").GetComponent<Camera>().enabled = true;
             GameObject.Find("DialogueManager").GetComponent<DialogueManager>().enabled = false;
             blackBG.DOFade(0,1);

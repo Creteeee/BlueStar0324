@@ -16,13 +16,13 @@ MonoBehaviour:
   - itemID: 1001
     name: "\u78C1\u529B\u623F\u5361"
     itemType: 5
-    itemIcon: {fileID: 21300000, guid: bb60660a304a4a547b7524100b305ab9, type: 3}
-    itemObject: {fileID: 919132149155446097, guid: 42c71c192fed40445960d25dbac169cb,
+    itemIcon: {fileID: 21300000, guid: 6982243c22cf2a54fa6d2be4abfbcee1, type: 3}
+    itemObject: {fileID: 7059733190670056338, guid: b70deb4739ac44e499a826dc5b5adcbb,
       type: 3}
     itemDescriptions: "#03\u53F7\u5BBF\u820D\u7684\u78C1\u529B\u623F\u5361\uFF0C\u5728\u5927\u95E8\u5904\u5237\u5361\u65B9\u53EF\u8FDB\u51FA\uFF0C\u8BB0\u5F55\u4E86\u4EBA\u5458\u7684\u4FE1\u606F\uFF0C\u5728\u7535\u529B\u4E0D\u8DB3\u65F6\u4ECD\u53EF\u4F7F\u7528"
-    canPickedup: 0
+    canPickedup: 1
     canDropped: 0
-    canCarried: 0
+    canCarried: 1
   - itemID: 1002
     name: "\u62A4\u76FE\u5145\u80FD\u6A21\u7EC4"
     itemType: 2
@@ -37,13 +37,13 @@ MonoBehaviour:
     name: "\u5355\u53D1\u6CE8\u5C04\u67AA"
     itemType: 7
     itemIcon: {fileID: 21300000, guid: 8423f661555e1f14c9fcf8bd8e67deb4, type: 3}
-    itemObject: {fileID: 919132149155446097, guid: e6fa161c4a7c80145a6c78fdb980efff,
+    itemObject: {fileID: 1145491452281245933, guid: cb118aa6bc2bf2d4fa10b5e8bc721c50,
       type: 3}
     itemDescriptions: "\u5F3A\u76F8\u4E92\u4F5C\u7528\u529B\u5236\u6210\u7684\u6D88\u97F3\u624B\u67AA\uFF0C\u5728\u8154\u5185
       \u5B50\u5F39\u52A0\u901F\u4E3A1/20\u5149\u901F\uFF0C\u5BF9\u62A4\u76FE\u9020\u6210\u5C11\u91CF\u4F24\u5BB3"
     canPickedup: 0
     canDropped: 0
-    canCarried: 0
+    canCarried: 1
   - itemID: 1004
     name: "\u64AC\u68CD"
     itemType: 5
@@ -53,7 +53,7 @@ MonoBehaviour:
     itemDescriptions: "\u9668\u94C1\u5236\u4F5C\u7684\u5DE5\u5177, \u5341\u5206\u575A\u786C\uFF0C\u53EF\u4EE5\u64AC\u52A8\u5927\u90E8\u5206\u91D1\u5C5E"
     canPickedup: 0
     canDropped: 0
-    canCarried: 0
+    canCarried: 1
   - itemID: 1005
     name: "ID\u5361"
     itemType: 5
@@ -64,7 +64,7 @@ MonoBehaviour:
       \u5361\u9762\u8FD8\u53EF\u4EE5\u56DE\u6536\u5229\u7528"
     canPickedup: 0
     canDropped: 0
-    canCarried: 0
+    canCarried: 1
   - itemID: 1006
     name: "\u5B50\u5F39\u76D2"
     itemType: 1
@@ -86,3 +86,47 @@ MonoBehaviour:
     canPickedup: 0
     canDropped: 0
     canCarried: 0
+  - itemID: 1008
+    name: "\u5730\u7403\u6A21\u578B\u673A\u5173"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: ad66795590994eb41807fbe1cef3c6e5, type: 3}
+    itemObject: {fileID: 7008732759711782479, guid: 53f906d2f77cea842a7a7616e0167959,
+      type: 3}
+    itemDescriptions: "\u673A\u5173\u76D2\u4E0A\u7684\u5730\u7403\u7EC4\u4EF6, \u5B89\u88C5\u540E\u6309\u7167\u4E00\u5B9A\u987A\u5E8F\u6392\u5217\u661F\u7403,
+      \u5373\u53EF\u5F00\u9501"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1
+  - itemID: 1009
+    name: "\u7535\u963B\u7EBF\u5708"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: ad66795590994eb41807fbe1cef3c6e5, type: 3}
+    itemObject: {fileID: 919132149155446097, guid: 2e81f35117b42de44add41e9b2ad5cc2,
+      type: 3}
+    itemDescriptions: "\u53D8\u538B\u5668\u4E2D\u7684\u6ED1\u52A8\u7535\u963B\u6A21\u5757,
+      \u8C03\u6574\u7535\u963B\u53EF\u4EE5\u6539\u53D8\u8F93\u51FA\u7684\u7535\u6D41\u5927\u5C0F"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1
+  - itemID: 1010
+    name: "\u8BCA\u6240\u901A\u884C\u8BC1"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: 4f45b424dd7438843a01ec0ff400d0ea, type: 3}
+    itemObject: {fileID: 1529352640488905701, guid: 22bf936215f22b248932d898143b7c26,
+      type: 3}
+    itemDescriptions: "\u4E1C\u533A\u8BCA\u6240\u7684\u901A\u884C\u8BC1, \u5185\u6709\u78C1\u6761,
+      \u65E0\u7535\u60C5\u51B5\u4E0B\u4E5F\u53EF\u4EE5\u6253\u5F00"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1
+  - itemID: 1011
+    name: "\u914D\u7535\u95F4\u901A\u884C\u8BC1"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: 357d7516d7a7cee478f991d7cd411d78, type: 3}
+    itemObject: {fileID: 5215022721713835283, guid: c9a625d102f9bb042bf695c0019ea94f,
+      type: 3}
+    itemDescriptions: "\u4E1C\u533A\u914D\u7535\u95F4\u7684\u901A\u884C\u8BC1, \u5185\u6709\u78C1\u6761,
+      \u65E0\u7535\u60C5\u51B5\u4E0B\u4E5F\u53EF\u4EE5\u6253\u5F00"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1

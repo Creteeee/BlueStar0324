@@ -17,7 +17,10 @@ public class DialogueManager : MonoBehaviour
     public Image spriteLeft;
     public Image spriteRight;
     public TMP_Text dialogText;
-    public TMP_Text nameText;
+    public TMP_Text nameTextRight;
+    public TMP_Text nameTextLeft;
+    public GameObject nameLeft;
+    public GameObject nameRight;
     public List<Sprite> sprites = new List<Sprite>();
     private Dictionary<string, Sprite> imageDic = new Dictionary<string, Sprite>();
     public int dialogIndex;
@@ -73,10 +76,22 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public void UpdateText(string _name, string _text)
+    public void UpdateText(string _name, string _text,bool isTerra)
     {
-        nameText.text = _name;
-        dialogText.text = _text;
+        if (isTerra)
+        {
+            nameRight.gameObject.SetActive(true);
+            nameLeft.gameObject.SetActive(false);
+            nameTextRight.text = _name;
+            dialogText.text = _text;
+        }
+        else
+        {
+            nameRight.gameObject.SetActive(false);
+            nameLeft.gameObject.SetActive(true);
+            nameTextLeft.text = _name;
+            dialogText.text = _text;
+        }
     }
 
     public void UpdateImage(string _name, string _position)
@@ -111,15 +126,17 @@ public class DialogueManager : MonoBehaviour
             string[] cells = dialogRows[i].Split(',');
             if (cells[0] == "#" && int.Parse(cells[1]) == dialogIndex)
             {
-                UpdateText(cells[2],cells[4]);
+
                 UpdateImage(cells[2],cells[3]);
                 if (cells[2] != "泰拉")
                 {
+                    UpdateText(cells[2],cells[4],false);
                     spriteLeft.gameObject.SetActive(true);
                     spriteRight.gameObject.SetActive(false);
                 }
                 else
                 {
+                    UpdateText(cells[2],cells[4],true);
                     spriteLeft.gameObject.SetActive(false);
                     spriteRight.gameObject.SetActive(true);
 

@@ -80,7 +80,7 @@ public class ObserveItem : MonoBehaviour
         if (Camera.main!=null)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // 从自定义相机发射射线
-        RaycastHit hit;
+            RaycastHit hit;
         
 
         if (Physics.Raycast(ray, out hit,20f,LayerMask.GetMask("Interactive")))
@@ -166,7 +166,11 @@ public class ObserveItem : MonoBehaviour
             transform.DOMove(originalPosition, 1f);
             transform.DORotate(originalRotation, 1);
             EventHandler.CallResetHeader(true);
-            Destroy(ObserveItem.suggestUIInst.gameObject);
+            if (suggestUIInst!=null)
+            {
+                Destroy(ObserveItem.suggestUIInst.gameObject);
+            }
+            
             isObserving = false;
             if (InfomationUI!= null)
             {

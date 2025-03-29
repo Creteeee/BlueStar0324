@@ -144,6 +144,7 @@ public class DetectPlayerItem : MonoBehaviour
         Debug.Log("invoke调用了");
         // 恢复到初始位置
         EventHandler.CallResetHeader(true);
+        _director.Pause();
         if (currentObj != null)
         {
             currentObj.gameObject.GetComponent<DetectPlayerItem>().enabled = false;
