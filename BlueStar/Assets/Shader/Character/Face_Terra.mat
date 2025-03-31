@@ -46,7 +46,7 @@ Material:
     - _isShadow: 0
     - _offset: 56.55
     - _shadowThreshold: 0.75
-    - _shadowThreshold1: 0.51
+    - _shadowThreshold1: 0.1
     - _shadowThreshold2: -0
     - _threshold: 16.95
     m_Colors:

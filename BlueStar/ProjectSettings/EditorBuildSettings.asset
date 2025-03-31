@@ -65,4 +65,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersisitantLevel/PersistantLevel.unity
     guid: 79211de7bb126474092c87e3f07e31e5
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L4/L4_FileRoom.unity
+    guid: a12146fc38e7afe49a66d872ab037861
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Decompression_2.unity
+    guid: 05bff552d72499c4a84c9a7f6d6d8538
   m_configObjects: {}

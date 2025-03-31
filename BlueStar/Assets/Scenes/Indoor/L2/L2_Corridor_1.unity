@@ -124,7 +124,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 847c4519891f54246bf83caeb197e942, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a48137a5ac0901d49802654fdf019175, type: 2}
 --- !u!1001 &25276911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3784,6 +3784,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: SceneTo
+      value: L2_LivingRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: SceneFrom
+      value: L2_Corridor_1
+      objectReference: {fileID: 0}
     - target: {fileID: 1620180704827455441, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: m_Name
@@ -3838,6 +3848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389074905132940920, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

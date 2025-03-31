@@ -36,6 +36,7 @@ public class TimelineTrigger : MonoBehaviour
         
         if (other.tag == "Player" )
         {
+            Debug.Log("检测到Player");
             if (director!=null)
             {
                 currentObj=this.gameObject;

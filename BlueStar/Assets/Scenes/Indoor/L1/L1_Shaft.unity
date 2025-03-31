@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000002, guid: 06a7c91bef58e4a43a60492b5939eb4b,
+  m_LightingDataAsset: {fileID: 112000002, guid: 0a2eb3f7f60fd2843ae41d0e70429c73,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 3371d14a1f74bb241a1f1655003eb1e1,
     type: 2}
@@ -1851,7 +1851,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

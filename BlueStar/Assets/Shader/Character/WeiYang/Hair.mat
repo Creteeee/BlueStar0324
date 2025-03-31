@@ -34,11 +34,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp1:
-        m_Texture: {fileID: 2800000, guid: 1e8e1d81d3efbd14791b0e593be385a4, type: 3}
+        m_Texture: {fileID: 2800000, guid: c2b976c0548ed7f41ae974c584ffeaf6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp2:
-        m_Texture: {fileID: 2800000, guid: d63419c1e9b55db4d971433b81bec3ca, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8ce58d5f85ced2047bfe5b774a785adc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowMask:
@@ -54,7 +54,7 @@ Material:
     - _isShadow: 1
     - _offset: 0.5
     - _shadowThreshold: 0.5
-    - _shadowThreshold1: 0.81
+    - _shadowThreshold1: 0.32
     - _shadowThreshold2: 0.15
     - _threshold: 0.1
     m_Colors:
