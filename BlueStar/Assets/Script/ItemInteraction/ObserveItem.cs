@@ -41,6 +41,7 @@ public class ObserveItem : MonoBehaviour
     public static string[] infoStore;//存储的信息
     private int timer2 = 0;
     public static GameObject activeGameobject;
+    [SerializeField] private GameObject observeUI;
     
 
     private void Awake()
@@ -55,6 +56,8 @@ public class ObserveItem : MonoBehaviour
         downHeader=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("DownHeader").gameObject;
         Debug.Log(upHeader.transform.position.ToString());
         Debug.Log(downHeader.transform.position.ToString());
+        observeUI = GameObject.Find("------Camera------/MainCamera").gameObject.transform.Find("ObserveUI").gameObject;
+        observeUI.SetActive(false);
         
 
         
@@ -109,6 +112,7 @@ public class ObserveItem : MonoBehaviour
                         EventHandler.CallMoveHeader(true);
                         transform.DOMove(foucusPosition, 1f);
                         timer += 1;
+                        
                     }
                     if (InfomationUI != null)
                     {
@@ -169,6 +173,7 @@ public class ObserveItem : MonoBehaviour
             if (suggestUIInst!=null)
             {
                 Destroy(ObserveItem.suggestUIInst.gameObject);
+                observeUI.SetActive(false);
             }
             
             isObserving = false;
@@ -177,6 +182,7 @@ public class ObserveItem : MonoBehaviour
                 InfomationUI.SetActive(false);
             }
             canRotate = true;
+            observeUI.SetActive(false);
         }
         
         if (isChildItem && isObserving)
@@ -207,6 +213,7 @@ public class ObserveItem : MonoBehaviour
             Destroy(ObserveItem.suggestUIInst.gameObject);
             ObserveItem.index = 0;
             activeGameobject.GetComponent<ObserveItem>().isObserving=true;
+            observeUI.SetActive(true);
         }
     }
 

@@ -106,7 +106,7 @@ public class DetectPlayerItem : MonoBehaviour
 
     private void Click()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject()) 
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit,20f))
