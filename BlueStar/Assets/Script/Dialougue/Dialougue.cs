@@ -8,6 +8,7 @@ public class Dialougue : MonoBehaviour
 {
     [Header("Dialougue开始的编号")] 
     [SerializeField] private int startIndex = 0;
+    [SerializeField] private int endIndex = 0;
     [SerializeField] private GameObject suggestE;
     [SerializeField] private PlayableDirector _director;
     private DialogueManager dialougueManager;
@@ -26,6 +27,9 @@ public class Dialougue : MonoBehaviour
         {
             suggestE.gameObject.SetActive(false);
         }
+        //当有director时，播放完对话播放timeline
+        _director = this.gameObject.GetComponent<PlayableDirector>();
+
     }
 
     void Update()
@@ -38,6 +42,15 @@ public class Dialougue : MonoBehaviour
                 dialougueManager.Awake();
                 dialougueManager.Start();
                 isTriggered = false;
+            }
+        }
+
+        if (_director!= null)
+        {
+            if (DialogueManager.currentDialogueBeginID==endIndex)
+            {
+                _director.Play();
+                EventHandler.CallMoveHeader(true);
             }
         }
         
