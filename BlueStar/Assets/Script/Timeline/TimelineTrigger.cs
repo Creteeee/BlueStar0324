@@ -29,6 +29,7 @@ public class TimelineTrigger : MonoBehaviour
         director = GetComponent<PlayableDirector>();
         timelineUI=GameObject.Find("------TimelineUI------").GetComponent<TimelineUI>();
         animationCamera = GameObject.Find("------Camera------/AnimationCamera").gameObject;
+        //animationCamera.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -37,16 +37,21 @@ public class DialogueManager : MonoBehaviour
     public GameObject NPC_AI;
     private GameObject NPC_AI_inst;
     private int timer=0;
-    public static PlayableDirector director;
+    public static PlayableDirector director=null;
+    public static int expectEndID = 0;
     
     public void Awake()
-    {
+    { 
       
         imageDic["泰拉"] = sprites[0];
         imageDic["Mao"] = sprites[1];
         imageDic["伊达"] = sprites[2];
         imageDic["受伤的清理员"] = sprites[3];
         imageDic["朴义君"] = sprites[4];
+        imageDic["干员A"] = sprites[5];
+        imageDic["干员B"] = sprites[6];
+        imageDic["干员C"] = sprites[7];
+        imageDic["干员D"] = sprites[8];
         dialogIndex = currentDialogueBeginID;
         //Canvas.GetComponent<CanvasGroup>().alpha = 0f;
         NPC_AI = Resources.Load<GameObject>("Prefabs/Character/NPC/NPC_AI");
@@ -154,10 +159,11 @@ public class DialogueManager : MonoBehaviour
             else if (cells[0]=="END"&& int.Parse(cells[1])==dialogIndex)
             {
                 UI_Front.SetActive(false);
-                if (director!=null)
+                if (director!=null && dialogIndex==expectEndID)
                 {
                     director.Play();
                     director = null;
+                    expectEndID = 0;
                 }
 
             }

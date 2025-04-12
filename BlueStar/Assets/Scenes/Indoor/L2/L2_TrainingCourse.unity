@@ -56495,6 +56495,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: SceneTo
+      value: L2_ControlRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: SceneFrom
+      value: L2_TrainingCourse
+      objectReference: {fileID: 0}
     - target: {fileID: 1620180704827455441, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: m_Name

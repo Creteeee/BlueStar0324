@@ -29,6 +29,11 @@ public class Dialougue : MonoBehaviour
         }
         //当有director时，播放完对话播放timeline
         _director = this.gameObject.GetComponent<PlayableDirector>();
+        if (_director!= null)
+        {
+            DialogueManager.expectEndID=endIndex;
+            DialogueManager.director = _director;
+        }
 
     }
 
@@ -44,15 +49,7 @@ public class Dialougue : MonoBehaviour
                 isTriggered = false;
             }
         }
-
-        if (_director!= null)
-        {
-            if (DialogueManager.currentDialogueBeginID==endIndex)
-            {
-                _director.Play();
-                EventHandler.CallMoveHeader(true);
-            }
-        }
+        
         
     }
 
