@@ -16,6 +16,7 @@ public class Door_02 : MonoBehaviour
 	private int timer = 0;//第一次开门
 	private Teleport teleport;
 	private bool isTrigger=false;
+	[SerializeField] private GameObject suggsetIcon;
 	
 	
 
@@ -25,6 +26,10 @@ public class Door_02 : MonoBehaviour
 		right =this.transform.right;
 		audio = this.GetComponent<AudioSource>();
 		teleport = this.GetComponent<Teleport>();
+		if (suggsetIcon!=null)
+		{
+			suggsetIcon.SetActive(false);
+		}
 	}
 
 	private void Update()
@@ -65,8 +70,11 @@ public class Door_02 : MonoBehaviour
 				});
     				
 			}
+			if (suggsetIcon!=null)
+			{
+				suggsetIcon.SetActive(true);
+			}
 
-			
 		}
 	}
 	private void OnTriggerExit(Collider other)
@@ -81,6 +89,11 @@ public class Door_02 : MonoBehaviour
 					this.transform.DOMove(initialPosition, 1f);
 				
 				}			
+			}
+			
+			if (suggsetIcon!=null)
+			{
+				suggsetIcon.SetActive(false);
 			}
 		}
 

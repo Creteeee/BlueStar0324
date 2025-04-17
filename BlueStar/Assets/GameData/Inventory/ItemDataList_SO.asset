@@ -140,3 +140,43 @@ MonoBehaviour:
     canPickedup: 0
     canDropped: 0
     canCarried: 1
+  - itemID: 1013
+    name: "1\u53F7\u6307\u6325\u5BA4\u901A\u884C\u8BC1"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: 176fb3c0f1ebd994891d3ce9ee46d42d, type: 3}
+    itemObject: {fileID: 4931750288299500282, guid: c1e6f9daf83582f4e89d26c802352c5c,
+      type: 3}
+    itemDescriptions: "\u901A\u54111\u53F7\u6307\u6325\u5BA4"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1
+  - itemID: 1014
+    name: "2\u53F7\u6307\u6325\u5BA4\u901A\u884C\u8BC1"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: 71cd92886aab8664cb4b55b5c7b48367, type: 3}
+    itemObject: {fileID: 7059733190670056338, guid: b70deb4739ac44e499a826dc5b5adcbb,
+      type: 3}
+    itemDescriptions: "\u901A\u54112\u53F7\u6307\u6325\u5BA4, \u90A3\u91CC\u662F\u8FD1\u671F\u6211\u7684\u5DE5\u4F5C\u5730\u70B9"
+    canPickedup: 1
+    canDropped: 0
+    canCarried: 1
+  - itemID: 1015
+    name: "3\u53F7\u6307\u6325\u5BA4\u901A\u884C\u8BC1"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: 176fb3c0f1ebd994891d3ce9ee46d42d, type: 3}
+    itemObject: {fileID: 4931750288299500282, guid: c1e6f9daf83582f4e89d26c802352c5c,
+      type: 3}
+    itemDescriptions: "\u901A\u54113\u53F7\u6307\u6325\u5BA4"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1
+  - itemID: 1016
+    name: "4\u53F7\u6307\u6325\u5BA4\u901A\u884C\u8BC1"
+    itemType: 5
+    itemIcon: {fileID: 21300000, guid: 176fb3c0f1ebd994891d3ce9ee46d42d, type: 3}
+    itemObject: {fileID: 4931750288299500282, guid: c1e6f9daf83582f4e89d26c802352c5c,
+      type: 3}
+    itemDescriptions: "\u901A\u54114\u53F7\u6307\u6325\u5BA4"
+    canPickedup: 0
+    canDropped: 0
+    canCarried: 1
