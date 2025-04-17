@@ -38,6 +38,8 @@ namespace MeadowGames.UINodeConnect4
         public Port port0; // start
         public Port port1; // end
 
+        public NodePair NodePair;
+
         public Color selectedColor = new Color(1, 0.58f, 0.04f);
         public Color hoverColor = new Color(1, 0.81f, 0.3f);
         public Color defaultColor = new Color(0.98f, 0.94f, 0.84f);
@@ -108,12 +110,17 @@ namespace MeadowGames.UINodeConnect4
             {
                 _connection.port0 = port1;
                 _connection.port1 = port0;
+
             }
             else
             {
                 _connection.port0 = port0;
                 _connection.port1 = port1;
             }
+            _connection.NodePair.Node0 = _connection.port0.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                .GetComponent<Node>().NodeType;
+            _connection.NodePair.Node1 = _connection.port1.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                .GetComponent<Node>().NodeType;
             _connection.graphManager = port0.graphManager;
 
             UICSystemManager.AddConnectionToList(_connection);

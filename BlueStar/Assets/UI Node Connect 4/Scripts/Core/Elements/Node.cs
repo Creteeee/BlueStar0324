@@ -69,6 +69,8 @@ namespace MeadowGames.UINodeConnect4
         public Color outlineSelectedColor = new Color(1, 0.58f, 0.04f);
         public Color outlineHoverColor = new Color(1, 0.81f, 0.3f);
 
+        public NodeType NodeType;
+
         Transform _lastParent;
 
         void OnValidate()
@@ -306,4 +308,18 @@ namespace MeadowGames.UINodeConnect4
             UICSystemManager.RemoveNodeFromList(this);
         }
     }
+    
+}
+// Node的类型
+public enum NodeType
+{
+    Hydrogen,Electricity,Assemble,Solar,ParticalSource,Water,Accelerator,GasMixer,AntiInterference,Quantum,Dynamite,ElectricityEmitter,WorkingEmitter
+}
+
+[System.Serializable]
+//一个Connection的输入和输出的NodeType
+public class NodePair
+{
+    public NodeType Node0;
+    public NodeType Node1;
 }

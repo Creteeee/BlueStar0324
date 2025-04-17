@@ -37,6 +37,23 @@ namespace MeadowGames.UINodeConnect4
 
         [SerializeField] List<Connection> _connections = new List<Connection>();
         public static List<Connection> Connections { get => Instance ? Instance._connections : new List<Connection>(); }
+        //已经连接的NodePair的列表
+        [SerializeField] List<NodePair> _ExistNodePairs = new List<NodePair>();
+        public static List<NodePair> ExistNodePairs
+        {
+            get => Instance ? Instance._ExistNodePairs : new List<NodePair>();
+        }
+        
+        //封装一个生产线的List，在List外面再包装一层作为一个生产线的列表
+        [System.Serializable]
+        public class NodePairListWrapper
+        {
+            public List<NodePair> nodePairs = new List<NodePair>();
+        }
+        [SerializeField] private List<NodePairListWrapper> _ManufactureLine = new List<NodePairListWrapper>();
+
+        public static List<NodePairListWrapper> ManufactureLine =>
+            Instance ? Instance._ManufactureLine : new List<NodePairListWrapper>();
 
         [SerializeField] bool _cacheRaycasters = true;
         public bool CacheRaycasters
@@ -53,7 +70,31 @@ namespace MeadowGames.UINodeConnect4
             }
         }
         public static List<GraphicRaycaster> raycasterList = new List<GraphicRaycaster>();
+        
+        /// <summary>
+        /// 比较已经连好的生产线和某个正确的生产线
+        /// </summary>
+        /// <param name="想要生产的链路的Index"></param>
+        public static void CompareSteps(int index)
+        {
+            if (index<=ManufactureLine.Count-1)
+            {
+                foreach (var pair in ManufactureLine[index].nodePairs)
+                {
+                    if (!ExistNodePairs.Contains(pair))
+                    {
+                        Debug.Log("生产链路不完整");
+                        break;
+                    }
+                
+                }
 
+                if (ManufactureLine[index].nodePairs.TrueForAll(pair =>ExistNodePairs.Contains(pair)))
+                {
+                    Debug.Log("链路完整，开始执行生产");
+                }
+            }
+        }
         public static void AddNodeToList(Node node)
         {
             if (Instance && !Nodes.Contains(node))
@@ -77,7 +118,8 @@ namespace MeadowGames.UINodeConnect4
             if (!Connections.Contains(connection))
             {
                 Connections.Add(connection);
-
+                //新加的
+                ExistNodePairs.Add(connection.NodePair);
                 UICEvents.TriggerEvent(UICEventType.ConnectionAdded, connection);
  
                 // v4.1 - bugfix: - connection line position not updating when added using UICSystemManager.AddConnectionToList 
@@ -90,6 +132,8 @@ namespace MeadowGames.UINodeConnect4
             if (Connections.Contains(connection))
             {
                 Connections.Remove(connection);
+                //新加的
+                ExistNodePairs.Remove(connection.NodePair);
                 UICEvents.TriggerEvent(UICEventType.ConnectionRemoved, connection);
             }
         }
@@ -148,6 +192,13 @@ namespace MeadowGames.UINodeConnect4
             {
                 Connections[i].UpdateLine();
                 Connections[i].OnPointerUp();
+            }
+
+            ExistNodePairs.Clear();
+            
+            for (int i = 0; i < Connections.Count; i++)
+            {
+                ExistNodePairs.Add(Connections[i].NodePair);
             }
         }
 

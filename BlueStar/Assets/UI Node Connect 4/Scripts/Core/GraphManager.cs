@@ -15,6 +15,7 @@ namespace MeadowGames.UINodeConnect4
     {
         public Camera mainCamera;
         public UICLineRenderer lineRenderer;
+        
 
         public List<Node> localNodes = new List<Node>();
         public List<Connection> localConnections = new List<Connection>();
@@ -162,7 +163,15 @@ namespace MeadowGames.UINodeConnect4
             foreach (Connection connection in UICSystemManager.Connections)
             {
                 AddLocalConnection(connection);
+                // connection.NodePair.Node0 = connection.port0.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                //     .GetComponent<Node>().NodeType;
+                // connection.NodePair.Node1 = connection.port1.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                //     .GetComponent<Node>().NodeType;
+                // Debug.Log(connection.port1.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                //     .GetComponent<Node>().NodeType.ToString());
             }
+
+
         }
 
         void OnValidate()
@@ -172,6 +181,7 @@ namespace MeadowGames.UINodeConnect4
             if (newConnectionTemplate.ID != "") newConnectionTemplate.ID = "";
             if (newConnectionTemplate.port0 != null) newConnectionTemplate.port0 = null;
             if (newConnectionTemplate.port1 != null) newConnectionTemplate.port1 = null;
+            if (newConnectionTemplate.NodePair != null) newConnectionTemplate.NodePair = null;                         
             if (newConnectionTemplate.label != null) newConnectionTemplate.label = null;
             if (newConnectionTemplate.line.points.Count > 0) newConnectionTemplate.line.points.Clear();
             if (ghostConnectionLine.points.Count > 0) ghostConnectionLine.points.Clear();
@@ -198,6 +208,7 @@ namespace MeadowGames.UINodeConnect4
 
             UpdateLocalNodes();
             UpdateLocalConnections();
+
         }
 
         void Start()
