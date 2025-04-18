@@ -76,16 +76,18 @@ namespace MeadowGames.UINodeConnect4
         /// 比较已经连好的生产线和某个正确的生产线
         /// </summary>
         /// <param name="想要生产的链路的Index"></param>
-        public void CompareSteps(int index)
+        public static void CompareSteps(int index)
         {
             if (index<=ManufactureLine.Count-1)
             {
+                Debug.Log(ManufactureLine[index].nodePairs[0].Node0.ToString()+ManufactureLine[index].nodePairs[0].Node1.ToString());
+                Debug.Log(ExistNodePairs[0].Node0.ToString()+ExistNodePairs[0].Node1.ToString());
                 foreach (var pair in ManufactureLine[index].nodePairs)
                 {
                     if (!ExistNodePairs.Contains(pair))
                     {
-                        Debug.Log("生产链路不完整");
-                        UIManager_BattleMode.showManufactureText(true);
+                        Debug.Log("生产链路不完整，断在了"+pair.Node0);
+                        UIManager_BattleMode.isManufacture = false;
                         break;
                     }
                 
@@ -93,7 +95,7 @@ namespace MeadowGames.UINodeConnect4
 
                 if (ManufactureLine[index].nodePairs.TrueForAll(pair =>ExistNodePairs.Contains(pair)))
                 {
-                    UIManager_BattleMode.showManufactureText(false);
+                    UIManager_BattleMode.isManufacture = true;
                     Debug.Log("链路完整，开始执行生产");
                 }
             }

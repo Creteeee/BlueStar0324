@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 213b7319-bb1f-477e-9a86-0eb9566b50f9
+  _sID: 8dc71b68-bd23-4c54-abe2-3c2ca85d8846
   ports:
   - {fileID: 1399822391}
   - {fileID: 154895860}
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 07010f15-2e38-4724-9b49-de049f976cd4
+  _sID: ceb33bfc-5d6b-4cd2-a4ca-84afe1e44189
   ports:
   - {fileID: 770080015}
   - {fileID: 92609310}
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: d134cd4a-81da-4913-9e1a-6e41d3c5498c
+  _sID: 99af5f51-55c4-49f0-9090-fba1e93df714
   ports:
   - {fileID: 409024405}
   - {fileID: 1279776919}
@@ -931,7 +931,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: f85048f1-d9cd-4a90-8bca-aa4ac5470e37
+  _sID: fe0ff3b6-d6c0-4eb5-bcea-3f3a6a2b87e6
   rectTransform: {fileID: 80795956}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -1183,7 +1183,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: da9e4d95-5e4c-4516-95b5-a3be183889a7
+  _sID: d64a7f0f-f09d-4b5a-bc5f-620866eda388
   rectTransform: {fileID: 92609308}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -1373,7 +1373,7 @@ MonoBehaviour:
       type: 3}
     exclusiveOnDragCanvas: {fileID: 0}
     useLegacyDragMethod: 0
-    position: {x: -53.44328, y: 23.404259, z: 9.592164}
+    position: {x: -22.055998, y: 21.443233, z: 10.37867}
   dragSelection:
     customRenderer: {fileID: 0}
     line:
@@ -2208,7 +2208,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 71593945-b798-4f83-b3b6-7a305ad1c0c3
+  _sID: 685fad2e-84ac-4ef3-b4d7-65584ed6f965
   rectTransform: {fileID: 154895858}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -2843,7 +2843,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 8b3aff76-f934-4055-9d5c-d6711a710dbe
+  _sID: 64c68f88-57ca-4e71-a7ee-cb8b15784238
   rectTransform: {fileID: 218416457}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -2972,11 +2972,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: dd1b5fc1-2cf7-4db2-a350-291b42f8a76a
+  _sID: b6a3f3f9-22ff-400e-bfab-832d76d96cc5
   ports:
-  - {fileID: 993701371}
   - {fileID: 2024514128}
   - {fileID: 325841669}
+  - {fileID: 993701371}
   rectTransform: {fileID: 227352974}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -3122,11 +3122,7 @@ MonoBehaviour:
   FuelMenu: {fileID: 1880807451}
   FuelProgress: {fileID: 921132917}
   textFuel: {fileID: 1333557103}
-  ManuSlots:
-  - {fileID: 524217230}
-  - {fileID: 1908633735}
-  - {fileID: 1414299506}
-  - {fileID: 700587890}
+  ManuSlots: []
   ManuSuggest: {fileID: 0}
   NotManuSuggest: {fileID: 0}
 --- !u!1 &253593143
@@ -4572,7 +4568,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 103d69e2-cba9-434e-be35-8bda416a921a
+  _sID: 0f3b3ea9-6fa9-4c96-9b99-291c643356f3
   rectTransform: {fileID: 325841667}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -4661,7 +4657,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: cf9b1988-2e27-4195-b7af-0133b794778e
+  _sID: 06f090d4-9651-40d7-ad44-72920f5b060d
   rectTransform: {fileID: 328601397}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -4720,7 +4716,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 7a685146-6458-4539-9502-7fbe04f1963b
+  _sID: 643336f5-32d3-427d-8493-7e2c6a3eb2a8
   rectTransform: {fileID: 347471888}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -5451,7 +5447,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 16ad2a2b-0376-46f6-b2e8-05233c4c432c
+  _sID: edcfb3ca-cb6a-42f1-b17a-2f19a64e67c5
   rectTransform: {fileID: 409024403}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -6166,11 +6162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: b5fa50b9-4b1c-4664-ab85-1e355829bb99
+  _sID: e01adc6b-151d-41f8-b026-19c689f09b40
   ports:
+  - {fileID: 218416459}
   - {fileID: 1503152757}
   - {fileID: 1647992814}
-  - {fileID: 218416459}
   rectTransform: {fileID: 460265041}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -6547,11 +6543,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 67266269-6023-4595-8821-79cd7c02229f
+  _sID: b4a7dcff-6ba4-4369-841e-b4384ede0300
   ports:
-  - {fileID: 1089433484}
-  - {fileID: 1272577137}
   - {fileID: 1010625298}
+  - {fileID: 1272577137}
+  - {fileID: 1089433484}
   rectTransform: {fileID: 468640455}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -7337,18 +7333,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243332798}
         m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
-        m_MethodName: EnableFuelProgress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 243332798}
-        m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
         m_MethodName: callCompareManufactureLine
         m_Mode: 3
         m_Arguments:
@@ -7372,7 +7356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7901,11 +7885,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 960ce60d-4258-4d08-9cb4-1ad606a2c272
+  _sID: 7180c923-8ecc-4d7c-bdc7-2e1bae03da8e
   ports:
-  - {fileID: 1309297624}
-  - {fileID: 1281014954}
   - {fileID: 1435516894}
+  - {fileID: 1281014954}
+  - {fileID: 1309297624}
   rectTransform: {fileID: 550941649}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -8214,10 +8198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 496dfc05-4a19-4d7c-907a-84efec426258
+  _sID: 843a37f8-4382-411e-9e1b-e742629699b0
   ports:
-  - {fileID: 1829457844}
   - {fileID: 1403877276}
+  - {fileID: 1829457844}
   - {fileID: 1015270230}
   rectTransform: {fileID: 603146421}
   graphManager: {fileID: 94015312}
@@ -9418,7 +9402,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -9441,18 +9425,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 243332798}
-        m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
-        m_MethodName: EnableFuelProgress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 243332798}
         m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
         m_MethodName: callCompareManufactureLine
@@ -9798,7 +9770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 795b351b-d265-4b93-8d92-1f783295bc0e
+  _sID: 549a1f4a-10c0-4501-b258-75b40886df4d
   rectTransform: {fileID: 770080013}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -10708,10 +10680,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 84065fa3-ba9b-40b8-946a-4b1c97a777a0
+  _sID: 34840ff2-09a6-43f8-bfb8-9475e88d3477
   ports:
-  - {fileID: 1444796207}
   - {fileID: 1252346887}
+  - {fileID: 1444796207}
   - {fileID: 1317485058}
   rectTransform: {fileID: 871714117}
   graphManager: {fileID: 94015312}
@@ -11096,10 +11068,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 08e30f55-e6e4-49e8-97c1-719d0c56bb7e
+  _sID: 8cf229cd-9308-494b-ac34-ec1a52176dc9
   ports:
-  - {fileID: 347471886}
   - {fileID: 80795954}
+  - {fileID: 347471886}
   - {fileID: 948589930}
   rectTransform: {fileID: 912262056}
   graphManager: {fileID: 94015312}
@@ -11847,7 +11819,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 44bc59d5-935f-4019-9121-86d1280ea64f
+  _sID: 848735ae-488c-4b32-894d-c97bf99fb8b7
   rectTransform: {fileID: 940414700}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -11928,7 +11900,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 0d4d727d-d9e8-4c74-9fa6-227245551d80
+  _sID: d35d3827-46c1-48c6-810e-a1cdd461b836
   rectTransform: {fileID: 948589929}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -12294,7 +12266,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1244dafa-c951-4f31-9f28-ac030e9b37cc
+  _sID: 2a9f0721-c3b5-44bb-98b5-529b1c14ab66
   rectTransform: {fileID: 993701369}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -12621,7 +12593,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1fe48bfd-467d-4fb6-80dd-f91b8188aeec
+  _sID: e8735dee-76d4-4411-a8d7-10a02ad93011
   rectTransform: {fileID: 1010625299}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -12778,7 +12750,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: ec0c2661-928b-43a0-ab81-6f024fe44756
+  _sID: 745b5792-fc47-46c5-a50f-1d1ee08aca8c
   rectTransform: {fileID: 1015270228}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -13501,7 +13473,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9416a0aa-e528-4103-9b26-11649c4ff0bc
+  _sID: 51e7eb2c-a9d2-430e-93d2-fed624f3af70
   rectTransform: {fileID: 1058343284}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -13588,7 +13560,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 50ab5ca9-340c-46e0-bdf0-60c99d41dd58
+  _sID: 647dd5b3-ddaf-43c7-9bb4-6b619c0700cb
   rectTransform: {fileID: 1089433483}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -13685,7 +13657,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 2dc17d1f-e671-4308-95b8-7863a6ecef14
+  _sID: 755d06d7-a8ce-4b39-b8f6-53a4331e64a8
   rectTransform: {fileID: 1090710313}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -15367,11 +15339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 03e842d0-bb5c-4db4-a83d-3c07bc99e2f9
+  _sID: 1857854a-89a5-4eac-bf3f-a7f66ba2925c
   ports:
-  - {fileID: 1743986337}
-  - {fileID: 1295323360}
   - {fileID: 1090710315}
+  - {fileID: 1295323360}
+  - {fileID: 1743986337}
   rectTransform: {fileID: 1211947051}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -16010,7 +15982,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: cd20e391-cdc1-4843-b204-b8c564859d82
+  _sID: b7021c85-ca03-40df-91c6-c94b52a2766f
   rectTransform: {fileID: 1252346886}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -16301,6 +16273,7 @@ MonoBehaviour:
   - {fileID: 912262057}
   - {fileID: 1211947050}
   - {fileID: 2127679746}
+  uiManager: {fileID: 0}
   _connections:
   - _id: Connection (Node - Node)
     _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
@@ -16504,7 +16477,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: dda2ff84-2637-4f5b-849c-8c51149926e2
+  _sID: e52a5818-be63-4b08-a445-0ad1f9d6cd45
   rectTransform: {fileID: 1272577136}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -16891,7 +16864,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278961452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -500.3918}
+  m_LocalPosition: {x: 0, y: 0, z: -461.06653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16899,7 +16872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1047.164, y: 1170.2129}
+  m_AnchoredPosition: {x: 522.20013, y: 1072.1616}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1279776916
@@ -16971,7 +16944,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: c4006829-2600-42db-8be8-baa38ae109e5
+  _sID: 4c39cc34-285e-4d44-b59b-51e003680c59
   rectTransform: {fileID: 1279776917}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -17030,7 +17003,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9c78e4c9-b57a-4c79-8232-05a003f7b57d
+  _sID: 3138d1e9-52b2-4371-be64-6efc586cfd24
   rectTransform: {fileID: 1281014956}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -17266,7 +17239,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: c9f0a95c-3b87-4433-b6f2-ada49448a012
+  _sID: 22d01d94-3112-45c3-b040-9b3dedc35b63
   rectTransform: {fileID: 1295323358}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -17815,7 +17788,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 6064f241-7351-4924-9b11-5ffd5d323abb
+  _sID: 1fc0279b-3c83-463d-8f15-8405446696c0
   rectTransform: {fileID: 1309297623}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -18050,7 +18023,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 20fc371d-9483-43ca-a638-6c30cd1b5886
+  _sID: 5adb96df-e3dc-4637-a206-e8fd864dd85e
   rectTransform: {fileID: 1317485057}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -19354,7 +19327,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 11ed9881-2300-414d-8d2d-076a995371ca
+  _sID: d5ea4c95-799f-4b51-a99c-e5b2e1e5d62e
   rectTransform: {fileID: 1399822389}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -19443,7 +19416,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: a926a18f-ae87-470a-8d7d-95efe447bfed
+  _sID: 4d39e292-7823-4a7d-b51f-00d4c95b10e2
   rectTransform: {fileID: 1403877274}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -19523,7 +19496,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -19546,18 +19519,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 243332798}
-        m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
-        m_MethodName: EnableFuelProgress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 243332798}
         m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
         m_MethodName: callCompareManufactureLine
@@ -19583,7 +19544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19723,7 +19684,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: bf18ac48-6a6e-40a7-8b7a-a03ccd586bae
+  _sID: 69645cec-30ef-42f8-9a88-0813e369f039
   rectTransform: {fileID: 1435516896}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -19984,7 +19945,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9a770e0d-c512-4211-9c24-c2ae58724c2b
+  _sID: 296df6e0-010b-4d42-bed9-31a0b6a07f82
   rectTransform: {fileID: 1444796208}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -20542,7 +20503,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 190ad0c1-1605-458e-a100-c315ebf362f8
+  _sID: eb5141b8-0219-45f7-9165-96478aff61f2
   rectTransform: {fileID: 1503152755}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -20796,7 +20757,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: e42ac2d8-44fc-40ce-b873-1ee9275d969b
+  _sID: 024c018b-ff8e-401f-b1d9-51bc38241ad8
   rectTransform: {fileID: 1528280976}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -22786,7 +22747,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 99603d66-890d-4b3b-86c5-58ac4942421b
+  _sID: 4a4fe0b8-1e37-48e3-9625-36da0a513991
   rectTransform: {fileID: 1647992812}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -24320,7 +24281,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 2045b949-2ee0-4dae-8566-c41f6ff87d7e
+  _sID: 147b2bd3-06c9-473d-8afb-d1b9eb45826b
   rectTransform: {fileID: 1743986335}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -25378,7 +25339,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: a98f3ea2-56d8-4543-92b8-e729bef7bd1b
+  _sID: dddd03e0-a5ce-4ebe-9df3-746c08452e77
   rectTransform: {fileID: 1829457842}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -26205,7 +26166,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5ed8fc57-4ca2-4986-93f6-963e42093352
+  _sID: 6f378760-6efe-4935-837f-c65d709fc41a
   rectTransform: {fileID: 1873993172}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -26385,7 +26346,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880807451}
   m_LocalRotation: {x: -0.00096812943, y: -0, z: -0, w: 0.9999995}
-  m_LocalPosition: {x: 0, y: 0, z: 32.23899}
+  m_LocalPosition: {x: 0, y: 0, z: -38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26398,7 +26359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.111, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1453, y: 128}
+  m_AnchoredPosition: {x: -726, y: -251}
   m_SizeDelta: {x: 800, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880807453
@@ -26895,7 +26856,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -26918,18 +26879,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 243332798}
-        m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
-        m_MethodName: EnableFuelProgress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 243332798}
         m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
         m_MethodName: callCompareManufactureLine
@@ -26955,7 +26904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -28222,7 +28171,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1b485f9b-30f6-4748-8030-76453eff7fb6
+  _sID: 872a665d-9abb-4e6d-8db1-6ebc3375379f
   rectTransform: {fileID: 2024514126}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -29359,7 +29308,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 33568215-d1fa-4ea8-85a0-93ec9e1d5659
+  _sID: f9fb11d8-10d5-41c0-8444-693dac800837
   rectTransform: {fileID: 2076935213}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -29587,11 +29536,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 8da7fe93-ec96-41f8-b525-3b570899b876
+  _sID: a5d1b059-f91f-40af-85fe-47d3bb8ade49
   ports:
-  - {fileID: 1528280978}
-  - {fileID: 1873993174}
   - {fileID: 1058343286}
+  - {fileID: 1873993174}
+  - {fileID: 1528280978}
   rectTransform: {fileID: 2127679747}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1

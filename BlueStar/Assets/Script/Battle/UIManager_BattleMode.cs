@@ -50,6 +50,7 @@ public class UIManager_BattleMode : MonoBehaviour
     [SerializeField] private GameObject NotManuSuggest;
     private GameObject ManuSuggestInst;
     private GameObject NotManuSuggestInst;
+    public static bool isManufacture;
 
     private void OnEnable()
     {
@@ -274,6 +275,7 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         UIManager_BattleMode.ManuSlotIndex = index;
         UICSystemManager.CompareSteps(index);
+        showManufactureText(isManufacture);
     }
 
     public void showManufactureText(bool isCorrect)
@@ -289,7 +291,7 @@ public class UIManager_BattleMode : MonoBehaviour
         {
             Debug.Log("链接错误");
             NotManuSuggestInst=Instantiate(NotManuSuggest, GameObject.Find("Canvas_Manufacture").gameObject.transform);
-            Destroy(NotManuSuggestInst,1f);
+            Destroy(NotManuSuggestInst,3f);
         }
     }
 
