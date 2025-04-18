@@ -52,7 +52,6 @@ namespace MeadowGames.UINodeConnect4.SampleScene.LogicGates
 
         void UpdateConnectionsState()
         {
-            Debug.Log("bbbbbb");
             foreach (Connection connection in graphManager.localConnections)
             {
                 if (connection.port0.node.GetComponent<Gate>().Output)
@@ -61,8 +60,10 @@ namespace MeadowGames.UINodeConnect4.SampleScene.LogicGates
                 }
                 else
                 {
-                    connection.line.animation.isActive = false;
+                    //connection.line.animation.isActive = false;
+                    connection.line.animation.isActive = true;
                 }
+                connection.line.animation.isActive = true;
 
 
             }

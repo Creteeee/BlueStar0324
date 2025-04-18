@@ -88,7 +88,8 @@ namespace MeadowGames.UINodeConnect4
                 .GetComponent<Node>().NodeType;
             _connection.NodePair.Node1 = _connection.port1.gameObject.transform.parent.gameObject.transform.parent.gameObject
                 .GetComponent<Node>().NodeType;
-          
+           
+
         }
 
         public static Connection NewConnection(Port port0, Port port1)
@@ -259,6 +260,8 @@ namespace MeadowGames.UINodeConnect4
                     port0.UpdateIcon();
                     port1.UpdateIcon();
                 }
+                
+                line.animation.isActive = true;
             }
         }
 

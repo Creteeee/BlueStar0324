@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -322,4 +323,19 @@ public class NodePair
 {
     public NodeType Node0;
     public NodeType Node1;
+    // 重写Equals方法，按值比较
+    public override bool Equals(object obj)
+    {
+        if (obj is NodePair other)
+        {
+            return Node0 == other.Node0 && Node1 == other.Node1;
+        }
+        return false;
+    }
+
+    // 重写GetHashCode方法，确保按值比较时生成相同的哈希码
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Node0, Node1);
+    }
 }

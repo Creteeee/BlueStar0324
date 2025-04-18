@@ -10,7 +10,7 @@ namespace MeadowGames.UINodeConnect4.GraphicRenderer
     {
         // public MotionStyleType motionStyle = MotionStyleType.Lerp;
 
-        public bool isActive = false;
+        public bool isActive = true;
         public float pointsDistance = 35;
         public float size = 10;
         public Color color = new Color(1, 0.81f, 0.3f);
