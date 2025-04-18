@@ -35,6 +35,7 @@ namespace MeadowGames.UINodeConnect4
             }
         }
 
+        public UIManager_BattleMode uiManager;
         [SerializeField] List<Connection> _connections = new List<Connection>();
         public static List<Connection> Connections { get => Instance ? Instance._connections : new List<Connection>(); }
         //已经连接的NodePair的列表
@@ -75,7 +76,7 @@ namespace MeadowGames.UINodeConnect4
         /// 比较已经连好的生产线和某个正确的生产线
         /// </summary>
         /// <param name="想要生产的链路的Index"></param>
-        public static void CompareSteps(int index)
+        public void CompareSteps(int index)
         {
             if (index<=ManufactureLine.Count-1)
             {
@@ -84,6 +85,7 @@ namespace MeadowGames.UINodeConnect4
                     if (!ExistNodePairs.Contains(pair))
                     {
                         Debug.Log("生产链路不完整");
+                        UIManager_BattleMode.showManufactureText(true);
                         break;
                     }
                 
@@ -91,6 +93,7 @@ namespace MeadowGames.UINodeConnect4
 
                 if (ManufactureLine[index].nodePairs.TrueForAll(pair =>ExistNodePairs.Contains(pair)))
                 {
+                    UIManager_BattleMode.showManufactureText(false);
                     Debug.Log("链路完整，开始执行生产");
                 }
             }
@@ -192,6 +195,8 @@ namespace MeadowGames.UINodeConnect4
             {
                 Connections[i].UpdateLine();
                 Connections[i].OnPointerUp();
+                Connections[i].InitializeConnection(Connections[i]);
+ 
             }
 
             ExistNodePairs.Clear();

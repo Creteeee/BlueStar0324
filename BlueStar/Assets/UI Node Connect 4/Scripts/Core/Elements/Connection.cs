@@ -78,6 +78,19 @@ namespace MeadowGames.UINodeConnect4
             _sID = UICUtility.GenerateSID();
         }
 
+        /// <summary>
+        /// 新加的，用来初始化connection的
+        /// </summary>
+        /// <param name="_connection"></param>
+        public void InitializeConnection(Connection _connection)
+        {
+            _connection.NodePair.Node0 = _connection.port0.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                .GetComponent<Node>().NodeType;
+            _connection.NodePair.Node1 = _connection.port1.gameObject.transform.parent.gameObject.transform.parent.gameObject
+                .GetComponent<Node>().NodeType;
+          
+        }
+
         public static Connection NewConnection(Port port0, Port port1)
         {
             GraphManager graphManager = port0.graphManager;

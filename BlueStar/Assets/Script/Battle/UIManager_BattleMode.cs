@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using MeadowGames.UINodeConnect4;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 
 public class UIManager_BattleMode : MonoBehaviour
@@ -40,6 +43,13 @@ public class UIManager_BattleMode : MonoBehaviour
     public GameObject FuelProgress;
     public TMP_Text textFuel;
     
+    //生产的条目
+    public Button[] ManuSlots;
+    public static int ManuSlotIndex=-1;
+    [SerializeField] private GameObject ManuSuggest;
+    [SerializeField] private GameObject NotManuSuggest;
+    private GameObject ManuSuggestInst;
+    private GameObject NotManuSuggestInst;
 
     private void OnEnable()
     {
@@ -76,6 +86,12 @@ public class UIManager_BattleMode : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        ManuSuggest = Resources.Load("Prefabs/UI/ManuSuggest").GameObject();
+        NotManuSuggest = Resources.Load("Prefabs/UI/NotManuSuggest").GameObject();
+    }
+
     private void Start()
     {
         Orbit_Camera = GameObject.FindWithTag("Orbit_Camera");
@@ -91,6 +107,8 @@ public class UIManager_BattleMode : MonoBehaviour
         FuelProgress.SetActive(false);
         
         //MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        
+        //注册按钮方法，告诉比较哪个生产链
     }
 
     //----------------------Emitter发射----------------------------------
@@ -251,6 +269,33 @@ public class UIManager_BattleMode : MonoBehaviour
         // 确保最终值是 100%
         textFuel.text = "100%";
     }
+
+    public void callCompareManufactureLine(int index)
+    {
+        UIManager_BattleMode.ManuSlotIndex = index;
+        UICSystemManager.CompareSteps(index);
+    }
+
+    public void showManufactureText(bool isCorrect)
+    {
+        if (isCorrect)
+        {
+            Debug.Log("链接正确，正在生产中");
+            EnableFuelProgress();
+            ManuSuggestInst=Instantiate(ManuSuggest, GameObject.Find("Canvas_Manufacture").gameObject.transform);
+            Destroy(ManuSuggestInst,5f);
+        }
+        else
+        {
+            Debug.Log("链接错误");
+            NotManuSuggestInst=Instantiate(NotManuSuggest, GameObject.Find("Canvas_Manufacture").gameObject.transform);
+            Destroy(NotManuSuggestInst,1f);
+        }
+    }
+
+
+
+
 
 }
 
