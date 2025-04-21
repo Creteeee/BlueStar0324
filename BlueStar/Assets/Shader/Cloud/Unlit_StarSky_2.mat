@@ -41,8 +41,8 @@ Material:
     - _Speed: 0
     - _StepSize: 0.1
     - _Tile: 0.26
-    - _Volstep: 19.81
-    - _Zoom: 1.68
+    - _Volstep: 19.41
+    - _Zoom: 1.8
     m_Colors:
     - _CenterPosition: {r: 0.49, g: 0, b: 0, a: 0}
     - _DownColor: {r: 0, g: 0, b: 0, a: 1}

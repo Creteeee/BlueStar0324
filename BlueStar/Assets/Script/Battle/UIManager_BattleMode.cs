@@ -44,13 +44,16 @@ public class UIManager_BattleMode : MonoBehaviour
     public TMP_Text textFuel;
     
     //生产的条目
-    public Button[] ManuSlots;
+    public GameObject[] ManuSlots;
     public static int ManuSlotIndex=-1;
+    
     [SerializeField] private GameObject ManuSuggest;
     [SerializeField] private GameObject NotManuSuggest;
     private GameObject ManuSuggestInst;
     private GameObject NotManuSuggestInst;
     public static bool isManufacture;
+    
+    
 
     private void OnEnable()
     {
@@ -107,6 +110,8 @@ public class UIManager_BattleMode : MonoBehaviour
         FuelMenu.SetActive(false);
         FuelProgress.SetActive(false);
         
+        OnMenuIndexChanged += (index) => ChangeManufactureItem(index);
+                
         //MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         
         //注册按钮方法，告诉比较哪个生产链
@@ -270,6 +275,52 @@ public class UIManager_BattleMode : MonoBehaviour
         // 确保最终值是 100%
         textFuel.text = "100%";
     }
+
+    public System.Action<int> OnMenuIndexChanged;
+    
+    public void EnableManufactureItem()
+    {
+        ManuSlotIndex = 0;
+        OnMenuIndexChanged?.Invoke(ManuSlotIndex);
+    }
+
+    public void ChangeManufactureItem(int index)
+    {
+        foreach (var slot in ManuSlots)
+        {
+            slot.SetActive(false);
+        }
+        ManuSlots[index].SetActive(true);
+    }
+
+    public void NextManufactureItem()
+    {
+        if (ManuSlotIndex<ManuSlots.Length-1)
+        {
+            ManuSlotIndex += 1;
+        }
+        else
+        {
+            ManuSlotIndex = 0;
+        }
+        OnMenuIndexChanged?.Invoke(ManuSlotIndex);
+    }
+
+    public void PreviousManufactureItem()
+    {
+        if (ManuSlotIndex>0)
+        {
+            ManuSlotIndex -= 1;
+        }
+        else
+        {
+            ManuSlotIndex = ManuSlots.Length - 1;
+        }
+        OnMenuIndexChanged?.Invoke(ManuSlotIndex);
+    }
+    
+    
+    
 
     public void callCompareManufactureLine(int index)
     {
