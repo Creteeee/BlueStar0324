@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,7 +56,18 @@ namespace MeadowGames.UINodeConnect4
 
         public static List<NodePairListWrapper> ManufactureLine =>
             Instance ? Instance._ManufactureLine : new List<NodePairListWrapper>();
+        
+        //一个动画List，正确的链路播放动画,这里为啥static不行
+        [System.Serializable]
+        public class AnimatorListWrapper
+        {
+            public List<Animator> animators = new List<Animator>();
+        }
 
+        [SerializeField] private List<AnimatorListWrapper> _AnimatorList = new List<AnimatorListWrapper>();
+        public static List<AnimatorListWrapper> AnimatorList =>
+            Instance ? Instance._AnimatorList : new List<AnimatorListWrapper>();
+ 
         [SerializeField] bool _cacheRaycasters = true;
         public bool CacheRaycasters
         {
@@ -71,7 +83,8 @@ namespace MeadowGames.UINodeConnect4
             }
         }
         public static List<GraphicRaycaster> raycasterList = new List<GraphicRaycaster>();
-        
+        public static event Action<int> OnManufactureSuccess;
+       
         /// <summary>
         /// 比较已经连好的生产线和某个正确的生产线
         /// </summary>
@@ -97,9 +110,50 @@ namespace MeadowGames.UINodeConnect4
                 {
                     UIManager_BattleMode.isManufacture = true;
                     Debug.Log("链路完整，开始执行生产");
+                    OnManufactureSuccess?.Invoke(index);
                 }
             }
         }
+
+        public void PlayAnimation(int index)
+        {
+            StartCoroutine(LerpBlendValue(0, 1, 2, index));
+        }
+
+        
+        public void EndAnimation(int index)
+        {
+            StartCoroutine(LerpBlendValue(1, 0, 2, index));
+        }
+
+        public System.Action<float> OnValueChanged;
+
+        private IEnumerator LerpBlendValue(float from, float to, float duration,int index)
+        {
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                float currentValue = Mathf.Lerp(from, to, t);
+
+                OnValueChanged?.Invoke(currentValue);
+                foreach (var animator in AnimatorList[index].animators)
+                {
+                    animator.SetFloat("Blend",currentValue);
+                }
+                
+
+                yield return null;
+            }
+
+            // 确保最后值是目标值
+            OnValueChanged?.Invoke(to);
+        }
+        
+        
+        
         public static void AddNodeToList(Node node)
         {
             if (Instance && !Nodes.Contains(node))
@@ -186,6 +240,14 @@ namespace MeadowGames.UINodeConnect4
             }
 
             UpdateNodeList();
+            
+            
+            UICSystemManager.OnManufactureSuccess += PlayAnimation;
+        }
+
+        private void OnDisable()
+        {
+            UICSystemManager.OnManufactureSuccess -= PlayAnimation;
         }
 
         public static List<GraphManager> graphManagers = new List<GraphManager>();

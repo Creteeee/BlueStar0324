@@ -419,10 +419,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 8223585b-ca7a-4650-9d28-1ac284275284
+  _sID: 27fc51bb-908a-4d3f-a99c-af899035cd08
   ports:
-  - {fileID: 940414702}
   - {fileID: 154895860}
+  - {fileID: 940414702}
   rectTransform: {fileID: 40528046}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: cf531f93-b7f0-4841-8150-36c6fc10332c
+  _sID: 05cc2948-5abb-4ab3-a777-43f57582f770
   ports:
   - {fileID: 328601399}
   - {fileID: 92609310}
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 3458cfd2-5e9b-4c18-8713-4671a7ec2d07
+  _sID: ff6689b8-c14a-4d98-95f9-1ad91efe7d47
   ports:
   - {fileID: 409024405}
   - {fileID: 1279776919}
@@ -930,7 +930,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 2a1d139a-9195-4f86-9326-b447bd19c44f
+  _sID: 375f4bee-1c7e-4b97-a66c-f1884bb74aaa
   rectTransform: {fileID: 80795956}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: c1698405-6713-479b-8d7b-86943c46f589
+  _sID: c5b20396-554b-486d-8505-a908c4a765ec
   rectTransform: {fileID: 92609308}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -1548,7 +1548,7 @@ MonoBehaviour:
       type: 3}
     exclusiveOnDragCanvas: {fileID: 0}
     useLegacyDragMethod: 0
-    position: {x: -19.425005, y: 13.32937, z: 13.632889}
+    position: {x: -58.78109, y: -4.219194, z: 20.67107}
   dragSelection:
     customRenderer: {fileID: 0}
     line:
@@ -2501,7 +2501,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: abf85b98-dc13-4edb-b8d5-a17ca9fbabfd
+  _sID: 4a5152d8-6671-4f76-878f-8f69b2eede6a
   rectTransform: {fileID: 154895858}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -3163,7 +3163,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 7e930e89-9768-4b2a-ad54-dcfb8463fc63
+  _sID: 5f993d2f-f744-4048-b1ec-5eb8cce1fd2a
   rectTransform: {fileID: 218416457}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 5963c7d8-d764-4b3f-b2f1-6b7658b53cfe
+  _sID: dee2512e-644d-47c0-a351-c4a224c474ca
   ports:
   - {fileID: 993701371}
   - {fileID: 2024514128}
@@ -4976,7 +4976,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 57c6b3e4-39d3-4562-9ae3-9a1f75370917
+  _sID: 9bc9bb05-f59c-498a-b973-28c345cd5209
   rectTransform: {fileID: 328601397}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -5035,7 +5035,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b995a9e4-6c0c-4ea3-8623-72d6201d0ecd
+  _sID: 35d25592-22b7-409f-b3f7-b98454b66881
   rectTransform: {fileID: 347471888}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -5861,7 +5861,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: ffab232d-b696-4800-b0fd-edae43b47be4
+  _sID: 362a1280-53f1-424e-bf20-be1e53131daa
   rectTransform: {fileID: 409024403}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -6576,10 +6576,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 50560ab6-d5d3-40da-8c5f-8c4be86f5b89
+  _sID: f7ac9992-eac2-438c-b7b9-b02039f7fb2b
   ports:
-  - {fileID: 1647992814}
   - {fileID: 218416459}
+  - {fileID: 1647992814}
   rectTransform: {fileID: 460265041}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -6956,10 +6956,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: d52d4242-9ba8-4ec6-a411-c15d066c1e9d
+  _sID: 35dfeb51-0df8-4c0d-8873-933836bc08fc
   ports:
-  - {fileID: 1272577137}
   - {fileID: 1010625298}
+  - {fileID: 1272577137}
   rectTransform: {fileID: 468640455}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -8415,11 +8415,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: de0019ce-3804-4acf-a236-f85e2dc2cbe3
+  _sID: ce1c19bf-5de9-405a-9e25-f178df3d158f
   ports:
   - {fileID: 1435516894}
   - {fileID: 1281014954}
-  - {fileID: 1309297624}
   rectTransform: {fileID: 550941649}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -8657,6 +8656,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577301691}
   m_CullTransparentMesh: 1
+--- !u!95 &580337853 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1517883856514107806, guid: 51eeb146876bccf41b0a4c96fdd4ca1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 407998038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598930874
 GameObject:
   m_ObjectHideFlags: 0
@@ -8728,10 +8733,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 4f3b209a-55d2-49a4-b58a-1fcc513865dd
+  _sID: 5a57ee89-5031-4227-a41c-48b660b54d55
   ports:
-  - {fileID: 1829457844}
   - {fileID: 1015270230}
+  - {fileID: 1829457844}
   rectTransform: {fileID: 603146421}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -11486,7 +11491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: a795e87e-a50f-4cff-a65a-44b434e0b604
+  _sID: e94486f2-3de5-4dea-91fe-4fadda1f9a61
   ports:
   - {fileID: 1444796207}
   - {fileID: 1252346887}
@@ -11969,10 +11974,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 16e3fe5a-4cf4-4f24-8866-95a73719a35b
+  _sID: ea5b35e4-6d14-421c-a4a7-14447138d366
   ports:
-  - {fileID: 347471886}
   - {fileID: 80795954}
+  - {fileID: 347471886}
   - {fileID: 948589930}
   rectTransform: {fileID: 912262056}
   graphManager: {fileID: 94015312}
@@ -12717,7 +12722,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6db04394-89db-490a-8e05-38d8b3833d87
+  _sID: 89d7f99b-9773-411f-a023-c2be96cd0557
   rectTransform: {fileID: 940414700}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -12798,7 +12803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: a6dd7163-479f-4494-a3e6-2ade8d05f787
+  _sID: 3cfc5915-61ce-4058-978d-cd8ecb7399b2
   rectTransform: {fileID: 948589929}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -13191,7 +13196,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 980e109a-5ed2-4492-8d39-408867ddd79d
+  _sID: 6425e809-8602-4f46-a738-43222a644fa4
   rectTransform: {fileID: 993701369}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -13518,7 +13523,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 41087699-b8d3-4b4c-a804-c840a22d5f95
+  _sID: bb29c08a-5164-408f-b17d-914f999561ef
   rectTransform: {fileID: 1010625299}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -13675,7 +13680,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 462cfae3-b58f-456c-a761-f667d64d7ed1
+  _sID: 4aa50086-be8a-4b00-89a3-b0f5af2957d6
   rectTransform: {fileID: 1015270228}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -14330,7 +14335,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: f321aff9-c709-4ce3-b928-9475cf7e3f14
+  _sID: 2526e343-0e06-44c1-8712-545ec2c21075
   rectTransform: {fileID: 1058343284}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -14514,7 +14519,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b0a0dc68-97ab-42b5-b1c9-8c86b88acc8a
+  _sID: 319ac16f-776f-44b7-9771-3bcd42c423e8
   rectTransform: {fileID: 1090710313}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -16356,7 +16361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 4af91830-6cd6-47e6-b778-3b0454ea68cc
+  _sID: e9fd5f5e-2269-4e0f-a6bf-314319b8515f
   ports:
   - {fileID: 1295323360}
   - {fileID: 1090710315}
@@ -16998,7 +17003,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: cfd4b297-b881-45cc-9065-87fd71168b77
+  _sID: 190ad381-b7c8-4e35-b005-6eb33dc54f12
   rectTransform: {fileID: 1252346886}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -17436,6 +17441,15 @@ MonoBehaviour:
       Node1: 8
     - Node0: 8
       Node1: 11
+    - Node0: 6
+      Node1: 8
+  _AnimatorList:
+  - animators:
+    - {fileID: 1872681495}
+    - {fileID: 580337853}
+    - {fileID: 1360332193}
+    - {fileID: 3293433103968575739}
+    - {fileID: 197514529}
   _cacheRaycasters: 1
 --- !u!4 &1268323301
 Transform:
@@ -17513,7 +17527,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 54fa50e4-7b6f-4b2a-9b9e-c5b776ff0feb
+  _sID: eee896f7-d11f-4fc2-99c4-1b0479bbd122
   rectTransform: {fileID: 1272577136}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -17557,7 +17571,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: da2212186ff57324ab1c15f54f84986a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.41
+      value: -7.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da2212186ff57324ab1c15f54f84986a,
         type: 3}
@@ -18047,7 +18061,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278961452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -298.3556}
+  m_LocalPosition: {x: 0, y: 0, z: 53.553486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18055,7 +18069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653.74976, y: 666.4685}
+  m_AnchoredPosition: {x: -1314.0544, y: -210.9597}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1279776916
@@ -18127,7 +18141,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 7225422c-daed-440b-856f-9842818e7814
+  _sID: 57cdfc8c-f6cd-4960-955e-62d061973743
   rectTransform: {fileID: 1279776917}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -18186,7 +18200,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5d83ad10-81ee-48ef-8ea9-4483b06c9cd8
+  _sID: 5f6d7d95-63d8-4dc6-b83a-2ffcb9ae8195
   rectTransform: {fileID: 1281014956}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -18422,7 +18436,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b07605e8-ca9e-45db-a089-d06ac3cc47ab
+  _sID: 1f3c1bce-3f3d-494c-ade7-d73a64d697f8
   rectTransform: {fileID: 1295323358}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -18927,7 +18941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1309297623
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18971,7 +18985,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 909a205e-592e-407b-841d-f24384acc837
+  _sID: 56f56e3a-64e4-46a9-9134-6028bb02c4cd
   rectTransform: {fileID: 1309297623}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -20317,6 +20331,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359215361}
   m_CullTransparentMesh: 1
+--- !u!95 &1360332193 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6664759111280478252, guid: f14f5a786d4c33b4588649ea746221fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 47386844493595133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367128273
 GameObject:
   m_ObjectHideFlags: 0
@@ -20979,7 +20999,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b6035af0-b499-49f2-a049-d2ff4d31c3d7
+  _sID: 55275017-c568-49f1-8f20-9a27dab39985
   rectTransform: {fileID: 1435516896}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -21240,7 +21260,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 00432d66-bd64-43ac-b4bc-ae2d436ac252
+  _sID: 00a0b258-c4f4-402b-afc9-993c10f30a0e
   rectTransform: {fileID: 1444796208}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -24331,7 +24351,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6378584d-251d-4e26-af53-a165140a64ec
+  _sID: 941d8fea-947e-4909-832d-5ff84e9e403a
   rectTransform: {fileID: 1647992812}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -26670,7 +26690,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 7cfac6c2-c545-4e9f-ac90-4571fa2e2109
+  _sID: d4e87f7f-0575-4aba-bede-b39783353ed6
   rectTransform: {fileID: 1829457842}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -27061,12 +27081,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0759e5a2035d4c54f93a402bb70b568b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.13
+      value: -36.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0759e5a2035d4c54f93a402bb70b568b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6
+      value: -1.83
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0759e5a2035d4c54f93a402bb70b568b,
         type: 3}
@@ -27510,6 +27530,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866013001}
   m_CullTransparentMesh: 1
+--- !u!95 &1872681495 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1517883856514107806, guid: 51eeb146876bccf41b0a4c96fdd4ca1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3754831600850198242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1873993171
 GameObject:
   m_ObjectHideFlags: 0
@@ -27579,7 +27605,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: c7d0cd54-533e-4dfd-97f7-2232e76172fa
+  _sID: 415314f8-d882-4d17-8a3b-4c0a1f2ce9c7
   rectTransform: {fileID: 1873993172}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -29428,7 +29454,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 65bbaeec-1b97-404e-809c-b8d8efcb9466
+  _sID: 1c093630-e819-4f19-bf21-701a620979d1
   rectTransform: {fileID: 2024514126}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -30660,10 +30686,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 500d1552-2bce-4704-a0d3-8ce7fad3dbcb
+  _sID: 0b3f1d22-9c09-4a8a-a1fb-166bd73d6e3c
   ports:
-  - {fileID: 1873993174}
   - {fileID: 1058343286}
+  - {fileID: 1873993174}
   rectTransform: {fileID: 2127679747}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -31311,6 +31337,12 @@ PrefabInstance:
 --- !u!4 &3293433103968575738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 393509563999610466, guid: ff382495fa8336343823088cdba375ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3293433103968575737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3293433103968575739 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5239457318683351191, guid: ff382495fa8336343823088cdba375ca,
     type: 3}
   m_PrefabInstance: {fileID: 3293433103968575737}
   m_PrefabAsset: {fileID: 0}
