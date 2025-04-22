@@ -42,8 +42,10 @@ public class UIManager_BattleMode : MonoBehaviour
     public GameObject FuelMenu;
     public GameObject FuelProgress;
     public TMP_Text textFuel;
+    public TMP_Text ManuingEmiterName;
     
     //生产的条目
+    public UICSystemManager uicManager;
     public GameObject[] ManuSlots;
     public static int ManuSlotIndex=-1;
     
@@ -52,6 +54,15 @@ public class UIManager_BattleMode : MonoBehaviour
     private GameObject ManuSuggestInst;
     private GameObject NotManuSuggestInst;
     public static bool isManufacture;
+    
+    //预备的发射Slot
+    public EmitterDataList_SO emitterDataList;
+    public EmitterSlot[] emitterSlots;
+    public bool isEmitterSlotsAvailable = true;
+    public static int ActivatedSlotIndex = 0;
+    
+    //预览的模型们
+    public GameObject[] prelookModels;
     
     
 
@@ -257,6 +268,7 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         FuelMenu.SetActive(false);
         FuelProgress.SetActive(true);
+        ManuingEmiterName.text = GetEmitterDetails(ManuSlotIndex).name;
         StartCoroutine(UpdatePercentage());
 
     }
@@ -264,9 +276,9 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < 100)
+        while (elapsedTime < 10)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.deltaTime*10;
             float percentage = Mathf.Clamp01(elapsedTime / 100) * 100f;
             textFuel.text = $"{Mathf.RoundToInt(percentage)}%";
             yield return null;
@@ -274,6 +286,11 @@ public class UIManager_BattleMode : MonoBehaviour
 
         // 确保最终值是 100%
         textFuel.text = "100%";
+        //通知刷新EmitterSlot，这里将SO和UI的Index设成一样的了
+        AddEmitter(ManuSlotIndex);
+        FuelProgress.SetActive(false);
+        uicManager.EndAnimation(ManuSlotIndex);
+        
     }
 
     public System.Action<int> OnMenuIndexChanged;
@@ -335,8 +352,9 @@ public class UIManager_BattleMode : MonoBehaviour
 
     public void callCompareManufactureLine(int index)
     {
+        checkEmitterSlot();
         UIManager_BattleMode.ManuSlotIndex = index;
-        UICSystemManager.CompareSteps(index);
+        UICSystemManager.CompareSteps(index,isEmitterSlotsAvailable);
         showManufactureText(isManufacture);
     }
 
@@ -357,10 +375,92 @@ public class UIManager_BattleMode : MonoBehaviour
             Destroy(NotManuSuggestInst,3f);
         }
     }
+/// <summary>
+/// 检查是否有空位
+/// </summary>
+/// <param name="emitterID"></param>
+    public void checkEmitterSlot()//前面调用方法的时候要注意一下
+    {
+        bool hasUpdated = false; // 用来记录有没有成功填进去
 
+        foreach (EmitterSlot slot in emitterSlots)
+        {
+            if (slot.isEmpty)
+            {
+                hasUpdated = true;
+                isEmitterSlotsAvailable = true;
+                break;
+            }
+        }
 
+        if (!hasUpdated)
+        {
+            // 所有slot都不是空的，这里执行备用操作
+            isEmitterSlotsAvailable = false;
 
+        }
+    }
 
+    public void AddEmitter(int EmitterID)
+    {
+        for (int i = 0; i < emitterSlots.Length; i++)
+        {
+            emitterSlots[i].defaultColorSlot();
+            if (emitterSlots[i].isEmpty)
+            {
+                emitterSlots[i].UpadateSlot(GetEmitterDetails(EmitterID));
+                emitterSlots[i].HighLightSlot();
+                prelookModels[i].SetActive(true); // 使用索引 i
+                ActivatedSlotIndex = i;
+                break;
+            }
+        }
+    }
 
+    public void NextSlot()
+    {
+        if (ActivatedSlotIndex<emitterSlots.Length-1)
+        {
+            ActivatedSlotIndex += 1;
+        }
+        else
+        {
+            ActivatedSlotIndex = 0;
+        }
+        ActivateSlot(ActivatedSlotIndex);
+    }
+
+    public void PreviousSlot()
+    {
+        if (ActivatedSlotIndex>0)
+        {
+            ActivatedSlotIndex -= 0;
+        }
+        else
+        {
+            ActivatedSlotIndex = emitterSlots.Length - 1;
+        }
+
+        ActivateSlot(ActivatedSlotIndex);
+    }
+
+    public void ActivateSlot(int index)
+    {
+        foreach (EmitterSlot slot in emitterSlots)
+        {
+            slot.defaultColorSlot();
+        }
+        emitterSlots[index].HighLightSlot();
+        foreach (GameObject model in prelookModels)
+        {
+            model.SetActive(false);
+        }
+        prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
+    }
+    
+    public EmitterDetails GetEmitterDetails(int ID)
+    {
+        return emitterDataList.EmitterDataList.Find(i => i.ID == ID);
+    }
 }
 

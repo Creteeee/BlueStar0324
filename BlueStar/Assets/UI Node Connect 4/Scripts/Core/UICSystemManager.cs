@@ -86,33 +86,43 @@ namespace MeadowGames.UINodeConnect4
         public static event Action<int> OnManufactureSuccess;
        
         /// <summary>
-        /// 比较已经连好的生产线和某个正确的生产线
+        /// 先检查是否有空位，再比较已经连好的生产线和某个正确的生产线
         /// </summary>
         /// <param name="想要生产的链路的Index"></param>
-        public static void CompareSteps(int index)
+        public static void CompareSteps(int index,bool isAvailable)
         {
-            if (index<=ManufactureLine.Count-1)
+            if (isAvailable)
             {
-                Debug.Log(ManufactureLine[index].nodePairs[0].Node0.ToString()+ManufactureLine[index].nodePairs[0].Node1.ToString());
-                Debug.Log(ExistNodePairs[0].Node0.ToString()+ExistNodePairs[0].Node1.ToString());
-                foreach (var pair in ManufactureLine[index].nodePairs)
+                if (index<=ManufactureLine.Count-1)
                 {
-                    if (!ExistNodePairs.Contains(pair))
+                    Debug.Log(ManufactureLine[index].nodePairs[0].Node0.ToString()+ManufactureLine[index].nodePairs[0].Node1.ToString());
+                    Debug.Log(ExistNodePairs[0].Node0.ToString()+ExistNodePairs[0].Node1.ToString());
+                    foreach (var pair in ManufactureLine[index].nodePairs)
                     {
-                        Debug.Log("生产链路不完整，断在了"+pair.Node0);
-                        UIManager_BattleMode.isManufacture = false;
-                        break;
-                    }
+                        if (!ExistNodePairs.Contains(pair))
+                        {
+                            Debug.Log("生产链路不完整，断在了"+pair.Node0);
+                            UIManager_BattleMode.isManufacture = false;
+                            break;
+                        }
                 
-                }
+                    }
 
-                if (ManufactureLine[index].nodePairs.TrueForAll(pair =>ExistNodePairs.Contains(pair)))
-                {
-                    UIManager_BattleMode.isManufacture = true;
-                    Debug.Log("链路完整，开始执行生产");
-                    OnManufactureSuccess?.Invoke(index);
+                    if (ManufactureLine[index].nodePairs.TrueForAll(pair =>ExistNodePairs.Contains(pair)))
+                    {
+                        UIManager_BattleMode.isManufacture = true;
+                        Debug.Log("链路完整，开始执行生产");
+                        OnManufactureSuccess?.Invoke(index);
+                    }
                 }
             }
+
+            else
+            {
+                UIManager_BattleMode.isManufacture = false;
+                Debug.Log("Slot没有空位了");
+            }
+
         }
 
         public void PlayAnimation(int index)

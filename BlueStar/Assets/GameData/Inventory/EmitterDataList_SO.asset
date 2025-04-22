@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b472ce8915f764e85dec7239410680, type: 3}
+  m_Name: EmitterDataList_SO
+  m_EditorClassIdentifier: 
+  EmitterDataList:
+  - ID: 0
+    name: "\u5DE5\u8D28\u63A8\u8FDB\u5BFC\u5F39     "
+    icon: {fileID: 21300000, guid: c2ca1ab4d0a7d9942b9688c7d2a8c787, type: 3}
+    model_Unlaunched: {fileID: 5699997347662871209, guid: 2c79dc179840ec848b52c50b0054edef,
+      type: 3}
+    model_launched: {fileID: 5699997347662871209, guid: 7e623a5a1f5ccf74781fe80d28068508,
+      type: 3}
+    model_Orbit: {fileID: 3873783452725241248, guid: 83efbcbacf03dba4ebe791fbcf21fcb3,
+      type: 3}
+    health: 40
+    bulletLeft: 4
+  - ID: 1
+    name: "\u4E2D\u5FAE\u5B50\u7535\u78C1\u70AE"
+    icon: {fileID: 21300000, guid: 729f87804959036419e2b6207df7b590, type: 3}
+    model_Unlaunched: {fileID: 6294491876360983727, guid: f834a4c889d63ff4f80dec5095928cf6,
+      type: 3}
+    model_launched: {fileID: 6294491876360983727, guid: 6fec59a388b2c964e9a062c21d4308e8,
+      type: 3}
+    model_Orbit: {fileID: 3986977058794404984, guid: f8e7de9fc99e0cc49b54b424bb528a87,
+      type: 3}
+    health: 40
+    bulletLeft: 4
+  - ID: 2
+    name: "\u9AD8\u80FD\u7C92\u5B50\u7206\u7834\u88C5\u7F6E"
+    icon: {fileID: 21300000, guid: 96eed11b9c0ecf649a290e15dc1276b4, type: 3}
+    model_Unlaunched: {fileID: 8250746157763139658, guid: 22272268bcde4cb42a5ee9efb674ee78,
+      type: 3}
+    model_launched: {fileID: 8250746157763139658, guid: b106b06be37508249b1a422ffea967b3,
+      type: 3}
+    model_Orbit: {fileID: 650522001026775422, guid: 411e5707f1c28a04fb908dac61d0f8dd,
+      type: 3}
+    health: 40
+    bulletLeft: 4
+  - ID: 3
+    name: "\u7A7A\u95F4\u9ED1\u57DF\u5F39"
+    icon: {fileID: 21300000, guid: c3882e92d34f95045844195b0a0cc3ae, type: 3}
+    model_Unlaunched: {fileID: 1234558574429603365, guid: a161a7544b96845488fbdd7caec32e0e,
+      type: 3}
+    model_launched: {fileID: 1234558574429603365, guid: 2781f98b86b62d14dbc21d32f106fbf1,
+      type: 3}
+    model_Orbit: {fileID: 3262878391125744404, guid: e89e94e1b80b6004caf302cc0d40f29d,
+      type: 3}
+    health: 40
+    bulletLeft: 2

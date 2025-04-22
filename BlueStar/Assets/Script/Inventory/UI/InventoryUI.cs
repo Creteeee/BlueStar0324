@@ -117,10 +117,7 @@ namespace  BlueStar.Inventory
                 downHeader.transform.DOMove(downHeaderPos, 1);
             }
         }
-
-
-
-
+        
     }
 }
 

@@ -12,7 +12,7 @@ public class TerraCamera : MonoBehaviour
   
     void Start()
     {
-        controller = Terra.GetComponent<Controller_Terra>();
+       
         initialTransform = Terra.transform;
         initialPosition = initialTransform.position;
         positionDifference = this.transform.position - initialPosition;
