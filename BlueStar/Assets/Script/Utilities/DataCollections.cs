@@ -22,3 +22,4 @@ public struct InventoryItem
     public int itemID;
     public int itemAmount;
 }
+

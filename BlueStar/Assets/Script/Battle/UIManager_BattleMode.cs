@@ -278,10 +278,12 @@ public class UIManager_BattleMode : MonoBehaviour
 
     public System.Action<int> OnMenuIndexChanged;
     
-    public void EnableManufactureItem()
+    public void EnableManufactureItem(GameObject MenufactureMenu)
     {
+        MenufactureMenu.SetActive(true);
         ManuSlotIndex = 0;
         OnMenuIndexChanged?.Invoke(ManuSlotIndex);
+        
     }
 
     public void ChangeManufactureItem(int index)
@@ -318,7 +320,16 @@ public class UIManager_BattleMode : MonoBehaviour
         }
         OnMenuIndexChanged?.Invoke(ManuSlotIndex);
     }
-    
+
+    public void CallMenufactureItem()
+    {
+        callCompareManufactureLine(ManuSlotIndex);
+    }
+
+    public void ExitMenufacture(GameObject menufactureMenu)
+    {
+        menufactureMenu.SetActive(false);
+    }
     
     
 
@@ -336,6 +347,7 @@ public class UIManager_BattleMode : MonoBehaviour
             Debug.Log("链接正确，正在生产中");
             EnableFuelProgress();
             ManuSuggestInst=Instantiate(ManuSuggest, GameObject.Find("Canvas_Manufacture").gameObject.transform);
+            ExitMenufacture(GameObject.Find("Canvas_Manufacture/ManufactureMenu"));
             Destroy(ManuSuggestInst,5f);
         }
         else

@@ -419,10 +419,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 1707d61b-791a-466b-b846-b5992b116cf6
+  _sID: f3dd5c71-d1ae-436a-9996-8afd73a33c92
   ports:
-  - {fileID: 154895860}
   - {fileID: 940414702}
+  - {fileID: 154895860}
   rectTransform: {fileID: 40528046}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -678,10 +678,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 56275731-f1c8-4d9f-8ae8-88f3be872d4b
+  _sID: 22fa9cef-f1bd-4c4f-844e-c4d1760e03be
   ports:
-  - {fileID: 328601399}
   - {fileID: 92609310}
+  - {fileID: 328601399}
   rectTransform: {fileID: 68999419}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 6f57f7cd-ad90-40ce-8e6e-7a6c504eac64
+  _sID: 3836938e-05d2-4afd-a090-7221a29106c5
   ports:
   - {fileID: 1279776919}
   - {fileID: 409024405}
@@ -930,7 +930,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: e55116e6-4773-4930-8515-e3d8a2a03864
+  _sID: d2bf4b64-55a1-4718-91c4-5528a139cd6e
   rectTransform: {fileID: 80795956}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b29d92d0-e0f1-434b-8b0d-7b1b691d4150
+  _sID: 095cd570-fe1a-4113-970d-42684e9458b2
   rectTransform: {fileID: 92609308}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -1548,7 +1548,7 @@ MonoBehaviour:
       type: 3}
     exclusiveOnDragCanvas: {fileID: 0}
     useLegacyDragMethod: 0
-    position: {x: -32.94079, y: 36.222485, z: 4.4511714}
+    position: {x: -49.117233, y: 11.406315, z: 14.404165}
   dragSelection:
     customRenderer: {fileID: 0}
     line:
@@ -2501,7 +2501,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 44445271-8549-4ee4-a9a1-68dcafa13cdb
+  _sID: a622b2f1-88c0-4318-bf3c-68da9b09f123
   rectTransform: {fileID: 154895858}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -3297,7 +3297,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 0768c1ee-6f93-4278-9314-9891af514d7a
+  _sID: 5924e1f7-d8a9-4292-8805-54f31c66a2b2
   rectTransform: {fileID: 218416457}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -3426,7 +3426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 54b5ff48-f9a5-4c74-ab55-5483419714f0
+  _sID: cb2cd462-7fcc-4937-b323-1fed89cd5219
   ports:
   - {fileID: 993701371}
   - {fileID: 2024514128}
@@ -3795,6 +3795,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260687857}
   m_CullTransparentMesh: 1
+--- !u!1 &262000618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262000619}
+  m_Layer: 5
+  m_Name: ManufactureMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &262000619
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262000618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 814895399}
+  - {fileID: 590011681}
+  - {fileID: 1647365155}
+  - {fileID: 1670188942}
+  - {fileID: 346734257}
+  - {fileID: 1359065767}
+  m_Father: {fileID: 285299653}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 4324.4, y: 2606.6}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &263494483
 GameObject:
   m_ObjectHideFlags: 0
@@ -4204,12 +4245,7 @@ RectTransform:
   - {fileID: 151229447}
   - {fileID: 1970987515}
   - {fileID: 1880807452}
-  - {fileID: 814895399}
-  - {fileID: 590011681}
-  - {fileID: 1647365155}
-  - {fileID: 1670188942}
-  - {fileID: 346734257}
-  - {fileID: 1359065767}
+  - {fileID: 262000619}
   - {fileID: 536461292}
   - {fileID: 1326991301}
   m_Father: {fileID: 0}
@@ -5122,7 +5158,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 311af610-be42-4393-bd68-f3819d699dd0
+  _sID: 1e560f27-729e-404c-9261-366be027d701
   rectTransform: {fileID: 328601397}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -5168,17 +5204,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346734256}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1290877122}
-  m_Father: {fileID: 285299653}
+  m_Father: {fileID: 262000619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -242.19995, y: 223.30005}
   m_SizeDelta: {x: 346, y: 319}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &346734258
@@ -5224,7 +5260,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 346734259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 243332798}
+        m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
+        m_MethodName: CallMenufactureItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &346734259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5302,7 +5350,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: e1af275b-f3c6-47af-b64f-5bc8243c8424
+  _sID: ce6a436c-0b20-4168-9887-33dfa3a80feb
   rectTransform: {fileID: 347471888}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -6128,7 +6176,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5939b326-6214-47a4-810f-f69ab1c0774d
+  _sID: 1899c1e4-231f-470d-9744-ee90517ed611
   rectTransform: {fileID: 409024403}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -6843,7 +6891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: d130d98b-e836-4db7-aa64-00103ad46001
+  _sID: 96a56246-61c8-414b-9570-ebd8b75273f9
   ports:
   - {fileID: 218416459}
   - {fileID: 1647992814}
@@ -7223,7 +7271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 034a837a-9b09-4c1c-b13b-05bbf78a7d03
+  _sID: b8523bbb-b062-4126-a110-91db443d3cc3
   ports:
   - {fileID: 1010625298}
   - {fileID: 1272577137}
@@ -8815,10 +8863,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: b64e440b-dadf-4421-8dad-00bc306a70f6
+  _sID: d98525e3-5d29-41ca-bde8-9453898fbb3e
   ports:
-  - {fileID: 1281014954}
   - {fileID: 1435516894}
+  - {fileID: 1281014954}
   rectTransform: {fileID: 550941649}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -9068,7 +9116,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 285299653}
+    m_TransformParent: {fileID: 262000619}
     m_Modifications:
     - target: {fileID: 2167295575650056594, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -9109,12 +9157,12 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -484.3999
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -446.6001
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -9139,17 +9187,17 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -9274,10 +9322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 738ee2cf-d6bc-4b36-9626-091862eae9b2
+  _sID: 4e3578ae-ef53-43af-98b7-0fee0df3f49b
   ports:
-  - {fileID: 1829457844}
   - {fileID: 1015270230}
+  - {fileID: 1829457844}
   rectTransform: {fileID: 603146421}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -12044,7 +12092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 93198b76-ec3b-4876-ae94-b93d61a2d6af
+  _sID: ae9efbd2-a034-45a8-afda-3bbc499b3c21
   ports:
   - {fileID: 1252346887}
   - {fileID: 1444796207}
@@ -12527,11 +12575,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 6118b693-9da7-457d-b424-4fd6bf168c6b
+  _sID: c0d7f964-c34d-4ef9-9a0a-43b2698fdd06
   ports:
-  - {fileID: 948589930}
-  - {fileID: 80795954}
   - {fileID: 347471886}
+  - {fileID: 80795954}
+  - {fileID: 948589930}
   rectTransform: {fileID: 912262056}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -13275,7 +13323,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 83b61275-4cc1-4430-9a74-6bf7280f77a0
+  _sID: fe3b38dc-6927-46e9-9c83-ae6722bee473
   rectTransform: {fileID: 940414700}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -13356,7 +13404,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 8d024d86-9763-4e57-957e-8b5318495d8c
+  _sID: a9c62599-8b2f-4dc4-9a1c-adf75ad2a249
   rectTransform: {fileID: 948589929}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -13749,7 +13797,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6d79f0ae-36cb-41bc-b5a6-d836a07b0deb
+  _sID: 39ec9019-f165-40b4-a313-c7d391bea865
   rectTransform: {fileID: 993701369}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -14076,7 +14124,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5c53d713-0ef7-4d2e-a22d-230a687b4743
+  _sID: 413714e6-2764-4990-b061-fdf56fc2aaf2
   rectTransform: {fileID: 1010625299}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -14233,7 +14281,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: d9f043bf-5f18-480e-828f-592173123e22
+  _sID: 4c5c934a-6763-4665-9f9e-ccdf7ef2758c
   rectTransform: {fileID: 1015270228}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -14888,7 +14936,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 30775e69-918d-48c8-86d8-fce266011ef4
+  _sID: 0d7be7a7-a62f-47a1-bb30-bce2db7b90d2
   rectTransform: {fileID: 1058343284}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -15072,7 +15120,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: fd1882c2-ab5c-4e59-a034-9c876cc8c933
+  _sID: c7a5de64-f7db-4c0a-bc87-0e1924abfe34
   rectTransform: {fileID: 1090710313}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -16914,10 +16962,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 0f19d30c-b632-43e4-9884-f3fe1f373000
+  _sID: e0b9e899-2acc-459b-b41c-971d81b403c7
   ports:
-  - {fileID: 1090710315}
   - {fileID: 1295323360}
+  - {fileID: 1090710315}
   rectTransform: {fileID: 1211947051}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -17556,7 +17604,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b0c66ee4-18e2-454a-b95e-324b251addbf
+  _sID: 27086e7c-4d0f-4f81-847a-e5e042b86318
   rectTransform: {fileID: 1252346886}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -17717,7 +17765,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -18080,7 +18128,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6606200e-eeb0-4661-ada5-4db1f364c05b
+  _sID: cf3b2cce-e1e9-42b0-949d-d20625324c74
   rectTransform: {fileID: 1272577136}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -18614,7 +18662,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278961452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -757.4414}
+  m_LocalPosition: {x: 0, y: 0, z: -259.79175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18622,7 +18670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.039413, y: 1811.1243}
+  m_AnchoredPosition: {x: -830.8617, y: 570.31573}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1279776916
@@ -18694,7 +18742,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: e5471dfe-e40d-426e-a1f8-70629e756395
+  _sID: bf5dc792-2139-48b3-9b70-68ed8c7ae448
   rectTransform: {fileID: 1279776917}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -18753,7 +18801,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 36debf85-14ca-49d1-a70b-c50e16c8d1a7
+  _sID: 73aa7535-3290-48d5-b618-cae06a79fead
   rectTransform: {fileID: 1281014956}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -19124,7 +19172,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 3842cb2d-d9fd-49cf-b688-7710c34a779d
+  _sID: bfdbf2d2-f533-4925-b5d8-e04a0a90920c
   rectTransform: {fileID: 1295323358}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -21826,7 +21874,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9399d00a-d73e-42a1-9d63-a674a4cbc56b
+  _sID: 692c15ec-1796-44f1-ae2c-d1fa318b1f41
   rectTransform: {fileID: 1435516896}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -22087,7 +22135,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 4a9c8c1c-018d-4942-b36c-214c7ac9a7dc
+  _sID: 97e3f427-0c3f-4541-b5b0-b5ce695e62a6
   rectTransform: {fileID: 1444796208}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -25249,7 +25297,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 285299653}
+    m_TransformParent: {fileID: 262000619}
     m_Modifications:
     - target: {fileID: 2167295575650056594, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -25290,12 +25338,12 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -484.3999
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -446.6001
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -25320,17 +25368,17 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -25453,7 +25501,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 429fa83e-557c-457e-bf55-0ef2af9f8229
+  _sID: 5956e787-29bd-4642-bb21-4161f3b9330d
   rectTransform: {fileID: 1647992812}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -25931,7 +25979,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 285299653}
+    m_TransformParent: {fileID: 262000619}
     m_Modifications:
     - target: {fileID: 2167295575650056594, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -25972,12 +26020,12 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -484.3999
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -446.6001
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -26002,17 +26050,17 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -27933,7 +27981,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 870bb55f-4f40-43a6-8ca2-a23094a2a8af
+  _sID: 1969a367-5eb2-4b98-9c00-b0261be88011
   rectTransform: {fileID: 1829457842}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -28848,7 +28896,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: bcaced20-02c2-4c94-a3f6-53b1ac3b8270
+  _sID: 6ece14ac-15e5-422f-b14b-6a056a485d55
   rectTransform: {fileID: 1873993172}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -30281,23 +30329,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243332798}
         m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
-        m_MethodName: EnableFuelMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 243332798}
-        m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
         m_MethodName: EnableManufactureItem
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 262000618}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -30709,7 +30745,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: cd50b4da-eec1-40b3-81e3-524978142e5a
+  _sID: 1ee9f9b6-1401-4ab5-afb4-f6fa21f47cf5
   rectTransform: {fileID: 2024514126}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -31941,7 +31977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 2b526804-7847-403a-89dc-d3726158002a
+  _sID: 79e4d50b-8ce3-467b-a977-397f1fb8fffd
   ports:
   - {fileID: 1873993174}
   - {fileID: 1058343286}
@@ -32374,8 +32410,48 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 285299653}
+    m_TransformParent: {fileID: 262000619}
     m_Modifications:
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243332798}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitMenufacture
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager_BattleMode, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 262000618}
+    - target: {fileID: 5184412243183881596, guid: f2120e6c865da334ab7dea9a90d3f8f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
       propertyPath: m_Pivot.x
@@ -32439,12 +32515,12 @@ PrefabInstance:
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
@@ -32454,12 +32530,12 @@ PrefabInstance:
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 242.19995
       objectReference: {fileID: 0}
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -223.30005
       objectReference: {fileID: 0}
     - target: {fileID: 6055987120918277770, guid: f2120e6c865da334ab7dea9a90d3f8f0,
         type: 3}
@@ -32492,7 +32568,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 285299653}
+    m_TransformParent: {fileID: 262000619}
     m_Modifications:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -32527,12 +32603,12 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -484.3999
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -446.6001
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
@@ -32557,17 +32633,17 @@ PrefabInstance:
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3764135258253369439, guid: 0dc6a380534057c479d317a753d81e70,
         type: 3}
