@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b3fd74a0a2c20469b6fabd2abf0829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center_Star: {x: -3, y: 3, z: 0}
+  center_Star: {x: -34, y: 3, z: 0}
   semiMajorAxis: 3
   eccentricity: 0.8
-  orbitalSpeed: 0.05
+  orbitalSpeed: 0.5
   acceleration: 0
   Rotation_Tangent: 0
   pointCounts: 50

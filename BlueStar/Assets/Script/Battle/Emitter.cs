@@ -14,6 +14,7 @@ public class Emitter : MonoBehaviour,Aircraft
     public float semiMajorAxis = 5f; // 半长轴
     public float eccentricity = 0.3f; // 偏心率
     public float orbitalSpeed = 0.8f; // 轨道速度（决定飞船在轨道上的速度）
+    private float initialSpeed;
     public float acceleration = 0f; // 外部加速度，决定飞船的加速（正值表示加速，负值表示减速）
     public float Rotation_Tangent=0f;//飞船相对于切线的旋转角度
     private SpaceShip sp;
@@ -24,6 +25,7 @@ public class Emitter : MonoBehaviour,Aircraft
     private LineRenderer lineRenderer;
     private int timer=0;
     private float a;
+    private float a_initial;
  
     public List<GameObject> enemies;
     public float minDistance = 1f;
@@ -42,11 +44,13 @@ public class Emitter : MonoBehaviour,Aircraft
         center_Star = sp.center_Star;
         semiMajorAxis = sp.semiMajorAxis+0.01f;
         orbitalSpeed = sp.orbitalSpeed + 0.01f;
+        initialSpeed = orbitalSpeed;
         orbit.InitializeParameter(this.transform.position,center_Star,sp.orbitalSpeed,acceleration,sp.eccentricity,Rotation_Tangent,semiMajorAxis);
         points = new List<Vector3>();
         linePrefab = Resources.Load<GameObject>("Prefabs/Line/Line");
         bulletPrefab=Resources.Load<GameObject>("Prefabs/Bullet/Type_1/Bullet_Type1");
         a = semiMajorAxis;
+        a_initial = a;
     }
 
     private void OnEnable()
@@ -67,6 +71,9 @@ public class Emitter : MonoBehaviour,Aircraft
         lineRenderer.positionCount = pointCounts;
         lineRenderer.SetPositions(points.ToArray());
         
+        orbitalSpeed=a/a_initial*initialSpeed;
+        
+
 
 
 
@@ -74,7 +81,8 @@ public class Emitter : MonoBehaviour,Aircraft
 
     public void onMove()
     {
-        acceleration = DataManager.emitterAcceleration;
+        //这句先暂时注释掉，改成由键盘输入赋值
+        //acceleration = DataManager.emitterAcceleration;
         var (newPosition,newCenter, newAcceleration, newTrueAnomaly, newSemiMajorAxis,newOrbitalSpeed) = orbit.UpdatePosition(this.transform.position);
         orbit.UpdateParameter(center_Star,orbitalSpeed,acceleration,eccentricity,Rotation_Tangent,newSemiMajorAxis,newTrueAnomaly);//这个只是给orbit里的方法使用
         //这个物体本身的各个参数还要刷新一遍

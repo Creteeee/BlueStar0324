@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4863733720671605122}
+  - component: {fileID: 6197264536673787435}
   m_Layer: 0
   m_Name: Emitter_1_Orbit
   m_TagString: Untagged
@@ -34,6 +35,29 @@ Transform:
   - {fileID: 7233565348049364385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6197264536673787435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873783452725241248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b3fd74a0a2c20469b6fabd2abf0829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center_Star: {x: -3, y: 3, z: 0}
+  semiMajorAxis: 3
+  eccentricity: 0.8
+  orbitalSpeed: 0.15
+  acceleration: 0
+  Rotation_Tangent: 0
+  pointCounts: 50
+  enemies: []
+  minDistance: 2
+  bulletPrefab: {fileID: 0}
+  TangentDir: {x: 0, y: 0, z: 0}
 --- !u!1 &4646241819711277292
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 7271198814604456298, guid: 72c64cbd523e5bf4489cd1c8e48b66a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 7271198814604456298, guid: 72c64cbd523e5bf4489cd1c8e48b66a3,
         type: 3}
@@ -535,7 +559,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8ab0f3f04558ad747855858a8af4d38f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ab0f3f04558ad747855858a8af4d38f,
         type: 3}

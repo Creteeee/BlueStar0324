@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
+using Slider = UnityEngine.UI.Slider;
 
 
 public class UIManager_BattleMode : MonoBehaviour
@@ -27,6 +28,7 @@ public class UIManager_BattleMode : MonoBehaviour
     List<MeshRenderer> CelestialRenderers=new List<MeshRenderer>();
 
     private GameObject Orbit_Camera;
+    public bool isOrbitCameraActivated = false;
     public float speed = 0.1f;
     
     //先这么写 持续加速
@@ -61,9 +63,16 @@ public class UIManager_BattleMode : MonoBehaviour
     public bool isEmitterSlotsAvailable = true;
     public static int ActivatedSlotIndex = 0;
     public GameObject LaunchButton;//发射的按钮，更新slot的UI时判断是否隐藏它
+    public TMP_Text EmitterName;
+    public Slider HealthBar;
+    
     
     //预览的模型们
     public GameObject[] prelookModels;
+
+
+    
+    
     
     
 
@@ -124,9 +133,11 @@ public class UIManager_BattleMode : MonoBehaviour
         FuelProgress.SetActive(false);
         
         OnMenuIndexChanged += (index) => ChangeManufactureItem(index);
-                
+        EmitterName.text = "空槽位";
+        HealthBar.gameObject.SetActive(false);
+
         //MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        
+
         //注册按钮方法，告诉比较哪个生产链
     }
 
@@ -138,29 +149,38 @@ public class UIManager_BattleMode : MonoBehaviour
 
     private void Update()
     {
-        // Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition); // 从自定义相机发射射线
-        // RaycastHit hit;
-        //
-        // if (Physics.Raycast(ray, out hit,20f))
-        // {
-        //
-        //     // 如果射线击中物体，执行放大操作
-        //     if (hit.transform == leftButton.transform)
-        //     {
-        //         if (Input.GetMouseButton(0))
-        //         {
-        //             DataManager.emitterAcceleration -=speed;
-        //         }
-        //
-        //     }
-        //     else if (hit.transform == rightButton.transform)
-        //     {
-        //         if (Input.GetMouseButton(0))
-        //         {
-        //             DataManager.emitterAcceleration +=speed;
-        //         }
-        //     }
-        // }
+        //在轨道模式下，激活对于飞船的操作
+        if (isOrbitCameraActivated)
+        {
+            //发射了才能控制
+            if (emitterSlots[ActivatedSlotIndex].isLaunched && !emitterSlots[ActivatedSlotIndex].isEmpty)
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration += 0.01f;
+                    Debug.Log( emitterSlots[ActivatedSlotIndex].emitterDetails.name+"的加速度是"+emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration);
+                }
+
+                if (Input.GetKey(KeyCode.D))
+                {
+                    emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration =
+                        Mathf.Max(
+                            emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration -
+                            0.01f, -4f);
+                    Debug.Log( emitterSlots[ActivatedSlotIndex].emitterDetails.name+"的加速度是"+emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration);
+                }
+
+            }
+            
+        }
+        
+        //设置fuel的值
+        if ( emitterSlots[ActivatedSlotIndex].isLaunched)
+        {
+            HealthBar.value = emitterSlots[ActivatedSlotIndex].fuel/emitterSlots[ActivatedSlotIndex].fuelTotal;
+        }
+        
+
     }
 
     public void LaunchEmitter()
@@ -191,6 +211,7 @@ public class UIManager_BattleMode : MonoBehaviour
         CanvasSpaceBattle.GetComponent<CanvasGroup>().interactable = false;
         CanvasSpaceBattle.GetComponent<CanvasGroup>().blocksRaycasts = false;
         Orbit_Camera.SetActive(false);
+        isOrbitCameraActivated = false;
 
     }
 
@@ -210,6 +231,7 @@ public class UIManager_BattleMode : MonoBehaviour
         CanvasSpaceBattle.GetComponent<CanvasGroup>().interactable = true;
         CanvasSpaceBattle.GetComponent<CanvasGroup>().blocksRaycasts = true;
         Orbit_Camera.SetActive(true);
+        isOrbitCameraActivated = true;
     }
     
     //-----------------------实例化新的Model-----------------------
@@ -423,6 +445,7 @@ public class UIManager_BattleMode : MonoBehaviour
                 prelookModels[ManuSlotIndex].SetActive(true); // ManuSlotIndex指的是用的哪个船，i是哪个格子被激活
                 ActivatedSlotIndex = i;
                 LaunchButton.SetActive(true);
+                ActivateSlot(i);// 这里有点重复回来改改
                 break;
             }
         }
@@ -430,6 +453,7 @@ public class UIManager_BattleMode : MonoBehaviour
 
     public void NextSlot()
     {
+        InactiveSlot(ActivatedSlotIndex);
         if (ActivatedSlotIndex<emitterSlots.Length-1)
         {
             ActivatedSlotIndex += 1;
@@ -443,6 +467,7 @@ public class UIManager_BattleMode : MonoBehaviour
 
     public void PreviousSlot()
     {
+        InactiveSlot(ActivatedSlotIndex);
         if (ActivatedSlotIndex>0)
         {
             ActivatedSlotIndex -= 1;
@@ -467,8 +492,11 @@ public class UIManager_BattleMode : MonoBehaviour
             model.SetActive(false);
         }
 
-        if (!emitterSlots[ActivatedSlotIndex].isEmpty)
+        if (!emitterSlots[index].isEmpty)
         {
+            EmitterName.text = emitterSlots[ActivatedSlotIndex].emitterDetails.name;
+            HealthBar.value = 1;
+            HealthBar.gameObject.SetActive(true); 
             prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
             
             if (!emitterSlots[index].isLaunched )
@@ -476,6 +504,15 @@ public class UIManager_BattleMode : MonoBehaviour
                 LaunchButton.SetActive(true);
             }
         }
+
+        if (emitterSlots[index].isEmpty)
+        {
+            //空格子名字为空
+            EmitterName.text = "空槽位";
+            HealthBar.gameObject.SetActive(false);
+        }
+        
+        
         
         
         //判断是否发射
@@ -483,6 +520,12 @@ public class UIManager_BattleMode : MonoBehaviour
         {
             LaunchButton.SetActive(false);
         }
+        
+    }
+
+    public void InactiveSlot(int index)
+    {
+        emitterSlots[index].defaultColorSlot();
     }
     
     public EmitterDetails GetEmitterDetails(int ID)

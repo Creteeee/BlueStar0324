@@ -17,7 +17,7 @@ public class Orbit
     public float trueAnomaly=0f; // 当前真近点角
     private Vector3 position=new Vector3(0f, 0f,0f);
     public Vector3 CameraDir=new Vector3(0f, 0f,0f);
-
+    
 
     public void InitializeParameter(Vector3 pos, Vector3 centerPos, float v, float a, float e,float rotationAngle,float sMA)//初始化position和六个参数
     {

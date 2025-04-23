@@ -33,6 +33,7 @@ public class EmitterDetails
     public GameObject model_launched;
     public GameObject model_Orbit;
     public float health;
+    public float duration = 30f;
     public int bulletLeft;
     //还要加上发射子弹的类型
 }
