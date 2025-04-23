@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour,Aircraft
     public float orbitalSpeed = 0.05f; // 轨道速度（决定飞船在轨道上的速度）
     public float acceleration = 0f; // 外部加速度，决定飞船的加速（正值表示加速，负值表示减速）
     public float Rotation_Tangent=0f;//飞船相对于切线的旋转角度
+    public float blood = 4;
+    public float harm = 1;
+    
+ 
 
 
     private void OnEnable()
@@ -58,4 +62,19 @@ public class Enemy : MonoBehaviour,Aircraft
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+           this.GetComponent<BloodLine>().ReduceBlood();
+           blood -= harm;
+        }
+
+        if (blood==0)
+        {
+            Destroy(this.gameObject);
+            CleanSignals.totalKill += 1;
+        }
+        
+    }
 }

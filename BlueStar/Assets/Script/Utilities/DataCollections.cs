@@ -35,6 +35,7 @@ public class EmitterDetails
     public float health;
     public float duration = 30f;
     public int bulletLeft;
+    public GameObject bulletPrefab;
     //还要加上发射子弹的类型
 }
 

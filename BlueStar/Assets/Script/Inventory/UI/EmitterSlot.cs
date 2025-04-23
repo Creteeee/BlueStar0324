@@ -14,6 +14,7 @@ public class EmitterSlot : MonoBehaviour
     public bool isLaunched = false;//这个值注意飞船销毁时要便会false
     public GameObject Emitter_Launched;
     public GameObject SpaceShip;
+    private GameObject bulletPrefab;
     
     //飞船的状态
     public float fuelTotal;
@@ -22,6 +23,8 @@ public class EmitterSlot : MonoBehaviour
     public float fuel;
     public float bullet;
 
+    //prelook模型们，虽然这样写有点傻，但是就这样吧
+    public GameObject[] prelookModels;
 
     private void Update()
     {
@@ -49,6 +52,7 @@ public class EmitterSlot : MonoBehaviour
         bulletTotal = emitterDetails.bulletLeft;
         bullet=bulletTotal;
         duration=emitterDetails.duration;
+        bulletPrefab = emitterDetails.bulletPrefab;
     }
 
     public void ClearSlot()
@@ -56,8 +60,12 @@ public class EmitterSlot : MonoBehaviour
         slotImage.enabled = false;
         isEmpty = true;
         isLaunched = false;
+        prelookModels[emitterDetails.ID].SetActive(false);
         emitterDetails=null;
+        Destroy(Emitter_Launched.gameObject.GetComponent<Emitter>().line);
         Destroy(Emitter_Launched.gameObject);
+        UIManager_BattleMode.suggestLine.SetActive(false);
+        UIManager_BattleMode.arrowInst.SetActive(false);
         Emitter_Launched=null;
         fuelTotal = 0;
         bulletTotal = 0;
@@ -106,6 +114,19 @@ public class EmitterSlot : MonoBehaviour
             yield return null;
         }
         
+    }
+
+    public void Shoot()
+    {
+        if (bullet>0)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                GameObject obj = Instantiate(bulletPrefab, Emitter_Launched.transform.position, Quaternion.identity);
+                obj.transform.up = UIManager_BattleMode.bulletDirection;
+                bullet -= 1;
+            }
+        }
     }
     
 }

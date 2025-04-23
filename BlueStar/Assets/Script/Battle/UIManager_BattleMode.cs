@@ -69,13 +69,21 @@ public class UIManager_BattleMode : MonoBehaviour
     
     //预览的模型们
     public GameObject[] prelookModels;
+    
+    [Header("引导线")]
+    //从发射器到鼠标的导引线
+    private GameObject linePrefab;
+    public static GameObject suggestLine;
+    private LineRenderer suggestLineRenderer;
+    public GameObject arrowIcon;
+    public static GameObject arrowInst;
+    public Camera orbitCamera;
+    public static Vector3 bulletDirection;
 
-
     
     
     
     
-
     private void OnEnable()
     {
         Debug.Log("UIManager_BattleMode 已启用");
@@ -116,6 +124,12 @@ public class UIManager_BattleMode : MonoBehaviour
         ManuSuggest = Resources.Load("Prefabs/UI/ManuSuggest").GameObject();
         NotManuSuggest = Resources.Load("Prefabs/UI/NotManuSuggest").GameObject();
         LaunchButton.SetActive(false);
+        linePrefab = Resources.Load<GameObject>("Prefabs/Line/Line");
+        suggestLine = Instantiate(linePrefab);
+        suggestLineRenderer = suggestLine.GetComponent<LineRenderer>();
+        suggestLine.SetActive(false);
+        arrowInst = Instantiate(arrowIcon);
+        arrowInst.SetActive(false);
     }
 
     private void Start()
@@ -157,7 +171,7 @@ public class UIManager_BattleMode : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.A))
                 {
-                    emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration += 0.01f;
+                    emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration += 0.05f;
                     Debug.Log( emitterSlots[ActivatedSlotIndex].emitterDetails.name+"的加速度是"+emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration);
                 }
 
@@ -166,7 +180,7 @@ public class UIManager_BattleMode : MonoBehaviour
                     emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration =
                         Mathf.Max(
                             emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration -
-                            0.01f, -4f);
+                            0.05f, -4f);
                     Debug.Log( emitterSlots[ActivatedSlotIndex].emitterDetails.name+"的加速度是"+emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration);
                 }
 
@@ -178,7 +192,12 @@ public class UIManager_BattleMode : MonoBehaviour
         if ( emitterSlots[ActivatedSlotIndex].isLaunched)
         {
             HealthBar.value = emitterSlots[ActivatedSlotIndex].fuel/emitterSlots[ActivatedSlotIndex].fuelTotal;
+            DrawSuggestLine(emitterSlots[ActivatedSlotIndex].Emitter_Launched.transform.position,arrowInst,orbitCamera,suggestLineRenderer);
+            emitterSlots[ActivatedSlotIndex].Shoot();
+            
         }
+
+  
         
 
     }
@@ -190,6 +209,8 @@ public class UIManager_BattleMode : MonoBehaviour
         // Debug.Log($"我是UI层，我发射了新的Emitter");
         emitterSlots[ActivatedSlotIndex].LaunchEmitter();
         LaunchButton.SetActive(false);
+        suggestLine.SetActive(true);
+        arrowInst.SetActive(true);
         
         
     }
@@ -502,6 +523,8 @@ public class UIManager_BattleMode : MonoBehaviour
             if (!emitterSlots[index].isLaunched )
             {
                 LaunchButton.SetActive(true);
+                suggestLine.SetActive(false);
+                arrowInst.SetActive(false);
             }
         }
 
@@ -510,6 +533,8 @@ public class UIManager_BattleMode : MonoBehaviour
             //空格子名字为空
             EmitterName.text = "空槽位";
             HealthBar.gameObject.SetActive(false);
+            suggestLine.SetActive(false);
+            arrowInst.SetActive(false);
         }
         
         
@@ -519,6 +544,13 @@ public class UIManager_BattleMode : MonoBehaviour
         if (emitterSlots[index].isLaunched || emitterSlots[index].isEmpty==true)
         {
             LaunchButton.SetActive(false);
+        }
+        
+        //是否开启提示线         
+        if (emitterSlots[index].isLaunched)
+        {
+            suggestLine.SetActive(true);
+            arrowInst.SetActive(true);
         }
         
     }
@@ -532,5 +564,24 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         return emitterDataList.EmitterDataList.Find(i => i.ID == ID);
     }
+    
+    //画引导线
+    private void DrawSuggestLine(Vector3 start, GameObject arrowIcon, Camera camera, LineRenderer line)
+    {
+        Vector3 mousePos = camera.ScreenToViewportPoint(Input.mousePosition);
+        Vector3 startVS = camera.WorldToViewportPoint(start);
+        mousePos.z = startVS.z;
+        Vector3 end = (mousePos - startVS).normalized +start;
+        line.positionCount = 2;
+        line.SetPosition(0,start);
+        line.SetPosition(1,end);
+        arrowIcon.transform.position = end;
+        Vector3 arrowDirection = (mousePos - startVS).normalized;
+        bulletDirection = arrowDirection;
+        arrowIcon.transform.up = arrowDirection;
+        
+    }
+    
+    
 }
 

@@ -21,7 +21,7 @@ public class Emitter : MonoBehaviour,Aircraft
     private List<Vector3> points ;
     public int pointCounts = 50;
     private GameObject linePrefab;
-    private GameObject line;
+    public GameObject line;
     private LineRenderer lineRenderer;
     private int timer=0;
     private float a;

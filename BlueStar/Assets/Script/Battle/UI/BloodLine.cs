@@ -31,7 +31,7 @@ public class BloodLine : MonoBehaviour
         
     }
 
-    void ReduceBlood()
+    public void ReduceBlood()
     {
         RectTransform rectTransform = bloodline.GetComponent<RectTransform>();
 

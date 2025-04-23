@@ -6,32 +6,22 @@ using UnityEngine;
 public class Bullet_Emitter : MonoBehaviour
 {
     public float speed = 0.08f;
-    public Vector3 Direction = new Vector3(1,1,0);
-    public List<GameObject> enemies;
+    public float lifetime = 1.5f;
+    private Vector3 dir;
+
 
     private void Start()
     {
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-        foreach (GameObject obj in allObjects)
-        {
-            string nameToSearch = "Enemy";  
-            if (obj.name.Contains(nameToSearch))
-            {
-                enemies.Add(obj);
-            }
-        }
-        
-        
+        dir = UIManager_BattleMode.bulletDirection;
     }
 
     private void Update()
     {
+        this.transform.position += speed * dir;
+        Destroy(this.gameObject,lifetime);
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
 
-    }
 }
 
