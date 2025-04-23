@@ -410,7 +410,11 @@ public class UIManager_BattleMode : MonoBehaviour
             {
                 emitterSlots[i].UpadateSlot(GetEmitterDetails(EmitterID));
                 emitterSlots[i].HighLightSlot();
-                prelookModels[i].SetActive(true); // 使用索引 i
+                foreach (GameObject model in prelookModels)
+                {
+                    model.SetActive(false);
+                }
+                prelookModels[ManuSlotIndex].SetActive(true); // ManuSlotIndex指的是用的哪个船，i是哪个格子被激活
                 ActivatedSlotIndex = i;
                 break;
             }
@@ -434,7 +438,7 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         if (ActivatedSlotIndex>0)
         {
-            ActivatedSlotIndex -= 0;
+            ActivatedSlotIndex -= 1;
         }
         else
         {
@@ -455,7 +459,17 @@ public class UIManager_BattleMode : MonoBehaviour
         {
             model.SetActive(false);
         }
-        prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
+
+        if (emitterSlots[ActivatedSlotIndex].isEmpty)
+        {
+            
+        }
+
+        if (!emitterSlots[ActivatedSlotIndex].isEmpty)
+        {
+            prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
+        }
+        
     }
     
     public EmitterDetails GetEmitterDetails(int ID)
