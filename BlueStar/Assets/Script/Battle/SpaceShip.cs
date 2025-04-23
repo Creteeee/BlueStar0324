@@ -20,7 +20,7 @@ public class SpaceShip : MonoBehaviour,Aircraft
     private GameObject line;
     private LineRenderer lineRenderer;
     public List<GameObject> EmitterList { get;  set; } = new List<GameObject>();
-    public GameObject spaceshipModel;
+    public GameObject spaceshipModelspaceshipModel;
     public float anglebbias = -25f;
 
     private void OnEnable()
@@ -40,7 +40,6 @@ public class SpaceShip : MonoBehaviour,Aircraft
         orbit.InitializeParameter(this.transform.position,center_Star,orbitalSpeed,acceleration,eccentricity,Rotation_Tangent,semiMajorAxis);
         linePrefab = Resources.Load<GameObject>("Prefabs/Line/Line");
         line=Instantiate(linePrefab);
-        spaceshipModel = transform.Find("Spaceship1").gameObject;
         this.transform.up =new Vector3(Mathf.Cos(orbit.trueAnomaly),Mathf.Sin(orbit.trueAnomaly),0);
 
 

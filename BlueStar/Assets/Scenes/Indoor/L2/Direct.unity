@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 190d33be-e6bc-4a6f-928c-377ad41173ab
+  _sID: 49acd6c1-f678-447d-b7bf-4d76022b1639
   ports:
   - {fileID: 154895860}
   - {fileID: 940414702}
@@ -690,10 +690,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 9da718ad-6cee-4773-958d-3379116f503a
+  _sID: 4c4a54c8-8f4f-48d5-9b4c-6d13d51ba0b1
   ports:
-  - {fileID: 92609310}
   - {fileID: 328601399}
+  - {fileID: 92609310}
   rectTransform: {fileID: 68999419}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -813,10 +813,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: c8cf3ef9-37fe-4b9b-9226-4f67ebd66747
+  _sID: 24f73185-df2b-4faa-97cc-a1deda1ec861
   ports:
-  - {fileID: 1279776919}
   - {fileID: 409024405}
+  - {fileID: 1279776919}
   rectTransform: {fileID: 73232714}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -942,7 +942,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 2579dce9-5af4-48a1-9c78-70b7b3a5f0ed
+  _sID: 628c5616-fd7f-4bc1-abf6-98b100575c07
   rectTransform: {fileID: 80795956}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -1077,7 +1077,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243332798}
         m_TargetAssemblyTypeName: UIManager_BattleMode, Assembly-CSharp
-        m_MethodName: AddEmitter
+        m_MethodName: LaunchEmitter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1370,7 +1370,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: de81887c-d993-49d8-8028-8ac6e6f7d4d8
+  _sID: ea2d9c06-b48b-4772-a5e3-fcaee9acf192
   rectTransform: {fileID: 92609308}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -1438,14 +1438,14 @@ MonoBehaviour:
   - {fileID: 1211947050}
   - {fileID: 2127679746}
   localConnections:
-  - _id: Connection (Node - Node)
+  - _id: Connection (Node (1) - Node)
     _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
     graphManager: {fileID: 94015312}
-    port0: {fileID: 1010625298}
-    port1: {fileID: 80795954}
+    port0: {fileID: 1058343286}
+    port1: {fileID: 1272577137}
     NodePair:
-      Node0: 1
-      Node1: 8
+      Node0: 3
+      Node1: 1
     selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
     hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
     defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
@@ -1470,26 +1470,83 @@ MonoBehaviour:
       dashDistance: 5
       color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
       points:
-      - {x: -575.5573, y: 505.00125}
-      - {x: -542.2222, y: 505.00125}
-      - {x: -535.8626, y: 504.43973}
-      - {x: -530.1177, y: 502.75494}
-      - {x: -524.9875, y: 499.94702}
-      - {x: -520.4721, y: 496.01596}
-      - {x: -490.38705, y: 450.03955}
-      - {x: -486.4867, y: 444.9857}
-      - {x: -481.97156, y: 441.0549}
-      - {x: -476.84174, y: 438.2472}
-      - {x: -471.09726, y: 436.56256}
-      - {x: -431.40527, y: 436.001}
+      - {x: -1182.6277, y: 439.2185}
+      - {x: -1149.7291, y: 439.2185}
+      - {x: -1143.9368, y: 439.86368}
+      - {x: -1139.7184, y: 441.79916}
+      - {x: -1137.0746, y: 445.02496}
+      - {x: -1136.0051, y: 449.5411}
+      - {x: -1143.1809, y: 488.6595}
+      - {x: -1143.6925, y: 494.54257}
+      - {x: -1142.6088, y: 499.11823}
+      - {x: -1139.93, y: 502.38654}
+      - {x: -1135.6562, y: 504.3476}
+      - {x: -1096.4548, y: 505.00125}
       lineStyle: 0
-      length: 176.38702
+      length: 150.6933
       animation:
         isActive: 1
         pointsDistance: 35
         size: 10
         color: {r: 1, g: 1, b: 1, a: 1}
-        shape: 2
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node (2) - Node)
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 1295323360}
+    port1: {fileID: 1252346887}
+    NodePair:
+      Node0: 4
+      Node1: 6
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: -1246.7556, y: 121.00058}
+      - {x: -1213.4213, y: 121.000595}
+      - {x: -1207.1602, y: 120.38715}
+      - {x: -1201.7102, y: 118.54678}
+      - {x: -1197.0715, y: 115.47951}
+      - {x: -1193.2441, y: 111.18533}
+      - {x: -1184.1313, y: 91.33702}
+      - {x: -1181.1154, y: 85.8159}
+      - {x: -1177.288, y: 81.5217}
+      - {x: -1172.6492, y: 78.45441}
+      - {x: -1167.1992, y: 76.61404}
+      - {x: -1127.6035, y: 76.00057}
+      lineStyle: 0
+      length: 141.48882
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
         speed: 20
     _enableDrag: 1
     _enableHover: 1
@@ -1499,7 +1556,7 @@ MonoBehaviour:
     _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
     graphManager: {fileID: 94015312}
     port0: {fileID: 1444796207}
-    port1: {fileID: 948589930}
+    port1: {fileID: 80795954}
     NodePair:
       Node0: 6
       Node1: 8
@@ -1529,24 +1586,195 @@ MonoBehaviour:
       points:
       - {x: -604.4056, y: 76.00057}
       - {x: -571.0711, y: 76.00058}
-      - {x: -564.4223, y: 76.15482}
-      - {x: -557.8097, y: 76.617546}
-      - {x: -551.2332, y: 77.38875}
-      - {x: -544.693, y: 78.468445}
-      - {x: -144.22049, y: 173.54462}
-      - {x: -138.38327, y: 175.59943}
-      - {x: -133.84322, y: 178.67908}
-      - {x: -130.6003, y: 182.78358}
-      - {x: -128.65457, y: 187.91296}
-      - {x: -128.00598, y: 227.40056}
+      - {x: -564.9384, y: 76.65397}
+      - {x: -559.87415, y: 78.61415}
+      - {x: -555.8782, y: 81.8811}
+      - {x: -552.9507, y: 86.45485}
+      - {x: -484.71655, y: 419.66705}
+      - {x: -482.8576, y: 425.5473}
+      - {x: -479.93018, y: 430.1208}
+      - {x: -475.93445, y: 433.38757}
+      - {x: -470.87042, y: 435.34766}
+      - {x: -431.40527, y: 436.001}
       lineStyle: 0
-      length: 533.3523
+      length: 457.31006
       animation:
         isActive: 1
         pointsDistance: 35
         size: 10
         color: {r: 1, g: 1, b: 1, a: 1}
-        shape: 2
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node - Node (5))
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 1010625298}
+    port1: {fileID: 92609310}
+    NodePair:
+      Node0: 1
+      Node1: 9
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: -575.5573, y: 505.00125}
+      - {x: -542.2222, y: 505.00125}
+      - {x: -536.1961, y: 504.3351}
+      - {x: -531.45166, y: 502.33646}
+      - {x: -527.9889, y: 499.00543}
+      - {x: -525.80786, y: 494.34207}
+      - {x: -504.04907, y: -49.3455}
+      - {x: -503.14987, y: -55.341007}
+      - {x: -500.96893, y: -60.004173}
+      - {x: -497.50632, y: -63.335007}
+      - {x: -492.76218, y: -65.3335}
+      - {x: -453.4029, y: -65.99967}
+      lineStyle: 0
+      length: 659.14996
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node (5) - Node (7))
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 328601399}
+    port1: {fileID: 1647992814}
+    NodePair:
+      Node0: 9
+      Node1: 11
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: 91.397285, y: -65.99967}
+      - {x: 124.73071, y: -65.999664}
+      - {x: 130.9711, y: -65.37784}
+      - {x: 136.35884, y: -63.51234}
+      - {x: 140.89398, y: -60.40318}
+      - {x: 144.5765, y: -56.05036}
+      - {x: 332.13446, y: 427.45532}
+      - {x: 334.96436, y: 433.05176}
+      - {x: 338.64682, y: 437.40454}
+      - {x: 343.1819, y: 440.51364}
+      - {x: 348.5696, y: 442.37915}
+      - {x: 388.14297, y: 443.00095}
+      lineStyle: 0
+      length: 637.86694
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node - Node (7))
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 347471886}
+    port1: {fileID: 1647992814}
+    NodePair:
+      Node0: 8
+      Node1: 11
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: 175.39902, y: 436.001}
+      - {x: 208.73181, y: 436.001}
+      - {x: 215.3971, y: 436.04233}
+      - {x: 222.05981, y: 436.16626}
+      - {x: 228.71996, y: 436.3728}
+      - {x: 235.37756, y: 436.662}
+      - {x: 321.50888, y: 441.96817}
+      - {x: 328.16397, y: 442.34}
+      - {x: 334.82162, y: 442.62918}
+      - {x: 341.48178, y: 442.8357}
+      - {x: 348.1446, y: 442.95966}
+      - {x: 388.14297, y: 443.00095}
+      lineStyle: 0
+      length: 212.93906
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
         speed: 20
     _enableDrag: 1
     _enableHover: 1
@@ -1560,7 +1788,7 @@ MonoBehaviour:
       type: 3}
     exclusiveOnDragCanvas: {fileID: 0}
     useLegacyDragMethod: 0
-    position: {x: -38.286297, y: 14.775939, z: 13.052713}
+    position: {x: -49.085022, y: 11.346616, z: 14.42811}
   dragSelection:
     customRenderer: {fileID: 0}
     line:
@@ -2518,7 +2746,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 4f4f5e17-44c5-40a6-9ea5-4341f95b9572
+  _sID: 47984752-a8a4-4ac6-adb5-e6939da6d964
   rectTransform: {fileID: 154895858}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -3326,7 +3554,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5eaf4710-b473-478f-b0ff-f4ababde3133
+  _sID: 8f14eaf4-24cb-40f9-8da6-fb490f17235b
   rectTransform: {fileID: 218416457}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -3403,7 +3631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3455,7 +3683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 2edce14d-9ee7-4d30-87c0-a7488e3b84ff
+  _sID: 5c8e6314-bd8a-48b1-8499-4bd17be38d37
   ports:
   - {fileID: 2024514128}
   - {fileID: 993701371}
@@ -3646,6 +3874,8 @@ MonoBehaviour:
     health: 0
     bulletLeft: 0
   isLaunched: 0
+  Emitter_Launched: {fileID: 0}
+  SpaceShip: {fileID: 430796435}
 --- !u!1 &243332795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3720,6 +3950,7 @@ MonoBehaviour:
   - {fileID: 569068013}
   - {fileID: 1796165975}
   isEmitterSlotsAvailable: 1
+  LaunchButton: {fileID: 84284692}
   prelookModels:
   - {fileID: 35498604}
   - {fileID: 480225322}
@@ -4497,7 +4728,7 @@ PrefabInstance:
     - target: {fileID: 1164540408507258433, guid: 6fec59a388b2c964e9a062c21d4308e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.630001
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 1164540408507258433, guid: 6fec59a388b2c964e9a062c21d4308e8,
         type: 3}
@@ -4557,7 +4788,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6294491876360983727, guid: 6fec59a388b2c964e9a062c21d4308e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2016691099}
   m_SourcePrefab: {fileID: 100100000, guid: 6fec59a388b2c964e9a062c21d4308e8, type: 3}
 --- !u!1 &301584962
 GameObject:
@@ -5330,7 +5565,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 3df7dbac-49c9-45a5-a10a-bfcdb5c2ee9d
+  _sID: 5bccfc86-f67f-4f93-be9c-a726b43d7999
   rectTransform: {fileID: 328601397}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -5657,7 +5892,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9257119a-60a1-43b0-8cd7-cdf96f65b630
+  _sID: 91335738-56a6-4894-971b-539b89a5f500
   rectTransform: {fileID: 347471888}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -6504,7 +6739,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6f789191-b754-4d8c-9231-3c186e6fd1d2
+  _sID: a9b5a1d5-76df-47e3-b54f-12f4de57c13f
   rectTransform: {fileID: 409024403}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -6846,7 +7081,7 @@ MonoBehaviour:
   acceleration: 0
   Rotation_Tangent: 0
   pointCounts: 100
-  spaceshipModel: {fileID: 0}
+  spaceshipModelspaceshipModel: {fileID: 0}
   anglebbias: 15
 --- !u!1 &449011696
 GameObject:
@@ -7091,10 +7326,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: dc532ff4-1789-4262-90e8-6b13ae8ad680
+  _sID: eb41aa56-9cd5-4de9-a6fb-01465a3d32d8
   ports:
-  - {fileID: 1647992814}
   - {fileID: 218416459}
+  - {fileID: 1647992814}
   rectTransform: {fileID: 460265041}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -7471,7 +7706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: ca935b23-8a12-46f3-8a0e-501835b73286
+  _sID: c306fab4-a909-423e-aec2-786351529dbb
   ports:
   - {fileID: 1272577137}
   - {fileID: 1010625298}
@@ -8936,10 +9171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 060c8a6a-ac58-48d3-946f-f1d2c84576d3
+  _sID: 9969a58d-8f8e-4488-9dbb-7c2cde3cce69
   ports:
-  - {fileID: 1435516894}
   - {fileID: 1281014954}
+  - {fileID: 1435516894}
   rectTransform: {fileID: 550941649}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -9144,6 +9379,8 @@ MonoBehaviour:
     health: 0
     bulletLeft: 0
   isLaunched: 0
+  Emitter_Launched: {fileID: 0}
+  SpaceShip: {fileID: 430796435}
 --- !u!1 &577301691
 GameObject:
   m_ObjectHideFlags: 0
@@ -9565,7 +9802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: b9eda2d3-18f5-4614-92e4-9af06a61dccf
+  _sID: 65fa292a-c651-48b8-b103-bd26d73c2ab5
   ports:
   - {fileID: 1015270230}
   - {fileID: 1829457844}
@@ -10237,7 +10474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10942,7 +11179,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5699997347662871209, guid: 7e623a5a1f5ccf74781fe80d28068508,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855685016}
   m_SourcePrefab: {fileID: 100100000, guid: 7e623a5a1f5ccf74781fe80d28068508, type: 3}
 --- !u!1 &676677922
 GameObject:
@@ -12131,7 +12372,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8250746157763139658, guid: b106b06be37508249b1a422ffea967b3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260123352}
   m_SourcePrefab: {fileID: 100100000, guid: b106b06be37508249b1a422ffea967b3, type: 3}
 --- !u!95 &827978314 stripped
 Animator:
@@ -12568,7 +12813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -12695,10 +12940,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: f82844e8-a394-4df9-a692-016432b86390
+  _sID: 292212da-8fd6-4e32-a884-0b1c31664ce2
   ports:
-  - {fileID: 1444796207}
   - {fileID: 1252346887}
+  - {fileID: 1444796207}
   rectTransform: {fileID: 871714117}
   graphManager: {fileID: 94015312}
   enableSelfConnection: 1
@@ -13088,7 +13333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 90755780-caa3-4748-b4c6-e4bc79c44ad6
+  _sID: 22295916-56f9-4c0e-ad51-e4d8056e30d4
   ports:
   - {fileID: 347471886}
   - {fileID: 948589930}
@@ -13838,7 +14083,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5a17d077-bea1-4481-a95d-eb609663b33b
+  _sID: 3a837d83-9d95-43b0-b3a4-994d4f06b9e2
   rectTransform: {fileID: 940414700}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -13919,7 +14164,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 8e9e6682-176e-4825-987e-33b94296d04a
+  _sID: a2bc74ca-5280-4b94-85ee-c82c9c8cc018
   rectTransform: {fileID: 948589929}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -14318,7 +14563,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 385eec80-1f6e-4f5a-9744-eb8928540280
+  _sID: be387a7a-407a-4b11-af1f-f9dd067dbb78
   rectTransform: {fileID: 993701369}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -14780,7 +15025,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6d9799ba-86b5-4da8-9b53-4b9ad5ac9b95
+  _sID: b4a6a404-6f82-49bb-a0b4-c66ec04ff3c2
   rectTransform: {fileID: 1010625299}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -14937,7 +15182,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: a194e6f4-b8e9-492d-8539-66639a58a93b
+  _sID: 3551a62c-dba2-40e7-898a-f99f25455f9e
   rectTransform: {fileID: 1015270228}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -15148,7 +15393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -15592,7 +15837,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 25f74461-7d2e-48b6-a7b0-0ffc2e161e7b
+  _sID: 2759a9b8-7bf3-4b8a-81f0-e1b385f44e19
   rectTransform: {fileID: 1058343284}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -15776,7 +16021,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 06af7d8b-ad3f-4f8c-b478-5159bb0a042a
+  _sID: 3e0eb655-434b-4ad3-a74c-4c725cf18f43
   rectTransform: {fileID: 1090710313}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -15867,7 +16112,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1234558574429603365, guid: 2781f98b86b62d14dbc21d32f106fbf1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1377440927}
   m_SourcePrefab: {fileID: 100100000, guid: 2781f98b86b62d14dbc21d32f106fbf1, type: 3}
 --- !u!1 &1098123221
 GameObject:
@@ -17766,7 +18015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 57842291-ac82-46b7-8ceb-11fff4bb5467
+  _sID: 25fd7003-1b77-4d8f-ab64-bc228420ba51
   ports:
   - {fileID: 1295323360}
   - {fileID: 1090710315}
@@ -18292,7 +18541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -18420,7 +18669,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b52c6600-e42d-43f5-977f-3d1b25b97695
+  _sID: 5208668f-ea68-45fc-ad34-619aaeb44ffd
   rectTransform: {fileID: 1252346886}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -18486,7 +18735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -18677,6 +18926,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 827458739}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260123352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260123351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5311fe9d9959a848b64bd267f6f6ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: -30
+  rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &1268323298
 GameObject:
   m_ObjectHideFlags: 0
@@ -18738,14 +19001,14 @@ MonoBehaviour:
   - {fileID: 2127679746}
   uiManager: {fileID: 0}
   _connections:
-  - _id: Connection (Node - Node)
+  - _id: Connection (Node (1) - Node)
     _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
     graphManager: {fileID: 94015312}
-    port0: {fileID: 1010625298}
-    port1: {fileID: 80795954}
+    port0: {fileID: 1058343286}
+    port1: {fileID: 1272577137}
     NodePair:
-      Node0: 1
-      Node1: 8
+      Node0: 3
+      Node1: 1
     selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
     hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
     defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
@@ -18770,26 +19033,83 @@ MonoBehaviour:
       dashDistance: 5
       color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
       points:
-      - {x: -575.5573, y: 505.00125}
-      - {x: -542.2222, y: 505.00125}
-      - {x: -535.8626, y: 504.43973}
-      - {x: -530.1177, y: 502.75494}
-      - {x: -524.9875, y: 499.94702}
-      - {x: -520.4721, y: 496.01596}
-      - {x: -490.38705, y: 450.03955}
-      - {x: -486.4867, y: 444.9857}
-      - {x: -481.97156, y: 441.0549}
-      - {x: -476.84174, y: 438.2472}
-      - {x: -471.09726, y: 436.56256}
-      - {x: -431.40527, y: 436.001}
+      - {x: -1182.6277, y: 439.2185}
+      - {x: -1149.7291, y: 439.2185}
+      - {x: -1143.9368, y: 439.86368}
+      - {x: -1139.7184, y: 441.79916}
+      - {x: -1137.0746, y: 445.02496}
+      - {x: -1136.0051, y: 449.5411}
+      - {x: -1143.1809, y: 488.6595}
+      - {x: -1143.6925, y: 494.54257}
+      - {x: -1142.6088, y: 499.11823}
+      - {x: -1139.93, y: 502.38654}
+      - {x: -1135.6562, y: 504.3476}
+      - {x: -1096.4548, y: 505.00125}
       lineStyle: 0
-      length: 176.38702
+      length: 150.6933
       animation:
         isActive: 1
         pointsDistance: 35
         size: 10
         color: {r: 1, g: 1, b: 1, a: 1}
-        shape: 2
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node (2) - Node)
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 1295323360}
+    port1: {fileID: 1252346887}
+    NodePair:
+      Node0: 4
+      Node1: 6
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: -1246.7556, y: 121.00058}
+      - {x: -1213.4213, y: 121.000595}
+      - {x: -1207.1602, y: 120.38715}
+      - {x: -1201.7102, y: 118.54678}
+      - {x: -1197.0715, y: 115.47951}
+      - {x: -1193.2441, y: 111.18533}
+      - {x: -1184.1313, y: 91.33702}
+      - {x: -1181.1154, y: 85.8159}
+      - {x: -1177.288, y: 81.5217}
+      - {x: -1172.6492, y: 78.45441}
+      - {x: -1167.1992, y: 76.61404}
+      - {x: -1127.6035, y: 76.00057}
+      lineStyle: 0
+      length: 141.48882
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
         speed: 20
     _enableDrag: 1
     _enableHover: 1
@@ -18799,7 +19119,7 @@ MonoBehaviour:
     _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
     graphManager: {fileID: 94015312}
     port0: {fileID: 1444796207}
-    port1: {fileID: 948589930}
+    port1: {fileID: 80795954}
     NodePair:
       Node0: 6
       Node1: 8
@@ -18829,34 +19149,213 @@ MonoBehaviour:
       points:
       - {x: -604.4056, y: 76.00057}
       - {x: -571.0711, y: 76.00058}
-      - {x: -564.4223, y: 76.15482}
-      - {x: -557.8097, y: 76.617546}
-      - {x: -551.2332, y: 77.38875}
-      - {x: -544.693, y: 78.468445}
-      - {x: -144.22049, y: 173.54462}
-      - {x: -138.38327, y: 175.59943}
-      - {x: -133.84322, y: 178.67908}
-      - {x: -130.6003, y: 182.78358}
-      - {x: -128.65457, y: 187.91296}
-      - {x: -128.00598, y: 227.40056}
+      - {x: -564.9384, y: 76.65397}
+      - {x: -559.87415, y: 78.61415}
+      - {x: -555.8782, y: 81.8811}
+      - {x: -552.9507, y: 86.45485}
+      - {x: -484.71655, y: 419.66705}
+      - {x: -482.8576, y: 425.5473}
+      - {x: -479.93018, y: 430.1208}
+      - {x: -475.93445, y: 433.38757}
+      - {x: -470.87042, y: 435.34766}
+      - {x: -431.40527, y: 436.001}
       lineStyle: 0
-      length: 533.3523
+      length: 457.31006
       animation:
         isActive: 1
         pointsDistance: 35
         size: 10
         color: {r: 1, g: 1, b: 1, a: 1}
-        shape: 2
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node - Node (5))
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 1010625298}
+    port1: {fileID: 92609310}
+    NodePair:
+      Node0: 1
+      Node1: 9
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: -575.5573, y: 505.00125}
+      - {x: -542.2222, y: 505.00125}
+      - {x: -536.1961, y: 504.3351}
+      - {x: -531.45166, y: 502.33646}
+      - {x: -527.9889, y: 499.00543}
+      - {x: -525.80786, y: 494.34207}
+      - {x: -504.04907, y: -49.3455}
+      - {x: -503.14987, y: -55.341007}
+      - {x: -500.96893, y: -60.004173}
+      - {x: -497.50632, y: -63.335007}
+      - {x: -492.76218, y: -65.3335}
+      - {x: -453.4029, y: -65.99967}
+      lineStyle: 0
+      length: 659.14996
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node (5) - Node (7))
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 328601399}
+    port1: {fileID: 1647992814}
+    NodePair:
+      Node0: 9
+      Node1: 11
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: 91.397285, y: -65.99967}
+      - {x: 124.73071, y: -65.999664}
+      - {x: 130.9711, y: -65.37784}
+      - {x: 136.35884, y: -63.51234}
+      - {x: 140.89398, y: -60.40318}
+      - {x: 144.5765, y: -56.05036}
+      - {x: 332.13446, y: 427.45532}
+      - {x: 334.96436, y: 433.05176}
+      - {x: 338.64682, y: 437.40454}
+      - {x: 343.1819, y: 440.51364}
+      - {x: 348.5696, y: 442.37915}
+      - {x: 388.14297, y: 443.00095}
+      lineStyle: 0
+      length: 637.86694
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
+        speed: 20
+    _enableDrag: 1
+    _enableHover: 1
+    _enableSelect: 1
+    _disableClick: 0
+  - _id: Connection (Node - Node (7))
+    _sID: 0e096a02-7039-4de4-b9c0-cc206c738d0b
+    graphManager: {fileID: 94015312}
+    port0: {fileID: 347471886}
+    port1: {fileID: 1647992814}
+    NodePair:
+      Node0: 8
+      Node1: 11
+    selectedColor: {r: 1, g: 0.58, b: 0.04, a: 1}
+    hoverColor: {r: 1, g: 0.81, b: 0.3, a: 1}
+    defaultColor: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+    curveStyle: 2
+    label: {fileID: 0}
+    line:
+      capStart:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      capEnd:
+        active: 0
+        shape: 3
+        size: 5
+        color: {r: 1, g: 0.81, b: 0.3, a: 1}
+        angleOffset: 0
+      ID: 
+      startWidth: 3
+      endWidth: 3
+      dashDistance: 5
+      color: {r: 0.98, g: 0.94, b: 0.84, a: 1}
+      points:
+      - {x: 175.39902, y: 436.001}
+      - {x: 208.73181, y: 436.001}
+      - {x: 215.3971, y: 436.04233}
+      - {x: 222.05981, y: 436.16626}
+      - {x: 228.71996, y: 436.3728}
+      - {x: 235.37756, y: 436.662}
+      - {x: 321.50888, y: 441.96817}
+      - {x: 328.16397, y: 442.34}
+      - {x: 334.82162, y: 442.62918}
+      - {x: 341.48178, y: 442.8357}
+      - {x: 348.1446, y: 442.95966}
+      - {x: 388.14297, y: 443.00095}
+      lineStyle: 0
+      length: 212.93906
+      animation:
+        isActive: 1
+        pointsDistance: 35
+        size: 10
+        color: {r: 1, g: 1, b: 1, a: 1}
+        shape: 3
         speed: 20
     _enableDrag: 1
     _enableHover: 1
     _enableSelect: 1
     _disableClick: 0
   _ExistNodePairs:
-  - Node0: 1
-    Node1: 8
+  - Node0: 3
+    Node1: 1
+  - Node0: 4
+    Node1: 6
   - Node0: 6
     Node1: 8
+  - Node0: 1
+    Node1: 9
+  - Node0: 9
+    Node1: 11
+  - Node0: 8
+    Node1: 11
   _ManufactureLine:
   - nodePairs:
     - Node0: 3
@@ -19021,7 +19520,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: ec71a60d-cb6b-4ab3-9a58-85cf14a2b999
+  _sID: 3a6136a5-dfd2-4142-b481-2dd649ae18bc
   rectTransform: {fileID: 1272577136}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -19419,7 +19918,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278961452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -327.36435}
+  m_LocalPosition: {x: 0, y: 0, z: -258.5945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19427,7 +19926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289.31485, y: 738.79694}
+  m_AnchoredPosition: {x: -829.2511, y: 567.3308}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1279776916
@@ -19499,7 +19998,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 166ef7e1-daf8-4617-918a-d8abebfa0834
+  _sID: 63ff1543-de2f-4a06-a2e0-a1b3756abfb9
   rectTransform: {fileID: 1279776917}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -19558,7 +20057,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: bdba3145-18cd-4357-87bc-bd98014f8a4f
+  _sID: 2dbeba4d-7d6a-455a-8477-cebc0eb93e66
   rectTransform: {fileID: 1281014956}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -19898,7 +20397,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 11b1bb51-585c-46f4-beed-4a069b0b4905
+  _sID: ec0bd622-ff75-4331-b608-869745954fd9
   rectTransform: {fileID: 1295323358}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -22038,6 +22537,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1097273211}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1377440927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377440926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5311fe9d9959a848b64bd267f6f6ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: -30
+  rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &1395842516
 GameObject:
   m_ObjectHideFlags: 0
@@ -22658,7 +23171,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 2927ab9e-bf93-4402-94b3-8a7ffbb747ad
+  _sID: b8906150-06c6-40b8-b693-4aa2efa61c21
   rectTransform: {fileID: 1435516896}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -22783,7 +23296,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 54cf7632-3a64-4367-ab62-dde0d3bc06bb
+  _sID: 290fc3f2-ca97-431f-b231-378da6eb608f
   rectTransform: {fileID: 1444796208}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -23327,7 +23840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -26139,7 +26652,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: f38fd669-3418-445d-8226-8badb70dbf09
+  _sID: 791e8b1c-0ab6-4d22-9439-4134f6e82f9f
   rectTransform: {fileID: 1647992812}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -28327,7 +28840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5124879146011779999, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -2892737170341545671, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -28465,6 +28978,8 @@ MonoBehaviour:
     health: 0
     bulletLeft: 0
   isLaunched: 0
+  Emitter_Launched: {fileID: 0}
+  SpaceShip: {fileID: 430796435}
 --- !u!224 &1796165976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28795,7 +29310,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9af015b0-098f-46c3-b275-f816a10c7bcf
+  _sID: 1d6ed637-f263-4e3d-a021-1cf04ca5253f
   rectTransform: {fileID: 1829457842}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -29311,6 +29826,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 672811617}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1855685016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35498604}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5311fe9d9959a848b64bd267f6f6ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: -30
+  rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &1859778083
 GameObject:
   m_ObjectHideFlags: 0
@@ -29764,7 +30293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: bafd0b5e-a8f9-460b-9e43-18166634d279
+  _sID: 6fcebe2b-f6c1-4897-af3d-901f693edc33
   rectTransform: {fileID: 1873993172}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -30055,7 +30584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+  m_Sprite: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -31582,6 +32111,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 294064647}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2016691099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480225322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5311fe9d9959a848b64bd267f6f6ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: -30
+  rotationAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &2023828365
 GameObject:
   m_ObjectHideFlags: 0
@@ -31726,7 +32269,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6263c63d-3f84-4a1e-ba30-795bbbb05bfe
+  _sID: 5ca2a4ed-35e1-4de1-af60-dc5ea489a758
   rectTransform: {fileID: 2024514126}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -32905,7 +33448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 272b58b5-d042-40f1-9493-fd6912620424
+  _sID: fd6c6b4b-127d-4c07-b400-92f60cc76c31
   ports:
   - {fileID: 1058343286}
   - {fileID: 1873993174}

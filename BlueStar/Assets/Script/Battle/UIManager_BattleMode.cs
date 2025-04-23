@@ -60,6 +60,7 @@ public class UIManager_BattleMode : MonoBehaviour
     public EmitterSlot[] emitterSlots;
     public bool isEmitterSlotsAvailable = true;
     public static int ActivatedSlotIndex = 0;
+    public GameObject LaunchButton;//发射的按钮，更新slot的UI时判断是否隐藏它
     
     //预览的模型们
     public GameObject[] prelookModels;
@@ -105,6 +106,7 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         ManuSuggest = Resources.Load("Prefabs/UI/ManuSuggest").GameObject();
         NotManuSuggest = Resources.Load("Prefabs/UI/NotManuSuggest").GameObject();
+        LaunchButton.SetActive(false);
     }
 
     private void Start()
@@ -161,11 +163,15 @@ public class UIManager_BattleMode : MonoBehaviour
         // }
     }
 
-    public void AddEmitter()
+    public void LaunchEmitter()
     {
-        DataManager.updateLaunchedEmitterType=DataManager.emitterConfigs[DataManager.currentEmitterNumber].EmitterType;  
-        EventCenter_BattleMode.NotifyLaunchEmitter(); // 通知事件中心，更新
-        Debug.Log($"我是UI层，我发射了新的Emitter");
+        // DataManager.updateLaunchedEmitterType=DataManager.emitterConfigs[DataManager.currentEmitterNumber].EmitterType;  
+        // EventCenter_BattleMode.NotifyLaunchEmitter(); // 通知事件中心，更新
+        // Debug.Log($"我是UI层，我发射了新的Emitter");
+        emitterSlots[ActivatedSlotIndex].LaunchEmitter();
+        LaunchButton.SetActive(false);
+        
+        
     }
 
     //-----------------------UI切换------------------------------
@@ -416,6 +422,7 @@ public class UIManager_BattleMode : MonoBehaviour
                 }
                 prelookModels[ManuSlotIndex].SetActive(true); // ManuSlotIndex指的是用的哪个船，i是哪个格子被激活
                 ActivatedSlotIndex = i;
+                LaunchButton.SetActive(true);
                 break;
             }
         }
@@ -460,16 +467,22 @@ public class UIManager_BattleMode : MonoBehaviour
             model.SetActive(false);
         }
 
-        if (emitterSlots[ActivatedSlotIndex].isEmpty)
-        {
-            
-        }
-
         if (!emitterSlots[ActivatedSlotIndex].isEmpty)
         {
             prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
+            
+            if (!emitterSlots[index].isLaunched )
+            {
+                LaunchButton.SetActive(true);
+            }
         }
         
+        
+        //判断是否发射
+        if (emitterSlots[index].isLaunched || emitterSlots[index].isEmpty==true)
+        {
+            LaunchButton.SetActive(false);
+        }
     }
     
     public EmitterDetails GetEmitterDetails(int ID)

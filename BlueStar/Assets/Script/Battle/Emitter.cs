@@ -24,14 +24,12 @@ public class Emitter : MonoBehaviour,Aircraft
     private LineRenderer lineRenderer;
     private int timer=0;
     private float a;
-    public Vector3 CameraDir;
-    public GameObject Camera;
+ 
     public List<GameObject> enemies;
     public float minDistance = 1f;
     public GameObject bulletPrefab;
     public Vector3 TangentDir=new Vector3();
     public static Vector3 BulletDir;
-    public GameObject enemy;
     public static int currentBulletID = -1;
     
     
@@ -49,22 +47,6 @@ public class Emitter : MonoBehaviour,Aircraft
         linePrefab = Resources.Load<GameObject>("Prefabs/Line/Line");
         bulletPrefab=Resources.Load<GameObject>("Prefabs/Bullet/Type_1/Bullet_Type1");
         a = semiMajorAxis;
-        Camera.SetActive(true);
-        string nameToSearch = "Enemy";  // 要匹配的名称部分
-        // 获取场景中所有的游戏物体
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-        foreach (GameObject obj in allObjects)
-        {
-            // 如果物体的名称包含给定的部分
-            if (obj.name.Contains(nameToSearch))
-            {
-                enemies.Add(obj);
-            }
-
-            enemy = GameObject.Find("Enemy_Type1");
-        }
-        
-
     }
 
     private void OnEnable()
@@ -84,28 +66,8 @@ public class Emitter : MonoBehaviour,Aircraft
         lineRenderer = line.GetComponent<LineRenderer>();
         lineRenderer.positionCount = pointCounts;
         lineRenderer.SetPositions(points.ToArray());
-        Debug.Log("deltatime是"+1/Time.deltaTime);
         
-        CameraDir = orbit.CameraDir;
-        Camera.transform.LookAt(enemy.transform.position);
-        
-        foreach (GameObject i in enemies)
-        {
-            float distance = (this.transform.position - i.transform.position).magnitude;
-            if (distance < minDistance)
-            {
-                Camera.SetActive(true);
-            }
-            else
-            {
-                Camera.SetActive(false);
-            }
-        }
-        /*AlignCameraWithOrbit();*/
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Camera.activeSelf==true)
-        {
-            onShoot();
-        }
+
 
 
     }
@@ -118,20 +80,21 @@ public class Emitter : MonoBehaviour,Aircraft
         //这个物体本身的各个参数还要刷新一遍
         a = newSemiMajorAxis;
         this.transform.position = newPosition;
+        
+        //  设置物体的旋转，让 Y 轴（transform.up）指向切线方向
+        Vector3 tangent = orbit.GetTangentDirection();
+        if (points != null && points.Count >= 2)
+        {
+            Vector3 tangentFromPoints = (points[1] - points[0]).normalized;
+            this.transform.up = tangentFromPoints;
+        }
     }
+
     public void onShoot()
     {
         
-      Vector2  mousePos = UnityEngine.Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, UnityEngine.Camera.main.farClipPlane));
-      if (Input.mousePosition.x < Screen.width * 0.5 && Input.mousePosition.y < Screen.height && DataManager.bulletCounts>0)
-      {
-          GameObject bullet =GameObject.Instantiate(bulletPrefab,this.transform.position,quaternion.identity);
-          DataManager.bulletCounts -= 1;
-      }
-      Debug.Log("mousepos是" +mousePos);
-      BulletDir =Vector3.Normalize(new Vector3(mousePos.x, mousePos.y, 1));
-      currentBulletID += 1;
     }
+
 
     public void Addpoints(float beginAngle)
     {
@@ -151,25 +114,20 @@ public class Emitter : MonoBehaviour,Aircraft
         }
         
     }
-    // 计算相机的位置和朝向
-    /*private void AlignCameraWithOrbit()
+    void OnDrawGizmos()
     {
-        //Vector3 position = orbit.GetPosition();
-        Vector3 velocity = orbit.GetVelocity();
+        if (!Application.isPlaying)
+        {
+            if (points == null) points = new List<Vector3>();
+            Addpoints(0f); // 用默认角度画一下（你可以改成其他合理角度）
+        }
 
-        // 计算切线方向（即速度方向）
-        Vector3 tangentDirection = velocity.normalized;
-        TangentDir = tangentDirection;
+        if (points == null || points.Count < 2) return;
 
-        // 计算相机应该朝向的切线方向
-        Quaternion rotation = Quaternion.LookRotation(tangentDirection, Vector3.up);
-
-        // 将相机绕世界的 Z 轴旋转 90 度
-        Quaternion localRotation = rotation * Quaternion.Euler(0f, 90f, 0f); // 绕 X 轴旋转 90 度
-
-        // 设置相机的旋转
-        Camera.transform.rotation = localRotation;
-    }*/
-
+        Vector3 tangent = (points[1] - points[0]).normalized;
+        Vector3 start = points[0];
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(start, start + tangent * 2f);
+    }
 
 }

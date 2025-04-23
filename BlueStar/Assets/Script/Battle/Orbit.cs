@@ -31,6 +31,7 @@ public class Orbit
         initialTrueAnomaly = Mathf.Atan2(pos.y - centerPos.y, pos.x - centerPos.x);
         trueAnomaly = initialTrueAnomaly;//设置初始角度
     }
+    
 
     public void UpdateParameter(Vector3 centerPos,float v, float a, float e,float rotationAngle,float sMA,float angle)//初始化position和六个参数
     {

@@ -14,7 +14,7 @@ public class EmitterModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bullets[Emitter.currentBulletID].SetActive(false);
+   
         
     }
 }
