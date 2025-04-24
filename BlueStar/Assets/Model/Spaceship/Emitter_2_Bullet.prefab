@@ -120,8 +120,8 @@ GameObject:
   - component: {fileID: 3053718160457359313}
   - component: {fileID: 7997730569854446918}
   m_Layer: 10
-  m_Name: Emitter_Bullet
-  m_TagString: Bullet
+  m_Name: Emitter_2_Bullet
+  m_TagString: Bullet2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.04
-  lifetime: 0.4
-  vfx: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
+  lifetime: 1
+  vfx: {fileID: 1339485438278462, guid: 3c76d3052528c8f48855537883bf7a19, type: 3}
 --- !u!54 &3053718160457359313
 Rigidbody:
   m_ObjectHideFlags: 0

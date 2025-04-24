@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour,Aircraft
     public int pointCounts = 2;
     private float a;
     private GameObject Inner;//形状这个GameObject
+    public EnemyType enemyType;
     
  
 
@@ -86,10 +87,25 @@ public class Enemy : MonoBehaviour,Aircraft
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet1")&& enemyType==EnemyType.threeDimension)
         {
            this.GetComponent<BloodLine>().ReduceBlood();
            blood -= harm;
+        }
+        else if (other.CompareTag("Bullet2") && enemyType==EnemyType.oneDimension)
+        {
+            this.GetComponent<BloodLine>().ReduceBlood();
+            blood -= harm;
+        }
+        else if (other.CompareTag("Bullet2") && enemyType==EnemyType.twoDimension)
+        {
+            this.GetComponent<BloodLine>().ReduceBlood();
+            blood -= harm;
+        }
+        else if (other.CompareTag("Bullet3") && enemyType==EnemyType.fourDimension)
+        {
+            this.GetComponent<BloodLine>().ReduceBlood();
+            blood -= harm;
         }
 
         if (blood==0)
@@ -159,6 +175,9 @@ public class Enemy : MonoBehaviour,Aircraft
         Gizmos.DrawLine(start, start + tangent * 2f);
     }
     
-    
-    
+}
+
+public enum EnemyType
+{
+    oneDimension,twoDimension,threeDimension,fourDimension
 }

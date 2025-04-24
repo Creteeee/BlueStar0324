@@ -24,7 +24,7 @@ MonoBehaviour:
       type: 3}
     health: 40
     duration: 120
-    bulletLeft: 4
+    bulletLeft: 8
     bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
       type: 3}
     VFX: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
@@ -39,8 +39,8 @@ MonoBehaviour:
       type: 3}
     health: 40
     duration: 120
-    bulletLeft: 4
-    bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
+    bulletLeft: 8
+    bulletPrefab: {fileID: 7818529322733171601, guid: 3820e331b5ee7e34c8a135733853bf9b,
       type: 3}
     VFX: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
   - ID: 2
@@ -54,8 +54,8 @@ MonoBehaviour:
       type: 3}
     health: 40
     duration: 120
-    bulletLeft: 4
-    bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
+    bulletLeft: 8
+    bulletPrefab: {fileID: 7818529322733171601, guid: 16e11429c0c424b40be85be5008e5aa1,
       type: 3}
     VFX: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
   - ID: 3
