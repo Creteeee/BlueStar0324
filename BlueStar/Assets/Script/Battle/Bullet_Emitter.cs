@@ -28,7 +28,8 @@ public class Bullet_Emitter : MonoBehaviour
         {
             
             StartCoroutine(DelayedInstantiate(vfx,this.transform.position,lifetime));
-            Destroy(this.gameObject,lifetime*1.1f);
+            ishit=true;
+            
         }
         else
         {
@@ -43,6 +44,7 @@ public class Bullet_Emitter : MonoBehaviour
         {
             GameObject vfxInst;
             vfxInst=Instantiate(vfx,this.transform.position,Quaternion.identity);
+            vfxInst.transform.up=Vector3.forward;
             Destroy(this.gameObject);
             ishit = true;
             
@@ -59,6 +61,7 @@ public class Bullet_Emitter : MonoBehaviour
 
         vfxInst=Instantiate(prefab, delayedPosition, quaternion.identity);
         vfxInst.transform.up=Vector3.forward;
+        Destroy(this.gameObject,lifetime*1.1f);
         
     }
 }

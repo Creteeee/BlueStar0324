@@ -30,12 +30,12 @@ public class Enemy : MonoBehaviour,Aircraft
 
     private void OnEnable()
     {
-        EventCenter_BattleMode.OnLaunchEmitter += onShoot;
+        //EventCenter_BattleMode.OnLaunchEmitter += onShoot;
 
     }
     private void OnDisable()
     {
-        EventCenter_BattleMode.OnLaunchEmitter -= onShoot;
+        //EventCenter_BattleMode.OnLaunchEmitter -= onShoot;
     }
 
     void Start()
@@ -57,6 +57,12 @@ public class Enemy : MonoBehaviour,Aircraft
     {
         Addpoints(orbit.trueAnomaly);
         onMove();
+        if (blood==0)
+        {
+            
+            CleanSignals.totalKill += 1;
+            Destroy(this.gameObject);
+        }
 
         
 
@@ -108,11 +114,7 @@ public class Enemy : MonoBehaviour,Aircraft
             blood -= harm;
         }
 
-        if (blood==0)
-        {
-            Destroy(this.gameObject);
-            CleanSignals.totalKill += 1;
-        }
+
 
         if (other.CompareTag("Froze"))
         {

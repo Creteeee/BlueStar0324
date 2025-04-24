@@ -342,7 +342,7 @@ public class UIManager_BattleMode : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < 10)
+        while (elapsedTime < 100)
         {
             elapsedTime += Time.deltaTime*10;
             float percentage = Mathf.Clamp01(elapsedTime / 100) * 100f;
@@ -434,13 +434,13 @@ public class UIManager_BattleMode : MonoBehaviour
             EnableFuelProgress();
             ManuSuggestInst=Instantiate(ManuSuggest, GameObject.Find("Canvas_Manufacture").gameObject.transform);
             ExitMenufacture(GameObject.Find("Canvas_Manufacture/ManufactureMenu"));
-            Destroy(ManuSuggestInst,5f);
+            Destroy(ManuSuggestInst,1.5f);
         }
         else
         {
             Debug.Log("链接错误");
             NotManuSuggestInst=Instantiate(NotManuSuggest, GameObject.Find("Canvas_Manufacture").gameObject.transform);
-            Destroy(NotManuSuggestInst,3f);
+            Destroy(NotManuSuggestInst,1.5f);
         }
     }
 /// <summary>
