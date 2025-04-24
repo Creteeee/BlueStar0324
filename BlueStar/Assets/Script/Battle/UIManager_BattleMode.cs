@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
+using Cursor = UnityEngine.Cursor;
 using Slider = UnityEngine.UI.Slider;
 
 
@@ -47,6 +48,8 @@ public class UIManager_BattleMode : MonoBehaviour
     public TMP_Text ManuingEmiterName;
     
     //生产的条目
+    [Header("生产相关UI")] 
+    public GameObject ManuTab;
     public UICSystemManager uicManager;
     public GameObject[] ManuSlots;
     public static int ManuSlotIndex=-1;
@@ -62,9 +65,13 @@ public class UIManager_BattleMode : MonoBehaviour
     public EmitterSlot[] emitterSlots;
     public bool isEmitterSlotsAvailable = true;
     public static int ActivatedSlotIndex = 0;
+    
+    //发射相关UI
     public GameObject LaunchButton;//发射的按钮，更新slot的UI时判断是否隐藏它
-    public TMP_Text EmitterName;
-    public Slider HealthBar;
+    public static TMP_Text EmitterName;
+    public static Slider HealthBar;
+    public static TMP_Text bulletLeftText;
+    public bool isClickChangeEmitterButton = false;
     
     
     //预览的模型们
@@ -147,8 +154,13 @@ public class UIManager_BattleMode : MonoBehaviour
         FuelProgress.SetActive(false);
         
         OnMenuIndexChanged += (index) => ChangeManufactureItem(index);
+        EmitterName=GameObject.Find("Canvas_SpaceBattle/EmitterName").GetComponent<TMP_Text>();
         EmitterName.text = "空槽位";
+        HealthBar= GameObject.Find("Canvas_SpaceBattle/FuelLeft/Slider").GetComponent<Slider>();
         HealthBar.gameObject.SetActive(false);
+        ManuTab.SetActive(true);
+        bulletLeftText= GameObject.Find("Canvas_SpaceBattle/BulletLeft/Text").GetComponent<TMP_Text>();
+        bulletLeftText.text="";
 
         //MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
@@ -163,9 +175,11 @@ public class UIManager_BattleMode : MonoBehaviour
 
     private void Update()
     {
+  
         //在轨道模式下，激活对于飞船的操作
         if (isOrbitCameraActivated)
         {
+            
             //发射了才能控制
             if (emitterSlots[ActivatedSlotIndex].isLaunched && !emitterSlots[ActivatedSlotIndex].isEmpty)
             {
@@ -193,6 +207,8 @@ public class UIManager_BattleMode : MonoBehaviour
         {
             HealthBar.value = emitterSlots[ActivatedSlotIndex].fuel/emitterSlots[ActivatedSlotIndex].fuelTotal;
             DrawSuggestLine(emitterSlots[ActivatedSlotIndex].Emitter_Launched.transform.position,arrowInst,orbitCamera,suggestLineRenderer);
+            
+            
             emitterSlots[ActivatedSlotIndex].Shoot();
             
         }
@@ -315,6 +331,7 @@ public class UIManager_BattleMode : MonoBehaviour
 
     public void EnableFuelProgress()
     {
+        ManuTab.SetActive(false);
         FuelMenu.SetActive(false);
         FuelProgress.SetActive(true);
         ManuingEmiterName.text = GetEmitterDetails(ManuSlotIndex).name;
@@ -339,6 +356,7 @@ public class UIManager_BattleMode : MonoBehaviour
         AddEmitter(ManuSlotIndex);
         FuelProgress.SetActive(false);
         uicManager.EndAnimation(ManuSlotIndex);
+        ManuTab.SetActive(true);
         
     }
 
@@ -346,6 +364,7 @@ public class UIManager_BattleMode : MonoBehaviour
     
     public void EnableManufactureItem(GameObject MenufactureMenu)
     {
+        
         MenufactureMenu.SetActive(true);
         ManuSlotIndex = 0;
         OnMenuIndexChanged?.Invoke(ManuSlotIndex);
@@ -519,6 +538,7 @@ public class UIManager_BattleMode : MonoBehaviour
             HealthBar.value = 1;
             HealthBar.gameObject.SetActive(true); 
             prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
+            bulletLeftText.text = emitterSlots[index].bullet.ToString() + "/" + emitterSlots[index].bulletTotal.ToString();
             
             if (!emitterSlots[index].isLaunched )
             {
@@ -533,6 +553,7 @@ public class UIManager_BattleMode : MonoBehaviour
             //空格子名字为空
             EmitterName.text = "空槽位";
             HealthBar.gameObject.SetActive(false);
+            bulletLeftText.text = "";
             suggestLine.SetActive(false);
             arrowInst.SetActive(false);
         }

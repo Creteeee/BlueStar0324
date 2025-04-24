@@ -27,6 +27,7 @@ MonoBehaviour:
     bulletLeft: 4
     bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
       type: 3}
+    VFX: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
   - ID: 1
     name: "\u4E2D\u5FAE\u5B50\u7535\u78C1\u70AE"
     icon: {fileID: 21300000, guid: 729f87804959036419e2b6207df7b590, type: 3}
@@ -41,6 +42,7 @@ MonoBehaviour:
     bulletLeft: 4
     bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
       type: 3}
+    VFX: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
   - ID: 2
     name: "\u9AD8\u80FD\u7C92\u5B50\u7206\u7834\u88C5\u7F6E"
     icon: {fileID: 21300000, guid: 96eed11b9c0ecf649a290e15dc1276b4, type: 3}
@@ -55,6 +57,7 @@ MonoBehaviour:
     bulletLeft: 4
     bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
       type: 3}
+    VFX: {fileID: 1962406821623320, guid: a99761df9fa8d9d4bb2a4e945d849807, type: 3}
   - ID: 3
     name: "\u7A7A\u95F4\u9ED1\u57DF\u5F39"
     icon: {fileID: 21300000, guid: c3882e92d34f95045844195b0a0cc3ae, type: 3}
@@ -67,5 +70,6 @@ MonoBehaviour:
     health: 40
     duration: 120
     bulletLeft: 8
-    bulletPrefab: {fileID: 7818529322733171601, guid: 4be77f8fd230d484ab194076cb9e6ea1,
+    bulletPrefab: {fileID: 7818529322733171601, guid: faa5c419843bd144a875fe839728b291,
       type: 3}
+    VFX: {fileID: 1962406821623320, guid: d244d94d478e51c418129dddd50414d3, type: 3}

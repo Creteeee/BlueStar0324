@@ -22,6 +22,7 @@ TagManager:
   - Interactive
   - PlanetModel
   - CardWriterNumber
+  - Froze
   layers:
   - Default
   - TransparentFX

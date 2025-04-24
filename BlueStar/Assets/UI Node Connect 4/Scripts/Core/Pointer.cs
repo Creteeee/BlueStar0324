@@ -35,7 +35,8 @@ namespace MeadowGames.UINodeConnect4
 
             if (ImageIsActive)
             {
-                Cursor.visible = false;
+                //这里改一下
+                //Cursor.visible = false;
                 customImage.raycastTarget = false;
 
                 Canvas _pointerCanvas = customImage.GetComponent<Canvas>() ? customImage.GetComponent<Canvas>() : customImage.gameObject.AddComponent<Canvas>();

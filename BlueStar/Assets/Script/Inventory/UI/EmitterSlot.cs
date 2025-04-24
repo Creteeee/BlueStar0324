@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class EmitterSlot : MonoBehaviour
@@ -25,6 +26,8 @@ public class EmitterSlot : MonoBehaviour
 
     //prelook模型们，虽然这样写有点傻，但是就这样吧
     public GameObject[] prelookModels;
+    
+    
 
     private void Update()
     {
@@ -72,6 +75,9 @@ public class EmitterSlot : MonoBehaviour
         fuel = 0;
         bullet = 0;
         duration = 0;
+        UIManager_BattleMode.HealthBar.gameObject.SetActive(false);
+        UIManager_BattleMode.bulletLeftText.text="";
+        UIManager_BattleMode.EmitterName.text="空槽位";
     }
 
     public void HighLightSlot()
@@ -122,11 +128,15 @@ public class EmitterSlot : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+      
                 GameObject obj = Instantiate(bulletPrefab, Emitter_Launched.transform.position, Quaternion.identity);
                 obj.transform.up = UIManager_BattleMode.bulletDirection;
                 bullet -= 1;
+                UIManager_BattleMode.bulletLeftText.text = bullet.ToString() + "/" + bulletTotal;
             }
         }
     }
+    
+
     
 }

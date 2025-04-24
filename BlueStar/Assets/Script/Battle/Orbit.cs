@@ -60,6 +60,7 @@ public class Orbit
         
         //更新半长轴
         semiMajorAxis += acceleration * Time.deltaTime*1f;
+        semiMajorAxis = Mathf.Max(semiMajorAxis, 2f); 
         float r = semiMajorAxis * (1 - eccentricity * eccentricity) / (1 + eccentricity * Mathf.Cos(trueAnomaly));
         float x = center.x+r * Mathf.Cos(trueAnomaly);
         float y = center.y+r * Mathf.Sin(trueAnomaly);
