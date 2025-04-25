@@ -22,6 +22,9 @@ public class SpaceShip : MonoBehaviour,Aircraft
     public List<GameObject> EmitterList { get;  set; } = new List<GameObject>();
     public GameObject spaceshipModelspaceshipModel;
     public float anglebbias = -25f;
+    private float a;
+    public GameObject spaceshipOrbit;
+
 
     private void OnEnable()
     {
@@ -72,6 +75,12 @@ public class SpaceShip : MonoBehaviour,Aircraft
         orbit.UpdateParameter(center_Star,orbitalSpeed,acceleration,eccentricity,Rotation_Tangent,newSemiMajorAxis,newTrueAnomaly);//这个只是给orbit里的方法使用
         //这个物体本身的各个参数还要刷新一遍
         this.transform.position = newPosition;
+        a = newSemiMajorAxis;
+        if (points != null && points.Count >= 2)
+        {
+            Vector3 tangentFromPoints = (points[1] - points[0]).normalized;
+            spaceshipOrbit.transform.up = tangentFromPoints;
+        }
     }
     public void onShoot()
     {
@@ -96,7 +105,8 @@ public class SpaceShip : MonoBehaviour,Aircraft
             beginAngle += deltaAngle;
             points.Add(point);
         }
-        
     }
+    
+    
 
 }
