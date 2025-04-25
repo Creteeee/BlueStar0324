@@ -70,9 +70,9 @@ public class EmitterSlot : MonoBehaviour
         UIManager_BattleMode.suggestLine.SetActive(false);
         UIManager_BattleMode.arrowInst.SetActive(false);
         Emitter_Launched=null;
-        fuelTotal = 0;
+        fuelTotal = 1;
         bulletTotal = 0;
-        fuel = 0;
+        fuel = 1;
         bullet = 0;
         duration = 0;
         UIManager_BattleMode.HealthBar.gameObject.SetActive(false);
@@ -105,7 +105,7 @@ public class EmitterSlot : MonoBehaviour
     {
         //在飞船处实例化发射的模型，后面加上朝向
         Emitter_Launched = Instantiate(emitterDetails.model_Orbit, SpaceShip.transform.position,Quaternion.identity);
-        StartCoroutine(UpdateFuel(fuelTotal, duration));
+        StartCoroutine(UpdateFuel(fuel, duration));
         isLaunched = true;
     }
 

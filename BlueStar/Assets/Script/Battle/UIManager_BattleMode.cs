@@ -195,7 +195,7 @@ public class UIManager_BattleMode : MonoBehaviour
                         Mathf.Max(
                             emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration -
                             0.05f, -4f);
-                    Debug.Log( emitterSlots[ActivatedSlotIndex].emitterDetails.name+"的加速度是"+emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration);
+                    //Debug.Log( emitterSlots[ActivatedSlotIndex].emitterDetails.name+"的加速度是"+emitterSlots[ActivatedSlotIndex].Emitter_Launched.GetComponent<Emitter>().acceleration);
                 }
 
             }
@@ -535,7 +535,8 @@ public class UIManager_BattleMode : MonoBehaviour
         if (!emitterSlots[index].isEmpty)
         {
             EmitterName.text = emitterSlots[ActivatedSlotIndex].emitterDetails.name;
-            HealthBar.value = 1;
+            //HealthBar.value = 1;
+            HealthBar.value = emitterSlots[index].fuel / emitterSlots[index].fuelTotal;
             HealthBar.gameObject.SetActive(true); 
             prelookModels[emitterSlots[ActivatedSlotIndex].emitterDetails.ID].SetActive(true);
             bulletLeftText.text = emitterSlots[index].bullet.ToString() + "/" + emitterSlots[index].bulletTotal.ToString();
@@ -570,6 +571,7 @@ public class UIManager_BattleMode : MonoBehaviour
         //是否开启提示线         
         if (emitterSlots[index].isLaunched)
         {
+            HealthBar.value = emitterSlots[index].fuel / emitterSlots[index].fuelTotal;
             suggestLine.SetActive(true);
             arrowInst.SetActive(true);
         }
