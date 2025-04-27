@@ -56,6 +56,8 @@ public class Zombie_CS : MonoBehaviour
     public bool ChackHit;
     [HideInInspector]
     public bool CanISee;
+    
+    [Header("血液特效")] public GameObject bloodVFX;
 
     // Start is called before the first frame update
     void Start()
@@ -379,6 +381,8 @@ public class Zombie_CS : MonoBehaviour
             if (hit.transform.gameObject.name == PlayerName)
             {
                 hit.transform.gameObject.SendMessage("ApplyDamage", Damage);
+                PostProcessingManager.Instance.OnHurt();
+                Instantiate(bloodVFX, hit.point, Quaternion.identity);
             }
 
 
@@ -519,11 +523,7 @@ private void OnDrawGizmosSelected()
                 CanISee = false;
             }
 
-
         }
-
-
-
     }
 
 
@@ -534,9 +534,6 @@ private void OnDrawGizmosSelected()
         IsMove = true;
        // Debug.Log(Health);
     }
-
-
-
 
 }
 

@@ -58,5 +58,12 @@ public static class EventHandler
     {
         ShowTimelineInfos?.Invoke(infos,playIndexs);
     }
+    
+    public static event Action<float> RecoverHealth;
+
+    public static void CallRecoverHealth(float health)
+    {
+        RecoverHealth?.Invoke(health);
+    }
 
 }

@@ -42,6 +42,8 @@ public class Controller_Terra : MonoBehaviour
         {
             Debug.Log("成功加载射击显示线,名字为："+shootLine.name);
         }
+        //
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
@@ -52,6 +54,16 @@ public class Controller_Terra : MonoBehaviour
         shortLineInst = Instantiate(shootLine, this.transform);
         animator.SetFloat("Blend", 0);
         walkSpeedCurrent = 0;
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.RecoverHealth += RecoverHealth;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.RecoverHealth -= RecoverHealth;
     }
 
     void Update()
@@ -251,6 +263,13 @@ public class Controller_Terra : MonoBehaviour
     public void ApplyDamage(float Damage)
     {
         Health -= Damage;
+        Debug.Log("Terra的生命值是"+Health);
+    }
+
+    public void RecoverHealth(float Damage)
+    {
+        Health += Damage;
+        Debug.Log("使用了补血包，现在的生命值为"+Health);
     }
 
 }

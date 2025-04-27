@@ -153,10 +153,10 @@ public class ItemCarry : MonoBehaviour
     /// </summary>
     void CompareID(TMP_Text text,TMP_Text name)
     {
-        if (expectedID == CarriedID && CarriedID !=0)
+        if (expectedID == CarriedID && CarriedID !=0 && isCompare == true )
         {
             //切换UI
-            isCompare = true;
+            isCompare = false;
             isFinished = true;
             text.text = "已使用";
             name.text = InventoryManager.Instance.GetItemDetails(expectedID).name;

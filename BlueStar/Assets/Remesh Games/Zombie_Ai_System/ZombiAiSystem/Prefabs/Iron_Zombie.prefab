@@ -1873,6 +1873,37 @@ Transform:
   - {fileID: 3480121352154684363}
   m_Father: {fileID: 8520033316943827134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5603066215380308224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7588868702783166926}
+  m_Layer: 0
+  m_Name: AttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7588868702783166926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603066215380308224}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.391, z: 0.534}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6595605668464275586}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5679615475519245932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1973,7 @@ Transform:
   - {fileID: 5323965893616766572}
   - {fileID: 6630131068941212546}
   - {fileID: 6630131068919286506}
+  - {fileID: 7588868702783166926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &966128487454763768
@@ -1995,6 +2027,8 @@ MonoBehaviour:
   Spawn: 0
   ChackHit: 0
   CanISee: 0
+  bloodVFX: {fileID: 3019378008296561345, guid: 25ff97ff330daad4a91bf3f66d43faf2,
+    type: 3}
 --- !u!195 &6630131068973670443
 NavMeshAgent:
   m_ObjectHideFlags: 0

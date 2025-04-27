@@ -225,9 +225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    RenderPassEvent: 300
-    LowResWidth: 432
-    LowResHeight: 768
+    RenderPassEvent: 450
+    LowResWidth: 576
+    LowResHeight: 324
 --- !u!114 &3109652150894798321
 MonoBehaviour:
   m_ObjectHideFlags: 0
