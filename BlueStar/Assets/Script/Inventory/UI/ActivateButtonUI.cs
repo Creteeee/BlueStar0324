@@ -54,7 +54,8 @@ namespace BlueStar.Inventory
                     InventoryManager.Instance.UseItem(item.itemID,true);
                     Debug.Log("当前使用的物品名称为："+item.itemID+"数量为"+ InventoryManager.Instance.playerBag.itemList[InventoryManager.Instance.GetItemIndexBag(item.itemID)].itemAmount);
                     //呼叫给玩家增加血量
-                    EventHandler.CallRecoverHealth(20f);
+                    EventHandler.CallRecoverHealth(40f);
+                    PostProcessingManager.Instance.ResetFocalLength();
                     if (InventoryManager.Instance.playerBag
                             .itemList[InventoryManager.Instance.GetItemIndexBag(item.itemID)].itemAmount == 0)
                     {

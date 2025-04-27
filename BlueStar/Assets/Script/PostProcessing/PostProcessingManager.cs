@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -34,6 +36,19 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
 
     void Update()
     {
+        if (terra.Health>=100)
+        {
+            initialFocalLength = 1;
+        }
+
+        else if (terra.Health>=60 && terra.Health<100)
+        {
+            initialFocalLength = 30;
+        }
+        else
+        {
+            initialFocalLength = 60;
+        }
 
     }
     
@@ -44,19 +59,6 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
 
     IEnumerator HurtEffectCoroutine()
     {
-        if (terra.Health>100)
-        {
-            initialFocalLength = 1;
-        }
-
-        if (terra.Health>60 && terra.Health<=100)
-        {
-            initialFocalLength = 30;
-        }
-        else
-        {
-            initialFocalLength = 60;
-        }
         // 初始爆发
         chromaticAberration.intensity.value = 1.0f;
         float initialLowresWidth = LowresWidth;
@@ -90,6 +92,9 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
 
         // 最后归位
         chromaticAberration.intensity.value = 0f;
+        depthOfField.focalLength.value=initialFocalLength;
+        colorAdjustments.hueShift.value = 0;
+        colorAdjustments.contrast.value = 0;
         LowresWidth = Mathf.RoundToInt(initialLowresWidth);
         LowresHeight = Mathf.RoundToInt(initialLowresHeight);
 
@@ -97,4 +102,22 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
         pixelizeRenderPassFeature.settings.LowResHeight = LowresHeight;
     }
 
+    public void ResetFocalLength()
+    {
+        if (terra.Health>=100)
+        {
+            initialFocalLength = 1;
+        }
+
+        else if (terra.Health>=60 && terra.Health<100)
+        {
+            initialFocalLength = 30;
+        }
+        else
+        {
+            initialFocalLength = 60;
+        }
+
+        depthOfField.focalLength.value = initialFocalLength;
+    }
 }
