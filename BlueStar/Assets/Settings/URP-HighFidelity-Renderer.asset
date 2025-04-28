@@ -84,6 +84,90 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-6810644244486142662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: StencilColor
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    passTag: StencilColor
+    Event: 600
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 3a28e1070393b814ca6fb6320fa80b68, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideShader: {fileID: 0}
+    overrideShaderPassIndex: 0
+    overrideMode: 1
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &-3725101433459029228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderObjects
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    passTag: RenderObjects
+    Event: 600
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 3a28e1070393b814ca6fb6320fa80b68, type: 2}
+    overrideMaterialPassIndex: 1
+    overrideShader: {fileID: 0}
+    overrideShaderPassIndex: 0
+    overrideMode: 1
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &-1996617367238483427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +252,10 @@ MonoBehaviour:
   - {fileID: -7660953859172799922}
   - {fileID: 3337013283903890459}
   - {fileID: -9019475617732358701}
-  m_RendererFeatureMap: adc0de57c6d2eee53206af2c2449800cf1251dd527b4272b61588e2af84052771de25f4115974ae41e2d8189416d7b544eea58f70dd3ae951be4d9c5e6734f2ed30dc480b662d482
+  - {fileID: 3020986340536120343}
+  - {fileID: -6810644244486142662}
+  - {fileID: -3725101433459029228}
+  m_RendererFeatureMap: adc0de57c6d2eee53206af2c2449800cf1251dd527b4272b61588e2af84052771de25f4115974ae41e2d8189416d7b544eea58f70dd3ae951be4d9c5e6734f2ed30dc480b662d4821774f62212b3ec293a45d8db24bb7ba1144b6092fbc74dcc
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -225,9 +312,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    RenderPassEvent: 450
-    LowResWidth: 576
-    LowResHeight: 324
+    RenderPassEvent: 550
+    LowResWidth: 405
+    LowResHeight: 720
+--- !u!114 &3020986340536120343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18240d5d3c99c2b4f9ef7dbc022901a3, type: 3}
+  m_Name: CustomDepthColorFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  depthColorMaterial: {fileID: 2100000, guid: 3a28e1070393b814ca6fb6320fa80b68, type: 2}
 --- !u!114 &3109652150894798321
 MonoBehaviour:
   m_ObjectHideFlags: 0

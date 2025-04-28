@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BlueStar.Inventory;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -21,6 +22,8 @@ public class Aim : MonoBehaviour
     public Transform bulletPoint;
     public GameObject bloodVFX;
     private GameObject bloodVFXInst;
+    public GameObject NoBulletSuggest;
+    private GameObject NoBulletSuggestInst;
 
     private void Awake()
     {
@@ -41,6 +44,11 @@ public class Aim : MonoBehaviour
     private void OnDisable()
     {
         Marker.SetActive(false);
+        if (NoBulletSuggestInst != null)
+        {
+            Destroy(NoBulletSuggestInst);
+            NoBulletSuggestInst = null;
+        }
 
     }
 
@@ -74,22 +82,34 @@ public class Aim : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            if (InventoryManager.Instance.BulletCount>=1)
+            {
+                bulletInst=Instantiate(bullet,bulletPoint.transform.position,Quaternion.identity);
+                Quaternion targetRotation = Quaternion.FromToRotation(bulletInst.transform.forward, this.rayDir);
+                bulletInst.transform.rotation = targetRotation;
+                InventoryManager.Instance.UseBullet();
+                //light.GetComponent<Light>().intensity = 20;
+            }
+
+            else if (InventoryManager.Instance.BulletCount <= 0)
+            {
+                if (NoBulletSuggestInst != null)
+                {
+                    Destroy(NoBulletSuggestInst);
+                    NoBulletSuggestInst = null;
+                }
+
+                NoBulletSuggestInst = Instantiate(NoBulletSuggest, GameObject.Find("------UI------/UI_2D").transform);
+                StartCoroutine(DestroySuggestAfterDelay(NoBulletSuggestInst, 1f));
+            }
             
-            bulletInst=Instantiate(bullet,bulletPoint.transform.position,Quaternion.identity);
-            // bloodVFXInst = Instantiate(bloodVFX, hitPoint, Quaternion.identity);
-            // bloodVFXInst.transform.rotation=Quaternion.Euler(new Vector3(30f,0,0));
-            // bloodVFXInst.transform.localScale *= 1f;
-            // Destroy(bloodVFXInst ,1f);
-            Quaternion targetRotation = Quaternion.FromToRotation(bulletInst.transform.forward, this.rayDir);
-            bulletInst.transform.rotation = targetRotation;
-            light.GetComponent<Light>().intensity = 20;
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            light.GetComponent<Light>().intensity = 0;
-
-        }
+        // if (Input.GetKeyUp(KeyCode.Mouse0))
+        // {
+        //     light.GetComponent<Light>().intensity = 0;
+        //
+        // }
         
 
 
@@ -97,5 +117,19 @@ public class Aim : MonoBehaviour
         points[0] = startPoint.position; 
         points[1] = ray.origin + rayDir * 2f;
         lineRenderer.SetPositions(points.ToArray());
+    }
+    IEnumerator DestroySuggestAfterDelay(GameObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (obj != null)  // 避免中途被替换
+        {
+            Destroy(obj);
+        }
+
+        if (NoBulletSuggestInst == obj)
+        {
+            NoBulletSuggestInst = null;
+        }
     }
 }

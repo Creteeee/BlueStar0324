@@ -27,11 +27,14 @@ namespace BlueStar.Inventory
 
         private void Update()
         {
-            item = InventoryManager.Instance.GetItemDetails(SlotUI.selectedID);
+            
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            item = InventoryManager.Instance.GetItemDetails(SlotUI.selectedID);
+            Debug.Log("你惦记了使用按钮，当前激活的ID为"+SlotUI.selectedID+"这个ID对应的名字是"+InventoryManager.Instance.GetItemDetails(SlotUI.selectedID).name+"它carried的情况是"+InventoryManager.Instance.GetItemDetails(SlotUI.selectedID).canCarried);
+            
             switch (item.itemType)
             {
                 case ItemType.card:
@@ -52,7 +55,7 @@ namespace BlueStar.Inventory
                 case ItemType.drug:
                     ChangeButtomName(item);
                     InventoryManager.Instance.UseItem(item.itemID,true);
-                    Debug.Log("当前使用的物品名称为："+item.itemID+"数量为"+ InventoryManager.Instance.playerBag.itemList[InventoryManager.Instance.GetItemIndexBag(item.itemID)].itemAmount);
+                    //Debug.Log("当前使用的物品名称为："+item.itemID+"数量为"+ InventoryManager.Instance.playerBag.itemList[InventoryManager.Instance.GetItemIndexBag(item.itemID)].itemAmount);
                     //呼叫给玩家增加血量
                     EventHandler.CallRecoverHealth(40f);
                     PostProcessingManager.Instance.ResetFocalLength();

@@ -55,6 +55,8 @@ namespace BlueStar.Inventory
             slotImage.enabled = false;
             amountText.text = string.Empty;
             button.interactable = false;
+
+
         }
     
     /// <summary>
@@ -75,6 +77,12 @@ namespace BlueStar.Inventory
             itemAmount = amount;
             amountText.text = itemAmount.ToString();
             button.interactable = true;
+            
+            //报告子弹数量
+            if (ItemDetails.itemID==1006)
+            {
+                InventoryManager.Instance.BulletCount = itemAmount;
+            }
 
         }
 

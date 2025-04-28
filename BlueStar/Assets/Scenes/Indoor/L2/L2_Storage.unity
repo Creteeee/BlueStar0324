@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 1006
-  itemAmount: 1
+  itemAmount: 6
   _itemDetails:
     itemID: 0
     name: 
@@ -9713,7 +9713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 1006
-  itemAmount: 1
+  itemAmount: 6
   _itemDetails:
     itemID: 0
     name: 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BlueStar.Inventory;
 using Unity.Mathematics;
 using UnityEditor.Animations;
 using UnityEditor.Rendering;
@@ -33,6 +34,7 @@ public class Controller_Terra : MonoBehaviour
     public List<Vector3> shootLinePoints=new List<Vector3>();
     private bool isFading = true;
     public float Health = 100.0f;
+    public float initialHealth;
 
 
     private void Awake()
@@ -44,6 +46,8 @@ public class Controller_Terra : MonoBehaviour
         }
         //
         DontDestroyOnLoad(this.gameObject);
+        initialHealth = Health;
+        InventoryManager.Instance.HealthBar.value = Health / initialHealth;
     }
 
     void Start()
@@ -264,12 +268,14 @@ public class Controller_Terra : MonoBehaviour
     {
         Health -= Damage;
         Debug.Log("Terra的生命值是"+Health);
+        InventoryManager.Instance.HealthBar.value = Health / initialHealth;
     }
 
     public void RecoverHealth(float Damage)
     {
         Health += Damage;
         Debug.Log("使用了补血包，现在的生命值为"+Health);
+        InventoryManager.Instance.HealthBar.value = Health / initialHealth;
     }
 
 }

@@ -23,13 +23,14 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
         postProcessingVolume.sharedProfile.TryGet(out chromaticAberration);
         postProcessingVolume.sharedProfile.TryGet(out depthOfField);
         postProcessingVolume.sharedProfile.TryGet(out colorAdjustments);
-        pixelizeRenderPassFeature.settings.LowResWidth = 324;
-        pixelizeRenderPassFeature.settings.LowResHeight = 576;
+        pixelizeRenderPassFeature.settings.LowResWidth = 405;
+        pixelizeRenderPassFeature.settings.LowResHeight = 720;
         depthOfField.focalLength.value = 1f;
         colorAdjustments.hueShift.value = 0;
         colorAdjustments.contrast.value = 0;
         LowresWidth = pixelizeRenderPassFeature.settings.LowResWidth;
         LowresHeight = pixelizeRenderPassFeature.settings.LowResHeight;
+        pixelizeRenderPassFeature.SetActive(true);
         
 
     }

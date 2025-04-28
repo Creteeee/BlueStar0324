@@ -2,14 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using TMPro;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Slider = UnityEngine.UI.Slider;
 
 namespace BlueStar.Inventory
 {
     public class InventoryManager : Singleton<InventoryManager>
     {
         [Header("玩家背包UI")] [SerializeField] private GameObject bagUI;
+        [Header("操作提示UI")] [SerializeField] private GameObject operationSuggestUI;
         private bool bagOpened;
+
+        [Header("UI动画相机和人物的状态机")] 
+        public GameObject UIAnimCamera;
+        public Animator _PlayerAnimator;
+        public Animator _UIAnimCameraAnimator;
+
+        [Header("玩家的健康值和子弹值")]
+        public Slider HealthBar;
+        public TMP_Text BulletCountTex;
+        public int BulletCount;
+        
+        
         [Header("物品数据")]
         public ItemDataList_SO itemDataList_SO;
 
@@ -22,6 +38,7 @@ namespace BlueStar.Inventory
         {
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
             bagOpened = bagUI.activeInHierarchy;
+            BulletCountTex.text = BulletCount.ToString();
         }
 
         private void Update()
@@ -31,12 +48,43 @@ namespace BlueStar.Inventory
                 OpenBagUI();
                 //canvas.GetComponent<CanvasGroup>().alpha =bagOpened?1:0;
                 //canvas.GetComponent<CanvasGroup>().interactable = bagOpened?true:false;
+                if (!bagOpened)
+                {
+                    bagUI.GetComponent<CanvasGroup>().alpha = 1;
+                    bagUI.GetComponent<CanvasGroup>().interactable = true;
+                    operationSuggestUI.GetComponent<CanvasGroup>().alpha = 0;
+                    operationSuggestUI.GetComponent<CanvasGroup>().interactable = false;
+                    operationSuggestUI.GetComponent<CanvasGroup>().blocksRaycasts = false;
+                    _UIAnimCameraAnimator.SetFloat("Blend",0);
+                    _PlayerAnimator.SetFloat("Blend",0);
+                }
             }
+
+
         }
 
         public ItemDetails GetItemDetails(int ID)
         {
-            return itemDataList_SO.ItemDetailsList.Find(i => i.itemID == ID);
+            var original = itemDataList_SO.ItemDetailsList.Find(i => i.itemID == ID);
+            if (original != null)
+            {
+                return new ItemDetails()
+                {
+                    itemID = original.itemID,
+                    name = original.name,
+                    itemType = original.itemType,
+                    itemIcon = original.itemIcon,
+                    itemObject = original.itemObject,
+                    itemDescriptions = original.itemDescriptions,
+                    canPickedup = original.canPickedup,
+                    canDropped = original.canDropped,
+                    canCarried = original.canCarried
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void AddItem(Item item, bool toDestroy)
@@ -76,14 +124,10 @@ namespace BlueStar.Inventory
                     
                     //如果使用过后的物品数量变为0，则删除物品
                     int refreshedAmount = playerBag.itemList[index].itemAmount;
-                    if (refreshedAmount==0)
+                    if (refreshedAmount<=0)
                     {
                         DeleteItem(itemID);
                     }
-                }
-                else
-                {
-                    DeleteItem(itemID);
                 }
                 //更新背包UI
                 EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
@@ -101,6 +145,11 @@ namespace BlueStar.Inventory
             var itemNew = new InventoryItem() { itemID = 0, itemAmount = 0 };
             playerBag.itemList[index] = itemNew;
             EventHandler.CallResetEmptySlot(index);
+            if (itemID==1006)
+            {
+                BulletCount = 0;
+                BulletCountTex.text = BulletCount.ToString();
+            }
         }
         
         /// <summary>
@@ -170,7 +219,72 @@ namespace BlueStar.Inventory
         {
             bagOpened = !bagOpened;
             bagUI.SetActive(bagOpened);
+            operationSuggestUI.SetActive(bagOpened);
+            UIAnimCamera.SetActive(bagOpened);
+            PostProcessingManager.Instance.pixelizeRenderPassFeature.SetActive(!bagOpened);
+            if (!bagOpened)
+            {
+                _UIAnimCameraAnimator.SetFloat("Blend",0f);
+                _PlayerAnimator.SetFloat("Blend",0f);
+            }
             
+        }
+
+        public void ChangeToOperationSuggest()
+        {
+            bagUI.GetComponent<CanvasGroup>().alpha = 0;
+            bagUI.GetComponent<CanvasGroup>().interactable = false;
+            operationSuggestUI.GetComponent<CanvasGroup>().alpha = 1;
+            operationSuggestUI.GetComponent<CanvasGroup>().interactable = true;
+            operationSuggestUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            StartCoroutine(FadeBlendValue(0, 1, 1));
+        }
+
+        public void ChangeToBag()
+        {
+            bagUI.GetComponent<CanvasGroup>().alpha = 1;
+            bagUI.GetComponent<CanvasGroup>().interactable = true;
+            operationSuggestUI.GetComponent<CanvasGroup>().alpha = 0;
+            operationSuggestUI.GetComponent<CanvasGroup>().interactable = false;
+            operationSuggestUI.GetComponent<CanvasGroup>().blocksRaycasts = false;
+            StartCoroutine(FadeBlendValue(1, 0, 1));
+        }
+        
+        public IEnumerator FadeBlendValue(float start, float end, float duration)
+        {
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                float currentValue = Mathf.Lerp(start, end, t);
+                
+                _UIAnimCameraAnimator.SetFloat("Blend",currentValue);
+                _PlayerAnimator.SetFloat("Blend",currentValue);
+            
+                yield return null;
+            }
+            
+            _UIAnimCameraAnimator.SetFloat("Blend",end);
+            _PlayerAnimator.SetFloat("Blend",end);
+
+        }
+
+        public void UseBullet()
+        {
+            int bulletItemID;
+            for (int i = playerBag.itemList.Count - 1; i >= 0; i--)
+            {
+                if (playerBag.itemList[i].itemID==1006)
+                {
+                    bulletItemID = playerBag.itemList[i].itemID;
+                    UseItem(bulletItemID,true);
+                }
+            }
+
+            
+            BulletCountTex.text = BulletCount.ToString();
         }
 
     }

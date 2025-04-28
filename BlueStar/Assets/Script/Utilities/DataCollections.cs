@@ -10,9 +10,9 @@ public class ItemDetails
     public GameObject itemObject;
     //public int itemAmount = 1;
     public string itemDescriptions;
-    public bool canPickedup;
+    public bool canPickedup=true;
     public bool canDropped;
-    public bool canCarried;
+    public bool canCarried=true;
     
 }
 
