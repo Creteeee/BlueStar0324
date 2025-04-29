@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Zombie_CS : MonoBehaviour
 {
@@ -58,10 +61,26 @@ public class Zombie_CS : MonoBehaviour
     public bool CanISee;
     
     [Header("血液特效")] public GameObject bloodVFX;
+    
+    [Header("敌人的GUID")]    
+    [SerializeField]
+    private string guid;
+    public string GUID => guid;
+
+    private void Awake()
+    {
+
+        if (string.IsNullOrEmpty(guid))
+        {
+            guid = System.Guid.NewGuid().ToString();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+
+
 
 
         HealthBarUI = transform.Find("HealthBar_Canvas/Slider").GetComponent<Slider>();
@@ -72,8 +91,26 @@ public class Zombie_CS : MonoBehaviour
         Anim = GetComponent<Animator>();
 
         Player = GameObject.Find(PlayerName).transform;
-        RandomDestroy = Random.Range(5.0f, 8.0f);
+        RandomDestroy = Random.Range(5.0f, 8.0f);//Random指代不明
         ChackHit = false;
+                
+        if (EnemyStateManager.Instance.EnemyHealth.TryGetValue(this.gameObject.name, out float health))
+        {
+            Health = health;
+            
+            Debug.Log("得到了生命值"+Health);
+        }
+        if (EnemyStateManager.Instance.EnemyPositions.TryGetValue(this.gameObject.name, out Vector3 pos))
+        {
+            transform.position = pos;
+        }
+        if (Health==0)
+        {
+            Anim.SetBool("DeathReload",true);
+            //Death();
+            HealthBarCanvas.gameObject.SetActive(false);
+            this.GetComponent<Animator>().runtimeAnimatorController = null;
+        }
         if (Spawn == false)
         {
 
@@ -178,6 +215,12 @@ public class Zombie_CS : MonoBehaviour
 
 
 
+
+    }
+
+    private void OnDisable()
+    {
+        EnemyStateManager.Instance.SaveEnemyState(this.gameObject.name, transform.position, Health);
     }
 
     // Update is called once per frame
@@ -395,6 +438,7 @@ public class Zombie_CS : MonoBehaviour
 
     void Death()
     {
+        ;
 
         Anim.SetBool("Attack", false);
         HealthBarUI.gameObject.SetActive(false);
@@ -408,8 +452,10 @@ public class Zombie_CS : MonoBehaviour
         {
             // StartCoroutine(TimeToDestroy());
         }
-  
-            
+
+        EnemyStateManager.Instance.SaveEnemyState(this.gameObject.name, transform.position, Health);
+
+
     }
 
 
