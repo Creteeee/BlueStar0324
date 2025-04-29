@@ -26266,6 +26266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5239305226426734831, guid: a9c548d6efc9ad24c9011ef933c2ad41,
         type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing_Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: a9c548d6efc9ad24c9011ef933c2ad41,
+        type: 3}
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}

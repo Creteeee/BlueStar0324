@@ -47,6 +47,7 @@ public class Zombie_CS : MonoBehaviour
     public string PlayerName;
     public float Damage;
     public float Health = 100.0f;
+    private Vector3 rotation;
     float RandomDestroy;
     Slider HealthBarUI;
     public Canvas HealthBarCanvas;
@@ -100,9 +101,26 @@ public class Zombie_CS : MonoBehaviour
             
             Debug.Log("得到了生命值"+Health);
         }
+        else
+        {
+            EnemyStateManager.Instance.EnemyHealth.Add(this.name,Health);
+        }
+
+        if (EnemyStateManager.Instance.EnemyRotations.TryGetValue(this.name,out Vector3 rot))
+        {
+            rotation = rot; 
+        }
+        else
+        {
+            EnemyStateManager.Instance.EnemyRotations.Add(this.name,this.transform.rotation.eulerAngles);
+        }
         if (EnemyStateManager.Instance.EnemyPositions.TryGetValue(this.gameObject.name, out Vector3 pos))
         {
             transform.position = pos;
+        }
+        else
+        {
+            EnemyStateManager.Instance.EnemyPositions.Add(this.name,this.transform.position);
         }
         if (Health==0)
         {
@@ -110,6 +128,11 @@ public class Zombie_CS : MonoBehaviour
             //Death();
             HealthBarCanvas.gameObject.SetActive(false);
             this.GetComponent<Animator>().runtimeAnimatorController = null;
+            
+            //禁用navigation后旋转
+            this.GetComponent<NavMeshAgent>().enabled = false;
+            this.transform.rotation=Quaternion.Euler(-90,rot.y,0);
+
         }
         if (Spawn == false)
         {
@@ -220,7 +243,7 @@ public class Zombie_CS : MonoBehaviour
 
     private void OnDisable()
     {
-        EnemyStateManager.Instance.SaveEnemyState(this.gameObject.name, transform.position, Health);
+        EnemyStateManager.Instance.SaveEnemyState(this.gameObject.name, transform.position,this.transform.rotation.eulerAngles, Health);
     }
 
     // Update is called once per frame
@@ -453,7 +476,7 @@ public class Zombie_CS : MonoBehaviour
             // StartCoroutine(TimeToDestroy());
         }
 
-        EnemyStateManager.Instance.SaveEnemyState(this.gameObject.name, transform.position, Health);
+        EnemyStateManager.Instance.SaveEnemyState(this.gameObject.name, transform.position, this.transform.rotation.eulerAngles,Health);
 
 
     }

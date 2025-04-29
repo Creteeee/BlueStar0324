@@ -30,6 +30,19 @@ public class Door_02 : MonoBehaviour
 		{
 			suggsetIcon.SetActive(false);
 		}
+
+		if (InventoryStateManager.Instance.DoorStates.TryGetValue(this.name,out bool openstate))
+		{
+			canOpen = openstate;
+			if (this.GetComponent<DetectPlayerItem>() != null && canOpen)
+			{
+				Destroy(this.GetComponent<DetectPlayerItem>());
+			}
+		}
+		else
+		{
+			InventoryStateManager.Instance.DoorStates.Add(this.name,canOpen);
+		}
 	}
 
 	private void Update()
@@ -54,6 +67,17 @@ public class Door_02 : MonoBehaviour
 			timer=1;
 		}
 		
+	}
+
+	private void OnDisable()
+	{
+		Debug.Log("门执行了OnDisable");
+		if (!InventoryStateManager.Instance.DoorStates.TryGetValue(this.name,out bool openstate))
+		{
+			Debug.Log("字典里不存在这个物体的键值对");
+		}
+		InventoryStateManager.Instance.SaveDoorState(this.name,canOpen);
+		Debug.Log(this.gameObject.name+canOpen);
 	}
 
 	private void OnTriggerEnter(Collider other)

@@ -1606,7 +1606,7 @@ PrefabInstance:
     - target: {fileID: 1620180704827455441, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: m_Name
-      value: wall_01_4x3_singleDoor (2)
+      value: wall_01_4x3_singleDoor_Client
       objectReference: {fileID: 0}
     - target: {fileID: 3546363021352035439, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -1657,6 +1657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing_Client
       objectReference: {fileID: 0}
     - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -8709,7 +8714,7 @@ PrefabInstance:
     - target: {fileID: 1620180704827455441, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: m_Name
-      value: wall_01_4x3_singleDoor
+      value: wall_01_4x3_singleDoor_Electricity
       objectReference: {fileID: 0}
     - target: {fileID: 3546363021352035439, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -8760,6 +8765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing_Electricity
       objectReference: {fileID: 0}
     - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
