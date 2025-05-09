@@ -71,4 +71,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Decompression_2.unity
     guid: 05bff552d72499c4a84c9a7f6d6d8538
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Corridor 1.unity
+    guid: 4d577941f6746b043865853946d4af5f
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Corridor_1 1.unity
+    guid: fb8cbb8e2971a2d458d999d11872771a
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L4/L4_Kindergarten.unity
+    guid: 9ec9f79f1184ed646b7eb33d1362f7a3
   m_configObjects: {}
