@@ -148,17 +148,20 @@ public class DialogueManager : MonoBehaviour
                 }
                 dialogIndex = int.Parse(cells[5]);
                 nextButton.gameObject.SetActive(true);
+                Controller_Terra.canMoveTerra = false;
                 break;
             }
             
             else if (cells[0] == "&" && int.Parse(cells[1]) == dialogIndex)
             {
                 nextButton.gameObject.SetActive(false);
+                Controller_Terra.canMoveTerra = false;
                 GenerateOption(i);
             }
             else if (cells[0]=="END"&& int.Parse(cells[1])==dialogIndex)
             {
                 UI_Front.SetActive(false);
+                Controller_Terra.canMoveTerra = true;
                 if (director!=null && dialogIndex==expectEndID)
                 {
                     director.Play();

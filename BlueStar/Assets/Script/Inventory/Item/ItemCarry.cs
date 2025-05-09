@@ -175,8 +175,12 @@ public class ItemCarry : MonoBehaviour
                 }
             }     
             //删除手上物品
+            CarriedID = 0;
             //删除背包物品
-            //禁止生成UI
+            InventoryManager.Instance.UseItem(expectedID, true);
+            //清空UI
+            SlotUI.selectedID = 0;
+            ActivateButtonUI.carriedID = 0;
             //播放TimeLine如有
         }
 

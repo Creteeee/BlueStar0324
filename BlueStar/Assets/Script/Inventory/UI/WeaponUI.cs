@@ -9,13 +9,19 @@ namespace BlueStar.Inventory
 {
     public class WeaponUI : MonoBehaviour
     {
-        [Header("UI组件")] [SerializeField] private Image icon;
-        [SerializeField] private TMP_Text name;
-        private Sprite initialIcon;
+        [Header("武器UI组件")] [SerializeField] private Image icon_Weapon;
+        [SerializeField] private TMP_Text name_Weapon;
+        private Sprite initialIcon_Weapon;
+
+        [Header("道具UI组件")] [SerializeField] private TMP_Text name_Device;
+        [SerializeField] private Image icon_Device;
+        private Sprite initialIcon_Device;
+        
 
         private void Awake()
         {
-            initialIcon = icon.sprite;
+            initialIcon_Weapon =  icon_Weapon.sprite;
+            initialIcon_Device = icon_Device.sprite;
         }
 
         private void Update()
@@ -23,13 +29,28 @@ namespace BlueStar.Inventory
             if (ActivateButtonUI.WeaponID != 0)
             {
                 ItemDetails item = InventoryManager.Instance.GetItemDetails(ActivateButtonUI.WeaponID);
-                icon.sprite = item.itemIcon;
-                name.text = item.name;
+                icon_Weapon.sprite = item.itemIcon;
+                name_Weapon.text = item.name;
             }
             else
             {
-                icon.sprite = initialIcon;
+                name_Weapon.text = "";
+                icon_Weapon.sprite = initialIcon_Weapon;
             }
+
+            if (ActivateButtonUI.carriedID!=0)
+            {
+                ItemDetails item = InventoryManager.Instance.GetItemDetails(ActivateButtonUI.carriedID);
+                icon_Device.sprite = item.itemIcon=item.itemIcon;
+                name_Device.text = item.name;
+            }
+            else
+            {
+                name_Device.text = "";
+                icon_Device.sprite = initialIcon_Device;
+            }
+            
+            
         }
     }
 }

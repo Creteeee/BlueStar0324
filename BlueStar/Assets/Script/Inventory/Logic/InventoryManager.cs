@@ -20,10 +20,11 @@ namespace BlueStar.Inventory
         public Animator _PlayerAnimator;
         public Animator _UIAnimCameraAnimator;
 
-        [Header("玩家的健康值和子弹值")]
+        [Header("玩家的健康值和子弹值")]//这里写了UI有点乱但是就这样吧
         public Slider HealthBar;
         public TMP_Text BulletCountTex;
         public int BulletCount;
+        public Material recoverMat;
         
         
         [Header("物品数据")]
@@ -224,6 +225,7 @@ namespace BlueStar.Inventory
             PostProcessingManager.Instance.pixelizeRenderPassFeature.SetActive(!bagOpened);
             if (!bagOpened)
             {
+                recoverMat.SetFloat("_Offset",-3f);
                 _UIAnimCameraAnimator.SetFloat("Blend",0f);
                 _PlayerAnimator.SetFloat("Blend",0f);
             }
@@ -285,6 +287,21 @@ namespace BlueStar.Inventory
 
             
             BulletCountTex.text = BulletCount.ToString();
+        }
+
+        public IEnumerator HealthRecoverVFX(float start, float end, float duration)
+        {
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                float currentValue = Mathf.Lerp(start, end, t);
+                recoverMat.SetFloat("_Offset",currentValue);
+                yield return null;
+            }
+            recoverMat.SetFloat("_Offset",end);
         }
 
     }

@@ -7,7 +7,7 @@ using DG.Tweening;
 
 namespace  BlueStar.Inventory
 {
-    public class InventoryUI : MonoBehaviour
+    public class InventoryUI : Singleton<InventoryUI>
     {
         public SlotUI[] playerSlots;
         [SerializeField] private GameObject suggestUI;

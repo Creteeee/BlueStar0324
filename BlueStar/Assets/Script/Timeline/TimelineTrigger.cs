@@ -12,7 +12,7 @@ public class TimelineTrigger : MonoBehaviour
     [Header("Timeline字幕")] [SerializeField]private string[] infos;
     [Header("继续播放的序号")] [SerializeField] private int[] indexs;
     private TimelineUI timelineUI;
-    private GameObject animationCamera;
+    public GameObject animationCamera;
 
     private void OnEnable()
     {
@@ -28,7 +28,7 @@ public class TimelineTrigger : MonoBehaviour
     {
         director = GetComponent<PlayableDirector>();
         timelineUI=GameObject.Find("------TimelineUI------").GetComponent<TimelineUI>();
-        animationCamera = GameObject.Find("------Camera------/AnimationCamera").gameObject;
+        //animationCamera = GameObject.Find("------Camera------/AnimationCamera").gameObject; 手动指定
         //animationCamera.SetActive(false);
     }
 
@@ -45,6 +45,7 @@ public class TimelineTrigger : MonoBehaviour
                 Debug.Log("呼叫生成了Timeline");
                 EventHandler.CallMoveHeader(true);
                 director.Play();
+                Controller_Terra.canMoveTerra = false;
             }
         }
     }
@@ -54,8 +55,9 @@ public class TimelineTrigger : MonoBehaviour
         this.gameObject.GetComponent<TimelineTrigger>().enabled = false;
         this.gameObject.GetComponent<Collider>().enabled = false;
         EventHandler.CallResetHeader(true);
-        Destroy(this.gameObject);
         animationCamera.SetActive(false);
+        Controller_Terra.canMoveTerra = true;
+        Destroy(this.gameObject);
     }
 
     /// <summary>

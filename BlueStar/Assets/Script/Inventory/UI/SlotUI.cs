@@ -15,6 +15,8 @@ namespace BlueStar.Inventory
         [SerializeField] private Button button;
         [Header("格子类型")] public SlotType slotType;
         public bool isSelected;
+        public bool canCarrried=false;
+        public bool canDropped = false;
         
         
         //物品信息
@@ -55,6 +57,8 @@ namespace BlueStar.Inventory
             slotImage.enabled = false;
             amountText.text = string.Empty;
             button.interactable = false;
+            canCarrried = false;
+            canDropped = false;
 
 
         }
@@ -84,6 +88,9 @@ namespace BlueStar.Inventory
                 InventoryManager.Instance.BulletCount = itemAmount;
             }
 
+            canCarrried = ItemDetails.canCarried;
+            canDropped = ItemDetails.canDropped;
+
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -97,6 +104,8 @@ namespace BlueStar.Inventory
             selectedID = ItemDetails.itemID;
             Debug.Log("现在点击的Slot是"+ItemDetails.name+"数量为"+itemAmount);
             inventoryUI.UpdateSlotHighLight(slotIndex);
+            ActivateButtonUI.selectedSlotIndex = slotIndex;
+            
             initActivateButton(ItemDetails);
         }
         /// <summary>

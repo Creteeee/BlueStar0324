@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e157e06d3ec404e8147509ee173da4, type: 3}
   m_Name: PixelizeRenderPassFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     RenderPassEvent: 550
     LowResWidth: 405

@@ -20803,7 +20803,7 @@ PrefabInstance:
     - target: {fileID: 5819667515729373752, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5859500981168367949, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
@@ -21088,12 +21088,12 @@ PrefabInstance:
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.39
+      value: -1.738
       objectReference: {fileID: 0}
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9799953
+      value: -0.796599
       objectReference: {fileID: 0}
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
@@ -21103,7 +21103,7 @@ PrefabInstance:
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.19902056
+      value: 0.60450816
       objectReference: {fileID: 0}
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
@@ -21118,7 +21118,7 @@ PrefabInstance:
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -337.04102
+      value: -434.387
       objectReference: {fileID: 0}
     - target: {fileID: 6595605668464275586, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
@@ -21208,12 +21208,12 @@ PrefabInstance:
     - target: {fileID: 6630131069668658216, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6630131069668658216, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653720396263878287, guid: 4fd336ce192a761418f2b1c44fd2ea6f,
         type: 3}
@@ -26349,8 +26349,10 @@ MonoBehaviour:
   expectID: 1001
   isFinished: 0
   Informations:
-  - "\u7535\u529B\u7CFB\u7EDF\u9020\u6210\u88AD\u51FB"
+  - "\u7535\u529B\u7CFB\u7EDF\u88AB\u53D1\u75C5\u4EBA\u5458\u653B\u51FB\u4E86"
   - "\u73B0\u8FDB\u5165\u7701\u7535\u6A21\u5F0F"
+  - "\u5173\u95ED\u4EBA\u8138\u8BC6\u522B\u7CFB\u7EDF"
+  - "\u9700\u8981\u901A\u884C\u8BC1\u51FA\u5165"
   _director: {fileID: 0}
 --- !u!1001 &2082822685
 PrefabInstance:

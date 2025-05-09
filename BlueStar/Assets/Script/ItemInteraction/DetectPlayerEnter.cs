@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Unity.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class DetectPlayerEnter : MonoBehaviour
 {
-    private bool isEntered = false;
+    [SerializeField]private bool isEntered = false;
+    [SerializeField] private bool isFocusing = false;
     public GameObject interactUIWidget;
     public Transform foucusPoint;
     public int dialougueID = 0;
     public DialogueManager dialogManager;
     private GameObject player;
+    private LayerMask playerLayer;
     public Camera MainCamera;
     private Vector3 initialCameraPosition;  // 记录相机初始位置
     private Quaternion initialCameraRotation;  // 记录相机初始旋转
@@ -33,11 +36,16 @@ public class DetectPlayerEnter : MonoBehaviour
         {
             interactUIWidget.SetActive(false);
         }
-        scale = player.transform.localScale;
+        //scale = player.transform.localScale;
         blackBG = GameObject.Find("------UI------/UI_2D/BlackBG").gameObject.GetComponent<CanvasGroup>();
         //挂载场景中物体，注意有没有改名字
 
 
+    }
+
+    private void Start()
+    {
+        playerLayer = LayerMask.NameToLayer("Player");
     }
 
     private void Update()
@@ -54,27 +62,23 @@ public class DetectPlayerEnter : MonoBehaviour
                 if (dialougueID != 0)
                 {
                     DialogueManager.currentDialogueBeginID = dialougueID;
-                    //Debug.Log("可以开启对话:" + gameObject.name);
-                    //dialogManager.Awake();
-                    //dialogManager.Start();
+  
 
                 }
 
                 player.GetComponent<Controller_Terra>().enabled = false;
+                player.GetComponent<Animator>().enabled = false;
+                
             }
         }
         
-        //防止player挡住摄像机，所以暂时改变它的位置；但是这样会导致走出碰撞体，isentered会变为false；因此保持这个状态下isentered=true
-        // if (player.transform.position !=pos && MainCamera.transform.position != initialCameraPosition )
-        // {
-        //     isEntered = true;
-        // }
-        
-        if (Input.GetKeyDown(KeyCode.Escape) )  // 按下 Escape 键时
+
+        if (isFocusing )  // 按下 Escape 键时
         {
-           // player.transform.position = pos;
-            if (isEntered)
+          
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("开始重置摄像头");
                 StartCoroutine(ResetCameraPosition());
 
             }
@@ -90,7 +94,7 @@ public class DetectPlayerEnter : MonoBehaviour
             interactUIWidget.SetActive(true);
             isEntered = true;
             player = other.gameObject;
-            //pos = player.transform.position;
+            
         }
     }
 
@@ -117,21 +121,25 @@ public class DetectPlayerEnter : MonoBehaviour
         MainCamera.gameObject.transform.rotation = foucusPoint.rotation;
         Vector3 posNew = new Vector3(MainCamera.transform.position.x, 0, MainCamera.transform.position.z-1);
         Vector3 scaleNew = new Vector3(0, 0.2f, 0f);
-        //player.transform.position = posNew;
-        player.transform.localScale = scaleNew;
+        player.GetComponent<Controller_Terra>().enabled = false;
+        MainCamera.cullingMask &= ~(1 <<playerLayer); 
         blackBG.DOFade(0, 0.5f);
+        isFocusing = true;
+        isEntered = false;
     }
 
     private IEnumerator ResetCameraPosition()
     {
         blackBG.DOFade(1, 0.5f);
         yield return new WaitForSeconds(1f);
-        player.transform.localScale = scale;
-        // 恢复到记录的相机初始位置和旋转
         MainCamera.gameObject.transform.position = initialCameraPosition;
         MainCamera.gameObject.transform.rotation = initialCameraRotation;
         player.GetComponent<Controller_Terra>().enabled = true;
+        player.GetComponent<Animator>().enabled = true;
+        MainCamera.cullingMask |= 1<< playerLayer;
         _terraCamera.enabled = true;
         blackBG.DOFade(0, 0.5f);
+        isFocusing = false;
+        isEntered = true;
     }
 }

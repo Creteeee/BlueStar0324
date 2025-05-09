@@ -35,6 +35,8 @@ public class Controller_Terra : MonoBehaviour
     private bool isFading = true;
     public float Health = 100.0f;
     public float initialHealth;
+    //全局记录是否可以移动人物的参数
+    public static bool canMoveTerra = true;
 
 
     private void Awake()
@@ -72,58 +74,67 @@ public class Controller_Terra : MonoBehaviour
 
     void Update()
     {
-        // 获取当前的水平和垂直输入
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector2 inputVector = new Vector2(horizontal, vertical);
-
-        // 处理瞄准和射击状态
-        if (Input.GetKey(KeyCode.Mouse1))
+        //判断是否可以移动
+        if (canMoveTerra)
         {
-            if (curState != StateType.Shooting)
-            {
-                curState = StateType.Aiming;
-                onAiming();
-            }
+            // 获取当前的水平和垂直输入
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+            Vector2 inputVector = new Vector2(horizontal, vertical);
 
-            // 按下鼠标左键进入射击状态
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            // 处理瞄准和射击状态
+            if (Input.GetKey(KeyCode.Mouse1))
             {
-                curState = StateType.Shooting;
-                onShooting();
+                if (curState != StateType.Shooting)
+                {
+                    curState = StateType.Aiming;
+                    onAiming();
+                }
+
+                // 按下鼠标左键进入射击状态
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    curState = StateType.Shooting;
+                    onShooting();
+                }
             }
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse1))
-        {
+            else if (Input.GetKeyUp(KeyCode.Mouse1))
+            {
           
-            // 松开右键时进入 IdleWalkRun 状态
-            curState = StateType.IdleWalkRun;
-            walkSpeedCurrent = 0;  // 确保速度为0
-            onWalking(inputVector);  // 停止行走动画
-        }
-        else
-        {
-            // 没有右键按下时，检查角色输入并切换状态
-            if (inputVector.magnitude >=0)
-            {
-                curState = StateType.IdleWalkRun;  // 切换到行走状态
-                onWalking(inputVector);  // 更新行走动画
+                // 松开右键时进入 IdleWalkRun 状态
+                curState = StateType.IdleWalkRun;
+                walkSpeedCurrent = 0;  // 确保速度为0
+                onWalking(inputVector);  // 停止行走动画
             }
             else
             {
-                curState = StateType.IdleWalkRun;
-                onWalking(inputVector); // 没有输入时，保持静止
-                //walkSpeedCurrent = 0f;  // 确保停止移动
+                // 没有右键按下时，检查角色输入并切换状态
+                if (inputVector.magnitude >=0)
+                {
+                    curState = StateType.IdleWalkRun;  // 切换到行走状态
+                    onWalking(inputVector);  // 更新行走动画
+                }
+                else
+                {
+                    curState = StateType.IdleWalkRun;
+                    onWalking(inputVector); // 没有输入时，保持静止
+                    //walkSpeedCurrent = 0f;  // 确保停止移动
 
+                }
             }
-        }
-        animator.SetFloat("Blend", walkSpeedCurrent);
-        transform.Translate(Vector3.forward * walkSpeedCurrent * Time.deltaTime);
+            animator.SetFloat("Blend", walkSpeedCurrent);
+            transform.Translate(Vector3.forward * walkSpeedCurrent * Time.deltaTime);
 
-        // 在 Aiming 状态下实时跟随鼠标位置旋转角色
-        if (curState == StateType.Aiming)
+            // 在 Aiming 状态下实时跟随鼠标位置旋转角色
+            if (curState == StateType.Aiming)
+            {
+                RotateTowardsMouse();
+            }
+            
+        }
+        else if (!canMoveTerra)
         {
-            RotateTowardsMouse();
+            animator.SetFloat("Blend", 0);
         }
     }
 

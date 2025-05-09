@@ -17,11 +17,17 @@ namespace BlueStar.Inventory
         private Sprite initialImage;
         public int ID;
         private ItemDetails item;
+        [SerializeField] private CanvasGroup carryButtonCanvasGroup;
+        [SerializeField] private CanvasGroup dropButtonCanvasGroup;
 
 
         private void Awake()
         {
             initialImage = Icon.sprite;
+            carryButtonCanvasGroup.alpha = 0;
+            carryButtonCanvasGroup.interactable = false;
+            dropButtonCanvasGroup.alpha = 0;
+            dropButtonCanvasGroup.interactable = false;
         }
 
         private void Update()
@@ -34,15 +40,49 @@ namespace BlueStar.Inventory
                     Name.text = item.name;
                     Description.text = item.itemDescriptions;
                     Icon.sprite = item.itemIcon;
+                    switch (item.itemType)
+                    {
+                        case ItemType.bulletFreeze:
+                            carryButtonCanvasGroup.alpha = 0;
+                            carryButtonCanvasGroup.interactable = false;
+                            dropButtonCanvasGroup.alpha = 1;
+                            dropButtonCanvasGroup.interactable = true;
+                            return;
+                        case ItemType.drug:
+                            carryButtonCanvasGroup.alpha = 0;
+                            carryButtonCanvasGroup.interactable = false;
+                            dropButtonCanvasGroup.alpha = 1;
+                            dropButtonCanvasGroup.interactable = true;
+                            return;
+                        case ItemType.tool:
+                            carryButtonCanvasGroup.alpha = 1;
+                            carryButtonCanvasGroup.interactable = true;
+                            dropButtonCanvasGroup.alpha = 0;
+                            dropButtonCanvasGroup.interactable = false;
+                            return;
+                        case ItemType.card:
+                            carryButtonCanvasGroup.alpha = 1;
+                            carryButtonCanvasGroup.interactable = true;
+                            dropButtonCanvasGroup.alpha = 0;
+                            dropButtonCanvasGroup.interactable = false;
+                            return;
+                    }
                     return;
                     
                 }
                 ResetSelectedUI();
+
+
             }
 
             if (SlotUI.selectedID==0)
             {
                 ResetSelectedUI();
+                carryButtonCanvasGroup.alpha = 0;
+                carryButtonCanvasGroup.interactable = false;
+                dropButtonCanvasGroup.alpha = 0;
+                dropButtonCanvasGroup.interactable = false;
+                return;
             }
 
         }
@@ -53,8 +93,6 @@ namespace BlueStar.Inventory
             Name.text = "";
             Description.text = "";
             Icon.sprite = initialImage;
-
-
         }
         
 
