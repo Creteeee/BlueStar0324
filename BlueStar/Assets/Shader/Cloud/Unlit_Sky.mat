@@ -25,7 +25,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Edge1: 0.36
+    - _Edge1: 0.03
     - _Edge2: 0.74
     - _Exponent: 1
     m_Colors:

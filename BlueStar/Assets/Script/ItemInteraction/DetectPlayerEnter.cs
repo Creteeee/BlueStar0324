@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using Unity.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class DetectPlayerEnter : MonoBehaviour

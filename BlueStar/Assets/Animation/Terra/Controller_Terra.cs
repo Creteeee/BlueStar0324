@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using BlueStar.Inventory;
 using Unity.Mathematics;
-using UnityEditor.Animations;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
