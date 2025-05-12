@@ -28,7 +28,7 @@ public class Dialougue : MonoBehaviour
             suggestE.gameObject.SetActive(false);
         }
         //当有director时，播放完对话播放timeline
-        _director = this.gameObject.GetComponent<PlayableDirector>();
+        //_director = this.gameObject.GetComponent<PlayableDirector>();
         if (_director!= null)
         {
             DialogueManager.expectEndID=endIndex;
@@ -77,6 +77,7 @@ public class Dialougue : MonoBehaviour
         DialogueManager.director = _director;
         dialougueManager.Awake();
         dialougueManager.Start();
+        DialogueManager.director = _director;
     }
 
     public void playTimeline()

@@ -527,11 +527,11 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 0.6833333333333327
+    m_PostExtrapolationTime: 0.5999999999999992
     m_PreExtrapolationTime: 0
     m_DisplayName: A_Director_Folded_Arm
   - m_Version: 1
-    m_Start: 2.3333333333333335
+    m_Start: 2.25
     m_ClipIn: 1.4666666666666668
     m_Asset: {fileID: -5226043467778211402}
     m_Duration: 1.6166666666666667
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 2.55
+  m_Time: 2.6166666666666667
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 1ca086a806f46964e85f7ef05346bb8e, type: 2}

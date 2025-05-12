@@ -52,6 +52,8 @@ public class DialogueManager : MonoBehaviour
         imageDic["干员B"] = sprites[6];
         imageDic["干员C"] = sprites[7];
         imageDic["干员D"] = sprites[8];
+        imageDic["秋原"] = sprites[9];
+        imageDic["神秘人士"] = sprites[10];
         dialogIndex = currentDialogueBeginID;
         //Canvas.GetComponent<CanvasGroup>().alpha = 0f;
         NPC_AI = Resources.Load<GameObject>("Prefabs/Character/NPC/NPC_AI");
@@ -162,8 +164,10 @@ public class DialogueManager : MonoBehaviour
             {
                 UI_Front.SetActive(false);
                 Controller_Terra.canMoveTerra = true;
-                if (director!=null && dialogIndex==expectEndID)
+                Debug.Log("进行到了最后一句");
+                if (director!=null /*&& dialogIndex==expectEndID*/)
                 {
+                    Debug.Log("存在director,它的父物体shi"+director.gameObject.name);
                     director.Play();
                     director = null;
                     expectEndID = 0;

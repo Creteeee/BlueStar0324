@@ -47,6 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddLights: 0
+    - _LightFactor: 0.01
     - _RimIntensity: 0.1
     - _StepEdge: 1.59
     - _isRimLight: 0

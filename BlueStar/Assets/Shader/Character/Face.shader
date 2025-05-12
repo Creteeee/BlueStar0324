@@ -18,6 +18,7 @@ Shader "Unlit/Face"
     	_Ramp2("Ramp2",2D)="white"{}
     	_shadowThreshold2("ShadowThreshold2",float)=0.15
     	_ShadowMask("ShadowMask",2D)="white"{}
+    	_LightFactor("LightFactor",float)=0.4
         
     }
     SubShader
@@ -49,6 +50,7 @@ Shader "Unlit/Face"
          float _isRimLight;
          float _shadowThreshold1;
          float _shadowThreshold2;
+        float _LightFactor;
          float4 _Ramp1_ST;
          float4 _Ramp2_ST;
          float4 _ShadowMask_ST;
@@ -233,7 +235,7 @@ Shader "Unlit/Face"
             	//加上shadow颜色
             	float4 baseColor_Ramped1 = lerp(Ramp1_Color*baseColor,baseColor,shadowArea1);
             	float4 baseColor_Ramped2 =lerp(baseColor_Ramped1*0.8+Ramp2_Color*0.05,baseColor_Ramped1,shadowArea2);
-            	finalMainColor = baseColor_Ramped2*1+float4(mainlightColor+addLightColor*0.005,1)*0.4;
+            	finalMainColor = baseColor_Ramped2*1+float4(mainlightColor+addLightColor*0.005,1)*_LightFactor;
             	
                 float4 finalColor = _isRimLight*rim*_RimColor+(1-rim*_isRimLight)*finalMainColor;
                return finalColor;

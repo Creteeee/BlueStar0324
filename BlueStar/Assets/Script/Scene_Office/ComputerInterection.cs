@@ -8,6 +8,7 @@ public class ComputerInterection : MonoBehaviour
     public GameObject[] interactionUI; 
     public string playerTag = "Player";  
     private bool isPlayerInRange = false;  // 用来标记玩家是否在触发器区域内
+    
 
     private void Start()
     {
@@ -30,7 +31,8 @@ public class ComputerInterection : MonoBehaviour
         // 如果玩家进入触发器并且按下了 E 键，加载场景
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(3);  // 切换到场景 3
+            this.GetComponent<Teleport>().onTransitionToScene();
+            isPlayerInRange = false;
         }
     }
 
