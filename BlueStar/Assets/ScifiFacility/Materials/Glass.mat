@@ -144,7 +144,7 @@ Material:
     - _Mode: 2
     - _NormalStrength: 1
     - _OcclusionStrength: 1
-    - _Opacity: 0.727
+    - _Opacity: 1
     - _OpaqueCullMode: 2
     - _Parallax: 0.02
     - _QueueControl: 0
