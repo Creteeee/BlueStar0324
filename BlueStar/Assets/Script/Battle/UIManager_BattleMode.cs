@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using BlueStar.Inventory;
 using MeadowGames.UINodeConnect4;
 using TMPro;
 using Unity.VisualScripting;
@@ -87,6 +88,13 @@ public class UIManager_BattleMode : MonoBehaviour
     public Camera orbitCamera;
     public static Vector3 bulletDirection;
 
+    [Header("游戏进度")] public Slider killProgress;
+    public TMP_Text killProgressText;
+    public static int killCount=0;
+    public GameObject finishGameUIInst;
+    private int timer = 0;//防止一直调用携程
+    public Transform TerraControlRoomTransform;
+
     
     
     
@@ -161,6 +169,7 @@ public class UIManager_BattleMode : MonoBehaviour
         ManuTab.SetActive(true);
         bulletLeftText= GameObject.Find("Canvas_SpaceBattle/BulletLeft/Text").GetComponent<TMP_Text>();
         bulletLeftText.text="";
+        killProgress.value = 0;
 
         //MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
@@ -207,13 +216,38 @@ public class UIManager_BattleMode : MonoBehaviour
         {
             HealthBar.value = emitterSlots[ActivatedSlotIndex].fuel/emitterSlots[ActivatedSlotIndex].fuelTotal;
             DrawSuggestLine(emitterSlots[ActivatedSlotIndex].Emitter_Launched.transform.position,arrowInst,orbitCamera,suggestLineRenderer);
-            
-            
-            emitterSlots[ActivatedSlotIndex].Shoot();
-            
-        }
 
-  
+            if (isOrbitCameraActivated)
+            {
+                Ray ray = orbitCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray,out hit, 100f))
+                {
+                    if (!LayerMask.LayerToName(hit.collider.gameObject.layer).Equals("AirWall")) 
+                    {
+                        emitterSlots[ActivatedSlotIndex].Shoot();
+                    }
+                    else
+                    {
+                        Debug.Log("打到了空气墙");
+                    }
+                }
+                //emitterSlots[ActivatedSlotIndex].Shoot();
+            }
+            
+
+        }
+        //击杀进度
+
+        killProgress.value = killCount / 5;
+        killProgressText.text=killCount*20+"%";
+
+        if (killCount==5&&timer==0)
+        {
+            Debug.Log("开始携程");
+            StartCoroutine(FinishGame());
+            timer += 1;
+        }
         
 
     }
@@ -603,6 +637,27 @@ public class UIManager_BattleMode : MonoBehaviour
         bulletDirection = arrowDirection;
         arrowIcon.transform.up = arrowDirection;
         
+    }
+
+    private IEnumerator FinishGame()
+    {
+        GameObject finishGameInst=Instantiate(finishGameUIInst,GameObject.Find("Canvas_SpaceBattle").transform);
+        yield return new WaitForSeconds(2f);
+        Destroy(finishGameInst);
+        Controller_Terra.canMoveTerra=true;
+        //这里再加一句告诉游戏进度干完了，可以打开另一个Trigger了
+        GameProgressManager.Instance.Day2_Work_isFinished = true;
+        GameProgressManager.Instance.Day2_Work_Finished();
+        TransitionManager.Instance.mainCamera.enabled = true;
+        TransitionManager.Instance.Transition("Direct","L2_ControlRoom",TerraControlRoomTransform);
+        
+        
+    }
+
+    public void KillAll()
+    {
+        killCount = 5;
+        Debug.Log("击杀的总数为"+killCount);
     }
     
     

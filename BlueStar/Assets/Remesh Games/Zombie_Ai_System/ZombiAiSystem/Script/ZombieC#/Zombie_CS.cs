@@ -234,6 +234,12 @@ public class Zombie_CS : MonoBehaviour
         {
             ChackHit = false;
         }
+        
+        //到了第二天，所有Zombie消失
+        if (!GameProgressManager.Instance.Day2_Zombie_isAlive)
+        {
+            this.gameObject.SetActive(false);
+        }
 
 
 

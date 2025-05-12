@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Indoor/L2/L2_ControlRoom.unity
     guid: 9ae9c6d7ba912494c8e7957f06024aeb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/Direct.unity
     guid: f9a028e7b06fbc04191031983d553a4a
   - enabled: 0
@@ -86,4 +86,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Indoor/L4/L4_Lift.unity
     guid: 7d85fd335d25f8c4e819ee856f84ef61
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_LaunchPlatform.unity
+    guid: 727d1429691447c41b89d0ff5dc2f4c2
+  - enabled: 1
+    path: Assets/Scenes/OutDoor/Running/R_Canyon.unity
+    guid: cb178089bec13f04d9692c1ed87020fb
+  - enabled: 1
+    path: Assets/Scenes/OutDoor/Running/R_City.unity
+    guid: 35a472ef44a54ac45aa8a68b72d41dab
+  - enabled: 1
+    path: Assets/Scenes/OutDoor/H_Huangxing.unity
+    guid: 974a4a9676ee2cc4990586190d4fbb12
+  - enabled: 1
+    path: Assets/Scenes/Transition/HomePage.unity
+    guid: 28826c9fd3540b540bfe5590a7156576
+  - enabled: 1
+    path: Assets/Scenes/Indoor/L2/L2_Lift.unity
+    guid: 4765ff2fdb5f2964b9e6c3661c33eb17
   m_configObjects: {}

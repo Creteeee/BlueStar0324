@@ -43,4 +43,12 @@ public class HomepageUI : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene("PersistantLevel",LoadSceneMode.Additive);
+        SceneManager.LoadScene("L2_Home",LoadSceneMode.Additive);
+        SceneManager.LoadScene("O_OverView",LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("O_OverView"));
+    }
+
 }

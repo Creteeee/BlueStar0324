@@ -12,6 +12,7 @@ namespace BlueStar.Inventory
         private CanvasGroup blackBG;
         public GameObject player;
         public GameObject Terra_Awake;
+        public Camera mainCamera;
         void Start()
         {
             player=GameObject.Find("Terra");
@@ -39,6 +40,11 @@ namespace BlueStar.Inventory
             Scene newActiveScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
             //SceneManager.SetActiveScene(newActiveScene);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("PersistantLevel"));
+            if (to=="Direct")
+            {
+                mainCamera.enabled = false;
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Direct"));
+            }
             
             blackBG.DOFade(0, 0.5f);
         }

@@ -32,6 +32,7 @@ public class ComputerInterection : MonoBehaviour
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             this.GetComponent<Teleport>().onTransitionToScene();
+            Controller_Terra.canMoveTerra = false;
             isPlayerInRange = false;
         }
     }

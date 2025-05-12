@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 90afd45a82889f64093261bbe2d788b1, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2705843, g: 0.1537544, b: 0.8560363, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -586,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 1620180704827455441, guid: a9c548d6efc9ad24c9011ef933c2ad41,
         type: 3}
       propertyPath: m_Name
-      value: wall_01_4x3_singleDoor back (2)
+      value: Door_ControlRoom
       objectReference: {fileID: 0}
     - target: {fileID: 1620180704827455441, guid: a9c548d6efc9ad24c9011ef933c2ad41,
         type: 3}
@@ -646,7 +646,7 @@ PrefabInstance:
     - target: {fileID: 3546363021352035439, guid: a9c548d6efc9ad24c9011ef933c2ad41,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15999985
+      value: -0.063
       objectReference: {fileID: 0}
     - target: {fileID: 3546363021352035439, guid: a9c548d6efc9ad24c9011ef933c2ad41,
         type: 3}
@@ -687,6 +687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: a9c548d6efc9ad24c9011ef933c2ad41,
+        type: 3}
+      propertyPath: m_Name
+      value: Door_ControlRoom_wing
       objectReference: {fileID: 0}
     - target: {fileID: 5239305226426734831, guid: a9c548d6efc9ad24c9011ef933c2ad41,
         type: 3}
@@ -735,6 +740,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 103803799}
+    - targetCorrespondingSourceObject: {fileID: 5239305226426734831, guid: a9c548d6efc9ad24c9011ef933c2ad41,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103803804}
   m_SourcePrefab: {fileID: 100100000, guid: a9c548d6efc9ad24c9011ef933c2ad41, type: 3}
 --- !u!4 &103803796 stripped
 Transform:
@@ -766,6 +775,21 @@ MonoBehaviour:
   Informations:
   - "\u8FD9\u91CC\u662F4\u53F7\u8BAD\u7EC3\u5BA4"
   _director: {fileID: 0}
+--- !u!114 &103803804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103803797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1e72f6a69b6a04c877d0ce5b7a093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneFrom: L2_ControlRoom
+  SceneTo: L2_TrainingCourse
+  transform: {fileID: 1905429862}
 --- !u!1001 &142330694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5633,7 +5657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1088150785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9188,7 +9212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2007633104
 SpriteRenderer:
   m_ObjectHideFlags: 0

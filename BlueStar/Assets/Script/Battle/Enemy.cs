@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour,Aircraft
     private float a;
     private GameObject Inner;//形状这个GameObject
     public EnemyType enemyType;
+    private int timer = 0;
     
  
 
@@ -57,10 +58,12 @@ public class Enemy : MonoBehaviour,Aircraft
     {
         Addpoints(orbit.trueAnomaly);
         onMove();
-        if (blood==0)
+        if (blood==0&&timer==0)
         {
             
-            CleanSignals.totalKill += 1;
+            //CleanSignals.totalKill += 1;
+            UIManager_BattleMode.killCount += 1;
+            timer += 1;
             Destroy(this.gameObject);
         }
 
