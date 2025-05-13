@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class HomepageUI : MonoBehaviour
@@ -16,8 +17,13 @@ public class HomepageUI : MonoBehaviour
     public Transform transform2;
     public GameObject button1;
     public GameObject botton2;
+    public PlayableDirector Director;
+  
 
- 
+    private void Awake()
+    {
+        Director = this.GetComponent<PlayableDirector>();
+    }
 
     public void NextUI1()
     {
@@ -45,10 +51,40 @@ public class HomepageUI : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("PersistantLevel",LoadSceneMode.Additive);
-        SceneManager.LoadScene("L2_Home",LoadSceneMode.Additive);
-        SceneManager.LoadScene("O_OverView",LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("O_OverView"));
+        StartCoroutine(LoadScenesAndStartGame());
+    }
+
+    private IEnumerator LoadScenesAndStartGame()
+    {
+        // 1. 加载主逻辑场景
+        AsyncOperation loadPersistent = SceneManager.LoadSceneAsync("PersistantLevel", LoadSceneMode.Additive);
+        yield return loadPersistent;
+        
+        AsyncOperation loadHome = SceneManager.LoadSceneAsync("L2_Home", LoadSceneMode.Additive);
+        yield return loadHome;
+
+        // 2. 加载目标场景 O_OverView
+        AsyncOperation loadOverview = SceneManager.LoadSceneAsync("O_OverView", LoadSceneMode.Additive);
+        yield return loadOverview;
+
+        // 3. 设置为激活场景
+        Scene overviewScene = SceneManager.GetSceneByName("O_OverView");
+        if (overviewScene.IsValid() && overviewScene.isLoaded)
+        {
+            SceneManager.SetActiveScene(overviewScene);
+        }
+        else
+        {
+            Debug.LogError("O_OverView 场景无效或未加载完成！");
+        }
+
+        // 4. 卸载当前场景
+        SceneManager.UnloadSceneAsync("HomePage");
+    }
+
+    public void playTimeLine()
+    {
+        Director.Play();
     }
 
 }

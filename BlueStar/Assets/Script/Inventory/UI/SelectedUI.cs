@@ -49,8 +49,8 @@ namespace BlueStar.Inventory
                             dropButtonCanvasGroup.interactable = true;
                             return;
                         case ItemType.drug:
-                            carryButtonCanvasGroup.alpha = 0;
-                            carryButtonCanvasGroup.interactable = false;
+                            carryButtonCanvasGroup.alpha = 1;
+                            carryButtonCanvasGroup.interactable = true;
                             dropButtonCanvasGroup.alpha = 1;
                             dropButtonCanvasGroup.interactable = true;
                             return;

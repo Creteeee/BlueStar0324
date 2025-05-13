@@ -36,6 +36,7 @@ public class Controller_Terra : MonoBehaviour
     public float initialHealth;
     //全局记录是否可以移动人物的参数
     public static bool canMoveTerra = true;
+    public static bool isEndShowState = false;
 
 
     private void Awake()
@@ -131,7 +132,7 @@ public class Controller_Terra : MonoBehaviour
             }
             
         }
-        else if (!canMoveTerra)
+        else if (!canMoveTerra&&!isEndShowState)
         {
             animator.SetFloat("Blend", 0);
         }

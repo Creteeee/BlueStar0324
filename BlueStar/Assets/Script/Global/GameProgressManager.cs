@@ -2,16 +2,34 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameProgressManager : Singleton<GameProgressManager>
 {
+    public GameObject Terra;
+    [Header("Day1_RepairFinish")] public bool isRepairFinish = false;
     [Header("Day2_Zombie_Die")]
     public bool Day2_Zombie_isAlive = true;
     [Header("Day2_Work")]
     public bool Day2_Work_isFinished=false;
     public GameObject Timeline_UnknownPersonLeaveSuggest;
-    
-    
+
+
+    public void Day1_FinishRepair()
+    {
+        isRepairFinish = true;
+        Day2_Zombie_isAlive = false;
+        Terra.transform.position = new Vector3(54f, 0.1f, -12f);
+        StartCoroutine(LoadDay2Scene());
+
+    }
+
+    public IEnumerator LoadDay2Scene()
+    {
+        AsyncOperation loadTrainingCourse = SceneManager.LoadSceneAsync("L2_TrainingCourse", LoadSceneMode.Additive);
+        yield return loadTrainingCourse;
+        SceneManager.UnloadSceneAsync("L1_Shaft");
+    }
 
     public void Day2_Work_Finished()
     {

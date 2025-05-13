@@ -19,6 +19,7 @@ public class DetectPlayerEnter : MonoBehaviour
     private Vector3 pos;
     private Vector3 scale;
     private CanvasGroup blackBG;
+    public static GameObject currentInteractObj;
     
 
     
@@ -90,7 +91,8 @@ public class DetectPlayerEnter : MonoBehaviour
             interactUIWidget.SetActive(true);
             isEntered = true;
             player = other.gameObject;
-            
+            currentInteractObj = this.gameObject;
+
         }
     }
 
@@ -104,7 +106,7 @@ public class DetectPlayerEnter : MonoBehaviour
         isEntered = false;
     }
 
-    private IEnumerator ChangeCameraPosition()
+    public IEnumerator ChangeCameraPosition()
     {
         blackBG.DOFade(1, 0.5f);
         yield return new WaitForSeconds(1f);
@@ -124,7 +126,7 @@ public class DetectPlayerEnter : MonoBehaviour
         isEntered = false;
     }
 
-    private IEnumerator ResetCameraPosition()
+    public IEnumerator ResetCameraPosition()
     {
         blackBG.DOFade(1, 0.5f);
         yield return new WaitForSeconds(1f);
@@ -137,5 +139,13 @@ public class DetectPlayerEnter : MonoBehaviour
         blackBG.DOFade(0, 0.5f);
         isFocusing = false;
         isEntered = true;
+    }
+
+    public void Reset()
+    {
+        //interactUIWidget.SetActive(false);
+        //isEntered = false;
+        StartCoroutine(ResetCameraPosition());
+        currentInteractObj.GetComponent<DetectPlayerEnter>().enabled = false;
     }
 }

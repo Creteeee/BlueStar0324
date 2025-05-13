@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Transition/ShortCut01.unity
     guid: 851bb09e80b1d0e4bb82bc0762a4651b
   - enabled: 1
+    path: Assets/Scenes/Transition/HomePage.unity
+    guid: 28826c9fd3540b540bfe5590a7156576
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Home.unity
     guid: 95bd9c4bc5d24a24796d930dc896ddaf
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_ControlRoom.unity
     guid: 9ae9c6d7ba912494c8e7957f06024aeb
   - enabled: 1
@@ -20,43 +23,43 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Indoor/L2/L2_Corridor.unity
     guid: ab2c07d5a8f7e9d4e921f3a6ed37e613
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_ClassRoom.unity
     guid: 4b9427e106a654f4e8c13ab86df75d09
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Client.unity
     guid: 305b83b0446a0cc4ea60f4b9d17bb043
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Corridor_1.unity
     guid: c33280d95757f3d4db9c07042eb5d94b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Corridor_2.unity
     guid: 0f85ba0a80818354ea21a7e1dedcb559
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Decompression.unity
     guid: 8292a3e264d0a7d43863c98250841d7f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Electricity_01.unity
     guid: af182f1446eecfc4b9d19eb2db916033
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Kitchen.unity
     guid: 8be9f2e8ec1b8cb4392975bef2b045f6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_LiftRoom.unity
     guid: 60ce60a86453d5447863d1b32d2a5d9d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_LivingRoom.unity
     guid: 17b5317e4be552a4589cb792de4b1dcb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Office.unity
     guid: b01ef0ce053730042accf9aff703631f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L1/L1_Shaft.unity
     guid: cd0536d10b7182d43b1bcca36888e383
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Storage.unity
     guid: d07df5c1324a8794c80272220a8aac31
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_TrainingCourse.unity
     guid: e463db45792e701459ca38968e38c1d8
   - enabled: 1
@@ -65,10 +68,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersisitantLevel/PersistantLevel.unity
     guid: 79211de7bb126474092c87e3f07e31e5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L4/L4_FileRoom.unity
     guid: a12146fc38e7afe49a66d872ab037861
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Decompression_2.unity
     guid: 05bff552d72499c4a84c9a7f6d6d8538
   - enabled: 0
@@ -77,13 +80,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Indoor/L2/L2_Corridor_1 1.unity
     guid: fb8cbb8e2971a2d458d999d11872771a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L4/L4_Kindergarten.unity
     guid: 9ec9f79f1184ed646b7eb33d1362f7a3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OutDoor/Running/R_GrassLand.unity
     guid: 47cc807de5eec4e4ea3c40ff631042e8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Indoor/L4/L4_Lift.unity
     guid: 7d85fd335d25f8c4e819ee856f84ef61
   - enabled: 1
@@ -99,9 +102,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OutDoor/H_Huangxing.unity
     guid: 974a4a9676ee2cc4990586190d4fbb12
   - enabled: 1
-    path: Assets/Scenes/Transition/HomePage.unity
-    guid: 28826c9fd3540b540bfe5590a7156576
-  - enabled: 1
     path: Assets/Scenes/Indoor/L2/L2_Lift.unity
     guid: 4765ff2fdb5f2964b9e6c3661c33eb17
+  - enabled: 1
+    path: Assets/Scenes/OutDoor/Running/R_Lake.unity
+    guid: 525f6351468d36f4a9deb3ebab322d58
   m_configObjects: {}
