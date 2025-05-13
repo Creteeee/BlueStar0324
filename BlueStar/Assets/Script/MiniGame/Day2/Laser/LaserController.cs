@@ -8,6 +8,9 @@ public class LaserController : MonoBehaviour
     public int MaxReflectTimes = 5;
     private LineRenderer lineRenderer;
     public Vector3 direction = Vector3.forward;  // 默认方向（你可以改成 Vector3.right）
+    public Material litMat;
+    public GameObject huangxingPos;
+    public RotateLaserCube[] rotateLaserCubes;
 
     private void Start()
     {
@@ -16,8 +19,8 @@ public class LaserController : MonoBehaviour
         // 推荐设置材质和颜色以便可见
         lineRenderer.startColor = Color.red;
         lineRenderer.endColor = Color.red;
-        lineRenderer.startWidth = 0.05f;
-        lineRenderer.endWidth = 0.05f;
+        lineRenderer.startWidth = 0.01f;
+        lineRenderer.endWidth = 0.01f;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
     }
 
@@ -38,6 +41,8 @@ public class LaserController : MonoBehaviour
             Ray ray = new Ray(currentPos, dir);
             RaycastHit hit;
 
+
+
             if (Physics.Raycast(ray, out hit, maxDistance))
             {
                 currentReflectTimes++;
@@ -48,6 +53,16 @@ public class LaserController : MonoBehaviour
                 // 计算反射方向
                 dir = Vector3.Reflect(dir, hit.normal);
                 currentPos += dir * 0.01f; // 防止下一帧仍然命中同一个点
+                
+                if (hit.transform.gameObject == huangxingPos)
+                {
+                    litMat.EnableKeyword("_EMISSION");
+                    foreach (var cube in rotateLaserCubes)
+                    {
+                        cube.enabled = false;
+                    }
+                
+                }
             }
             else
             {
