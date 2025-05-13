@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,45 +6,56 @@ public class LaserController : MonoBehaviour
 {
     public float maxDistance = 100f;
     public int MaxReflectTimes = 5;
-    private LineRenderer lineRenderer;   
-    private Vector3 WorldMousePos;
-    private Vector2 direction;
-    private Vector2 startFirePos;
+    private LineRenderer lineRenderer;
+    public Vector3 direction = Vector3.forward;  // 默认方向（你可以改成 Vector3.right）
 
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+
+        // 推荐设置材质和颜色以便可见
+        lineRenderer.startColor = Color.red;
+        lineRenderer.endColor = Color.red;
+        lineRenderer.startWidth = 0.05f;
+        lineRenderer.endWidth = 0.05f;
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
     }
 
     private void Update()
     {
-        FireLaserIteration(this.gameObject.transform.position,direction,MaxReflectTimes);
+        FireLaserIteration(transform.position, direction.normalized, MaxReflectTimes);
     }
 
-    void FireLaserIteration(Vector2 origin, Vector2 direction,int maxReflectTimes)
+    void FireLaserIteration(Vector3 origin, Vector3 dir, int maxReflectTimes)
     {
         int currentReflectTimes = 0;
-        Vector2 currentPos = origin;
+        Vector3 currentPos = origin;
         lineRenderer.positionCount = 1;
-        lineRenderer.SetPosition(currentReflectTimes,currentPos);
+        lineRenderer.SetPosition(0, currentPos);
 
-        RaycastHit2D hit = Physics2D.Raycast(currentPos, direction, maxDistance);
-        while (hit.collider!=null && currentReflectTimes<=maxReflectTimes)
+        while (currentReflectTimes < maxReflectTimes)
         {
+            Ray ray = new Ray(currentPos, dir);
+            RaycastHit hit;
 
-            
-            currentPos = hit.point;
+            if (Physics.Raycast(ray, out hit, maxDistance))
+            {
+                currentReflectTimes++;
+                currentPos = hit.point;
+                lineRenderer.positionCount = currentReflectTimes + 1;
+                lineRenderer.SetPosition(currentReflectTimes, currentPos);
 
-            lineRenderer.positionCount++;
-            lineRenderer.SetPosition(++currentReflectTimes,currentPos);
-            
-            //计算反射
-            direction = Vector2.Reflect(direction, hit.normal);
-
-            Vector2 OFFSET = new Vector2(0.01f, 0.01f);
-            currentPos = currentPos + direction * OFFSET;
-            hit = Physics2D.Raycast(currentPos, direction, maxDistance);
+                // 计算反射方向
+                dir = Vector3.Reflect(dir, hit.normal);
+                currentPos += dir * 0.01f; // 防止下一帧仍然命中同一个点
+            }
+            else
+            {
+                // 没打到东西，延伸到最大距离
+                lineRenderer.positionCount = currentReflectTimes + 2;
+                lineRenderer.SetPosition(currentReflectTimes + 1, currentPos + dir * maxDistance);
+                break;
+            }
         }
     }
-
 }
