@@ -42,6 +42,7 @@ public class ObserveItem : MonoBehaviour
     private int timer2 = 0;
     public static GameObject activeGameobject;
     [SerializeField] private GameObject observeUI;
+    [SerializeField] private GameObject ObserveSuggest;
     
 
     private void Awake()
@@ -58,7 +59,8 @@ public class ObserveItem : MonoBehaviour
         Debug.Log(downHeader.transform.position.ToString());
         observeUI = GameObject.Find("------Camera------/MainCamera").gameObject.transform.Find("ObserveUI").gameObject;
         observeUI.SetActive(false);
-        
+        ObserveSuggest=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("ObserveSuggest").gameObject;
+        ObserveSuggest.SetActive(false);
 
         
         
@@ -114,8 +116,13 @@ public class ObserveItem : MonoBehaviour
                         // ObserveItem.upHeader.transform.DOMove(new Vector3(960, 880, 0) , 1);
                         // ObserveItem.downHeader.transform.DOMove(new Vector3(960, -880, 0) , 1);
                         EventHandler.CallMoveHeader(true);
-                        transform.DOMove(foucusPosition, 1f);
+                        if (InfomationUI==null)
+                        {
+                            transform.DOMove(foucusPosition, 1f);
+                        }
+
                         timer += 1;
+                        ObserveSuggest.SetActive(true);
                         
                     }
                     if (InfomationUI != null)
@@ -171,8 +178,11 @@ public class ObserveItem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            transform.DOMove(originalPosition, 1f);
-            transform.DORotate(originalRotation, 1);
+            if (InfomationUI==null)
+            {
+                transform.DOMove(originalPosition, 1f);
+                transform.DORotate(originalRotation, 1);
+            }
             EventHandler.CallResetHeader(true);
             if (suggestUIInst!=null)
             {
@@ -187,6 +197,7 @@ public class ObserveItem : MonoBehaviour
             }
             canRotate = true;
             observeUI.SetActive(false);
+            ObserveSuggest.SetActive(false);
         }
         
         if (isChildItem && isObserving)
@@ -217,7 +228,13 @@ public class ObserveItem : MonoBehaviour
             Destroy(ObserveItem.suggestUIInst.gameObject);
             ObserveItem.index = 0;
             activeGameobject.GetComponent<ObserveItem>().isObserving=true;
-            observeUI.SetActive(true);
+            
+            //有InfomationUI的时候不放置背景黑色
+            if (InfomationUI==null)
+            {
+                observeUI.SetActive(true);
+            }
+            //observeUI.SetActive(true);
         }
     }
 

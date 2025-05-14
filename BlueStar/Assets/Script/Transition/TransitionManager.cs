@@ -13,6 +13,7 @@ namespace BlueStar.Inventory
         public GameObject player;
         public GameObject Terra_Awake;
         public Camera mainCamera;
+        //public GameObject BeginText;
         void Start()
         {
             player=GameObject.Find("Terra");
@@ -57,6 +58,8 @@ namespace BlueStar.Inventory
             GameObject.Find("DialogueManager").GetComponent<DialogueManager>().enabled = false;
             blackBG.DOFade(0,1);
             Terra_Awake.SetActive(true);
+            //BeginText.GetComponent<TimelineTrigger>().enabled = false;
+            
         }
 
 
