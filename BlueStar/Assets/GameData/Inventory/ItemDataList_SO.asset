@@ -92,7 +92,7 @@ MonoBehaviour:
   - itemID: 1008
     name: "\u5730\u7403\u6A21\u578B\u673A\u5173"
     itemType: 5
-    itemIcon: {fileID: 21300000, guid: ad66795590994eb41807fbe1cef3c6e5, type: 3}
+    itemIcon: {fileID: 21300000, guid: f7e5aa75ab3705a47831120cf011b0ba, type: 3}
     itemObject: {fileID: 7008732759711782479, guid: 53f906d2f77cea842a7a7616e0167959,
       type: 3}
     itemDescriptions: "\u673A\u5173\u76D2\u4E0A\u7684\u5730\u7403\u7EC4\u4EF6, \u5B89\u88C5\u540E\u6309\u7167\u4E00\u5B9A\u987A\u5E8F\u6392\u5217\u661F\u7403,

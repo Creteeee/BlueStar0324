@@ -88,6 +88,10 @@ public class ObserveItem : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit,20f,LayerMask.GetMask("Interactive")))
         {
+            if (InfomationUI != null)
+            {
+                isChildItem = true;
+            }
 
             // 如果射线击中物体，执行放大操作
             if (hit.transform == transform)

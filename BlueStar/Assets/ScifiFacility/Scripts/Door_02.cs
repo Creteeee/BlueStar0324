@@ -85,15 +85,15 @@ public class Door_02 : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			isTrigger = true;
-			if (canOpen && timer !=0)
-			{
-				audio.Play();
-				this.transform.DOMove(initialPosition+right*1.5f, 1f).OnComplete(() =>
-				{
-					teleport.onTransitionToScene(); // 只在门完全打开后切换场景
-				});
-    				
-			}
+			// if (canOpen && timer !=0)
+			// {
+			// 	audio.Play();
+			// 	this.transform.DOMove(initialPosition+right*1.5f, 1f).OnComplete(() =>
+			// 	{
+			// 		teleport.onTransitionToScene(); // 只在门完全打开后切换场景
+			// 	});
+   //  				
+			// }
 			if (suggsetIcon!=null)
 			{
 				suggsetIcon.SetActive(true);

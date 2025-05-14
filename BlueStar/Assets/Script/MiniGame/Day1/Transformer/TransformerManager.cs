@@ -65,11 +65,11 @@ public class TransformerManager : MonoBehaviour
         if (I1 == 40 && I2 == 40 && I3 == 40) 
         {
             
-            // EventHandler.CallMoveHeader(true);
-            //this.GetComponent<TimelineTrigger>().enabled = true;
-            SceneManager.LoadScene("L2_Electricity_01",LoadSceneMode.Additive);
-            SceneManager.LoadScene("L2_Decompression_2",LoadSceneMode.Additive);
-            SceneManager.LoadScene("L2_TrainingCourse",LoadSceneMode.Additive);
+            EventHandler.CallMoveHeader(true);
+            this.GetComponent<TimelineTrigger>().enabled = true;
+            // SceneManager.LoadScene("L2_Electricity_01",LoadSceneMode.Additive);
+            // SceneManager.LoadScene("L2_Decompression_2",LoadSceneMode.Additive);
+            // SceneManager.LoadScene("L2_TrainingCourse",LoadSceneMode.Additive);
             PlayerTrigger.SetActive(true);
             
         }

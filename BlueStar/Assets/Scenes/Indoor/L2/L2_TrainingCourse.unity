@@ -26255,7 +26255,7 @@ PrefabInstance:
     - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: SceneTo
-      value: L2_Corrider_2
+      value: L2_Decompression_2
       objectReference: {fileID: 0}
     - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
