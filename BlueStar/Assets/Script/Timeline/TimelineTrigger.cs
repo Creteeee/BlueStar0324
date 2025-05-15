@@ -46,6 +46,7 @@ public class TimelineTrigger : MonoBehaviour
                 EventHandler.CallMoveHeader(true);
                 director.Play();
                 Controller_Terra.canMoveTerra = false;
+                Controller_Terra.audio.enabled = false;
             }
         }
     }
@@ -57,6 +58,7 @@ public class TimelineTrigger : MonoBehaviour
         EventHandler.CallResetHeader(true);
         animationCamera.SetActive(false);
         Controller_Terra.canMoveTerra = true;
+        Controller_Terra.audio.enabled = true;
         Destroy(this.gameObject);
     }
 

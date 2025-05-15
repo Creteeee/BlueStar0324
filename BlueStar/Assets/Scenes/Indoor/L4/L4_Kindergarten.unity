@@ -3059,6 +3059,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)DAWDAD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: canOpen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

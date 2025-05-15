@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class ComputerInterection : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class ComputerInterection : MonoBehaviour
         // 如果玩家进入触发器并且按下了 E 键，加载场景
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResHeight = 1920;
+            PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResWidth = 1080;
             this.GetComponent<Teleport>().onTransitionToScene();
             Controller_Terra.canMoveTerra = false;
             isPlayerInRange = false;

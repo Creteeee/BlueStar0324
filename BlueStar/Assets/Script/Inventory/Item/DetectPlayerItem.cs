@@ -79,9 +79,10 @@ public class DetectPlayerItem : MonoBehaviour
         {
             EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations);
         }*/
-        if (mode == InteractionMode.Trigger)
+        if (mode == InteractionMode.Trigger && isIneracted==transform)
         {
             EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations);
+            isIneracted = false;
         }
         
 
@@ -104,6 +105,11 @@ public class DetectPlayerItem : MonoBehaviour
         {
             isIneracted = false;
             
+        }
+
+        if (ItemCarry.suggestUIInst != null) 
+        {
+            Destroy(ItemCarry.suggestUIInst.gameObject);
         }
         
     }

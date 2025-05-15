@@ -26,6 +26,8 @@ public static class EventHandler
         ShowExpectItemUI?.Invoke(isInteracted,ID,informations);
     }
     
+    
+    
 
     public static event Action<string[]> PassObserveInfos;
     public static void CallPassObserveInfos(string[] infos)

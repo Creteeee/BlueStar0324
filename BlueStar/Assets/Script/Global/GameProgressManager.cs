@@ -22,6 +22,7 @@ public class GameProgressManager : Singleton<GameProgressManager>
     {
         audio = mainCamera.gameObject.GetComponent<AudioSource>();
         audio.clip = _audioClips[0];
+        audio.Play();
     }
 
     public void Day1_FinishRepair()
@@ -40,6 +41,7 @@ public class GameProgressManager : Singleton<GameProgressManager>
         yield return loadTrainingCourse;
         SceneManager.UnloadSceneAsync("L1_Shaft");
         audio.clip = _audioClips[1];
+        audio.Play();
     }
 
     public void Day2_Work_Finished()
@@ -50,6 +52,9 @@ public class GameProgressManager : Singleton<GameProgressManager>
             InventoryStateManager.Instance.DoorStates["Door_ControlRoom_wing"]=true;
             InventoryStateManager.Instance.DoorStates["Door_TrainingCourse_To_Decompression_wing"]=true;
             InventoryStateManager.Instance.DoorStates["Door_Corridor_1_wing"]=true;
+            InventoryStateManager.Instance.DoorStates["O_I_LiftDoor"] = true;
+            Debug.Log("游戏进程让O_I_LiftDoor的值为"+InventoryStateManager.Instance.DoorStates["O_I_LiftDoor"]);
+            
         }
     }
 
@@ -63,6 +68,17 @@ public class GameProgressManager : Singleton<GameProgressManager>
         if (enterEndingSHow)
         {
             audio.clip = _audioClips[2];
+            audio.Play();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Day2_Work_isFinished = true;
+            Debug.Log("完成了第二天的工作");
+            Day2_Work_Finished();
         }
     }
 }

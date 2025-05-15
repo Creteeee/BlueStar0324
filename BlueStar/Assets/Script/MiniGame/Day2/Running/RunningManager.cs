@@ -42,6 +42,10 @@ public class RunningManager : MonoBehaviour
             {
                 _director.Play();
             }
+
+            GameProgressManager.Instance.enterEndingSHow = true;
+            GameProgressManager.Instance.EnterEndingShow();
+            Controller_Terra.audio.enabled = false;
         }
     }
 
@@ -71,6 +75,7 @@ public class RunningManager : MonoBehaviour
         EventHandler.CallResetHeader(true);
         Controller_Terra.canMoveTerra = true;
         isTrigger = false;
+        Controller_Terra.audio.enabled = true;
 
     }
     

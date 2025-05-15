@@ -650,6 +650,8 @@ public class UIManager_BattleMode : MonoBehaviour
         GameProgressManager.Instance.Day2_Work_Finished();
         TransitionManager.Instance.mainCamera.enabled = true;
         TransitionManager.Instance.Transition("Direct","L2_ControlRoom",TerraControlRoomTransform);
+        PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResHeight = 720;
+        PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResWidth = 405;
         
         
     }

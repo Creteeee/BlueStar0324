@@ -14,6 +14,7 @@ namespace BlueStar.Inventory
         [Header("玩家背包UI")] [SerializeField] private GameObject bagUI;
         [Header("操作提示UI")] [SerializeField] private GameObject operationSuggestUI;
         private bool bagOpened;
+        [Header("地图")] [SerializeField] private GameObject mapUI;
 
         [Header("UI动画相机和人物的状态机")] 
         public GameObject UIAnimCamera;
@@ -59,6 +60,11 @@ namespace BlueStar.Inventory
                     _UIAnimCameraAnimator.SetFloat("Blend",0);
                     _PlayerAnimator.SetFloat("Blend",0);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                mapUI.SetActive(!mapUI.activeSelf);
             }
 
 

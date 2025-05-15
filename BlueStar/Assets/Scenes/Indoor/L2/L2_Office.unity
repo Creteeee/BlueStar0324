@@ -893,13 +893,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2b866f8bd87437c458e5af72b7d659a3, type: 2}
     - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)ghthe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
       propertyPath: m_TagString
       value: Interactive
       objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: canOpen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -3890,13 +3895,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2b866f8bd87437c458e5af72b7d659a3, type: 2}
     - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)sdaww
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
       propertyPath: m_TagString
       value: Interactive
       objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: canOpen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}

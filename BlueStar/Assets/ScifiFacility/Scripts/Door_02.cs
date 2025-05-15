@@ -22,6 +22,7 @@ public class Door_02 : MonoBehaviour
 
 	private void Start()
 	{
+		Debug.Log(this.name+"开始执行");
 		initialPosition = this.transform.position;
 		right =this.transform.right;
 		audio = this.GetComponent<AudioSource>();
@@ -33,6 +34,7 @@ public class Door_02 : MonoBehaviour
 
 		if (InventoryStateManager.Instance.DoorStates.TryGetValue(this.name,out bool openstate))
 		{
+			Debug.Log(this.name+"找到了状态"+InventoryStateManager.Instance.DoorStates[this.name]);
 			canOpen = openstate;
 			if (this.GetComponent<DetectPlayerItem>() != null && canOpen)
 			{
@@ -41,13 +43,14 @@ public class Door_02 : MonoBehaviour
 		}
 		else
 		{
+			Debug.Log(this.name+"没找到状态");
 			InventoryStateManager.Instance.DoorStates.Add(this.name,canOpen);
 		}
 	}
 
 	private void Update()
 	{
-		if (this.GetComponent<DetectPlayerItem>()!=null)
+		if (this.GetComponent<DetectPlayerItem>()!=null && !InventoryStateManager.Instance.DoorStates[this.name])
 		{
 			canOpen = this.GetComponent<DetectPlayerItem>().isFinished;
 		}
@@ -55,6 +58,7 @@ public class Door_02 : MonoBehaviour
 		{
 			//canOpen = true;
 		}
+		
 
 		if (timer==0 && canOpen && isTrigger)
 		{
@@ -65,6 +69,12 @@ public class Door_02 : MonoBehaviour
 			});
 			isTrigger=false;
 			timer=1;
+
+			if (this.GetComponent<DetectPlayerItem>()!=null)
+			{
+				InventoryStateManager.Instance.SaveDoorState(this.name,canOpen);
+				this.GetComponent<DetectPlayerItem>().enabled = false;
+			}
 		}
 		
 	}

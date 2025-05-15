@@ -256,12 +256,12 @@ PrefabInstance:
     - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: SceneTo
-      value: L2_Decompression_2
+      value: L2_TrainingCourse
       objectReference: {fileID: 0}
     - target: {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: SceneFrom
-      value: L2_TraingCourse
+      value: L2_Decompression_2
       objectReference: {fileID: 0}
     - target: {fileID: 1620180704827455441, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -353,6 +353,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b866f8bd87437c458e5af72b7d659a3, type: 2}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)DAWDA
+      objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: canOpen
@@ -1349,6 +1354,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b866f8bd87437c458e5af72b7d659a3, type: 2}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)DAWA
+      objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: canOpen

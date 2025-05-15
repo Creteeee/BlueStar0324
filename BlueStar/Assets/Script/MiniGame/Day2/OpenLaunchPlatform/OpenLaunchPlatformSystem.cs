@@ -60,7 +60,7 @@ public class OpenLaunchPlatformSystem : MonoBehaviour
         }
    
 
-        if (Code1.activeSelf)
+        if (Code1.activeSelf&&!Code2.activeSelf)
         {
             for (KeyCode k = KeyCode.Alpha0; k <= KeyCode.Alpha9; k++)
             {

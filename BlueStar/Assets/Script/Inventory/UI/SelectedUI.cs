@@ -66,6 +66,13 @@ namespace BlueStar.Inventory
                             dropButtonCanvasGroup.alpha = 0;
                             dropButtonCanvasGroup.interactable = false;
                             return;
+                        case ItemType.weapon:
+                            carryButtonCanvasGroup.alpha = 1;
+                            carryButtonCanvasGroup.interactable = true;
+                            dropButtonCanvasGroup.alpha = 0;
+                            dropButtonCanvasGroup.interactable = false;
+                            return;
+                            
                     }
                     return;
                     

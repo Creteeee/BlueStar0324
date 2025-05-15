@@ -1364,6 +1364,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing WADA
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff, type: 3}
     m_RemovedGameObjects: []
@@ -5858,7 +5863,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796774400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7949,6 +7954,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)WEQW2E
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff, type: 3}
     m_RemovedGameObjects: []
@@ -9241,6 +9251,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)QWDSD
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff, type: 3}
@@ -11251,7 +11266,7 @@ PrefabInstance:
     - target: {fileID: 3546363021352035439, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3546363021352035439, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -11292,6 +11307,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347291432395309360, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wingAWE
       objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
@@ -13804,6 +13829,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)DSDCAEW
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1406936127332390787, guid: e9035527a771076449eb283d775ea9ff, type: 3}
     m_RemovedGameObjects: []
@@ -14361,6 +14391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239305226426734831, guid: e9035527a771076449eb283d775ea9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: wall_01_4x3_door_02_wing (1)DWAD
       objectReference: {fileID: 0}
     - target: {fileID: 5708156695520386924, guid: e9035527a771076449eb283d775ea9ff,
         type: 3}
