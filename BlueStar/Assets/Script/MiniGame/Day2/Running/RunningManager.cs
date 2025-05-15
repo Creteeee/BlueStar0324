@@ -37,6 +37,7 @@ public class RunningManager : MonoBehaviour
             landscapeCamera.enabled = true;
             initialZ = Terra.transform.position.z;
             isTrigger = true;
+            EventHandler.CallMoveHeader(true);
             if (_director!=null)
             {
                 _director.Play();
@@ -46,18 +47,11 @@ public class RunningManager : MonoBehaviour
 
     private void Update()
     {
-        if (isTrigger)
+        if (isTrigger&&!Controller_Terra.canMoveTerra)
         {
-            new Vector3(Terra.transform.position.x, Terra.transform.position.y, initialZ);
+            Terra.transform.position= new Vector3(Terra.transform.position.x, Terra.transform.position.y, initialZ);
         }
-
-        if (runningFinish)
-        {
-            StartCoroutine(DarkFade());
-            mainCamera.enabled = true;
-            landscapeCamera.enabled = false;
-            AirWall.SetActive(true);
-        }
+        
     }
 
     private IEnumerator DarkFade()
@@ -66,4 +60,18 @@ public class RunningManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         blackBG.DOFade(0, 0.5f);
     }
+
+    public void FinishRunning()
+    {
+        StartCoroutine(DarkFade());
+        mainCamera.enabled = true;
+        landscapeCamera.enabled = false;
+        AirWall.SetActive(true);
+        StartCoroutine(DarkFade());
+        EventHandler.CallResetHeader(true);
+        Controller_Terra.canMoveTerra = true;
+        isTrigger = false;
+
+    }
+    
 }

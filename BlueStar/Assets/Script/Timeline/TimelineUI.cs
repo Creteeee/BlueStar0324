@@ -15,11 +15,13 @@ public class TimelineUI : MonoBehaviour
     public static int currentPlayIndex=-1;
     public static string[] UIInfos;
     public static int[] playIndexs;
+    private AudioSource audio;
     
 
     private void Start()
     {
         infoUI=Resources.Load("Prefabs/UI/TimelineInfos") as GameObject;
+        audio = this.GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -65,16 +67,20 @@ public class TimelineUI : MonoBehaviour
     /// </summary>
     public void UpdateTimelineInfos()
     {
+        audio.Play();
         if (infoUICurrentIndex < UIInfos.Length)
         {
             infoUICurrentIndex += 1;
-            TimelineUI.infoText.text = UIInfos[infoUICurrentIndex];
+            if (currentPlayIndex>=0)
+            {
+                TimelineUI.infoText.text = UIInfos[infoUICurrentIndex];
+            }
             if (currentPlayIndex>=0 && infoUICurrentIndex==currentPlayIndex+1)
             {
                 //当继续播放的序号等于当前句子的序号；通知director继续播放,并关闭显示字幕
                 TimelineTrigger.currentObj.GetComponent<PlayableDirector>().Play();
                 TimelineUI.infoUIInst.SetActive(false);
-                if (Array.IndexOf(playIndexs,currentPlayIndex)<UIInfos.Length-1)
+                if (Array.IndexOf(playIndexs,currentPlayIndex)<playIndexs.Length-1)
                 {
                     Debug.Log("playIndex:"+currentPlayIndex);
                     currentPlayIndex = playIndexs[Array.IndexOf(playIndexs, currentPlayIndex) + 1];
@@ -91,6 +97,8 @@ public class TimelineUI : MonoBehaviour
             Destroy(TimelineUI.infoUIInst.gameObject);
             TimelineUI.infoUICurrentIndex = 0;
         }
+        
+        
 
 
     }

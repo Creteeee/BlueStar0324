@@ -65,6 +65,7 @@ public class DetectPlayerEnter : MonoBehaviour
 
                 player.GetComponent<Controller_Terra>().enabled = false;
                 player.GetComponent<Animator>().enabled = false;
+                Controller_Terra.audio.Stop();
                 
             }
         }

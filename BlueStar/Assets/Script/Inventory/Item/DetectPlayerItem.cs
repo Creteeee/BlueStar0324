@@ -74,8 +74,12 @@ public class DetectPlayerItem : MonoBehaviour
            Click();
         }
         
-
+        /*
         if (Input.GetKeyDown(KeyCode.E)&& mode == InteractionMode.Trigger)
+        {
+            EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations);
+        }*/
+        if (mode == InteractionMode.Trigger)
         {
             EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations);
         }

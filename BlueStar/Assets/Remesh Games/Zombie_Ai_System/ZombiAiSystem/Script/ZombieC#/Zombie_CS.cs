@@ -67,6 +67,9 @@ public class Zombie_CS : MonoBehaviour
     [SerializeField]
     private string guid;
     public string GUID => guid;
+    
+    // 攻击音效
+    private AudioSource audio;
 
     private void Awake()
     {
@@ -240,6 +243,10 @@ public class Zombie_CS : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+        
+        
+        //音效
+        audio = this.GetComponent<AudioSource>();
 
 
 
@@ -452,6 +459,7 @@ public class Zombie_CS : MonoBehaviour
 
             if (hit.transform.gameObject.name == PlayerName)
             {
+                audio.Play();
                 hit.transform.gameObject.SendMessage("ApplyDamage", Damage);
                 PostProcessingManager.Instance.OnHurt();
                 Instantiate(bloodVFX, hit.point, Quaternion.identity);

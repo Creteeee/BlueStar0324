@@ -37,6 +37,8 @@ public class Controller_Terra : MonoBehaviour
     //全局记录是否可以移动人物的参数
     public static bool canMoveTerra = true;
     public static bool isEndShowState = false;
+    public AudioClip[] stepSounds;
+    public static AudioSource audio;
 
 
     private void Awake()
@@ -60,6 +62,8 @@ public class Controller_Terra : MonoBehaviour
         shortLineInst = Instantiate(shootLine, this.transform);
         animator.SetFloat("Blend", 0);
         walkSpeedCurrent = 0;
+        audio = this.GetComponent<AudioSource>();
+        audio.loop = true;
     }
 
     private void OnEnable()
@@ -124,6 +128,27 @@ public class Controller_Terra : MonoBehaviour
             }
             animator.SetFloat("Blend", walkSpeedCurrent);
             transform.Translate(Vector3.forward * walkSpeedCurrent * Time.deltaTime);
+            
+                    
+            //跑步和走路的音效
+            if (walkSpeedCurrent > 0)
+            {
+                // 判断是否需要切换 clip
+                AudioClip targetClip = walkSpeedCurrent >= 0.7f ? stepSounds[1] : stepSounds[0];
+                if (audio.clip != targetClip)
+                {
+                    audio.clip = targetClip;
+                    audio.Play();
+                }
+                else if (!audio.isPlaying)
+                {
+                    audio.Play();
+                }
+            }
+            else
+            {
+                audio.Stop();
+            }
 
             // 在 Aiming 状态下实时跟随鼠标位置旋转角色
             if (curState == StateType.Aiming)
@@ -136,6 +161,7 @@ public class Controller_Terra : MonoBehaviour
         {
             animator.SetFloat("Blend", 0);
         }
+
     }
 
     void onWalking(Vector2 inputVector)

@@ -53,7 +53,7 @@ public class Door_02 : MonoBehaviour
 		}
 		else
 		{
-			canOpen = true;
+			//canOpen = true;
 		}
 
 		if (timer==0 && canOpen && isTrigger)
