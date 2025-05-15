@@ -41,9 +41,17 @@ public class Aim : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        line.SetActive(true);
+        lineRenderer.positionCount = 2;
+    }
+
     private void OnDisable()
     {
         Marker.SetActive(false);
+        line.SetActive(false);
+        lineRenderer.positionCount = 0;
         if (NoBulletSuggestInst != null)
         {
             Destroy(NoBulletSuggestInst);
@@ -80,7 +88,7 @@ public class Aim : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)&&Input.GetKey(KeyCode.Mouse1))
         {
             if (InventoryManager.Instance.BulletCount>=1)
             {
@@ -117,6 +125,7 @@ public class Aim : MonoBehaviour
         points[0] = startPoint.position; 
         points[1] = ray.origin + rayDir * 2f;
         lineRenderer.SetPositions(points.ToArray());
+       
     }
     IEnumerator DestroySuggestAfterDelay(GameObject obj, float delay)
     {
@@ -132,4 +141,6 @@ public class Aim : MonoBehaviour
             NoBulletSuggestInst = null;
         }
     }
+    
+    
 }

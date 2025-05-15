@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &25245346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: a23f185d-052e-41eb-8b67-345f06a0c937
+  _sID: b923eb4c-8923-4236-8bed-374036807c71
   ports:
   - {fileID: 940414702}
   - {fileID: 154895860}
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: b85492dc-6bbd-4792-9780-b569bf592fbc
+  _sID: f2214375-644e-490f-9366-881c4d22e589
   ports:
   - {fileID: 92609310}
   - {fileID: 328601399}
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 3bd971e0-0793-494c-a2d6-81276e220d13
+  _sID: b9ec2adc-ada9-4f5d-b4ba-e5f8770f991d
   ports:
   - {fileID: 1279776919}
   - {fileID: 409024405}
@@ -1077,7 +1077,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 5e65fdfe-4008-4661-9085-258516142726
+  _sID: 02335dda-9c68-4836-a1b9-c4848ab7322f
   rectTransform: {fileID: 80795956}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -1505,7 +1505,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 32ed7fb3-af94-43fd-81be-7f3019124b24
+  _sID: 98c58a5c-267f-4f13-b5c2-f5eb6f453e0c
   rectTransform: {fileID: 92609308}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -1923,7 +1923,7 @@ MonoBehaviour:
       type: 3}
     exclusiveOnDragCanvas: {fileID: 0}
     useLegacyDragMethod: 0
-    position: {x: -24.57643, y: 6.886982, z: 16.21673}
+    position: {x: -48.714207, y: 7.268298, z: 16.063795}
   dragSelection:
     customRenderer: {fileID: 0}
     line:
@@ -3032,7 +3032,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: b793c61c-5b1f-4c29-97e1-12f9c681fc17
+  _sID: 17eea0da-77e3-452f-97a2-4c1dc7b22d6a
   rectTransform: {fileID: 154895858}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -3978,7 +3978,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: bdd309e8-4f43-4d96-b263-657444c7bcc8
+  _sID: 5267f41a-3511-4fb2-a514-5d82238a1d85
   rectTransform: {fileID: 218416457}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -4107,7 +4107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 41ac697c-49b2-4ec4-88a8-fb6599dc8e21
+  _sID: ab5e0668-af3e-4e30-82c2-2cabd5a8d249
   ports:
   - {fileID: 993701371}
   - {fileID: 2024514128}
@@ -6089,7 +6089,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 3862a92a-93ae-41fb-bb11-0c21c30eb6c5
+  _sID: e08a824e-4321-48ea-b52a-78182923cda3
   rectTransform: {fileID: 328601397}
   graphManager: {fileID: 94015312}
   node: {fileID: 68999418}
@@ -6416,7 +6416,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: ee0dcc41-6ce1-4c67-a0d7-5d1d763346eb
+  _sID: d43bd7c8-ccdd-400c-804f-05d5cf017296
   rectTransform: {fileID: 347471888}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -7306,7 +7306,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: ee25ce04-b9bc-4e80-8294-73bca8d38ed5
+  _sID: 57ec14fb-83ef-47bf-8024-d94791d78005
   rectTransform: {fileID: 409024403}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -7408,7 +7408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -96.7, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419973887
@@ -7459,8 +7459,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7495,7 +7495,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -215.72952, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7845,7 +7845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: a390de79-5e5f-446e-a7e2-a5205b1b8718
+  _sID: 01b88e06-00da-4bfc-a360-c630983b1edd
   ports:
   - {fileID: 218416459}
   - {fileID: 1647992814}
@@ -8225,7 +8225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 3dec3e7e-f9e2-46b5-ac98-86931a9ef12b
+  _sID: 47c20ec0-cf81-4213-b09b-6a8c32f7bd67
   ports:
   - {fileID: 1272577137}
   - {fileID: 1010625298}
@@ -8617,7 +8617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 197, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494657693
@@ -8668,8 +8668,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8704,7 +8704,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -371.47675, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9530,7 +9530,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532698143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -89.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9538,7 +9538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -77.5, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532698145
@@ -9589,8 +9589,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9625,7 +9625,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -165.39307, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9960,7 +9960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 80c61a3d-3446-4e15-8515-58e2577f85e2
+  _sID: 0daddb9b-ccad-4f80-82e8-4be1eae4b282
   ports:
   - {fileID: 1435516894}
   - {fileID: 1281014954}
@@ -10679,7 +10679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 08536c26-63d0-4fb2-9c1e-b86bdeb8eb70
+  _sID: 3f5bfc93-6079-4daf-b6be-f2b3fd2a3266
   ports:
   - {fileID: 1829457844}
   - {fileID: 1015270230}
@@ -10954,7 +10954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 26, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630098358
@@ -11005,8 +11005,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11041,7 +11041,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -63.371277, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11771,7 +11771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -106.7, y: 60}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &658908116
@@ -11822,8 +11822,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11858,7 +11858,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -230.75084, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12630,7 +12630,7 @@ RectTransform:
   m_GameObject: {fileID: 761990006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.8734, y: 3.8734, z: 3.8734}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 978006062}
@@ -12638,7 +12638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 605}
+  m_AnchoredPosition: {x: -1541, y: -818}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761990008
@@ -12717,7 +12717,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 5848931678843618441, guid: eb11ac9a06fb4792b393db9b83ab43b4,
+    type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14019,7 +14020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 87ff3569-1553-4c37-a749-6a498d16a5ae
+  _sID: db3567aa-4d29-453b-b2be-ce11b58efc12
   ports:
   - {fileID: 1444796207}
   - {fileID: 1252346887}
@@ -14368,7 +14369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: a5fc0cfb-d05a-4645-98a7-e1f3abbb6980
+  _sID: 9d03ed7a-6273-4ffb-b9dc-8a9c2b99bab4
   ports:
   - {fileID: 948589930}
   - {fileID: 347471886}
@@ -15060,7 +15061,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 8f05653d-d19a-4aae-837d-866326f4c5f6
+  _sID: ee011238-f76a-467f-b32c-12e364c82272
   rectTransform: {fileID: 940414700}
   graphManager: {fileID: 94015312}
   node: {fileID: 40528045}
@@ -15141,7 +15142,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port (1)
-  _sID: 8c29ca43-071a-4c8b-8e8d-a7a5759f5b94
+  _sID: 88affcfc-1f1d-4661-95a1-007917830aec
   rectTransform: {fileID: 948589929}
   graphManager: {fileID: 94015312}
   node: {fileID: 912262057}
@@ -15197,7 +15198,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 761990007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15226,17 +15227,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: KillAll
+  m_text: "\u4E00\u952E\u901A\u5173\u952E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9f24854961950a74e9cedecb6c1ef8e4, type: 2}
+  m_sharedMaterial: {fileID: 3071297374050972546, guid: 9f24854961950a74e9cedecb6c1ef8e4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4283387727
+  m_fontColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15528,8 +15530,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15564,7 +15566,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -366.27295, y: 0, z: -339.42166, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15680,7 +15682,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 76ecc914-04eb-45f5-8128-ec6deed76064
+  _sID: 36414bea-1601-487e-90a9-2f905479f853
   rectTransform: {fileID: 993701369}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -16260,7 +16262,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 134e6476-e0a5-4a7b-9b4b-a94471a426ec
+  _sID: e0edbc15-846a-49aa-ab0b-8c5d60ffdc08
   rectTransform: {fileID: 1010625299}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -16417,7 +16419,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: f35f536f-8e76-411f-a10d-5cc348c607ef
+  _sID: 3b52071a-17dc-4998-b974-718840cf99d7
   rectTransform: {fileID: 1015270228}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -17072,7 +17074,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 46bd0660-3db0-446f-b18f-450b202d0df7
+  _sID: 4778ca65-c5fb-479a-a109-5753aca1e6a4
   rectTransform: {fileID: 1058343284}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -17256,7 +17258,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 7cbc4136-dad1-4ab7-84b5-3a183f6e734f
+  _sID: e0f8acff-a911-4439-9618-fb7ec75e1889
   rectTransform: {fileID: 1090710313}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -17964,7 +17966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 77, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123121800
@@ -18015,8 +18017,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18051,7 +18053,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -134.1404, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18691,7 +18693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 93, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169420262
@@ -18742,8 +18744,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18778,7 +18780,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -246.11798, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19375,7 +19377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 3d134830-858f-44bd-8c0f-fa42b19ebb7a
+  _sID: f7afb040-15fd-40ca-b6cd-1dab84d11640
   ports:
   - {fileID: 1295323360}
   - {fileID: 1090710315}
@@ -20029,7 +20031,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1ad289f2-ae1e-42df-bd5a-a53ba08fe70d
+  _sID: c67a10bc-e1f2-45e1-b654-b8d8a49715f1
   rectTransform: {fileID: 1252346886}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -20884,7 +20886,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 0292b0c8-0c9a-4277-8cf0-ab8f9c682fa2
+  _sID: 8ada713d-c61f-49d0-8039-64ed699e7152
   rectTransform: {fileID: 1272577136}
   graphManager: {fileID: 94015312}
   node: {fileID: 468640459}
@@ -21282,7 +21284,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278961452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -169.16351}
+  m_LocalPosition: {x: 0, y: 0, z: -176.81027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21290,7 +21292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 396.17853, y: 344.3491}
+  m_AnchoredPosition: {x: -810.7103, y: 363.41492}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1279776916
@@ -21362,7 +21364,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1d20852a-2620-4c61-8184-aab20985a0f6
+  _sID: 76fd27d9-845e-4464-8dec-da3175376374
   rectTransform: {fileID: 1279776917}
   graphManager: {fileID: 94015312}
   node: {fileID: 73232713}
@@ -21421,7 +21423,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: e8d2aba8-1c5b-4aa1-b041-108870fd8782
+  _sID: 15595535-5e71-4532-8848-226a188eef60
   rectTransform: {fileID: 1281014956}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -21761,7 +21763,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9aa22359-5d61-400a-a713-9aa1be41a44b
+  _sID: 13a6318a-a5c8-46e9-b153-71cf803853e1
   rectTransform: {fileID: 1295323358}
   graphManager: {fileID: 94015312}
   node: {fileID: 1211947050}
@@ -23471,7 +23473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 163, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333987152
@@ -23522,8 +23524,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23558,7 +23560,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -347.07928, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -24947,7 +24949,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 6aa48842-4944-4119-95c9-ec296a1211d7
+  _sID: ab91b041-b212-4d06-9362-a64f71b799b9
   rectTransform: {fileID: 1435516896}
   graphManager: {fileID: 94015312}
   node: {fileID: 550941650}
@@ -25072,7 +25074,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 2265b7b2-9146-4573-90fa-332ef4f5b2c0
+  _sID: a74cb024-499c-4a71-a848-3c9fc197d3a1
   rectTransform: {fileID: 1444796208}
   graphManager: {fileID: 94015312}
   node: {fileID: 871714121}
@@ -27989,8 +27991,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -28727,7 +28729,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 15921fde-f049-4b3a-83df-f75d98df461e
+  _sID: d9f76a4c-6eda-4bb4-ab42-b04401af20e9
   rectTransform: {fileID: 1647992812}
   graphManager: {fileID: 94015312}
   node: {fileID: 460265040}
@@ -31781,7 +31783,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1ac029bf-5448-4b2b-b46b-267e38debfa4
+  _sID: afb87059-a209-4fda-ab27-57a71d10fc2c
   rectTransform: {fileID: 1829457842}
   graphManager: {fileID: 94015312}
   node: {fileID: 603146420}
@@ -32881,7 +32883,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 1e85f4f1-f198-4a7c-84e7-51546b44b8d1
+  _sID: aebdc0fc-8f1c-432a-870f-2091d5bf51f0
   rectTransform: {fileID: 1873993172}
   graphManager: {fileID: 94015312}
   node: {fileID: 2127679746}
@@ -34298,7 +34300,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968079037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -181}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34306,7 +34308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67, y: -9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968079039
@@ -34357,8 +34359,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -34393,7 +34395,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -216.53958, y: 0, z: -114.08177, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -35076,7 +35078,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _id: Port
-  _sID: 9795f3ae-7cca-4320-b30b-2b5247942442
+  _sID: d104fffb-ee3b-4714-9167-44c64b77884a
   rectTransform: {fileID: 2024514126}
   graphManager: {fileID: 94015312}
   node: {fileID: 227352973}
@@ -35523,8 +35525,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -36255,7 +36257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
-  _sID: 04ab05e5-7d0d-45ac-b4a0-667abae08967
+  _sID: 8ff8b414-4ae9-4327-b45c-803588f7bf54
   ports:
   - {fileID: 1058343286}
   - {fileID: 1873993174}

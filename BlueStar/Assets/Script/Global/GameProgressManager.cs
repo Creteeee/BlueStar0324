@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BlueStar.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -66,6 +67,7 @@ public class GameProgressManager : Singleton<GameProgressManager>
     {
         if (Day2_Work_isFinished)
         {
+            InventoryManager.Instance.suggestGlobal.SetActive(true);
             Timeline_UnknownPersonLeaveSuggest.SetActive(true);
             InventoryStateManager.Instance.DoorStates["Door_ControlRoom_wing"]=true;
             InventoryStateManager.Instance.DoorStates["Door_TrainingCourse_To_Decompression_wing"]=true;

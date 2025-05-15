@@ -28,7 +28,7 @@ MonoBehaviour:
     name: "\u533B\u7597\u5305"
     itemType: 2
     itemIcon: {fileID: 21300000, guid: a67b03eaaa9a3854298ffd4efa4eb85c, type: 3}
-    itemObject: {fileID: 919132149155446097, guid: bc053a3001eb4654a8bc1497543988fd,
+    itemObject: {fileID: 1444471443614310081, guid: 872012e295653a740914c66aa0a6db47,
       type: 3}
     itemDescriptions: "\u7535\u78C1\u80FD\u5145\u80FD\u7684\u7684\u5C0F\u578B\u533B\u7597\u5305,
       \u80FD\u5FEB\u901F\u4FEE\u590D\u53D7\u635F\u7684\u62A4\u7532"
@@ -41,8 +41,8 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: 8423f661555e1f14c9fcf8bd8e67deb4, type: 3}
     itemObject: {fileID: 1145491452281245933, guid: cb118aa6bc2bf2d4fa10b5e8bc721c50,
       type: 3}
-    itemDescriptions: "\u5F3A\u76F8\u4E92\u4F5C\u7528\u529B\u5236\u6210\u7684\u6D88\u97F3\u624B\u67AA,
-      \u5728\u8154 \u5B50\u5F39\u52A0\u901F\u4E3A1/20\u5149\u901F, \u5BF9\u62A4\u76FE\u9020\u6210\u5C11\u91CF\u4F24\u5BB3"
+    itemDescriptions: "\u624B\u6301\u540E\u4F7F\u7528, \u9F20\u6807\u53F3\u952E\u7784\u51C6,
+      \u5DE6\u952E\u5F00\u706B"
     canPickedup: 0
     canDropped: 0
     canCarried: 0

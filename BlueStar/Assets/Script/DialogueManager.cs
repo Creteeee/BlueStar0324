@@ -124,6 +124,7 @@ public class DialogueManager : MonoBehaviour
     public void ReadText(TextAsset _textAsset)
     {
         dialogRows = _textAsset.text.Split('\n');
+        Controller_Terra.audio.enabled = false;
     }
 
     public void ShowDialogRow()
@@ -163,6 +164,7 @@ public class DialogueManager : MonoBehaviour
             }
             else if (cells[0]=="END"&& int.Parse(cells[1])==dialogIndex)
             {
+                Controller_Terra.audio.enabled = true;
                 UI_Front.SetActive(false);
                 Controller_Terra.canMoveTerra = true;
                 Debug.Log("进行到了最后一句");

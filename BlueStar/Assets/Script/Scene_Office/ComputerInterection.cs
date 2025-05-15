@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using BlueStar.Inventory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
@@ -34,6 +35,7 @@ public class ComputerInterection : MonoBehaviour
         {
             PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResHeight = 1920;
             PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResWidth = 1080;
+            InventoryManager.Instance.suggestGlobal.SetActive(false);
             this.GetComponent<Teleport>().onTransitionToScene();
             Controller_Terra.canMoveTerra = false;
             isPlayerInRange = false;

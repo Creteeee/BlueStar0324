@@ -35,6 +35,8 @@ namespace BlueStar.Inventory
         [Header("2DUI的Canvas")] [SerializeField]
         private GameObject canvas;
 
+        public GameObject suggestGlobal;
+
 
         private void Start()
         {

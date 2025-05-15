@@ -63,6 +63,10 @@ public class LaserController : MonoBehaviour
                     }
                 
                 }
+                else
+                {
+                    litMat.DisableKeyword("_EMISSION");
+                }
             }
             else
             {

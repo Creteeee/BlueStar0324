@@ -153,6 +153,50 @@ public class ItemCarry : MonoBehaviour
     /// </summary>
     void CompareID(TMP_Text text,TMP_Text name)
     {
+        InventoryBag_SO bag = InventoryManager.Instance.playerBag;
+        foreach (var item in bag.itemList)
+        {
+            if (item.itemID==expectedID)
+            {
+                //切换UI
+                isCompare = false;
+                isFinished = true;
+                text.text = "已使用";
+                name.text = InventoryManager.Instance.GetItemDetails(expectedID).name;
+                if (suggestUIInst!=null)
+                {
+                    Destroy(suggestUIInst.gameObject,2);
+                }
+                //EventHandler.CallPlayTimeLine(isFinished);//通知DetectItem播放TimeLine
+                if (interactiveObject!=null)
+                {
+                    interactiveObject.GetComponent<DetectPlayerItem>()?.onPlayTimeLine(true);
+                    if (interactiveObject!=null)
+                    {
+                        interactiveObject.GetComponent<DetectPlayerItem>().isFinished = isFinished;
+                        Debug.Log(interactiveObject.name+"isfinish:"+isFinished.ToString());
+                    }
+                }     
+                //删除手上物品
+                CarriedID = 0;
+                //删除背包物品
+                InventoryManager.Instance.UseItem(expectedID, true);
+                //清空UI
+                SlotUI.selectedID = 0;
+                ActivateButtonUI.carriedID = 0;
+            }
+            else
+            {
+                text.text = "没有检测到道具";
+                name.text = "";
+                if (suggestUIInst!=null)
+                {
+                    Debug.Log("cccc");
+                    Destroy(suggestUIInst.gameObject,2);
+                }
+            }
+        }
+        /*
         if (expectedID == CarriedID && CarriedID !=0 && isCompare == true )
         {
             //切换UI
@@ -182,6 +226,7 @@ public class ItemCarry : MonoBehaviour
             SlotUI.selectedID = 0;
             ActivateButtonUI.carriedID = 0;
             //播放TimeLine如有
+            
         }
 
         else if(expectedID!=CarriedID)
@@ -198,6 +243,7 @@ public class ItemCarry : MonoBehaviour
         {
             Debug.Log("有误");
         }
+        */
     }
 
     public void EnableCompare()

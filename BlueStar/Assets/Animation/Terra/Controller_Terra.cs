@@ -170,6 +170,7 @@ public class Controller_Terra : MonoBehaviour
         {
             gun.SetActive(false);
         }
+        shortLineInst.SetActive(gun.activeSelf);
 
     }
 
