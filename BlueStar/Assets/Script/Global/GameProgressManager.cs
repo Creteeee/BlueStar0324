@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,13 +18,24 @@ public class GameProgressManager : Singleton<GameProgressManager>
     public bool Day2_Work_isFinished=false;
     public GameObject Timeline_UnknownPersonLeaveSuggest;
     [Header("结局")] public bool enterEndingSHow;
+    [Header("游戏任务提示UI")] public GameObject taskSuggest;
+    public TMP_Text TaskText;
 
     private void Start()
     {
         audio = mainCamera.gameObject.GetComponent<AudioSource>();
         audio.clip = _audioClips[0];
         audio.Play();
+        taskSuggest.SetActive(false);
+        TaskText.text = "找到损坏的ID卡, 制作新的宿舍通行证";
     }
+
+    public void Day1_BeginRepair()
+    {
+        TaskText.text = "装备配枪, 找到配电间, 拿走电阻, 替换损坏的电阻并调节电流";
+    }
+
+
 
     public void Day1_FinishRepair()
     {
@@ -42,6 +54,12 @@ public class GameProgressManager : Singleton<GameProgressManager>
         SceneManager.UnloadSceneAsync("L1_Shaft");
         audio.clip = _audioClips[1];
         audio.Play();
+        TaskText.text = "与指挥官交谈, 开启新一天的任务";
+    }
+
+    public void BeginAttackSignal()
+    {
+        TaskText.text = "前往对应的控制室开启信号打击任务";
     }
 
     public void Day2_Work_Finished()
@@ -54,8 +72,14 @@ public class GameProgressManager : Singleton<GameProgressManager>
             InventoryStateManager.Instance.DoorStates["Door_Corridor_1_wing"]=true;
             InventoryStateManager.Instance.DoorStates["O_I_LiftDoor"] = true;
             Debug.Log("游戏进程让O_I_LiftDoor的值为"+InventoryStateManager.Instance.DoorStates["O_I_LiftDoor"]);
+            TaskText.text = "乘坐电梯前往天台寻找档案室入口";
             
         }
+    }
+
+    public void Day2_GotToLaunch()
+    {
+        TaskText.text = "前往二层飞船调度室调度飞船前往荒星";
     }
 
     public void Day2_Zombie_Die()
@@ -79,6 +103,11 @@ public class GameProgressManager : Singleton<GameProgressManager>
             Day2_Work_isFinished = true;
             Debug.Log("完成了第二天的工作");
             Day2_Work_Finished();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            taskSuggest.SetActive(!taskSuggest.activeSelf);
         }
     }
 }

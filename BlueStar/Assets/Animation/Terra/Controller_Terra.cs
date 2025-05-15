@@ -162,6 +162,15 @@ public class Controller_Terra : MonoBehaviour
             animator.SetFloat("Blend", 0);
         }
 
+        if (ActivateButtonUI.WeaponID!=0)
+        {
+            gun.SetActive(true);
+        }
+        else if (ActivateButtonUI.WeaponID <=0)
+        {
+            gun.SetActive(false);
+        }
+
     }
 
     void onWalking(Vector2 inputVector)

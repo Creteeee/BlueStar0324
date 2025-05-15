@@ -64,6 +64,7 @@ public class SerchingPlanetSystem : MonoBehaviour
             SerchingResaultUI.SetActive(true);
             SerchingPlanetUI.SetActive(false);
             // 触发成功事件，比如开门、激活动画等
+            GameProgressManager.Instance.Day2_GotToLaunch();
         }
         else
         {
