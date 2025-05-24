@@ -13,4 +13,19 @@ public class InventoryStateManager : Singleton<InventoryStateManager>
     {
         DoorStates[name] = canOpen;
     }
+    
+    private void OnEnable()
+    {
+        EventHandler.DestroyObject += onDestroyDontDestroyOnLoadObjects;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.DestroyObject -= onDestroyDontDestroyOnLoadObjects;
+    }
+
+    void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
+    {
+        Destroy(this.gameObject);
+    }
 }

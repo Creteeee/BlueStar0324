@@ -69,11 +69,17 @@ public class Controller_Terra : MonoBehaviour
     private void OnEnable()
     {
         EventHandler.RecoverHealth += RecoverHealth;
+        EventHandler.DestroyObject += onDestroyDontDestroyOnLoadObjects;
     }
 
     private void OnDisable()
     {
         EventHandler.RecoverHealth -= RecoverHealth;
+        EventHandler.DestroyObject -= onDestroyDontDestroyOnLoadObjects;
+    }
+    void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
+    {
+        Destroy(this.gameObject);
     }
 
     void Update()

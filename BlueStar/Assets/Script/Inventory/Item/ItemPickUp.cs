@@ -11,7 +11,7 @@ namespace BlueStar.Inventory
     {
         private GameObject UI;
         private GameObject itemPickUpUI;
-        private GameObject itemPickUpUIInst;
+        public static GameObject itemPickUpUIInst;
         private static bool isPickedUp = false;
         private static bool isDestroy = false;//用于不选择捡起时的退出
         private GameObject UI_Front;

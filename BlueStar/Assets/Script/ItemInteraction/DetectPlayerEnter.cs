@@ -1,4 +1,5 @@
 using System.Collections;
+using BlueStar.Inventory;
 using DG.Tweening;
 using UnityEngine;
 
@@ -78,6 +79,11 @@ public class DetectPlayerEnter : MonoBehaviour
             {
                 Debug.Log("开始重置摄像头");
                 StartCoroutine(ResetCameraPosition());
+                if (ItemPickUp.itemPickUpUIInst!=null)
+                {
+                    Destroy(ItemPickUp.itemPickUpUIInst.gameObject);
+                    ItemPickUp.itemPickUpUIInst = null;
+                }
 
             }
 

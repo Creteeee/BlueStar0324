@@ -121,4 +121,18 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
 
         depthOfField.focalLength.value = initialFocalLength;
     }
+    private void OnEnable()
+    {
+        EventHandler.DestroyObject += onDestroyDontDestroyOnLoadObjects;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.DestroyObject -= onDestroyDontDestroyOnLoadObjects;
+    }
+
+    void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
+    {
+        Destroy(this.gameObject);
+    }
 }

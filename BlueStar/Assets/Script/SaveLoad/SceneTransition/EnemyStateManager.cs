@@ -27,6 +27,21 @@ public class EnemyStateManager:Singleton<EnemyStateManager>
         EnemyRotations.Clear();
         EnemyHealth.Clear();
     }
+    
+    private void OnEnable()
+    {
+        EventHandler.DestroyObject += onDestroyDontDestroyOnLoadObjects;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.DestroyObject -= onDestroyDontDestroyOnLoadObjects;
+    }
+
+    void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
+    {
+        Destroy(this.gameObject);
+    }
 
 
 }

@@ -111,5 +111,26 @@ public class GameProgressManager : Singleton<GameProgressManager>
         {
             taskSuggest.SetActive(!taskSuggest.activeSelf);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("HomePage");
+            EventHandler.CallDestroyObject(true);
+        }
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.DestroyObject += onDestroyDontDestroyOnLoadObjects;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.DestroyObject -= onDestroyDontDestroyOnLoadObjects;
+    }
+
+    void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
+    {
+        Destroy(this.gameObject);
     }
 }

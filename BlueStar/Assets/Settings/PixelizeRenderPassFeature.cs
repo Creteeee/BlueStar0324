@@ -8,8 +8,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PixelizeRenderPassFeature : ScriptableRendererFeature
 {
-    
-        [System.Serializable]   //serializable是对公有字段的序列化，serializedField是对私有
+        [System.Serializable]  
         public class Settings
         {
             
@@ -19,9 +18,6 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
             public int LowResHeight;
 
         }
-
-
-
         class PixelizeRenderPass : ScriptableRenderPass
         {
             private Settings Settings;
@@ -87,12 +83,8 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
    
                 }
         }
-        
-
         private PixelizeRenderPass _PixelizeRenderPass;
-
         public Settings settings = new Settings();
-
         public override void Create()
         {
             _PixelizeRenderPass = new PixelizeRenderPass(settings,this);    //这个this干什么用的
@@ -101,17 +93,10 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
             
 
         }
-
-     
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
             renderer.EnqueuePass(_PixelizeRenderPass);
-
         }
-        
-        
-    
-    
 }
 
 

@@ -69,6 +69,17 @@ namespace BlueStar.Inventory
                 mapUI.SetActive(!mapUI.activeSelf);
             }
 
+            if (mapUI.activeSelf)
+            {
+                PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResHeight = 1920;
+                PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResWidth = 1080;
+            }
+            else if (!mapUI.activeSelf)
+            {
+                PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResHeight = 405;
+                PostProcessingManager.Instance.pixelizeRenderPassFeature.settings.LowResWidth = 720;
+            }
+
 
         }
 
@@ -310,6 +321,21 @@ namespace BlueStar.Inventory
                 yield return null;
             }
             recoverMat.SetFloat("_Offset",end);
+        }
+        
+        private void OnEnable()
+        {
+            EventHandler.DestroyObject += onDestroyDontDestroyOnLoadObjects;
+        }
+
+        private void OnDisable()
+        {
+            EventHandler.DestroyObject -= onDestroyDontDestroyOnLoadObjects;
+        }
+
+        void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
+        {
+            Destroy(this.gameObject);
         }
 
     }

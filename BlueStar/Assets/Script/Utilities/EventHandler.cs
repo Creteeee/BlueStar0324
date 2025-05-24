@@ -68,4 +68,16 @@ public static class EventHandler
         RecoverHealth?.Invoke(health);
     }
 
+    /// <summary>
+    /// 返回开始界面销毁dontdestroyonload的物体
+    /// </summary>
+    public static event Action<bool> DestroyObject;
+
+    public static void CallDestroyObject(bool isDestroy)
+    {
+        DestroyObject?.Invoke(isDestroy);
+    }
+    
+
+
 }
