@@ -56,6 +56,9 @@ public class GameProgressManager : Singleton<GameProgressManager>
         audio.clip = _audioClips[1];
         audio.Play();
         TaskText.text = "与指挥官交谈, 开启新一天的任务";
+        TransitionManager.Instance.Map_L2.SetActive(true);
+        TransitionManager.Instance.Map_L1.SetActive(false);
+        TransitionManager.Instance.Map_L4.SetActive(false);
     }
 
     public void BeginAttackSignal()
@@ -131,6 +134,7 @@ public class GameProgressManager : Singleton<GameProgressManager>
 
     void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
     {
+        Destroy(Terra.gameObject);
         Destroy(this.gameObject);
     }
 }

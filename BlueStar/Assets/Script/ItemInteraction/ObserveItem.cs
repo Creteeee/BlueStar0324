@@ -176,7 +176,7 @@ public class ObserveItem : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)&&isObserving==true)
         {
             if (InfomationUI==null)
             {

@@ -13,6 +13,12 @@ namespace BlueStar.Inventory
         public GameObject player;
         public GameObject Terra_Awake;
         public Camera mainCamera;
+
+        [Header("随楼层切换的地图")] public GameObject Map_L2;
+
+        public GameObject Map_L1;
+
+        public GameObject Map_L4;
         //public GameObject BeginText;
         void Start()
         {
@@ -46,6 +52,35 @@ namespace BlueStar.Inventory
                 mainCamera.enabled = false;
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName("Direct"));
             }
+
+            if (from=="L2_LiftRoom"&&to=="L1_Shaft")
+            {
+                Map_L2.SetActive(false);
+                Map_L1.SetActive(true);
+                Map_L4.SetActive(false);
+                
+            }
+            else if (from=="L1_Shaft"&&to=="L2_LiftRoom")
+            {
+                Map_L2.SetActive(true);
+                Map_L1.SetActive(false);
+                Map_L4.SetActive(false);
+                
+            }
+            else if (from=="L2_Lift"&&to=="L4_Kindergarten")
+            {
+                Map_L2.SetActive(false);
+                Map_L1.SetActive(false);
+                Map_L4.SetActive(true);
+                
+            }
+            else if (from=="L4_Lift"&&to=="L2_LiftRoom")
+            {
+                
+                Map_L2.SetActive(true);
+                Map_L1.SetActive(false);
+                Map_L4.SetActive(false);
+            }
             
             blackBG.DOFade(0, 0.5f);
         }
@@ -58,6 +93,9 @@ namespace BlueStar.Inventory
             GameObject.Find("DialogueManager").GetComponent<DialogueManager>().enabled = false;
             blackBG.DOFade(0,1);
             Terra_Awake.SetActive(true);
+            Map_L2.SetActive(true);
+            Map_L1.SetActive(false);
+            Map_L4.SetActive(false);
             //BeginText.GetComponent<TimelineTrigger>().enabled = false;
             
         }

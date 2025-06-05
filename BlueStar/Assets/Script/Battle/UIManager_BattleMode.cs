@@ -239,7 +239,7 @@ public class UIManager_BattleMode : MonoBehaviour
         }
         //击杀进度
 
-        killProgress.value = killCount / 5;
+        killProgress.value = (float)killCount / 5;
         killProgressText.text=killCount*20+"%";
 
         if (killCount==5&&timer==0)

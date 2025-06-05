@@ -336,8 +336,8 @@ MonoBehaviour:
   m_Active: 1
   settings:
     RenderPassEvent: 550
-    LowResWidth: 405
-    LowResHeight: 720
+    LowResWidth: 720
+    LowResHeight: 405
 --- !u!114 &3020986340536120343
 MonoBehaviour:
   m_ObjectHideFlags: 0

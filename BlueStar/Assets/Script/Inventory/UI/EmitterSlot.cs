@@ -71,10 +71,10 @@ public class EmitterSlot : MonoBehaviour
         UIManager_BattleMode.arrowInst.SetActive(false);
         Emitter_Launched=null;
         fuelTotal = 1;
-        bulletTotal = 0;
+        bulletTotal = 8;
         fuel = 1;
-        bullet = 0;
-        duration = 0;
+        bullet = 8;
+        //duration = 0;
         UIManager_BattleMode.HealthBar.gameObject.SetActive(false);
         UIManager_BattleMode.bulletLeftText.text="";
         UIManager_BattleMode.EmitterName.text="空槽位";
