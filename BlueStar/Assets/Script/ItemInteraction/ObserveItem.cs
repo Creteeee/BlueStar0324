@@ -200,6 +200,35 @@ public class ObserveItem : MonoBehaviour
             ObserveSuggest.SetActive(false);
         }
         
+        else if (DetectPlayerEnter.currentInteractObj!=null)
+        {
+            if (!DetectPlayerEnter.currentInteractObj.GetComponent<DetectPlayerEnter>().isFocusing)
+            {
+                            if (InfomationUI==null)
+                            {
+                                transform.DOMove(originalPosition, 1f);
+                                transform.DORotate(originalRotation, 1);
+                            }
+                            EventHandler.CallResetHeader(true);
+                            if (suggestUIInst!=null)
+                            {
+                                Destroy(ObserveItem.suggestUIInst.gameObject);
+                                observeUI.SetActive(false);
+                            }
+                            
+                            isObserving = false;
+                            if (InfomationUI!= null)
+                            {
+                                InfomationUI.SetActive(false);
+                            }
+                            canRotate = true;
+                            observeUI.SetActive(false);
+                            ObserveSuggest.SetActive(false);
+            }
+
+            
+        }
+        
         if (isChildItem && isObserving)
         {
             canRotate = false;  // 禁用父子物体的旋转功能

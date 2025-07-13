@@ -16,6 +16,7 @@ public class ItemCarry : MonoBehaviour
     private int WeaponID;
     private int DeviceID;
     private GameObject suggestUI;
+    private GameObject carryWeaponUI;
     public  static GameObject suggestUIInst;
     private bool IsInteractive=false;
     private bool lastInteractive;
@@ -36,6 +37,7 @@ public class ItemCarry : MonoBehaviour
     private void Awake()
     {
         suggestUI = Resources.Load<GameObject>("Prefabs/UI/SuggestUI");
+        carryWeaponUI = Resources.Load<GameObject>("Prefabs/UI/UI_CarryWeapon");
         
     }
 
@@ -58,6 +60,17 @@ public class ItemCarry : MonoBehaviour
 
             isClick = false;
         }
+
+        // if (DetectPlayerEnter.currentInteractObj!=null&&DetectPlayerEnter.currentInteractObj.GetComponent<Door_02>()==null )
+        // {
+        //     
+        //     if (!DetectPlayerEnter.currentInteractObj.GetComponent<DetectPlayerEnter>().isFocusing)
+        //     {
+        //         Destroy(suggestUIInst);
+        //         suggestUIInst = null;
+        //     }
+        // }
+
         
         
 

@@ -37,12 +37,16 @@ namespace BlueStar.Inventory
 
         public GameObject suggestGlobal;
 
+        private GameObject carryWeaponUI;
+        
+
 
         private void Start()
         {
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
             bagOpened = bagUI.activeInHierarchy;
             BulletCountTex.text = BulletCount.ToString();
+            carryWeaponUI = Resources.Load<GameObject>("Prefabs/UI/UI_CarryWeapon");
         }
 
         private void Update()
@@ -120,6 +124,11 @@ namespace BlueStar.Inventory
                 newItem.itemAmount = item.itemAmount;
                 Debug.Log("拾取了物体，ID："+GetItemDetails(item.itemID).itemID+"Name:"+GetItemDetails(item.itemID).name);
                 Destroy(item.gameObject);
+
+                if (item._itemDetails.itemType==ItemType.weapon)
+                {
+                    Instantiate(carryWeaponUI, GameObject.Find("------UI------/UI_2D").gameObject.transform);
+                }
                 
                 //更新背包UI
                 EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);

@@ -8,8 +8,20 @@ using UnityEngine.Playables;
 public class PlanetManager : MonoBehaviour
 {
     public PlanetSlot[] slots;
+    public GameObject[] names;
     [SerializeField] private PlayableDirector _director;
     private GameObject[] planets=new GameObject[2];
+    public GameObject suggest;
+    
+
+    private void Start()
+    {
+        foreach (var name in names)
+        {
+            name.SetActive(false);
+        }
+        suggest.SetActive(true);
+    }
 
     private void Update()
     {
@@ -34,10 +46,10 @@ public class PlanetManager : MonoBehaviour
 
     void ClickPlanet()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 20f, LayerMask.GetMask("Click"))&& hit.transform.gameObject.CompareTag("PlanetModel"))
             {
                 for (int i = 0; i < 2; i++)
@@ -57,6 +69,25 @@ public class PlanetManager : MonoBehaviour
                     planets[1].transform.DOMove(pos1, 0.5f);
                     planets = new GameObject[2];
 
+                }
+            }
+        }
+
+        if (Physics.Raycast(ray, out hit, 20f, LayerMask.GetMask("Click")) &&
+            hit.transform.gameObject.CompareTag("PlanetModel"))
+        {
+            foreach (var name in names)
+            {
+                name.SetActive(false);
+            }
+            int index;
+            if (int.TryParse(hit.transform.name, out index))
+            {
+               
+                if (index-1 >= 0 && index-1 < names.Length)
+                {
+                    // 激活对应的UI元素
+                    names[index-1].SetActive(true);
                 }
             }
         }

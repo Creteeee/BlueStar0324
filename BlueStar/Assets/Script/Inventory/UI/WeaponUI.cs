@@ -16,12 +16,29 @@ namespace BlueStar.Inventory
         [Header("道具UI组件")] [SerializeField] private TMP_Text name_Device;
         [SerializeField] private Image icon_Device;
         private Sprite initialIcon_Device;
-        
+
+        public static Image icon_Weapon_firsttime;
+        public static TMP_Text name_Weapon_firsttime;
 
         private void Awake()
         {
+            //icon_Weapon = GameObject.Find("------UI------/UI_2D/Status/Bag/IemEquipped/WeaponEquipped/Weapon/Icon").gameObject.GetComponent<Image>();
+            //name_Weapon=  GameObject.Find("------UI------/UI_2D/Status/Bag/IemEquipped/WeaponEquipped/Weapon/Name").gameObject.GetComponent<TMP_Text>();
             initialIcon_Weapon =  icon_Weapon.sprite;
             initialIcon_Device = icon_Device.sprite;
+            icon_Weapon_firsttime = icon_Weapon;
+            name_Weapon_firsttime = name_Weapon;
+        }
+
+        private void OnEnable()
+        {
+            
+            if (ActivateButtonUI.WeaponID != 0)
+            {
+                ItemDetails item = InventoryManager.Instance.GetItemDetails(ActivateButtonUI.WeaponID);
+                icon_Weapon.sprite = item.itemIcon;
+                name_Weapon.text = item.name;
+            }
         }
 
         private void Update()
@@ -52,6 +69,8 @@ namespace BlueStar.Inventory
             
             
         }
+
+
     }
 }
 

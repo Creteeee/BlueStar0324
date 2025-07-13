@@ -22,7 +22,7 @@ namespace BlueStar.Inventory
 
         private void Awake()
         {
-            WeaponID = 0;
+            //WeaponID = 0;
             DeviceID = 0;
             carriedID = 0;
         }
@@ -43,6 +43,7 @@ namespace BlueStar.Inventory
 
             if (SlotUI.selectedID!=0)
             {
+         
                             switch (item.itemType)
                                 {
                                     case ItemType.card:
@@ -59,6 +60,7 @@ namespace BlueStar.Inventory
                                         InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried= !InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried;
                                         ChangeButtomName(item);
                                         WeaponID = InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried == true ? item.itemID : 0;
+                                        
                                         Debug.Log("目前武器的ID为："+WeaponID);
                                         return;
                                     
@@ -128,6 +130,26 @@ namespace BlueStar.Inventory
             }
             
         }
+        
+        //用于第一次拾取后装备武器的方法
+        public void carryWeapon(GameObject carryWeaponUI)
+        {
+            SlotUI.selectedID = 1003;
+            WeaponID = 1003;
+            item = InventoryManager.Instance.GetItemDetails(SlotUI.selectedID);
+            InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried= !InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried;
+            ChangeButtomName(item);
+            Debug.Log("目前武器的ID为："+WeaponID);
+            Destroy(carryWeaponUI.gameObject);
+            
+            
+        }
+
+        public void notcarryWeapon(GameObject carryWeaponUI)
+        {
+            Destroy(carryWeaponUI.gameObject);
+        }
+        
 
 
     

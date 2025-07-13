@@ -6,7 +6,7 @@ using UnityEngine;
 public class DetectPlayerEnter : MonoBehaviour
 {
     [SerializeField]private bool isEntered = false;
-    [SerializeField] private bool isFocusing = false;
+    public bool isFocusing = false;
     public GameObject interactUIWidget;
     public Transform foucusPoint;
     public int dialougueID = 0;
@@ -36,6 +36,7 @@ public class DetectPlayerEnter : MonoBehaviour
         }
         //scale = player.transform.localScale;
         blackBG = GameObject.Find("------UI------/UI_2D/BlackBG").gameObject.GetComponent<CanvasGroup>();
+        currentInteractObj = null;
         //挂载场景中物体，注意有没有改名字
 
 
@@ -111,6 +112,7 @@ public class DetectPlayerEnter : MonoBehaviour
             isEntered = false;
         }
         isEntered = false;
+        
     }
 
     public IEnumerator ChangeCameraPosition()
