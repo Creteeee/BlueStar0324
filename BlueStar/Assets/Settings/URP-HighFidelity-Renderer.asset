@@ -190,6 +190,21 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-2348256636462843819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3affa0f9ccbe2ee49a1c3c4850d48d9d, type: 3}
+  m_Name: OutlineRenderPassFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    outlineMaterial: {fileID: 2100000, guid: 1cf4e6f549184d2459a7df6274108592, type: 2}
 --- !u!114 &-1996617367238483427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +293,8 @@ MonoBehaviour:
   - {fileID: -6810644244486142662}
   - {fileID: -3725101433459029228}
   - {fileID: -8081152734645601434}
-  m_RendererFeatureMap: adc0de57c6d2eee53206af2c2449800cf1251dd527b4272b61588e2af84052771de25f4115974ae41e2d8189416d7b544eea58f70dd3ae951be4d9c5e6734f2ed30dc480b662d4821774f62212b3ec293a45d8db24bb7ba1144b6092fbc74dcc66bbc55367fad98f
+  - {fileID: -2348256636462843819}
+  m_RendererFeatureMap: adc0de57c6d2eee53206af2c2449800cf1251dd527b4272b61588e2af84052771de25f4115974ae41e2d8189416d7b544eea58f70dd3ae951be4d9c5e6734f2ed30dc480b662d4821774f62212b3ec293a45d8db24bb7ba1144b6092fbc74dcc66bbc55367fad98f55b82dde075169df
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
