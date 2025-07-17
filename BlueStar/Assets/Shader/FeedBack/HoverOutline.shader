@@ -24,9 +24,10 @@ Shader "Unlit/HoverOutline"
             CBUFFER_END
             TEXTURE2D(_BaseMap);                 
             SAMPLER(sampler_BaseMap);
-            struct Attributes{
+            struct Attributes
+            {
                 float4 positionOS : POSITION;
-                float4 normalOS : NORMAL;
+                float4 normalOS : TANGENT;
                 float4 texcoord : TEXCOORD;
             };
             struct Varyings{
@@ -79,7 +80,7 @@ Shader "Unlit/HoverOutline"
                Comp NotEqual
                Pass Keep //不写入
             }
-	        Cull Front
+	        //Cull Front
 	        
 	        HLSLPROGRAM
 	        #pragma vertex vert  

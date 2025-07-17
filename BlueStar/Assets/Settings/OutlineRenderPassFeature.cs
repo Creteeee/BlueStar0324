@@ -50,7 +50,8 @@ public class OutlineRenderPassFeature : ScriptableRendererFeature
                 var renderer = obj?.GetComponent<Renderer>();
                 if (renderer != null)
                 {
-                    cmd.DrawRenderer(renderer, settings.outlineMaterial);
+                    cmd.DrawRenderer(renderer, settings.outlineMaterial,0,0);
+                    cmd.DrawRenderer(renderer, settings.outlineMaterial,0,1);
                 }
             }
 
