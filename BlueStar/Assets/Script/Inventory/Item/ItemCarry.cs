@@ -93,7 +93,16 @@ public class ItemCarry : MonoBehaviour
         if (IsInteractive && /*isIneractive !=lastInteractive &&*/suggestUIInst == null)
         {
             Debug.Log("正在生成提示UI"+isIneractive.ToString());
+            if (InventoryManager.existedSuggestUI.Count>0)
+            {
+                foreach (var ui in InventoryManager.existedSuggestUI)
+                {
+                    Destroy(ui.gameObject);
+                }
+                InventoryManager.existedSuggestUI.Clear();
+            }
             suggestUIInst = Instantiate(suggestUI, GameObject.Find("------UI------/UI_2D").gameObject.transform);
+            InventoryManager.existedSuggestUI.Add(suggestUIInst);
             text_pre=suggestUIInst.gameObject.transform.Find("TextPre").GetComponent<TMP_Text>();
             name=suggestUIInst.gameObject.transform.Find("Name").GetComponent<TMP_Text>();
             nextButton = suggestUIInst.gameObject.transform.Find("NextButton").gameObject;

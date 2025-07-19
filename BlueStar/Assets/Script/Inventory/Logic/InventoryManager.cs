@@ -38,6 +38,8 @@ namespace BlueStar.Inventory
         public GameObject suggestGlobal;
 
         private GameObject carryWeaponUI;
+
+        public static List<GameObject> existedSuggestUI = new List<GameObject>();
         
 
 
@@ -345,6 +347,11 @@ namespace BlueStar.Inventory
         void onDestroyDontDestroyOnLoadObjects(bool isDestroy)
         {
             Destroy(this.gameObject);
+        }
+
+        public void CallCancelObservation()
+        {
+            ObserveItem.CancelObservation();
         }
 
     }

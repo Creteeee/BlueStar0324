@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BlueStar.Inventory;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class ObserveItem : MonoBehaviour
 {
  
     public Camera MainCamera;
-    
     private Vector3 originalPosition;
     private Vector3 originalRotation;
     private Vector3 cameraPosition;
@@ -43,6 +43,8 @@ public class ObserveItem : MonoBehaviour
     public static GameObject activeGameobject;
     [SerializeField] private GameObject observeUI;
     [SerializeField] private GameObject ObserveSuggest;
+    [SerializeField] private GameObject ObserveCancelButton;
+    public static GameObject currentObserveObj;
     
 
     private void Awake()
@@ -61,7 +63,8 @@ public class ObserveItem : MonoBehaviour
         observeUI.SetActive(false);
         ObserveSuggest=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("ObserveSuggest").gameObject;
         ObserveSuggest.SetActive(false);
-
+        ObserveCancelButton=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("ObserveCancelButton").gameObject;
+        ObserveCancelButton.SetActive(false);
         
         
 
@@ -105,7 +108,16 @@ public class ObserveItem : MonoBehaviour
                     {
                         EventHandler.CallPassObserveInfos(infos);
                         activeGameobject = this.gameObject;
+                        if (InventoryManager.existedSuggestUI.Count>0)
+                        {
+                            foreach (var ui in InventoryManager.existedSuggestUI)
+                            {
+                                Destroy(ui.gameObject);
+                            }
+                            InventoryManager.existedSuggestUI.Clear();
+                        }
                         suggestUIInst= Instantiate(suggestUI, GameObject.Find("------UI------/UI_2D").gameObject.transform);
+                        InventoryManager.existedSuggestUI.Add(suggestUIInst);
                         name=suggestUIInst.gameObject.transform.Find("Name").GetComponent<TMP_Text>();
                         name.text = nameString;
                         description=suggestUIInst.gameObject.transform.Find("Description").GetComponent<TMP_Text>();
@@ -122,8 +134,17 @@ public class ObserveItem : MonoBehaviour
                         }
 
                         timer += 1;
-                        ObserveSuggest.SetActive(true);
-                        
+                        //ObserveSuggest.SetActive(true);
+                        ObserveCancelButton.SetActive(true);
+                        currentObserveObj = this.gameObject;
+                        isObserving=true;
+                        //有InfomationUI的时候不放置背景黑色
+                        if (InfomationUI==null)
+                        {
+                            observeUI.SetActive(true);
+                        }
+                        //observeUI.SetActive(true);
+
                     }
                     if (InfomationUI != null)
                     {
@@ -156,15 +177,9 @@ public class ObserveItem : MonoBehaviour
                         //UI_Front.SetActive(true);
                         dialougueID = 0;
                     }
-                    
                 }
-
             }
         }
-        
-
-
-
         }
 
         if (isObserving && isChildItem==false )
@@ -197,7 +212,9 @@ public class ObserveItem : MonoBehaviour
             }
             canRotate = true;
             observeUI.SetActive(false);
-            ObserveSuggest.SetActive(false);
+            //ObserveSuggest.SetActive(false);
+            ObserveCancelButton.SetActive(false);
+            currentObserveObj = null;
         }
         
         else if (DetectPlayerEnter.currentInteractObj!=null)
@@ -223,7 +240,8 @@ public class ObserveItem : MonoBehaviour
                             }
                             canRotate = true;
                             observeUI.SetActive(false);
-                            ObserveSuggest.SetActive(false);
+                            //ObserveSuggest.SetActive(false);
+                            ObserveCancelButton.SetActive(false);
             }
 
             
@@ -256,14 +274,7 @@ public class ObserveItem : MonoBehaviour
             EventHandler.CallResetHeader(true);
             Destroy(ObserveItem.suggestUIInst.gameObject);
             ObserveItem.index = 0;
-            activeGameobject.GetComponent<ObserveItem>().isObserving=true;
-            
-            //有InfomationUI的时候不放置背景黑色
-            if (InfomationUI==null)
-            {
-                observeUI.SetActive(true);
-            }
-            //observeUI.SetActive(true);
+
         }
     }
 
@@ -279,7 +290,38 @@ public class ObserveItem : MonoBehaviour
         downHeader.transform.DOMove(downStartPos, 1);
        
     }
-    
 
+    public static void CancelObservation()
+    {
+        if (ObserveItem.currentObserveObj!=null)
+        {
+            var observeItem = ObserveItem.currentObserveObj.GetComponent<ObserveItem>();
+            if (observeItem.isObserving)
+            {
+                if (observeItem.InfomationUI==null)
+                {
+                    observeItem.gameObject.transform.DOMove(observeItem.originalPosition, 1f);
+                    observeItem.gameObject.transform.transform.DORotate(observeItem.originalRotation, 1);
+                }
+                EventHandler.CallResetHeader(true);
+                if (suggestUIInst!=null)
+                {
+                    Destroy(ObserveItem.suggestUIInst.gameObject);
+                    observeItem.observeUI.SetActive(false);
+                }
+            
+                observeItem.isObserving = false;
+                if (observeItem.InfomationUI!= null)
+                {
+                    observeItem.InfomationUI.SetActive(false);
+                }
+                ObserveItem.canRotate = true;
+                observeItem.observeUI.SetActive(false);
+                //observeItem.ObserveSuggest.SetActive(false);
+                observeItem.ObserveCancelButton.SetActive(false);
+                currentObserveObj = null;
+            }
+        }
+    }
 }
 
