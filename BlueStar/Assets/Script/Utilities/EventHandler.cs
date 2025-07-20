@@ -19,11 +19,11 @@ public static class EventHandler
         ResetEmptySlot?.Invoke(index);
     }
     
-    public static event Action<bool,int,string[]> ShowExpectItemUI;
+    public static event Action<bool,int,string[],int> ShowExpectItemUI;
 
-    public static void CallShowExpectedItemUI(bool isInteracted,int ID,string[] informations)
+    public static void CallShowExpectedItemUI(bool isInteracted,int ID,string[] informations,int times)
     {
-        ShowExpectItemUI?.Invoke(isInteracted,ID,informations);
+        ShowExpectItemUI?.Invoke(isInteracted,ID,informations,times);
     }
     
     

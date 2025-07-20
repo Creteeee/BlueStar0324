@@ -81,7 +81,17 @@ public class DetectPlayerItem : MonoBehaviour
         }*/
         if (mode == InteractionMode.Trigger && isIneracted==transform)
         {
-            EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations);
+            if (InventoryStateManager.Instance.ItemState.TryGetValue(this.transform.name,out int times ))
+            {
+                InventoryStateManager.Instance.ItemState[this.transform.name] += 1;
+            }
+            else
+            {
+                InventoryStateManager.Instance.ItemState.Add(this.transform.name,1);
+            }
+
+            times = InventoryStateManager.Instance.ItemState[this.transform.name];
+            EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations,times);
             isIneracted = false;
         }
         
@@ -126,9 +136,19 @@ public class DetectPlayerItem : MonoBehaviour
                 Debug.Log(hit.transform.gameObject.name);
                 if (hit.transform==transform)
                 {
-                    Debug.Log("CCC");
+                    if (InventoryStateManager.Instance.ItemState.TryGetValue(hit.transform.name,out int times ))
+                    {
+                        InventoryStateManager.Instance.ItemState[hit.transform.name] += 1;
+                    }
+                    else
+                    {
+                        InventoryStateManager.Instance.ItemState.Add(hit.transform.name,1);
+                    }
+
+                    times = InventoryStateManager.Instance.ItemState[hit.transform.name];
+                    
                     isIneracted = true;
-                    EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations);
+                    EventHandler.CallShowExpectedItemUI(isIneracted,expectID,Informations,times);
                     currentObj = hit.transform.gameObject;
                 }
             }

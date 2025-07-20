@@ -21,6 +21,7 @@ public class DetectPlayerEnter : MonoBehaviour
     private Vector3 scale;
     private CanvasGroup blackBG;
     public static GameObject currentInteractObj;
+    public static GameObject FocusCancelButton;
     
 
     
@@ -38,6 +39,7 @@ public class DetectPlayerEnter : MonoBehaviour
         blackBG = GameObject.Find("------UI------/UI_2D/BlackBG").gameObject.GetComponent<CanvasGroup>();
         currentInteractObj = null;
         //挂载场景中物体，注意有没有改名字
+        FocusCancelButton=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("FocusCancelButton").gameObject;
 
 
     }
@@ -45,6 +47,7 @@ public class DetectPlayerEnter : MonoBehaviour
     private void Start()
     {
         playerLayer = LayerMask.NameToLayer("Player");
+        FocusCancelButton.SetActive(false);
     }
 
     private void Update()
@@ -55,13 +58,11 @@ public class DetectPlayerEnter : MonoBehaviour
             {
                 Debug.Log("我按下了E");
                 StartCoroutine(ChangeCameraPosition());
-                
 
                 // 开始对话
                 if (dialougueID != 0)
                 {
                     DialogueManager.currentDialogueBeginID = dialougueID;
-  
 
                 }
 
@@ -80,6 +81,7 @@ public class DetectPlayerEnter : MonoBehaviour
             {
                 Debug.Log("开始重置摄像头");
                 StartCoroutine(ResetCameraPosition());
+
                 if (ItemPickUp.itemPickUpUIInst!=null)
                 {
                     Destroy(ItemPickUp.itemPickUpUIInst.gameObject);
@@ -133,6 +135,8 @@ public class DetectPlayerEnter : MonoBehaviour
         blackBG.DOFade(0, 0.5f);
         isFocusing = true;
         isEntered = false;
+        InventoryManager.Instance.suggestGlobal.SetActive(false);
+        FocusCancelButton.SetActive(true);
     }
 
     public IEnumerator ResetCameraPosition()
@@ -148,6 +152,8 @@ public class DetectPlayerEnter : MonoBehaviour
         blackBG.DOFade(0, 0.5f);
         isFocusing = false;
         isEntered = true;
+        InventoryManager.Instance.suggestGlobal.SetActive(true);
+        FocusCancelButton.SetActive(false);
     }
 
     public void Reset()
@@ -156,5 +162,21 @@ public class DetectPlayerEnter : MonoBehaviour
         //isEntered = false;
         StartCoroutine(ResetCameraPosition());
         currentInteractObj.GetComponent<DetectPlayerEnter>().enabled = false;
+    }
+
+    public static void CancelFocusing()
+    {
+        var detect = currentInteractObj.GetComponent<DetectPlayerEnter>();
+        if ( detect.isFocusing )  // 按下 Escape 键时
+        {
+            Debug.Log("开始重置摄像头");
+            detect.StartCoroutine(detect.ResetCameraPosition());
+
+            if (ItemPickUp.itemPickUpUIInst!=null)
+            {
+                Destroy(ItemPickUp.itemPickUpUIInst.gameObject);
+                ItemPickUp.itemPickUpUIInst = null;
+            }
+        }
     }
 }

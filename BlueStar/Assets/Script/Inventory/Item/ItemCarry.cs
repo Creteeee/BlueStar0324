@@ -87,7 +87,7 @@ public class ItemCarry : MonoBehaviour
     }
 
     
-    private void onInitiateSuggestUI(bool isIneractive,int ID,string[] informations)
+    private void onInitiateSuggestUI(bool isIneractive,int ID,string[] informations,int times)
     {
         IsInteractive = isIneractive;
         if (IsInteractive && /*isIneractive !=lastInteractive &&*/suggestUIInst == null)
@@ -112,16 +112,17 @@ public class ItemCarry : MonoBehaviour
             infos = informations;
             index = 0;
             //当物品的介绍有内容时会触发下面的委托
-            if (infos.Length !=0)
+            if (infos.Length !=0 && times<2)
             {
                 index = 0;
                 text_pre.text = informations[index];
                 name.gameObject.SetActive(false);
                 chooseBar.SetActive(false);
             }
-            else if (infos.Length==0)
+            else if (infos.Length==0 || times >=2 )
             {
                 text_pre.text = "需要";
+                nextButton.SetActive(false);
                 chooseBar.SetActive(true);
             }
             
@@ -293,6 +294,11 @@ public class ItemCarry : MonoBehaviour
     {
         Debug.Log("我被Click了");
         onUpdateInformation();
+    }
+
+    public void ClearSuggest()
+    {
+        InventoryManager.Instance.CallClearSuggest();
     }
     
     

@@ -44,6 +44,7 @@ public class ObserveItem : MonoBehaviour
     [SerializeField] private GameObject observeUI;
     [SerializeField] private GameObject ObserveSuggest;
     [SerializeField] private GameObject ObserveCancelButton;
+    [SerializeField] private GameObject KeySuggest;
     public static GameObject currentObserveObj;
     
 
@@ -65,7 +66,8 @@ public class ObserveItem : MonoBehaviour
         ObserveSuggest.SetActive(false);
         ObserveCancelButton=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("ObserveCancelButton").gameObject;
         ObserveCancelButton.SetActive(false);
-        
+        KeySuggest=GameObject.Find("------UI------/UI_2D/ObserveCancelButton").gameObject.transform.Find("KeySuggest").gameObject;
+        KeySuggest.SetActive(false);
         
 
 
@@ -127,7 +129,7 @@ public class ObserveItem : MonoBehaviour
                         //transform.position = foucusPosition;
                         // ObserveItem.upHeader.transform.DOMove(new Vector3(960, 880, 0) , 1);
                         // ObserveItem.downHeader.transform.DOMove(new Vector3(960, -880, 0) , 1);
-                        EventHandler.CallMoveHeader(true);
+                        //EventHandler.CallMoveHeader(true);
                         if (InfomationUI==null)
                         {
                             transform.DOMove(foucusPosition, 1f);
@@ -136,6 +138,7 @@ public class ObserveItem : MonoBehaviour
                         timer += 1;
                         //ObserveSuggest.SetActive(true);
                         ObserveCancelButton.SetActive(true);
+                        DetectPlayerEnter.FocusCancelButton.SetActive(false);
                         currentObserveObj = this.gameObject;
                         isObserving=true;
                         //有InfomationUI的时候不放置背景黑色
@@ -198,7 +201,7 @@ public class ObserveItem : MonoBehaviour
                 transform.DOMove(originalPosition, 1f);
                 transform.DORotate(originalRotation, 1);
             }
-            EventHandler.CallResetHeader(true);
+            //EventHandler.CallResetHeader(true);
             if (suggestUIInst!=null)
             {
                 Destroy(ObserveItem.suggestUIInst.gameObject);
@@ -215,6 +218,7 @@ public class ObserveItem : MonoBehaviour
             //ObserveSuggest.SetActive(false);
             ObserveCancelButton.SetActive(false);
             currentObserveObj = null;
+            DetectPlayerEnter.FocusCancelButton.SetActive(true);
         }
         
         else if (DetectPlayerEnter.currentInteractObj!=null)
@@ -226,7 +230,7 @@ public class ObserveItem : MonoBehaviour
                                 transform.DOMove(originalPosition, 1f);
                                 transform.DORotate(originalRotation, 1);
                             }
-                            EventHandler.CallResetHeader(true);
+                            //EventHandler.CallResetHeader(true);
                             if (suggestUIInst!=null)
                             {
                                 Destroy(ObserveItem.suggestUIInst.gameObject);
@@ -271,7 +275,8 @@ public class ObserveItem : MonoBehaviour
         }
         else if (ObserveItem.index >= ObserveItem.infoStore.Length - 1)
         {
-            EventHandler.CallResetHeader(true);
+            //EventHandler.CallResetHeader(true);
+            KeySuggest.SetActive(true);
             Destroy(ObserveItem.suggestUIInst.gameObject);
             ObserveItem.index = 0;
 
@@ -295,6 +300,7 @@ public class ObserveItem : MonoBehaviour
     {
         if (ObserveItem.currentObserveObj!=null)
         {
+            Debug.Log("正要执行关闭检查");
             var observeItem = ObserveItem.currentObserveObj.GetComponent<ObserveItem>();
             if (observeItem.isObserving)
             {
@@ -303,7 +309,7 @@ public class ObserveItem : MonoBehaviour
                     observeItem.gameObject.transform.DOMove(observeItem.originalPosition, 1f);
                     observeItem.gameObject.transform.transform.DORotate(observeItem.originalRotation, 1);
                 }
-                EventHandler.CallResetHeader(true);
+                //EventHandler.CallResetHeader(true);
                 if (suggestUIInst!=null)
                 {
                     Destroy(ObserveItem.suggestUIInst.gameObject);
@@ -320,8 +326,14 @@ public class ObserveItem : MonoBehaviour
                 //observeItem.ObserveSuggest.SetActive(false);
                 observeItem.ObserveCancelButton.SetActive(false);
                 currentObserveObj = null;
+                DetectPlayerEnter.FocusCancelButton.SetActive(true);
             }
         }
+    }
+    public void ClearSuggest()
+    {
+        InventoryManager.Instance.CallClearSuggest();
+        KeySuggest.SetActive(true);
     }
 }
 

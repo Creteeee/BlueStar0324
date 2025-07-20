@@ -49,6 +49,7 @@ namespace BlueStar.Inventory
             bagOpened = bagUI.activeInHierarchy;
             BulletCountTex.text = BulletCount.ToString();
             carryWeaponUI = Resources.Load<GameObject>("Prefabs/UI/UI_CarryWeapon");
+            suggestGlobal = GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("Suggest_Global").gameObject;
         }
 
         private void Update()
@@ -354,9 +355,23 @@ namespace BlueStar.Inventory
             ObserveItem.CancelObservation();
         }
 
+        public void CallCancelFocus()
+        {
+            DetectPlayerEnter.CancelFocusing();
+        }
+
+        public void CallClearSuggest()
+        {
+            if (existedSuggestUI.Count>0)
+            {
+                foreach (var ui in existedSuggestUI)
+                {
+                    Destroy(ui.gameObject);
+                }
+            }
+            existedSuggestUI.Clear();
+        }
+
     }
-    
-    
-    
 }
 

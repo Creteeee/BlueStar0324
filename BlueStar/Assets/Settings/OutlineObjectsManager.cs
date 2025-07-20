@@ -25,10 +25,11 @@ public class OutlineObjectsManager : MonoBehaviour
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
+    
 
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("InteractiveMesh","Click")))
             {
+                Debug.Log(this.gameObject.name);
                 if (hit.transform.gameObject != previousObj)
                 {
                     objsForRender.Clear();
