@@ -47,8 +47,9 @@ public class SmoothNormalTool : OdinEditorWindow
                 {
                     if (obj.GetComponent<MeshFilter>() !=null)
                     {
-                        obj.GetComponent<MeshFilter>().sharedMesh.tangents =
-                            SmoothNormals(obj.GetComponent<MeshFilter>().sharedMesh);
+                        // obj.GetComponent<MeshFilter>().sharedMesh.tangents =
+                        //     SmoothNormals(obj.GetComponent<MeshFilter>().sharedMesh);
+                        ReplaceOldMesh(obj);
                     }
                 }
                 return;
@@ -103,4 +104,24 @@ public class SmoothNormalTool : OdinEditorWindow
         return smoothNormals;
     }
 
+    void ReplaceOldMesh(GameObject obj)
+    {
+        Mesh mesh = obj.GetComponent<MeshFilter>().sharedMesh;
+        string path = AssetDatabase.GetAssetPath(mesh);
+        if (AssetDatabase.IsMainAsset(mesh))
+        {
+            // 如果是可写入的 .asset 文件
+            mesh.tangents = SmoothNormals(mesh);
+            EditorUtility.SetDirty(mesh);
+            AssetDatabase.SaveAssets();
+        }
+        else
+        {
+            // 是 fbx 内的导入资源，只能复制一份
+            Mesh newMesh = Instantiate(mesh);
+            newMesh.tangents = SmoothNormals(newMesh);
+            AssetDatabase.CreateAsset(newMesh, $"Assets/Model/Item/Scene/SmoothedFBX/{mesh.name}_Smoothed.asset");
+            obj.GetComponent<MeshFilter>().sharedMesh = newMesh;
+        }
+    }
 }
