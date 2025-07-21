@@ -30,7 +30,7 @@ public class OutlineObjectsManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("InteractiveMesh","Click")))
             {
                 Debug.Log(this.gameObject.name);
-                if (hit.transform.gameObject != previousObj)
+                if (hit.transform.gameObject != previousObj && ObserveItem.currentObserveObj== null)
                 {
                     objsForRender.Clear();
                     objsForRender.Add(hit.collider.gameObject);
