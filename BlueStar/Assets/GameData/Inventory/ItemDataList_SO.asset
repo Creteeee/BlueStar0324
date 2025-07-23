@@ -52,7 +52,8 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: b5cc3cacc5fd622428b5682cc148c2d5, type: 3}
     itemObject: {fileID: 3700976783133483460, guid: 07ed1259b510ae840a0051cd603e4d30,
       type: 3}
-    itemDescriptions: "\u9668\u94C1\u5236\u4F5C\u7684\u5DE5\u5177, \u5341\u5206\u575A\u786C\uFF0C\u53EF\u4EE5\u64AC\u52A8\u5927\u90E8\u5206\u91D1\u5C5E"
+    itemDescriptions: "\u9668\u94C1\u5236\u4F5C\u7684\u5DE5\u5177, \u5341\u5206\u575A\u786C,
+      \u53EF\u4EE5\u64AC\u52A8\u5927\u90E8\u5206\u91D1\u5C5E"
     canPickedup: 0
     canDropped: 0
     canCarried: 0

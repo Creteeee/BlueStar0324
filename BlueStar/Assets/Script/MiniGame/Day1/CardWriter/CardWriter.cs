@@ -13,10 +13,11 @@ public class CardWriter : MonoBehaviour
     [SerializeField] private TMP_Text PreText;
     [SerializeField] private TMP_Text CodeText;
     [SerializeField] private PlayableDirector _director;
+    [SerializeField] private GameObject outlineObj;
 
     private void OnEnable()
     {
-
+        outlineObj.SetActive(false);
     }
 
     private void Update()

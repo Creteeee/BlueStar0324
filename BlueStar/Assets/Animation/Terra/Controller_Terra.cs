@@ -312,7 +312,7 @@ public class Controller_Terra : MonoBehaviour
         {
             float angle = Vector3.Angle(Vector3.forward, direction);
             float angle2 = 360-Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
-            transform.rotation =Quaternion.Euler(0,angle2+180,0);  // 直接设置目标旋转
+            transform.rotation =Quaternion.Euler(0,angle2+180-45,0);  // 直接设置目标旋转
         }
     }
     

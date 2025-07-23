@@ -45,6 +45,7 @@ public class ObserveItem : MonoBehaviour
     [SerializeField] private GameObject ObserveSuggest;
     [SerializeField] private GameObject ObserveCancelButton;
     [SerializeField] private GameObject KeySuggest;
+    [SerializeField] private GameObject ObserveHeader;
     public static GameObject currentObserveObj;
     
 
@@ -67,7 +68,9 @@ public class ObserveItem : MonoBehaviour
         ObserveCancelButton=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("ObserveCancelButton").gameObject;
         ObserveCancelButton.SetActive(false);
         KeySuggest=GameObject.Find("------UI------/UI_2D/ObserveCancelButton").gameObject.transform.Find("KeySuggest").gameObject;
+        ObserveHeader = GameObject.Find("------UI------/UI_2D/ObserveCancelButton").gameObject.transform.Find("Header").gameObject;
         KeySuggest.SetActive(false);
+        ObserveHeader.SetActive(true);
         
 
 
@@ -152,6 +155,8 @@ public class ObserveItem : MonoBehaviour
                     if (InfomationUI != null)
                     {
                         InfomationUI.SetActive(true);
+                        KeySuggest.SetActive(false);
+                        ObserveHeader.SetActive(false);
                         if (InfomationUI.activeSelf==true)
                         {
                             timer = 0;
@@ -276,7 +281,11 @@ public class ObserveItem : MonoBehaviour
         else if (ObserveItem.index >= ObserveItem.infoStore.Length - 1)
         {
             //EventHandler.CallResetHeader(true);
-            KeySuggest.SetActive(true);
+            if (currentObserveObj.GetComponent<ObserveItem>().InfomationUI==null)
+            {
+                KeySuggest.SetActive(true);
+                ObserveHeader.SetActive(true);
+            }
             Destroy(ObserveItem.suggestUIInst.gameObject);
             ObserveItem.index = 0;
 
@@ -334,6 +343,7 @@ public class ObserveItem : MonoBehaviour
     {
         InventoryManager.Instance.CallClearSuggest();
         KeySuggest.SetActive(true);
+        ObserveHeader.SetActive(true);
     }
 }
 
