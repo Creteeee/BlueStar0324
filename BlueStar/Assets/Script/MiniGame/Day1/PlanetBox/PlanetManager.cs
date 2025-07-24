@@ -12,7 +12,12 @@ public class PlanetManager : MonoBehaviour
     [SerializeField] private PlayableDirector _director;
     private GameObject[] planets=new GameObject[2];
     public GameObject suggest;
-    
+    [SerializeField] private GameObject outlineObj;
+
+    private void OnEnable()
+    {
+        outlineObj.SetActive(false);
+    }
 
     private void Start()
     {

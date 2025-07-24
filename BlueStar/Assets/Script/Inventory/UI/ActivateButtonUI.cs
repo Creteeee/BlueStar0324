@@ -12,6 +12,7 @@ namespace BlueStar.Inventory
     {
         public static ItemDetails item;
         [Header("UI组件")] [SerializeField] private TMP_Text buttonName;
+        [SerializeField] private GameObject tutorial;
         public int handledItemID;
         public static int WeaponID;
         public static int DeviceID;
@@ -34,6 +35,11 @@ namespace BlueStar.Inventory
         private void Update()
         {
             
+        }
+
+        private void OnEnable()
+        {
+            tutorial = GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("WeaponTutorial").gameObject;
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -140,6 +146,7 @@ namespace BlueStar.Inventory
             InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried= !InventoryUI.Instance.playerSlots[selectedSlotIndex].canCarrried;
             ChangeButtomName(item);
             Debug.Log("目前武器的ID为："+WeaponID);
+            tutorial.SetActive(true);
             Destroy(carryWeaponUI.gameObject);
             
             
@@ -147,6 +154,7 @@ namespace BlueStar.Inventory
 
         public void notcarryWeapon(GameObject carryWeaponUI)
         {
+            tutorial.SetActive(true);
             Destroy(carryWeaponUI.gameObject);
         }
         

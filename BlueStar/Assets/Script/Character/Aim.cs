@@ -23,7 +23,11 @@ public class Aim : MonoBehaviour
     public GameObject bloodVFX;
     private GameObject bloodVFXInst;
     public GameObject NoBulletSuggest;
-    private GameObject NoBulletSuggestInst;
+    public static GameObject NoBulletSuggestInst;
+    public GameObject NoGunSuggest;
+    private GameObject NoGunSuggesttInst;
+    public GameObject gun;
+
 
     private void Awake()
     {
@@ -88,6 +92,26 @@ public class Aim : MonoBehaviour
 
         }
 
+        // if (Input.GetKey(KeyCode.Mouse1))
+        // {
+        //     if (!gun.activeSelf)
+        //     {
+        //         if (NoBulletSuggestInst != null)
+        //         {
+        //             Destroy(NoBulletSuggestInst);
+        //             NoBulletSuggestInst = null;
+        //         }
+        //
+        //         if (NoGunSuggesttInst!=null)
+        //         {
+        //             Destroy(NoGunSuggesttInst);
+        //             NoGunSuggesttInst = null;
+        //         }
+        //         NoGunSuggesttInst = Instantiate(NoGunSuggest, GameObject.Find("------UI------/UI_2D").transform);
+        //         StartCoroutine(DestroySuggestAfterDelay(NoGunSuggesttInst, 1f));
+        //     }
+        // }
+
         if (Input.GetKeyDown(KeyCode.Mouse0)&&Input.GetKey(KeyCode.Mouse1))
         {
             if (InventoryManager.Instance.BulletCount>=1)
@@ -106,7 +130,11 @@ public class Aim : MonoBehaviour
                     Destroy(NoBulletSuggestInst);
                     NoBulletSuggestInst = null;
                 }
-
+                if (Controller_Terra.NoGunSuggestInst!=null)
+                {
+                    Destroy(Controller_Terra.NoGunSuggestInst);
+                    Controller_Terra.NoGunSuggestInst = null;
+                }
                 NoBulletSuggestInst = Instantiate(NoBulletSuggest, GameObject.Find("------UI------/UI_2D").transform);
                 StartCoroutine(DestroySuggestAfterDelay(NoBulletSuggestInst, 1f));
             }

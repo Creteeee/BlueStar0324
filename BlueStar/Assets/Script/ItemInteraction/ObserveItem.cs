@@ -6,6 +6,7 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class ObserveItem : MonoBehaviour
 {
@@ -107,7 +108,7 @@ public class ObserveItem : MonoBehaviour
             if (hit.transform == transform)
             {
                 Debug.Log("射线击中了物体");
-                if (Input.GetMouseButtonDown(0) && suggestUIInst==null )
+                if (Input.GetMouseButtonDown(0) && suggestUIInst==null&&!EventSystem.current.IsPointerOverGameObject() )
                 {
                     if (isObserving==false)
                     {

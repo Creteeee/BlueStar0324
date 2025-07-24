@@ -1035,6 +1035,11 @@ MonoBehaviour:
   - "\u4E00\u5F20\u51FA\u751F\u8BC1\u660E"
   - "\u4F3C\u4E4E\u662F\u6211\u7684"
   nameString: "\u51FA\u751F\u8BC1\u660E"
+  observeUI: {fileID: 0}
+  ObserveSuggest: {fileID: 0}
+  ObserveCancelButton: {fileID: 0}
+  KeySuggest: {fileID: 0}
+  ObserveHeader: {fileID: 0}
 --- !u!1 &8469193018447083084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1539,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  names: []
   _director: {fileID: 5836103455422345800}
+  suggest: {fileID: 0}
+  outlineObj: {fileID: 0}
 --- !u!320 &5836103455422345800
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -1599,6 +1607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b8b8225751cee439cda976305db9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEntered: 0
+  isFocusing: 0
   interactUIWidget: {fileID: 0}
   foucusPoint: {fileID: 7154231126723655133}
   dialougueID: 0
@@ -1645,6 +1655,12 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -3711819563237575845, guid: b2a8385291b81094ea955997604c090e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4016782554278847772, guid: b2a8385291b81094ea955997604c090e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3419575394060404798, guid: b2a8385291b81094ea955997604c090e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2695882653406919444, guid: b2a8385291b81094ea955997604c090e, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []

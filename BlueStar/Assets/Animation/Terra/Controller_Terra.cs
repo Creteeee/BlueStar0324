@@ -39,6 +39,8 @@ public class Controller_Terra : MonoBehaviour
     public static bool isEndShowState = false;
     public AudioClip[] stepSounds;
     public static AudioSource audio;
+    public GameObject NoGunSuggest;
+    public static GameObject NoGunSuggestInst;
 
 
     private void Awake()
@@ -131,6 +133,8 @@ public class Controller_Terra : MonoBehaviour
                     //walkSpeedCurrent = 0f;  // 确保停止移动
 
                 }
+                
+                
             }
             animator.SetFloat("Blend", walkSpeedCurrent);
             transform.Translate(Vector3.forward * walkSpeedCurrent * Time.deltaTime);
@@ -162,6 +166,8 @@ public class Controller_Terra : MonoBehaviour
                 RotateTowardsMouse();
             }
             
+            
+            
         }
         else if (!canMoveTerra&&!isEndShowState)
         {
@@ -177,9 +183,39 @@ public class Controller_Terra : MonoBehaviour
             gun.SetActive(false);
         }
         shortLineInst.SetActive(gun.activeSelf);
+        
+        if (!gun.activeSelf && Input.GetKey(KeyCode.Mouse1))
+        {
+            if (Aim.NoBulletSuggestInst != null)
+            {
+                Destroy(Aim.NoBulletSuggestInst);
+                Aim.NoBulletSuggestInst = null;
+            }
 
+            if (NoGunSuggestInst!=null)
+            {
+                Destroy(NoGunSuggestInst);
+                NoGunSuggestInst = null;
+            }
+            NoGunSuggestInst = Instantiate(NoGunSuggest, GameObject.Find("------UI------/UI_2D").transform);
+            StartCoroutine(DestroySuggestAfterDelay(NoGunSuggestInst, 1f));
+        }
     }
 
+        IEnumerator DestroySuggestAfterDelay(GameObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (obj != null)  // 避免中途被替换
+        {
+            Destroy(obj);
+        }
+
+        if (NoGunSuggestInst == obj)
+        {
+            NoGunSuggestInst = null;
+        }
+    }
     void onWalking(Vector2 inputVector)
     {
         animator.SetBool("isWalking", true);
