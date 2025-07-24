@@ -37794,6 +37794,7 @@ MonoBehaviour:
   PreText: {fileID: 0}
   CodeText: {fileID: 0}
   _director: {fileID: 1780608469}
+  outlineObj: {fileID: 0}
 --- !u!4 &1780608471
 Transform:
   m_ObjectHideFlags: 0
@@ -38008,6 +38009,8 @@ MonoBehaviour:
   button1: {fileID: 684250683}
   botton2: {fileID: 2028564651}
   Director: {fileID: 0}
+  bloodMat: {fileID: 2100000, guid: 463d73ceccb55834c91be25dcbcfc348, type: 2}
+  volume: {fileID: 882093934}
 --- !u!4 &1796480470
 Transform:
   m_ObjectHideFlags: 0

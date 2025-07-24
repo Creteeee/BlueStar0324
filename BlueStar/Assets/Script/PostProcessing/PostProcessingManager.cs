@@ -14,7 +14,7 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
     public PixelizeRenderPassFeature pixelizeRenderPassFeature;
     public int LowresWidth;
     public int LowresHeight;
-    ColorAdjustments colorAdjustments;
+    public ColorAdjustments colorAdjustments;
     public Controller_Terra terra;
     private float initialFocalLength;
     public Material bloodMat;
@@ -31,6 +31,7 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
         depthOfField.focalLength.value = 1f;
         colorAdjustments.hueShift.value = 0;
         colorAdjustments.contrast.value = 0;
+        colorAdjustments.colorFilter.value = Color.white;
         LowresWidth = pixelizeRenderPassFeature.settings.LowResWidth;
         LowresHeight = pixelizeRenderPassFeature.settings.LowResHeight;
         pixelizeRenderPassFeature.SetActive(true);
@@ -41,8 +42,8 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
 
     void Update()
     {
-        healthRatio = Mathf.Clamp(terra.Health/100, 0, 1);
-        alpha = Mathf.Clamp01(1-healthRatio)*1;
+        healthRatio = Mathf.Clamp(terra.Health/200, 0, 1);
+        alpha = Mathf.Clamp01(1-healthRatio)*3;
         
         
         // if (terra.Health>=100)
@@ -66,6 +67,10 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
         StartCoroutine(HurtEffectCoroutine());
         bloodMat.SetFloat("_Alpha",alpha);
         bloodMat.SetFloat("_HealthRatio",healthRatio);
+        Vector4 red = new Vector4(1, 0, 0, 1);
+        Vector4 white = new Vector4(1, 1, 1, 1);
+        Vector4 coloradjust = Vector4.Lerp(red,white,Mathf.Clamp01(healthRatio+0.2f));
+        colorAdjustments.colorFilter.value = coloradjust;
     }
 
     IEnumerator HurtEffectCoroutine()
@@ -117,6 +122,10 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
     {
         bloodMat.SetFloat("_Alpha",alpha);
         bloodMat.SetFloat("_HealthRatio",healthRatio);
+        Vector4 red = new Vector4(1, 0, 0, 1);
+        Vector4 white = new Vector4(1, 1, 1, 1);
+        Vector4 coloradjust = Vector4.Lerp(red,white,Mathf.Clamp01(healthRatio+0.2f));
+        colorAdjustments.colorFilter.value = coloradjust;
         // if (terra.Health>=100)
         // {
         //     initialFocalLength = 1;

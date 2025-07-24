@@ -16,6 +16,7 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
             //public LayerMask layerMask;
             public int LowResWidth;
             public int LowResHeight;
+            //public Material bloodMat;
 
         }
         class PixelizeRenderPass : ScriptableRenderPass
@@ -23,7 +24,9 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
             private Settings Settings;
             private PixelizeRenderPassFeature feature;
             private RenderTargetIdentifier colorBuffer, pixelBuffer;
+            //private RenderTargetIdentifier colorBuffer, pixelBuffer, bloodBuffer;
             private int pixelBufferID = Shader.PropertyToID("_PixelBuffer");//这个id的意义是什么
+            //private int bloodufferID = Shader.PropertyToID("_BloodBuffer");
             
             
             
@@ -42,17 +45,21 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
                     base.OnCameraSetup(cmd, ref renderingData);
                     colorBuffer = renderingData.cameraData.renderer.cameraColorTarget;
                     pixelBuffer = new RenderTargetIdentifier(pixelBufferID);
+                    //bloodBuffer = new RenderTargetIdentifier(bloodufferID);
+                    
                     RenderTextureDescriptor desc = renderingData.cameraData.cameraTargetDescriptor;
                     int lowResWidth = Settings.LowResWidth;
                     int lowResWHeight = Settings.LowResHeight;
                     desc.width = lowResWidth;
                     desc.height = lowResWHeight;
                     cmd.GetTemporaryRT(pixelBufferID,desc,FilterMode.Point);
+                    //cmd.GetTemporaryRT(bloodufferID, renderingData.cameraData.cameraTargetDescriptor,FilterMode.Bilinear);
                 }
 
 
                 public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
                 {
+                   // Material bloodMat = Settings.bloodMat;
                     CommandBuffer cmd = CommandBufferPool.Get("像素化");
                     // 获取相机的 LayerMask
                     Camera camera = renderingData.cameraData.camera;
@@ -67,6 +74,9 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
                     //cmd.Blit(colorBuffer,pixelBuffer,Settings.PixelizeMat,0);
                     cmd.Blit(colorBuffer,pixelBuffer);
                     cmd.Blit(pixelBuffer,colorBuffer);
+                    //cmd.Blit(colorBuffer, bloodBuffer);
+                    //cmd.Blit(bloodBuffer,colorBuffer,bloodMat);
+                    
                     context.ExecuteCommandBuffer(cmd);
                     CommandBufferPool.Release(cmd);
                    
@@ -79,6 +89,7 @@ public class PixelizeRenderPassFeature : ScriptableRendererFeature
                 public override void OnCameraCleanup(CommandBuffer cmd)
                 {
                     cmd.ReleaseTemporaryRT(Shader.PropertyToID("_PixelBuffer"));
+                    //cmd.ReleaseTemporaryRT(Shader.PropertyToID("_BloodBuffer"));
           
    
                 }

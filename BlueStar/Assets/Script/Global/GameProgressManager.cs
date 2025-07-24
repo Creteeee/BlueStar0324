@@ -25,6 +25,7 @@ public class GameProgressManager : Singleton<GameProgressManager>
     private float health;
     [Header("死亡UI")]
     [SerializeField] private CanvasGroup endUIGroup;//这个后面UI被卸载了可能出bug
+    public Material bloodMat;
 
     private int timer = 0;
 
@@ -125,6 +126,8 @@ public class GameProgressManager : Singleton<GameProgressManager>
 
         if (Input.GetKeyDown(KeyCode.P)&&timer<1)
         {
+            bloodMat.SetFloat("_Alpha",0);
+            bloodMat.SetFloat("_HealthRatio",1);
             timer += 1;
             SceneManager.LoadScene("HomePage");
             EventHandler.CallDestroyObject(true);
@@ -132,7 +135,10 @@ public class GameProgressManager : Singleton<GameProgressManager>
 
         if (Terra.GetComponent<Controller_Terra>().Health <= 0 && timer < 1)
         {
+            bloodMat.SetFloat("_Alpha",0);
+            bloodMat.SetFloat("_HealthRatio",1);
             timer += 1;
+            PostProcessingManager.Instance.colorAdjustments.colorFilter.value=Color.white;
             endUIGroup.DOFade(1, 3).OnComplete(() =>
             {
                 SceneManager.LoadScene("HomePage");

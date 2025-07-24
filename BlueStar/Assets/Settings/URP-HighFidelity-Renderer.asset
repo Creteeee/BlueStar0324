@@ -351,9 +351,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    RenderPassEvent: 550
+    RenderPassEvent: 500
     LowResWidth: 720
     LowResHeight: 405
+    bloodMat: {fileID: 2100000, guid: 463d73ceccb55834c91be25dcbcfc348, type: 2}
 --- !u!114 &3020986340536120343
 MonoBehaviour:
   m_ObjectHideFlags: 0

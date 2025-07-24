@@ -5,6 +5,8 @@ using DG.Tweening;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class HomepageUI : MonoBehaviour
@@ -18,11 +20,19 @@ public class HomepageUI : MonoBehaviour
     public GameObject button1;
     public GameObject botton2;
     public PlayableDirector Director;
+    public Material bloodMat;
+    public Volume volume;
+    private ColorAdjustments colorAdjustments;
   
 
     private void Awake()
     {
         Director = this.GetComponent<PlayableDirector>();
+        bloodMat.SetFloat("_Alpha",0);
+        bloodMat.SetFloat("_HealthRatio",1);
+        volume.sharedProfile.TryGet(out colorAdjustments);
+        colorAdjustments.colorFilter.value=Color.white;
+
     }
 
     public void NextUI1()
