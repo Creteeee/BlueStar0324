@@ -74,23 +74,23 @@ public class DetectPlayerEnter : MonoBehaviour
         }
         
 
-        if (isFocusing )  // 按下 Escape 键时
-        {
-          
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("开始重置摄像头");
-                StartCoroutine(ResetCameraPosition());
-
-                if (ItemPickUp.itemPickUpUIInst!=null)
-                {
-                    Destroy(ItemPickUp.itemPickUpUIInst.gameObject);
-                    ItemPickUp.itemPickUpUIInst = null;
-                }
-
-            }
-
-        }
+        // if (isFocusing )  // 按下 Escape 键时
+        // {
+        //   
+        //     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
+        //     {
+        //         Debug.Log("开始重置摄像头");
+        //         StartCoroutine(ResetCameraPosition());
+        //
+        //         if (ItemPickUp.itemPickUpUIInst!=null)
+        //         {
+        //             Destroy(ItemPickUp.itemPickUpUIInst.gameObject);
+        //             ItemPickUp.itemPickUpUIInst = null;
+        //         }
+        //
+        //     }
+        //
+        // }
 
     }
 

@@ -5,6 +5,7 @@ using BlueStar.Inventory;
 using Unity.Mathematics;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 
 
@@ -32,7 +33,7 @@ public class Controller_Terra : MonoBehaviour
     private GameObject shortLineInst;
     public List<Vector3> shootLinePoints=new List<Vector3>();
     private bool isFading = true;
-    public float Health = 100.0f;
+    public float Health = 200.0f;
     public float initialHealth;
     //全局记录是否可以移动人物的参数
     public static bool canMoveTerra = true;
@@ -363,6 +364,7 @@ public class Controller_Terra : MonoBehaviour
     public void RecoverHealth(float Damage)
     {
         Health += Damage;
+        Health = Mathf.Clamp(Health, 0, initialHealth);
         Debug.Log("使用了补血包，现在的生命值为"+Health);
         InventoryManager.Instance.HealthBar.value = Health / initialHealth;
     }

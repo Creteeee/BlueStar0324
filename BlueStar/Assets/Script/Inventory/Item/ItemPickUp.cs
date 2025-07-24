@@ -96,7 +96,7 @@ namespace BlueStar.Inventory
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // 从自定义相机发射射线
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 200f, LayerMask.GetMask("Item")))
+                if (Physics.Raycast(ray, out hit, 20f, LayerMask.GetMask("Item")))
                 {
                     item=hit.collider.GetComponent<Item>();
                     UI_Front.SetActive(false);

@@ -5,6 +5,7 @@ using BlueStar.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameProgressManager : Singleton<GameProgressManager>
 {
@@ -21,6 +22,11 @@ public class GameProgressManager : Singleton<GameProgressManager>
     [Header("结局")] public bool enterEndingSHow;
     [Header("游戏任务提示UI")] public GameObject taskSuggest;
     public TMP_Text TaskText;
+    private float health;
+    [Header("死亡UI")]
+    [SerializeField] private CanvasGroup endUIGroup;//这个后面UI被卸载了可能出bug
+
+    private int timer = 0;
 
     private void Start()
     {
@@ -28,12 +34,14 @@ public class GameProgressManager : Singleton<GameProgressManager>
         audio.clip = _audioClips[0];
         audio.Play();
         taskSuggest.SetActive(false);
-        TaskText.text = "找到损坏的ID卡, 制作新的宿舍通行证";
+        TaskText.text = "找到损坏的ID卡, 输入身份ID，制作新的通行证";
+        health = Terra.GetComponent<Controller_Terra>().Health;
+        endUIGroup = GameObject.Find("------UI------/UI_2D/Death").GetComponent<CanvasGroup>();
     }
 
     public void Day1_BeginRepair()
     {
-        TaskText.text = "装备配枪, 找到配电间, 拿走电阻, 替换损坏的电阻并调节电流";
+        TaskText.text = "装备镇定枪, 找到配电间, 拿走电阻, 替换损坏的电阻并调节电流";
     }
 
 
@@ -78,7 +86,7 @@ public class GameProgressManager : Singleton<GameProgressManager>
             InventoryStateManager.Instance.DoorStates["O_I_LiftDoor"] = true;
             Debug.Log("游戏进程让O_I_LiftDoor的值为"+InventoryStateManager.Instance.DoorStates["O_I_LiftDoor"]);
             TaskText.text = "乘坐电梯前往天台寻找档案室入口";
-            
+            endUIGroup = GameObject.Find("------UI------/UI_2D/Death").GetComponent<CanvasGroup>();
         }
     }
 
@@ -115,10 +123,21 @@ public class GameProgressManager : Singleton<GameProgressManager>
             taskSuggest.SetActive(!taskSuggest.activeSelf);
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)&&timer<1)
         {
+            timer += 1;
             SceneManager.LoadScene("HomePage");
             EventHandler.CallDestroyObject(true);
+        }
+
+        if (Terra.GetComponent<Controller_Terra>().Health <= 0 && timer < 1)
+        {
+            timer += 1;
+            endUIGroup.DOFade(1, 3).OnComplete(() =>
+            {
+                SceneManager.LoadScene("HomePage");
+                EventHandler.CallDestroyObject(true);
+            });
         }
     }
 

@@ -36,6 +36,8 @@ namespace BlueStar.Inventory
         private GameObject canvas;
 
         public GameObject suggestGlobal;
+        public GameObject suggestGlobalChild;
+        public TMP_Text suggestGlobalText;
 
         private GameObject carryWeaponUI;
 
@@ -145,7 +147,7 @@ namespace BlueStar.Inventory
         /// <param name="isUse"></param>
         public void UseItem(int itemID, bool isUse)
         {
-            if (isUse)
+            if (isUse && itemID!=1007)//钥匙不删掉
             {
                 var index = GetItemIndexBag(itemID);
                 int currentAmount = playerBag.itemList[index].itemAmount;
@@ -370,6 +372,13 @@ namespace BlueStar.Inventory
                 }
             }
             existedSuggestUI.Clear();
+        }
+
+        public void HideChildGlobalSuggest()
+        {
+            suggestGlobalChild.SetActive(!suggestGlobalChild.activeSelf);
+            suggestGlobalText.text = suggestGlobalChild.activeSelf?"关闭游戏提示":"展开游戏提示";
+            
         }
 
     }

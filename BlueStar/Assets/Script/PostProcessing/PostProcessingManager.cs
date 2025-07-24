@@ -17,6 +17,9 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
     ColorAdjustments colorAdjustments;
     public Controller_Terra terra;
     private float initialFocalLength;
+    public Material bloodMat;
+    private float healthRatio = 1;
+    private float alpha = 0;
     
     void Start()
     {
@@ -31,31 +34,38 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
         LowresWidth = pixelizeRenderPassFeature.settings.LowResWidth;
         LowresHeight = pixelizeRenderPassFeature.settings.LowResHeight;
         pixelizeRenderPassFeature.SetActive(true);
-        
+        bloodMat.SetFloat("_Alpha",0);
+        bloodMat.SetFloat("_HealthRatio",1);
 
     }
 
     void Update()
     {
-        if (terra.Health>=100)
-        {
-            initialFocalLength = 1;
-        }
-
-        else if (terra.Health>=60 && terra.Health<100)
-        {
-            initialFocalLength = 30;
-        }
-        else
-        {
-            initialFocalLength = 60;
-        }
+        healthRatio = Mathf.Clamp(terra.Health/100, 0, 1);
+        alpha = Mathf.Clamp01(1-healthRatio)*1;
+        
+        
+        // if (terra.Health>=100)
+        // {
+        //     initialFocalLength = 1;
+        // }
+        //
+        // else if (terra.Health>=60 && terra.Health<100)
+        // {
+        //     initialFocalLength = 30;
+        // }
+        // else
+        // {
+        //     initialFocalLength = 60;
+        // }
 
     }
     
     public void OnHurt()
     {
         StartCoroutine(HurtEffectCoroutine());
+        bloodMat.SetFloat("_Alpha",alpha);
+        bloodMat.SetFloat("_HealthRatio",healthRatio);
     }
 
     IEnumerator HurtEffectCoroutine()
@@ -105,21 +115,23 @@ public class PostProcessingManager :Singleton<PostProcessingManager>
 
     public void ResetFocalLength()
     {
-        if (terra.Health>=100)
-        {
-            initialFocalLength = 1;
-        }
-
-        else if (terra.Health>=60 && terra.Health<100)
-        {
-            initialFocalLength = 30;
-        }
-        else
-        {
-            initialFocalLength = 60;
-        }
-
-        depthOfField.focalLength.value = initialFocalLength;
+        bloodMat.SetFloat("_Alpha",alpha);
+        bloodMat.SetFloat("_HealthRatio",healthRatio);
+        // if (terra.Health>=100)
+        // {
+        //     initialFocalLength = 1;
+        // }
+        //
+        // else if (terra.Health>=60 && terra.Health<100)
+        // {
+        //     initialFocalLength = 30;
+        // }
+        // else
+        // {
+        //     initialFocalLength = 60;
+        // }
+        //
+        // depthOfField.focalLength.value = initialFocalLength;
     }
     private void OnEnable()
     {

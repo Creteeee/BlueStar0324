@@ -57,10 +57,10 @@ public class LaserController : MonoBehaviour
                 if (hit.transform.gameObject == huangxingPos)
                 {
                     litMat.EnableKeyword("_EMISSION");
-                    foreach (var cube in rotateLaserCubes)
-                    {
-                        cube.enabled = false;
-                    }
+                    // foreach (var cube in rotateLaserCubes)
+                    // {
+                    //     cube.enabled = false;
+                    // }
                 
                 }
                 else

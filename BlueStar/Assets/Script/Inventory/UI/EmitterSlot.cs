@@ -26,6 +26,7 @@ public class EmitterSlot : MonoBehaviour
 
     //prelook模型们，虽然这样写有点傻，但是就这样吧
     public GameObject[] prelookModels;
+    private Coroutine updateFuelCoroutine;
     
     
 
@@ -60,24 +61,29 @@ public class EmitterSlot : MonoBehaviour
 
     public void ClearSlot()
     {
+        if (updateFuelCoroutine != null)
+        {
+            StopCoroutine(updateFuelCoroutine);
+            updateFuelCoroutine = null;
+        }
+
         slotImage.enabled = false;
         isEmpty = true;
         isLaunched = false;
         prelookModels[emitterDetails.ID].SetActive(false);
-        emitterDetails=null;
+        emitterDetails = null;
         Destroy(Emitter_Launched.gameObject.GetComponent<Emitter>().line);
         Destroy(Emitter_Launched.gameObject);
         UIManager_BattleMode.suggestLine.SetActive(false);
         UIManager_BattleMode.arrowInst.SetActive(false);
-        Emitter_Launched=null;
+        Emitter_Launched = null;
         fuelTotal = 1;
         bulletTotal = 8;
         fuel = 1;
         bullet = 8;
-        //duration = 0;
         UIManager_BattleMode.HealthBar.gameObject.SetActive(false);
-        UIManager_BattleMode.bulletLeftText.text="";
-        UIManager_BattleMode.EmitterName.text="空槽位";
+        UIManager_BattleMode.bulletLeftText.text = "";
+        UIManager_BattleMode.EmitterName.text = "空槽位";
     }
 
     public void HighLightSlot()
@@ -103,9 +109,8 @@ public class EmitterSlot : MonoBehaviour
 
     public void LaunchEmitter()
     {
-        //在飞船处实例化发射的模型，后面加上朝向
-        Emitter_Launched = Instantiate(emitterDetails.model_Orbit, SpaceShip.transform.position,Quaternion.identity);
-        StartCoroutine(UpdateFuel(fuel, duration));
+        Emitter_Launched = Instantiate(emitterDetails.model_Orbit, SpaceShip.transform.position, Quaternion.identity);
+        updateFuelCoroutine = StartCoroutine(UpdateFuel(fuel, duration));
         isLaunched = true;
     }
 
