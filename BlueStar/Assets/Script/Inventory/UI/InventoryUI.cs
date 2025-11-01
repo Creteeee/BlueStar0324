@@ -46,8 +46,8 @@ namespace  BlueStar.Inventory
             upHeader=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("UpHeader").gameObject;
             downHeader=GameObject.Find("------UI------/UI_2D").gameObject.transform.Find("DownHeader").gameObject;
 
-            upHeaderPos = upHeader.transform.position;
-            downHeaderPos = downHeader.transform.position;
+            upHeaderPos = upHeader.GetComponent<RectTransform>().anchoredPosition;
+            downHeaderPos = downHeader.GetComponent<RectTransform>().anchoredPosition;
 
         }
         void OnUpdateInventoryUI(InventoryLocation location, List<InventoryItem> list)
@@ -104,8 +104,8 @@ namespace  BlueStar.Inventory
         {
             if (isMove)
             {
-                upHeader.transform.DOMove(upHeaderPos + new Vector3(0, -200, 0), 1);
-                downHeader.transform.DOMove(downHeaderPos + new Vector3(0, +200, 0), 1);
+                upHeader.GetComponent<RectTransform>().DOAnchorPos(upHeaderPos+new Vector3(0, -400, 0),1);
+                downHeader.GetComponent<RectTransform>().DOAnchorPos(downHeaderPos+new Vector3(0, +400, 0),1);
             }
         }
 
@@ -113,8 +113,8 @@ namespace  BlueStar.Inventory
         {
             if (isEnded)
             {
-                upHeader.transform.DOMove(upHeaderPos, 1);
-                downHeader.transform.DOMove(downHeaderPos, 1);
+                upHeader.GetComponent<RectTransform>().DOAnchorPos(upHeaderPos,1);
+                downHeader.GetComponent<RectTransform>().DOAnchorPos(downHeaderPos,1);
             }
         }
         
