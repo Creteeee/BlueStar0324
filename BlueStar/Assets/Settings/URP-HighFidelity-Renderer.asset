@@ -352,9 +352,8 @@ MonoBehaviour:
   m_Active: 1
   settings:
     RenderPassEvent: 500
-    LowResWidth: 720
-    LowResHeight: 405
-    bloodMat: {fileID: 2100000, guid: 463d73ceccb55834c91be25dcbcfc348, type: 2}
+    LowResWidth: 1080
+    LowResHeight: 1920
 --- !u!114 &3020986340536120343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +507,10 @@ MonoBehaviour:
   m_Name: FullScreenPassRendererFeature
   m_EditorClassIdentifier: 
   m_Active: 0
-  passMaterial: {fileID: 2100000, guid: 90afd45a82889f64093261bbe2d788b1, type: 2}
   injectionPoint: 600
-  requirements: -1
+  fetchColorBuffer: 1
+  requirements: -5
+  passMaterial: {fileID: 2100000, guid: 90afd45a82889f64093261bbe2d788b1, type: 2}
   passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
